@@ -1,0 +1,138 @@
+REFINEMENT MM_2 
+REFINES
+	MM_1
+/*" U2B3.6.11 generated this component from Package MM_2 "*/
+SETS
+	MM_2={thisMM_2};
+	MM_2_STATE={idling,waiting,elimination,competition,message}
+VARIABLES
+	mm_2_state,
+	XR,
+	WA,
+	WR,
+	wr,
+	nodes
+INVARIANT
+	mm_2_state : MM_2 --> MM_2_STATE &
+	XR : MM_2 --> POW(ND) &
+	WA : MM_2 --> POW(ND) &
+	WR : MM_2 --> POW(ND) &
+	wr : MM_2 --> POW(ND) &
+	nodes : MM_2 --> POW(ND) &
+	(WA(thisMM_2)/={} => wr(thisMM_2)={}) &
+	(XR(thisMM_2)/\WA(thisMM_2)={}) &
+	(wr(thisMM_2)/\XR(thisMM_2)={}) &
+	!(nd).(nd:ND & nd:WR(thisMM_2) => nd/:WA(thisMM_2))
+INITIALISATION
+	mm_2_state := MM_2 * {idling} ||
+	XR :: MM_2 --> POW(ND) ||
+	WA :: MM_2 --> POW(ND) ||
+	WR :: MM_2 --> POW(ND) ||
+	wr :: MM_2 --> POW(ND) ||
+	nodes :: MM_2 --> POW(ND)
+
+EVENTS
+ free =
+BEGIN
+	SELECT
+		wr(thisMM_2)/={}
+	THEN
+		SELECT mm_2_state(thisMM_2)=message
+		THEN   mm_2_state(thisMM_2):=idling
+		END ||
+		wr(thisMM_2):={}
+	END
+END
+;
+ take =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd:WR(thisMM_2) &
+		WA(thisMM_2)={}
+	THEN
+		SELECT mm_2_state(thisMM_2)=competition
+		THEN   mm_2_state(thisMM_2):=message
+		END ||
+		wr(thisMM_2):={nd} ||
+		WR(thisMM_2):={} ||
+		XR(thisMM_2):={}
+	END
+END
+;
+ idle =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd/:wr(thisMM_2) &
+		nd/:WA(thisMM_2)
+	THEN
+		skip
+	END
+END
+;
+ switch_ok =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd:WA(thisMM_2)
+	THEN
+		SELECT mm_2_state(thisMM_2)=waiting &
+		       WA(thisMM_2)/={nd}
+		THEN   mm_2_state(thisMM_2):=elimination
+		WHEN   mm_2_state(thisMM_2)=waiting &
+		       WA(thisMM_2)={nd}
+		THEN   mm_2_state(thisMM_2):=competition
+		WHEN   mm_2_state(thisMM_2)=elimination &
+		       WA(thisMM_2)/={nd}
+		THEN   skip
+		WHEN   mm_2_state(thisMM_2)=elimination &
+		       WA(thisMM_2)={nd}
+		THEN   mm_2_state(thisMM_2):=competition
+		END ||
+		WR(thisMM_2):=WR(thisMM_2)\/{nd} ||
+		WA(thisMM_2):=WA(thisMM_2)-{nd}
+	END
+END
+;
+ rise =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd/:WA(thisMM_2) &
+		nd/:XR(thisMM_2) &
+		WR(thisMM_2)={} &
+		wr(thisMM_2)={}
+	THEN
+		SELECT mm_2_state(thisMM_2)=idling
+		THEN   mm_2_state(thisMM_2):=waiting
+		WHEN   mm_2_state(thisMM_2)=waiting
+		THEN   skip
+		END ||
+		WA(thisMM_2):=WA(thisMM_2)\/{nd}
+	END
+END
+;
+ switch_ko =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd:WA(thisMM_2)
+	THEN
+		SELECT mm_2_state(thisMM_2)=elimination &
+		       WA(thisMM_2)={nd}
+		THEN   mm_2_state(thisMM_2):=competition
+		WHEN   mm_2_state(thisMM_2)=elimination &
+		       WA(thisMM_2)/={nd}
+		THEN   skip
+		END ||
+		WA(thisMM_2):=WA(thisMM_2)-{nd} ||
+		XR(thisMM_2):=XR(thisMM_2)\/{nd}
+	END
+END
+END

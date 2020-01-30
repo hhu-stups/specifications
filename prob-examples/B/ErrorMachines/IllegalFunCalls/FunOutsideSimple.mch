@@ -1,0 +1,15 @@
+MACHINE FunOutsideSimple
+DEFINITIONS
+ SET_PREF_MAX_INITIALISATIONS == 10
+SETS
+ ID={aa,bb}
+CONSTANTS f
+PROPERTIES f: ID +->ID &
+ /* f = {aa|->bb} & */
+ f(bb)=aa
+VARIABLES xx
+INVARIANT
+ xx:ID
+INITIALISATION xx:=f(aa)
+END
+

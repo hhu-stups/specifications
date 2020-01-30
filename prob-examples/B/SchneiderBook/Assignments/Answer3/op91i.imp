@@ -1,0 +1,23 @@
+IMPLEMENTATION    op91I
+
+REFINES           op91
+
+OPERATIONS
+
+  mm <-- oper91(xx) = 
+  VAR nn,vv IN
+  nn := 1; vv := xx;
+  WHILE nn > 0 
+  DO IF vv < 101
+     THEN vv := vv + 11 ; nn := nn + 1
+     ELSE vv := vv - 10 ; nn := nn - 1
+     END
+  INVARIANT nn : NAT & vv : NAT &
+            ((nn = 0 & vv = 91)
+            or (nn = 1 & vv < 102)
+            or (nn > 1 & vv < 112))
+  VARIANT 224 + (21*nn) - (2*vv)
+  END;
+  mm := vv
+  END
+END

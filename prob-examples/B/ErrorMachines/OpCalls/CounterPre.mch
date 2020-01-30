@@ -1,0 +1,9 @@
+MACHINE CounterPre
+VARIABLES x
+INVARIANT x:NATURAL
+INITIALISATION x:=1
+OPERATIONS
+ inc = x := x+1;
+ dec = PRE x>0 THEN x := x-1 END;
+ b <-- zero = IF x>0 THEN b:=FALSE ELSE b:=TRUE END
+END

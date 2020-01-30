@@ -1,0 +1,19 @@
+REFINEMENT        ColoursR
+
+REFINES           Colours
+
+VARIABLES         colour
+
+INVARIANT         colour : cols
+
+INITIALISATION    colour :: COLOUR - {blue}
+
+OPERATIONS
+
+  add(cc) = PRE cc: COLOUR THEN colour :: {colour, cc} END;  /* mal: added typing PRE */
+
+  cc <-- query = cc := colour;
+
+  change = colour :: COLOUR - {colour}
+
+END

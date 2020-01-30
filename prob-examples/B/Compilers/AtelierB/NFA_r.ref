@@ -1,0 +1,21 @@
+/* NFA_r
+ * Author: 
+ * Creation date: Mon Apr 23 2012
+ */
+REFINEMENT
+   NFA_r
+REFINES
+   NFA
+DEFINITIONS
+   Alphabet == { 0 , 1 }
+ABSTRACT_CONSTANTS deltas
+VARIABLES curs
+INVARIANT curs <: SS
+   
+INITIALISATION
+   curs := {z0}
+
+OPERATIONS
+  Go(input) = PRE input:Alphabet THEN curs:= deltas(curs,[input]) END;
+  Accept = PRE curs /\ FF /= {} THEN skip END
+END

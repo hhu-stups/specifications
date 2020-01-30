@@ -1,0 +1,37 @@
+{:properties 0,
+ :definitions 13,
+ :deferred_sets 0,
+ :number-of-transitions 2306,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Tickets/Guiziou_ClearSy/Machine_AvecPrintf.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :number-of-states 513,
+ :included-machines
+ ["./prob-examples/B/Tickets/Guiziou_ClearSy/Machine_AvecPrintf.mch"
+  "./prob-examples/B/Tickets/Guiziou_ClearSy/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "6916d260098dd3594e6c52aa181888ddc0c0cf471b1691fd3a42b8f935fa4b59",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 370,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 0,
+ :formalism :b}

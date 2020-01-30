@@ -1,0 +1,9 @@
+MACHINE A2
+
+EXTENDS X2
+
+OPERATIONS
+    opa2 = BEGIN skip END
+
+
+END

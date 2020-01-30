@@ -1,0 +1,33 @@
+REFINEMENT        PortR
+REFINES           Port
+DEFINITIONS
+  scope_SHIP == 1..3;
+  scope_QUAY == 1..3
+
+INCLUDES          List(SHIP), Map(SHIP, QUAY)
+
+VARIABLES         num
+
+INVARIANT         num : NAT & num = size(waiting) 
+                  & waiting = list & docked~ = fun 
+
+INITIALISATION    num := 0
+
+OPERATIONS
+
+  arrive(ss) = PRE ss/: ran(list) & ss/: dom(fun) THEN 
+               /* leuschel: added PRE for ss /: ran(waiting) & ss /: ran(docked) */
+    add(ss); num := num + 1 END;
+
+dock(qq) = PRE list /= <> THEN /* leuschel: added PRE corresponding to waiting /= <> */
+   VAR sh IN  sh <-- take ; insert(sh,qq) 
+   END;
+    num := num - 1 
+  END;
+
+qq <-- leave(ss) = PRE ss : dom(fun) THEN /* leuschel: added PRE corresponding to ss:ran(docked) */
+    qq <-- query(ss); remove(ss) END;
+
+nn <-- numberwaiting = nn := num
+
+END

@@ -1,0 +1,9 @@
+MACHINE parallel_subst
+VARIABLES xx
+INVARIANT xx : INTEGER
+INITIALISATION xx :=  1
+OPERATIONS
+ foo = BEGIN IF xx < 2 THEN xx := 4 ELSE skip END 
+	|| IF xx > 2 THEN xx:= 1 ELSE skip END
+ END
+END

@@ -1,0 +1,10 @@
+IMPLEMENTATION
+   MI
+/* check whether concrete variables of Main are propagated down to MI */
+REFINES Main
+CONCRETE_VARIABLES d
+INVARIANT d:NAT & d=x+1
+INITIALISATION d:= 1 ; c := 0
+OPERATIONS
+  r <-- Equal = IF d=c+1 THEN r:= TRUE ELSE r := FALSE END
+END

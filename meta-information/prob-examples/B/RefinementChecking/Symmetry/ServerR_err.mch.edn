@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 44,
+ :deadlock false,
+ :file "./prob-examples/B/RefinementChecking/Symmetry/ServerR_err.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 14,
+ :included-machines
+ ["./prob-examples/B/RefinementChecking/Symmetry/ServerR_err.mch"
+  "./prob-examples/B/RefinementChecking/Symmetry/Server.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "1afd40fc9368e5c64206481df5498ed869874e4ca1c55686b9fd055047eeedd1",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 120,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

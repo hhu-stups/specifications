@@ -1,0 +1,6 @@
+MODEL
+   ArrayElem
+
+SETS ELEMENTS /* = {ELEM1, ELEM2, ELEM3}*/
+
+END

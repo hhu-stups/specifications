@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 673,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksPGE/abz_case_study/Ref1_Valve_mch.eventb",
+ :enumerated_sets 7,
+ :variables 6,
+ :number-of-states 144,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksPGE/abz_case_study/Ref1_Valve_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 16,
+ :sha256
+ "c80e2d68c409828c1a211041e58e9f20a2be072c80f84c56c7d63267dc0a432d",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 140,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

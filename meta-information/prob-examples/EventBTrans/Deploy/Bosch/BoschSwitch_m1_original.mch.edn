@@ -1,0 +1,36 @@
+{:properties 20,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 0,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBTrans/Deploy/Bosch/BoschSwitch_m1_original.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/EventBTrans/Deploy/Bosch/BoschSwitch_m1_original.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "3d02de6dd9897d2d15f55b68a98b16265e28d3e76a0cda5d2a3125ff123f2116",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 10,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 9,
+ :formalism :b}

@@ -1,0 +1,28 @@
+REFINEMENT
+  Robot2
+REFINES
+  Robot
+VARIABLES
+  De2,Dt2,On
+INVARIANT
+  Dt2:BOOL & De2:BOOL & On:BOOL &
+  Dt2 = Dt& De2 = De
+INITIALISATION
+  Dt2 := FALSE || De2 := FALSE || On := FALSE
+OPERATIONS
+  Load = SELECT Dt2 = FALSE & On = TRUE
+         THEN Dt2 := TRUE
+         END;
+  Unload = SELECT Dt2 = TRUE
+                & De2 = FALSE
+           THEN Dt2 := FALSE
+             || De2 := TRUE
+           END;
+  Discard = SELECT De2 = TRUE
+            THEN De2 := FALSE
+            END;
+  StopStart = SELECT De2 = FALSE
+                   & Dt2 = FALSE
+              THEN On := bool(On=FALSE)
+              END
+END

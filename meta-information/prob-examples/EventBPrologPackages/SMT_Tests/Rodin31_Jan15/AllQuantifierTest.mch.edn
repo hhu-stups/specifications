@@ -1,0 +1,36 @@
+{:properties 4,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 4802,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/SMT_Tests/Rodin31_Jan15/AllQuantifierTest.mch",
+ :enumerated_sets 1,
+ :variables 0,
+ :number-of-states 4802,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/SMT_Tests/Rodin31_Jan15/AllQuantifierTest.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "b4e367a812c8f48f94e3f44acf0ec75bfcc93d541edf7f5bb7b521c708c4d781",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 2590,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

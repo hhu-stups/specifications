@@ -1,0 +1,36 @@
+{:properties 7,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Tickets/SonLazySetEvaluation/m0_Internal_v2.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Tickets/SonLazySetEvaluation/m0_Internal_v2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 1,
+ :operations 1,
+ :sha256
+ "fa78a8e1d49b6667996a8f54e81feb940fbd079fdf45ae5f50834ad2468907e5",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 7,
+ :formalism :b}

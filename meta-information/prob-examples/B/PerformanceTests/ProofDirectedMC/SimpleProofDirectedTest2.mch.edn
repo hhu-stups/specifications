@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 2003,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/ProofDirectedMC/SimpleProofDirectedTest2.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 2002,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/ProofDirectedMC/SimpleProofDirectedTest2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "dd4cd8f8029a16ab3f47c3aab1f846c280e6e67a1d62fb8ef26e6e56f31e0942",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 210,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

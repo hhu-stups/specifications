@@ -1,0 +1,6 @@
+MACHINE ArrayValuationB
+SETS EnsAbs
+CONCRETE_CONSTANTS t4
+PROPERTIES
+   t4 : (0..2)*BOOL-->EnsAbs
+END

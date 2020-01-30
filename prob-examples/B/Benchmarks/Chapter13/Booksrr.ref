@@ -1,0 +1,28 @@
+REFINEMENT        Booksrr(BOOK)
+/* From Steve Schneider's Book */
+
+REFINES           Booksr
+
+DEFINITIONS
+  scope_BOOK==1..3;
+  SET_PREF_MAX_INITIALISATIONS == 10
+
+/*  
+Parameter BOOK not visible in PROPERTIES !
+CONSTANTS         bookarr
+
+PROPERTIES        bookarr : 1..card(BOOK) >->> BOOK
+*/
+
+VARIABLES         bookarr, counter
+
+INVARIANT         bookarr : 1..card(BOOK) >->> BOOK &
+                  counter : 0..card(BOOK) & ((1..counter)<|bookarr)^scheme = bookarr
+
+INITIALISATION    counter := 0 || bookarr :: 1..card(BOOK) >->> BOOK
+
+OPERATIONS
+
+  bb <-- newbook = PRE counter < card(BOOK) THEN counter := counter + 1 ; bb := bookarr(counter) END
+
+END

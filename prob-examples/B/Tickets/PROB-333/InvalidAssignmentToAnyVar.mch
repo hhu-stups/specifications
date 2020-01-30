@@ -1,0 +1,7 @@
+MACHINE InvalidAssignmentToAnyVar
+VARIABLES xx
+INVARIANT xx : INTEGER
+INITIALISATION xx := 0
+OPERATIONS
+  op = ANY zz WHERE zz:{1,2,3} THEN zz := 0 END
+END

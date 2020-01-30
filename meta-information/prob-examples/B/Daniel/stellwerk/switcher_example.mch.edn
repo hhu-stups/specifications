@@ -1,0 +1,37 @@
+{:properties 14,
+ :definitions 1,
+ :deferred_sets 1,
+ :number-of-transitions 262726,
+ :deadlock false,
+ :file "./prob-examples/B/Daniel/stellwerk/switcher_example.mch",
+ :enumerated_sets 2,
+ :variables 6,
+ :number-of-states 3050,
+ :included-machines
+ ["./prob-examples/B/Daniel/stellwerk/switcher_example.mch"
+  "./prob-examples/B/Daniel/stellwerk/switching_example.mch"
+  "./prob-examples/B/Daniel/stellwerk/layout_example.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 10,
+ :sha256
+ "0a1090d06b4d6339524d39676b39659fe38a4800e5cb3542c754cd5a36912643",
+ :invariants 13,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 262144000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 34560,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 7,
+ :formalism :b}

@@ -1,0 +1,37 @@
+{:properties 10,
+ :definitions 27,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file "./prob-examples/B/Tickets/SLOT-24/data.mch",
+ :enumerated_sets 4,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/SLOT-24/data.mch"
+  "./prob-examples/B/Tickets/SLOT-24/LibraryIO.def"
+  "./prob-examples/B/Tickets/SLOT-24/base.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 2,
+ :operations 0,
+ :sha256
+ "53f2bee9cdea7101bef6ca6c470530a3c4e4f7f8f9e1c42ea25f2dff301d3c85",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 10,
+ :formalism :b}

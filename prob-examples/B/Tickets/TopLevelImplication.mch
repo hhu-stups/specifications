@@ -1,0 +1,7 @@
+MACHINE TopLevelImplication
+DEFINITIONS "LibraryIO.def"
+PROPERTIES
+ (TRUE=FALSE => FALSE=TRUE & TRUE=FALSE)
+
+END
+

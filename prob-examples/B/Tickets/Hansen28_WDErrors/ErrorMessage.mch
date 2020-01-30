@@ -1,0 +1,5 @@
+MACHINE ErrorMessage
+SEES Helper
+PROPERTIES DECIMAL_TO_INT("") = 123456
+END
+

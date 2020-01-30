@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 504,
+ :deadlock false,
+ :file
+ "./prob-examples/B/FeatureChecks/SetOperators/TestPartition.mch",
+ :enumerated_sets 1,
+ :variables 0,
+ :number-of-states 252,
+ :included-machines
+ ["./prob-examples/B/FeatureChecks/SetOperators/TestPartition.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "bbd7cdd6b0b9bec7373c022ad73840f4c5d3203c8b93e0cce05693e06e559165",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 50,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

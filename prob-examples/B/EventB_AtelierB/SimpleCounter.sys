@@ -1,0 +1,14 @@
+MODEL SimpleCounter
+CONSTANTS minc,maxc
+PROPERTIES
+ minc < maxc
+VARIABLES counter
+INVARIANT
+  counter : minc .. maxc
+INITIALISATION 
+  counter :: minc..maxc
+OPERATIONS
+  Increase = ANY ii WHERE ii:0..(maxc-minc) & counter+ii <= maxc THEN counter := counter+ii END;
+  Decrease = ANY ii WHERE ii:0..(maxc-minc) & counter-ii >= minc THEN counter := counter-ii END
+END
+

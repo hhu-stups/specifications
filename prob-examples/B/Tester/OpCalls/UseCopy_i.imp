@@ -1,0 +1,18 @@
+/* UseCopy_i
+ * Author: 
+ * Creation date: 14/11/2016
+ */
+
+IMPLEMENTATION UseCopy_i
+REFINES UseCopy
+IMPORTS Copy
+DEFINITIONS SET_PREF_MAXINT == 128
+
+CONCRETE_VARIABLES zz, ww
+
+INITIALISATION zz := 10 ; ww := 0
+
+OPERATIONS
+     Test = BEGIN zz,ww <-- Copy1(zz) END
+
+ END

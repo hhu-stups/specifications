@@ -1,0 +1,21 @@
+IMPLEMENTATION
+   MulImp
+REFINES Mul
+OPERATIONS
+ res <-- Mult(a,b) =
+  VAR tot,x,y IN
+     tot := 0; x:= a; y:= b;
+     WHILE x>0 DO
+       IF x mod 2 = 1 THEN
+         tot := tot+y
+       END;
+       x := x/2;
+       y := y*2
+     INVARIANT x:NAT & 
+               y:NAT &    /* THIS CAN BE VIOLATED ! */
+               tot:NAT & tot+x*y = a*b
+     VARIANT x
+     END;
+     res := tot
+  END
+END

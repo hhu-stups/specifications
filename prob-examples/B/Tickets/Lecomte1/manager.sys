@@ -1,0 +1,69 @@
+SYSTEM
+    manager
+    
+SEES
+    CTX
+    
+VARIABLES
+    current_active_conditions,
+    current_mode,
+    unit_config,
+    faulty_units
+    
+INVARIANT
+    current_active_conditions <: TRANSITION_CONDITIONS &
+    current_mode : MODES &
+    unit_config : UNIT_TYPE --> UNIT_STATUS &
+    !(ut).(ut: UNIT_TYPE => unit_config(ut) : UNIT_CONFIG(ut)) & /* La configuration des unités est une configuration admissible */
+    faulty_units <: UNIT_TYPE
+    
+INITIALISATION
+    current_active_conditions := {} ||
+    current_mode := MOff ||
+    unit_config := MODE2CONFIG(MOff) ||
+    faulty_units := {}
+    
+EVENTS
+    update_transition_conditions = /* Environnement: modification des conditions de transition */
+    ANY cond WHERE
+        cond <: TRANSITION_CONDITIONS
+    THEN
+       current_active_conditions := cond
+   END;
+   
+   detect_faulty_unit = /* Environnement: une unité de traitement est détectée défaillante */
+   ANY unit WHERE
+       unit : UNIT_TYPE - faulty_units
+   THEN
+       faulty_units := faulty_units \/ {unit}
+   END;
+
+   recover_faulty_unit = /* Environnement: une unité de traitement défaillante est considérée réparée */
+   ANY unit WHERE
+       unit : faulty_units
+   THEN
+       faulty_units := faulty_units - {unit}
+   END;
+   
+   mode_management = /* Contrôleur: sélection du prochain mode */
+   ANY cond, mode WHERE
+       cond: current_active_conditions &
+       mode: MODES &
+       cond |-> mode : NEXT(current_mode) &
+       faulty_units = {} /* management normal en l'absence d'unité défaillante */
+   THEN
+       current_mode := mode ||
+       unit_config := MODE2CONFIG(current_mode)
+   END
+   ;
+   
+   fdir = /* Contrôleur: sélection du prochain mode pour lesquels les unités défaillantes sont à l'état Off */
+   ANY mode WHERE
+       mode: MODES &
+       MODE2CONFIG(mode)[faulty_units] = {UOff}
+   THEN
+       current_mode := mode ||
+       unit_config := MODE2CONFIG(current_mode)
+   END
+       
+END

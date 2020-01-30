@@ -1,0 +1,36 @@
+{:properties 26,
+ :definitions 37,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/Tickets/Schneider4_Trees/data.mch",
+ :enumerated_sets 4,
+ :variables 0,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tickets/Schneider4_Trees/data.mch"
+  "./lib/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "d4132f41a4195a224a035b26e59b155edf44d24c8588a6f258d3060d9aa6355a",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 13,
+ :formalism :b}

@@ -1,0 +1,36 @@
+{:properties 41,
+ :definitions 0,
+ :deferred_sets 1,
+ :number-of-transitions 110468,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Dedale/LandingGears-5-fevrier-2015/LandingSystem_3_mch.eventb",
+ :enumerated_sets 10,
+ :variables 15,
+ :number-of-states 24662,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Dedale/LandingGears-5-fevrier-2015/LandingSystem_3_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 2,
+ :operations 21,
+ :sha256
+ "552c805f1a0953cd5424963a4e8f2fa28f011abc3b8476a514fbca7db74dba10",
+ :invariants 26,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 262144000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 32870,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 15,
+ :formalism :eventb}

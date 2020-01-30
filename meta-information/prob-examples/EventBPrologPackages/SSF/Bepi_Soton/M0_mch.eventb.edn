@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 1496,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/SSF/Bepi_Soton/M0_mch.eventb",
+ :enumerated_sets 0,
+ :variables 5,
+ :number-of-states 904,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/SSF/Bepi_Soton/M0_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "3f743122cf97855f0a5bf5c508d2c78b98db703de246040d26e72b2f8d831f8d",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 460,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :eventb}

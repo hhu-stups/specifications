@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 36,
+ :deadlock false,
+ :file
+ "./prob-examples/B/TestCaseGeneration/B4MSecure/Functional_1_1.mch",
+ :enumerated_sets 2,
+ :variables 4,
+ :number-of-states 7,
+ :included-machines
+ ["./prob-examples/B/TestCaseGeneration/B4MSecure/Functional_1_1.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 16,
+ :sha256
+ "3734ef0b20d5149305a3ea511376a56d9750c728e650bfe738edc97bf8c15228",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 110,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

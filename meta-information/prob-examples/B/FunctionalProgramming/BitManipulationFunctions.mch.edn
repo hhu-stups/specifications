@@ -1,0 +1,36 @@
+{:properties 7,
+ :definitions 6,
+ :deferred_sets 0,
+ :number-of-transitions 34,
+ :deadlock false,
+ :file
+ "./prob-examples/B/FunctionalProgramming/BitManipulationFunctions.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 9,
+ :included-machines
+ ["./prob-examples/B/FunctionalProgramming/BitManipulationFunctions.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 3,
+ :operations 4,
+ :sha256
+ "30cdadb65e8616d6cdaab894e4aa4550c4c898cc1b20d1f80a06ce3ebab06818",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 90,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :b}

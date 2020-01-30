@@ -1,0 +1,10 @@
+MACHINE LargeSets
+DEFINITIONS MX == 90000
+VARIABLES x,y
+INVARIANT
+ x <: INTEGER & y<: INTEGER
+INITIALISATION x,y :=  0..MX, 1..MX+1
+OPERATIONS
+  r <-- Diff = r := x - y
+END
+

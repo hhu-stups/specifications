@@ -1,0 +1,19 @@
+/* Copy_i
+ * Author: 
+ * Creation date: 14/11/2016
+ */
+
+IMPLEMENTATION Copy_i
+REFINES Copy
+
+OPERATIONS
+     xx,yy <-- Copy1(vv) = BEGIN
+          xx := 10-vv ; yy:=vv
+      END;
+     xx,yy <-- Inc(vv) = BEGIN
+         xx := xx+vv ; yy := yy+vv
+      END;
+     xx,yy <-- Copy2(vv) = BEGIN
+          xx := 10-vv ; yy:=vv
+      END
+ END

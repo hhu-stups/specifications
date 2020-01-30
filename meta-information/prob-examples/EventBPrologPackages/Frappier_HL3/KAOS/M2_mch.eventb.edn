@@ -1,0 +1,36 @@
+{:properties 13,
+ :definitions 0,
+ :deferred_sets 1,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Frappier_HL3/KAOS/M2_mch.eventb",
+ :enumerated_sets 1,
+ :variables 7,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Frappier_HL3/KAOS/M2_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 2,
+ :operations 3,
+ :sha256
+ "2bcc975656b4bed53dfbc3ba64839b8ac63949e8d03dfee822fe75a08acf485a",
+ :invariants 18,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 8,
+ :invariant-violated :unknown,
+ :constants 5,
+ :formalism :eventb}

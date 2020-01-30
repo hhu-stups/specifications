@@ -1,0 +1,37 @@
+{:properties 1,
+ :definitions 31,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file
+ "./prob-examples/B/ExternalFunctions/Sudoku/RepeatedSolveSudokusFromFile.mch",
+ :enumerated_sets 0,
+ :variables 5,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/B/ExternalFunctions/Sudoku/RepeatedSolveSudokusFromFile.mch"
+  "./prob-examples/B/ExternalFunctions/Sudoku/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "369790361138942926c68526d735f885793648417b5a8983e2b70ac9897fcb71",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 150,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

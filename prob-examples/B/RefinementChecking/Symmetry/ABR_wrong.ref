@@ -1,0 +1,13 @@
+REFINEMENT ABR_wrong
+REFINES AB
+VARIABLES xx,c
+INVARIANT
+ xx:ID & c:NAT
+INITIALISATION xx:: ID || c:= 0
+OPERATIONS
+  MoveAB(yy) = SELECT yy:ID & c<2 & yy=xx THEN c := c+1 END;
+/* Note with MoveAB(y) ProB generates a could not find identifier yy error message;
+    investigate */
+  MoveBA(yy) = SELECT yy:ID & c>99 THEN skip END
+END
+

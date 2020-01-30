@@ -1,0 +1,10 @@
+MACHINE DefSet_NoEnumWarning1
+SETS
+ ID
+CONSTANTS iv
+PROPERTIES
+ iv:ID & card(ID) = 3
+ASSERTIONS
+  iv:ID
+END
+

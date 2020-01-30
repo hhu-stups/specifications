@@ -1,0 +1,33 @@
+REFINEMENT ServerR_wrong2
+
+REFINES Server
+
+SETS
+  SessionID = {sid1}  /* not really an error: but restriction only one user can
+    log in at a time */
+  
+VARIABLES
+  session
+  
+INVARIANT
+  session : Process +-> SessionID &
+   logged_in = dom(session)
+  
+INITIALISATION
+  session := {}
+  
+OPERATIONS
+
+  LogIn(pp) =
+    PRE pp: Process & pp /: dom(session) THEN
+     ANY sid WHERE sid: SessionID & sid /: ran(session) THEN
+      session := ({pp} <<| session) \/ {pp |-> sid}
+     END
+    END;
+    
+  LogOut(pp) =
+    PRE pp: Process & pp: dom(session) THEN
+      session := {pp} <<| session 
+    END
+    
+END

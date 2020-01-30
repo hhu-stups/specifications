@@ -1,0 +1,52 @@
+IMPLEMENTATION
+  Nodes_Traversing_i
+REFINES
+  Nodes_Traversing
+SEES Nodes
+IMPORTS Nodes_Sequence
+INVARIANT mySeq = ss
+OPERATIONS
+ traverse =
+     VAR yy, empty
+     IN
+       empty <-- OP_isEmpty;
+       yy <-- OP_getFirst;
+       IF empty = TRUE
+       THEN
+           VAR hasNext
+           IN
+               OP_addFirst(yy);
+               hasNext <-- OP_hasNext(yy);
+               IF(hasNext = TRUE)
+               THEN
+                   VAR next
+                     IN
+                        next <-- OP_getNextNode(yy);
+                        OP_add(next);
+                        yy := next;
+                        hasNext <-- OP_hasNext(next)
+                   END
+               END;
+               WHILE hasNext = TRUE
+               DO
+                 VAR next
+                 IN
+                    next <-- OP_getNextNode(yy);
+                    OP_add(next);
+                    yy := next;
+                    hasNext <-- OP_hasNext(next)
+                 END
+               INVARIANT
+                   yy : NODES
+                   & hasNext : BOOL
+                   & (hasNext = TRUE => yy : ran(ss))
+                   & (hasNext = TRUE => last(ss) = yy)
+                   & (hasNext = TRUE => yy : dom(next))
+                   & (hasNext = TRUE => ({yy} <| next : {yy} >-> NODES))
+               VARIANT card(reachable[{yy}])
+               END
+           END
+       END
+     END
+
+END

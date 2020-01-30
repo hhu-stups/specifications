@@ -1,0 +1,4 @@
+MACHINE In1
+INCLUDES a1.A, 
+         a2.A
+END

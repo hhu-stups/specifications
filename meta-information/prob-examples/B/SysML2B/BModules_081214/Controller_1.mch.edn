@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/SysML2B/BModules_081214/Controller_1.mch",
+ :enumerated_sets 3,
+ :variables 14,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/SysML2B/BModules_081214/Controller_1.mch"
+  "./prob-examples/B/SysML2B/BModules_081214/Def_Types.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 16,
+ :sha256
+ "ff156bee50f28b54971ff9374f1d3e47ad2758a748914cafa85bb766fbd3a41e",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 0,
+ :formalism :b}

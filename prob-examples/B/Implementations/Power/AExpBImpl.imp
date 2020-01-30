@@ -1,0 +1,30 @@
+IMPLEMENTATION	AExpBImpl
+REFINES 	AExpB
+DEFINITIONS SET_PREF_MAXINT == 5; SET_PREF_MAX_OPERATIONS == 30
+PROPERTIES 	!(a, b) . (a : NAT & b : NAT => a**b * a = a**(b+1)) &
+/*		!(a, b) . (a : NAT & b : NAT => a**b <= a**(b+1)) & */
+
+/* ProB found a counterexample for this: a=0, b=1, c=0 */
+/* !(a, b, c) . (a : NAT & b : NAT & c : NAT => (b >= c => a**b >= a**c)) */
+/* now corrected to: */
+		!(a, b, c) . (a : NAT & b : NAT & c : NAT1 => (b >= c => a**b >= a**c))
+OPERATIONS
+  res <-- power(a, b) =
+	/* PRE	a:NAT & b:NAT & a**b:NAT */
+	BEGIN
+		VAR 	iter
+		IN
+			iter := b;
+			res := 1;
+			WHILE		iter > 0
+			DO		res := res * a;
+					iter := iter - 1
+			INVARIANT	res : NAT &
+					iter : 0..b &
+					
+					res = a**(b-iter)
+			VARIANT		iter
+			END
+		END
+	END
+END

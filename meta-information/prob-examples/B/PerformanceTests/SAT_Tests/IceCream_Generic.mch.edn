@@ -1,0 +1,36 @@
+{:properties 6,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 1008,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/SAT_Tests/IceCream_Generic.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 72,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/SAT_Tests/IceCream_Generic.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 1,
+ :operations 3,
+ :sha256
+ "56fded08d8dae6b11feebad639d8df1592f5336460a67bcd4599ee5efd47dad1",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 100,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

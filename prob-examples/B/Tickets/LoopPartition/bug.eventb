@@ -1,0 +1,2 @@
+package(load_event_b_project([],[event_b_context(none,c0,[extends(none,[]),constants(none,[identifier(none,'A'),identifier(none,'B')]),abstract_constants(none,[]),axioms(none,[partition(rodinpos(c0,axm1,'_2h0rAaLTEeKKZJha54Q7BA'),identifier(none,'SET'),[set_extension(none,[identifier(none,'A')]),set_extension(none,[identifier(none,'B')]),set_extension(none,[identifier(none,'A'),identifier(none,'B')])])]),theorems(none,[]),sets(none,[deferred_set(none,'SET')])])],[exporter_version(3)],_Error)).
+

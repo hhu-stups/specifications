@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 360164,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SymmetryReduction/PartialOrderTests/Test_Inv_Reduction2.mch",
+ :enumerated_sets 1,
+ :variables 4,
+ :number-of-states 36018,
+ :included-machines
+ ["./prob-examples/B/SymmetryReduction/PartialOrderTests/Test_Inv_Reduction2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "81f5df7fb542b96f56493fe31d38d57ca97f2b144d6863d7134785be22d34dc4",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 262144000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 18150,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

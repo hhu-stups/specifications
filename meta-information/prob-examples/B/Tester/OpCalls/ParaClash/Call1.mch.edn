@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/Tester/OpCalls/ParaClash/Call1.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tester/OpCalls/ParaClash/Call1.mch"
+  "./prob-examples/B/Tester/OpCalls/ParaClash/Base.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 6,
+ :sha256
+ "981232cea02daf926369e0fb310db27792751cf793dac60b5887025b8a75fe74",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 1,
+ :formalism :b}

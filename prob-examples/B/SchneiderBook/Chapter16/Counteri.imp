@@ -1,0 +1,19 @@
+IMPLEMENTATION    Counteri
+
+REFINES           Counter
+
+IMPORTS           Nvar.counter(maxint)  /* error */
+
+INVARIANT         Nvar.counter = counter
+
+OPERATIONS
+
+  nn <-- number = nn <-- counter_VAL_NVAR;
+
+  zero = counter_STO_NVAR(0);
+
+  inc = counter_INC_NVAR;
+
+  dec = counter_DEC_NVAR
+
+END

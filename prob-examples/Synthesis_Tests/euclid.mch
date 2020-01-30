@@ -1,0 +1,9 @@
+MACHINE euclid
+VARIABLES a,b
+INVARIANT
+ a : INTEGER & b : INTEGER
+INITIALISATION a := 182 || b := 15
+OPERATIONS
+  empty = BEGIN skip END
+END
+

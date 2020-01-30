@@ -1,0 +1,94 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  "LibraryIO.def";
+  myprintf(s,x) == printf(s,[x]);
+  /* XXX: testcases */
+  /*
+   * Checks a set of unit-pairs for conflicts, based on a groups and semesterChoice for each unit
+   */
+  SAME_RHYTHM(s1,s2) == (s1'rhythm = s2'rhythm /* both in the same rhythm */
+                         or s1'rhythm = 0      /* first weekly */
+                         or s2'rhythm = 0);    /* second weekly */
+  COMPATIBLE_SESSIONS(s1,s2,local_slots,restricted_sessions) ==
+     #(rs1,rs2).( rs1 = restricted_sessions(s1) &
+                  rs2 = restricted_sessions(s2)   /* LET to avoid duplication in SAME_RHYTHM macro */
+       &
+              (SAME_RHYTHM(rs1,rs2)
+                => /* if they are on a rhythm that might interfere, their slots must be different */
+                local_slots(s1) /= local_slots(s2)
+              )
+        );
+  COMPATIBLE_GROUPS(grp1, grp2, local_slots, restricted_sessions) ==
+          !(s1, s2).(/* myprintf("Checking !(s1,s2) with grp1/2 = ~w~n",(grp1,grp2)) & */
+                     s1 : grp1'sessions & s1 : dom(restricted_sessions) &
+                     s2 : grp2'sessions & s2 : dom(restricted_sessions) 
+              =>
+                     COMPATIBLE_SESSIONS(s1,s2,local_slots,restricted_sessions)
+          );
+
+  INCOMPATIBLE_GROUP_PRUNING_OFF(unit1,grp1,unit2,groupChoice,local_slots,restricted_sessions) == (1=1);
+  INCOMPATIBLE_GROUP_PRUNING(unit1,grp1,unit2,groupChoice,local_slots,restricted_sessions) ==
+    /* this check tries to force propagation from group compatibility back to groupChoice ;
+       in principle this information is redundant and could be inferred by looking
+       at the other constraints set up by CHECK_CS
+    */
+       ((card(unit_groups(unit2)) > 1 & /* there are multiple group choices for unit2 possible */
+         card(unit_groups(unit1)) = 1) /* unit1 has only one group */
+         =>
+            myprintf("Checking ~w ~n",unit1|->unit2) &
+           !gc2.((gc2: unit_groups(unit2) &
+                  not(COMPATIBLE_GROUPS(grp1, unit_group(unit2, gc2), local_slots, restricted_sessions)) 
+                  )
+                 => (myprintf("Pruning groupChoice (normal) ~w~n",(unit1|->unit2|->gc2)) &
+                     groupChoice(unit2) /= gc2  /* remove this group choice possibility */
+                     /* & printf_nonvar("groupChoice = ~w~n",unit2|->groupChoice) */
+                     )
+                )
+        );
+  INCOMPATIBLE_GROUP_PRUNING_STRONG(unit1,grp1,unit2,groupChoice, local_slots,restricted_sessions) ==
+
+   /* same as INCOMPATIBLE_GROUP_PRUNING but without pre-condition ; caused problem for CHECK(ang_soz, 1, gc)*/
+           !gc2.((gc2: unit_groups(unit2) &
+                  not(COMPATIBLE_GROUPS(grp1, unit_group(unit2, gc2), local_slots, restricted_sessions)) 
+                  )
+                 => (myprintf("Pruning groupChoice (Strong) ~w~n",(unit1|->unit2|->gc2)) &
+                     groupChoice(unit2) /= gc2 /* remove this group choice possibility */
+                     )
+                );
+  COMPATIBLE_GROUP_EXISTS(grp1,unit2,local_slots,restricted_sessions) ==
+       (card(unit_groups(unit2)) > 1
+         =>
+          #(gc2).(gc2 : unit_groups(unit2) &
+                  COMPATIBLE_GROUPS(grp1, unit_group(unit2, gc2), local_slots, restricted_sessions)))
+       /* check that a compatible assignment exists; we could do a similar thing for u1 and/or compute this information statically; these checks can sometimes quite drastically reduce runtime by detecting inconsistencies early but also have a computation cost; ideally we should only execute this if the corresponding groupChoice has not yet been set */
+       ;
+  CHECK_CS(conflict_set, groupChoice, semesterChoice, local_slots, ignored_sessions) ==
+    #(restricted_sessions).(
+      restricted_sessions = vprintf("restricted_sessions = ~w~n",(ignored_sessions <<| sessions))
+      &
+      /* XXX check statically wether u1 and u2 are definetely in conflict or not in conflict; see UnitsDefinitelyInConflict below */
+      !(u1, u2).( (u1, u2) : conflict_set =>
+       ( semesterChoice(u1) = semesterChoice(u2) =>
+        #(group1, group2).( /* LET */
+          group1 = unit_group(u1, groupChoice(u1))
+          &
+          group2 = unit_group(u2, groupChoice(u2))
+          & myprintf("Checking groups ~w~n",((groupChoice(u1),group1),(groupChoice(u2),group2)))
+          & myprintf("Checking Sessions ~w~n",(restricted_sessions[group1'sessions],restricted_sessions[group2'sessions]))
+          &
+             INCOMPATIBLE_GROUP_PRUNING(u1,group1, u2, groupChoice, local_slots, restricted_sessions) &
+             INCOMPATIBLE_GROUP_PRUNING(u2,group2, u1, groupChoice, local_slots, restricted_sessions) & 
+          COMPATIBLE_GROUPS(group1, group2, local_slots, restricted_sessions)
+         )
+        )
+      )
+    )
+    & myprintf("~nGroups: ~w~n", groupChoice)
+/*    & myprintf_nonvar("Groups (nonvar): ~w~n", groupChoice) & observe(groupChoice)
+    & myprintf("Local Sessions: ~w~n", local_sessions)  */
+    & myprintf("Semesters: ~w~n", semesterChoice);
+
+    MandatorySlotForUnit == {u,slt|card((units(u)'groups)) = 1 & #(gnr,gr,ss).(gnr|->gr:units(u)'groups & ss:gr'sessions & slt=sessions(ss)'slot)}; /* still takes too long to compute; should also be put as constant if we use it */
+    DefinitelyInConflict(u1,u2) == (MandatorySlotForUnit[{u1}] /\ MandatorySlotForUnit[{u2}] /= {});
+    NoObviousConflict(u1,u2) == (MandatorySlotForUnit[{u1}] /\ MandatorySlotForUnit[{u2}] = {});
+    UnitsDefinitelyInConflict == {u1,u2| u1:dom(MandatorySlotForUnit) & u2:dom(MandatorySlotForUnit) & u1<u2 & DefinitelyInConflict(u1,u2)};

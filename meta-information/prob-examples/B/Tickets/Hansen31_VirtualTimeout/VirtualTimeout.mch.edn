@@ -1,0 +1,39 @@
+{:properties 29,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Tickets/Hansen31_VirtualTimeout/VirtualTimeout.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/Hansen31_VirtualTimeout/VirtualTimeout.mch"
+  "./lib/LibraryStrings.mch"
+  "./lib/LibraryStrings.def"
+  "./lib/LibraryHash.def"],
+ :comment "",
+ :files 4,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "4dc9e3e916067cd8ca52e7417f4dbed53637e6e6570c8bc37ea78a72b0d0a42a",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 90,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 15,
+ :formalism :b}

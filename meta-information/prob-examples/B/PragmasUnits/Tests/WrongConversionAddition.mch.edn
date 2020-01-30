@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PragmasUnits/Tests/WrongConversionAddition.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/PragmasUnits/Tests/WrongConversionAddition.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "4292dc1ec339e7e0d2ca29396644dca06366318211271ff17e67ab0a2c1e2c0b",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 20,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 0,
+ :formalism :b}

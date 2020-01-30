@@ -1,0 +1,14 @@
+MACHINE CartesianNat
+SETS
+ ID={aa,bb}
+VARIABLES xx1, xx2, xx3
+INVARIANT
+ xx1:POW(NATURAL) &
+ xx2:POW(NATURAL*NATURAL) &
+ xx3:POW(NATURAL*(NATURAL*NATURAL))
+INITIALISATION xx1:={ 11*2 } || xx2:={ 1|->11 } || xx3:={ 1|->(11|->11) } 
+OPERATIONS
+ is_seq2 = PRE xx2: seq(NATURAL) THEN skip END;
+ is_seq3 = PRE xx3: seq(NATURAL*NATURAL) THEN skip END
+END
+

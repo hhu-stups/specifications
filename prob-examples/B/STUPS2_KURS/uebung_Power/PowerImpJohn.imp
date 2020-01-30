@@ -1,0 +1,31 @@
+IMPLEMENTATION PowerImpJohn
+REFINES PowerJohn
+OPERATIONS
+	res <-- power(a,b)= 
+		/*IF(b>0)
+		THEN*/
+			VAR x,y IN 
+			x:=b;y:=1;
+			WHILE x /= 0 
+			DO 
+				y:= y *a;
+				x:= x-1
+				INVARIANT x:NAT & y:NAT & a**b = y*a**x /*y = a**(b-x)*/
+				VARIANT x
+			END;
+			res := y
+			END
+		/*ELSE
+			VAR x,y IN 
+			x:=b*(-1);y:=1;
+			WHILE x /= 0 
+			DO 
+				y:= y *a;
+				x:= x-1
+				INVARIANT x:NAT & y:NAT & y = a**(b-x)
+				VARIANT x
+			END;
+			res := 1/y
+			END
+		END*/
+END

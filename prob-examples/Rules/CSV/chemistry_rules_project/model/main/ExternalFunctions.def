@@ -1,0 +1,100 @@
+DEFINITIONS
+
+/* XML */
+ XML_Element_Type ==
+      struct(
+        recId: NATURAL1,
+        pId:NATURAL,
+        element:STRING,
+        attributes: STRING +-> STRING,
+        meta: STRING +-> STRING
+        );
+EXTERNAL_FUNCTION_READ_XML == STRING --> seq(XML_Element_Type);
+READ_XML(file) == {};
+
+EXTERNAL_FUNCTION_READ_XML_FROM_STRING == STRING --> seq(XML_Element_Type);
+READ_XML_FROM_STRING(string) == {};
+
+EXTERNAL_PREDICATE_WRITE_XML == seq(XML_Element_Type) * STRING;
+WRITE_XML(contents,file) == (1=1);
+
+
+/* CVS */
+CSV_ELement_Type == STRING +-> STRING;
+
+EXTERNAL_FUNCTION_READ_CSV_STRINGS == STRING --> seq(CSV_ELement_Type);
+READ_CSV_STRINGS(file) == [];
+
+
+/* Strings */
+
+INT_TO_STRING(S) == "123"/* dummy value */;
+EXTERNAL_FUNCTION_INT_TO_STRING == (INTEGER --> STRING);
+
+STRING_SPLIT(x,y) == ["foo"];
+EXTERNAL_FUNCTION_STRING_SPLIT == ((STRING*STRING) --> (INTEGER<->STRING));
+
+STRING_JOIN(x,y) == "abc";
+EXTERNAL_FUNCTION_STRING_JOIN == (((INTEGER<->STRING)*STRING) --> STRING);
+
+STRING_LENGTH(x) == 123;
+EXTERNAL_FUNCTION_STRING_LENGTH == STRING --> INTEGER;
+
+EXTERNAL_FUNCTION_DEC_STRING_TO_INT == STRING * INTEGER --> INTEGER;
+DEC_STRING_TO_INT(decimal_string,precision) == 0;
+
+STRING_APPEND(x,y) == "str";
+EXTERNAL_FUNCTION_STRING_APPEND == (STRING*STRING) --> STRING;
+
+STRING_IS_INT(S) == (1=1);
+EXTERNAL_PREDICATE_STRING_IS_INT == (STRING);
+
+STRING_TO_INT(S) == 0;
+EXTERNAL_FUNCTION_STRING_TO_INT == (STRING --> INTEGER);
+
+TO_STRING(S) == "0";
+EXTERNAL_FUNCTION_TO_STRING(X) == (X --> STRING);
+
+FORMAT_TO_STRING(S,List) == "0";
+EXTERNAL_FUNCTION_FORMAT_TO_STRING(X) == ((STRING*seq(X)) --> STRING);
+//FORMAT_TO_STRING("CT: a=~w, b=~w",[TO_STRING(a),TO_STRING(b)])
+
+STRING_CHARS(xxx) == chars(xxx);
+EXTERNAL_FUNCTION_STRING_CHARS == (STRING --> (INTEGER<->STRING));
+
+
+/* This external function converts an integer to a decimal string representation
+   with the precision provided by the second argument. */
+INT_TO_DEC_STRING(integer,precision) == "0.0";
+EXTERNAL_FUNCTION_INT_TO_DEC_STRING == (INTEGER*INTEGER --> STRING);
+
+STRING_CODES(xxx) == codes(xxx);
+EXTERNAL_FUNCTION_STRING_CODES == (STRING --> (INTEGER<->INTEGER));
+
+
+/* SORT */
+SORT(X) == [];
+EXTERNAL_FUNCTION_SORT(T) == (POW(T)-->seq(T));
+
+      /* CHOOSE */
+CHOOSE(X) == ["a member of X"];
+EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T);
+
+    /* Prints */
+PRINT(x) == skip;
+EXTERNAL_SUBSTITUTION_PRINT(T) == T; /* declare as external for any type T */
+
+PRINTF(s,x) == skip;
+EXTERNAL_SUBSTITUTION_PRINTF(T) == STRING*T;
+
+printf(format_string,value) == TRUE=TRUE;
+EXTERNAL_PREDICATE_printf(printf_TYPE) == STRING*seq(printf_TYPE);
+   /* example: printf("result: ~w~n",[1+2]) */
+
+vprintf(s,x) == x;
+EXTERNAL_FUNCTION_vprintf(T) == STRING*T --> T;
+ /* value printf: print and return value as result */
+
+
+EXTERNAL_PREDICATE_LEQ_SYM_BREAK(X)==X*X;
+LEQ_SYM_BREAK(x,y)==(1=1);

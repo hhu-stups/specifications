@@ -1,0 +1,42 @@
+DEFINITIONS
+/* This Library DEFINITION file provides a convenient access to the ProB
+   external functions for printing information to screen or to a file */
+/* Include it into your machine by putting the file in the same directory
+   as the remaining files of your project and then writing 
+  DEFINITIONS
+      "LibraryIO.def"
+*/
+ PRINT(x) == skip;
+ EXTERNAL_SUBSTITUTION_PRINT(T) == T; /* declare as external for any type T */
+ PRINTF(s,x) == skip;
+ EXTERNAL_SUBSTITUTION_PRINTF(T) == STRING*T;
+ FPRINTF(file,s,x) == skip;
+ EXTERNAL_SUBSTITUTION_FPRINTF(T) == STRING*STRING*T;
+ 
+ printf(s,x) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_printf(T) == STRING*T;
+    /* printf could also be used as external function STRING*T --> BOOL */
+ fprintf(file,s,x) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_fprintf(T) == STRING*STRING*T;
+    /* fprintf could also be used as external function STRING*STRING*T --> BOOL */
+
+ vprintf(s,x) == x; 
+ EXTERNAL_FUNCTION_vprintf(T) == STRING*T --> T; /* value printf: print and return value as result */
+ fvprintf(file,s,x) == x; 
+ EXTERNAL_FUNCTION_fvprintf(T) == STRING*STRING*T --> T; /* value printf: print and return value as result */
+ 
+ EXTERNAL_FUNCTION_TIME == STRING --> INTEGER;
+ TIME(s) == 0;
+ EXTERNAL_FUNCTION_TIMESTAMP_INFO == STRING*INTEGER --> INTEGER;
+ TIMESTAMP_INFO(s,ticks) == 0;
+ EXTERNAL_FUNCTION_TIMESTAMP == INTEGER*INTEGER*INTEGER*INTEGER*INTEGER*INTEGER --> INTEGER;
+ TIMESTAMP(Year,Month,Day,Hour,Min,Sec) == 0;
+ 
+ EXTERNAL_SUBSTITUTION_SEE == (STRING);
+ SEE(file) == skip;
+ 
+ EXTERNAL_FUNCTION_GET_CODE == (STRING --> INTEGER);
+ GET_CODE(file) == 0;
+ 
+ EXTERNAL_SUBSTITUTION_SEEN == STRING;
+ SEEN(file) == skip;

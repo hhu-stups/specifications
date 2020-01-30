@@ -1,0 +1,21 @@
+REFINEMENT
+   FileTransfer2
+/* A file is now transferred block by block */
+REFINES FileTransfer1
+DEFINITIONS
+  BUFFER == (1..block_size --> BLOCK)
+VARIABLES sendq,recvq,finished, /* we keep same variables as above */
+          c,inq /* the transfer counter and incoming queue */
+INVARIANT c : 0..block_size & inq:BUFFER &
+  !i.(i:1..c => sendq(i) = inq(i))
+INITIALISATION
+  sendq := split(empty) || recvq := split(empty) || finished := FALSE ||
+  c := 0 || inq := split(empty)
+OPERATIONS
+  start_transfer(d) = BEGIN finished := FALSE || sendq := split(d) ||
+                            c := 0 END;
+  send_one_block = SELECT finished=FALSE & c<block_size THEN
+        inq(c+1) := sendq(c+1) || c := c+1
+  END;
+  send = SELECT c=block_size THEN finished := TRUE || recvq := inq END
+END

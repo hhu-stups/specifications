@@ -1,0 +1,15 @@
+REFINEMENT        ColoursR2
+
+REFINES           Colours
+
+INVARIANT         red : cols
+
+OPERATIONS
+
+  add(cc) = skip;
+
+  cc <-- query = cc := red;
+
+  change = skip
+
+END

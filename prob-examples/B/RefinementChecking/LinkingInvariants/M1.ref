@@ -1,0 +1,10 @@
+REFINEMENT M1 REFINES M0
+CONCRETE_VARIABLES jj
+INVARIANT
+  jj >ii & jj<11 &
+  (jj > 1 <=> xx=FALSE)
+INITIALISATION ii,jj := 0,1
+OPERATIONS
+  Incii = PRE ii<10 THEN ii,jj := ii+1,jj+1 END
+END
+

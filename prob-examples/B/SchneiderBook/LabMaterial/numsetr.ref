@@ -1,0 +1,30 @@
+REFINEMENT        NumsetR
+
+REFINES           Numset
+
+VARIABLES         ss, mm
+
+INVARIANT         ss : 0..maxsize & mm : 0..maxsize
+                  & ss = card(numset)
+                  & mm = max(numset \/ {0})
+
+INITIALISATION    ss := 0; mm := 0
+
+OPERATIONS
+
+  enter(nn) = 
+  BEGIN 
+    ss := ss+1 ; 
+    IF nn > mm THEN mm := nn END
+  END;
+
+  ans <-- sze = ans := ss;
+
+  nn <-- maximum = nn := mm;
+
+  reset = 
+  BEGIN
+    ss := 0 ; mm := 0
+  END
+
+END

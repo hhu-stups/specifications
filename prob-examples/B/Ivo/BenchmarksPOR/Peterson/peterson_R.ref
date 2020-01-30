@@ -1,0 +1,131 @@
+/*?----------------------------------------------------------
+   Exclusion mutuelle - Peterson
+   Raffinement du 
+   resultat de la composition ]|[ de 2 sous-systemes P1 et P2
+   C. A. Attiogbe  (Projet CBS) - Octobre 2003
+-------------------------------------------------------------?*/
+REFINEMENT
+	peterson_R
+REFINES
+	em_abs
+VARIABLES
+	pc1c    /*? local to P1 ?*/
+, 	pc2c    /*? local to P2 ?*/
+, 	cs1c    /*? shared ?*/
+, 	cs2c
+, 	y1
+, 	y2
+, 	ss
+INVARIANT
+	pc1c : 0..2
+&	pc2c : 0..2
+&	cs1c : 0..1
+& 	cs2c : 0..1
+& 	y1  : BOOL
+&	y2  : BOOL
+&	ss  : 1..2 
+
+/*?------ Gluing abstract and concrete variables ----------?*/
+&	((cs1c = cs1) or (cs1c = 0))
+&	((cs2c = cs2) or (cs2c = 0))
+&	((pc1c = pc1) => (pc1c /= 0))   /* soit ils sont egaux soit pc1c = 0*/
+&	((pc2c = pc2) => (pc2c /= 0))   /* idem */
+
+/*?------ added for the proof -----------------------------?*/
+& ((pc1c = 1) => (cs1c = 0))
+& ((pc2c = 1) => (cs2c = 0))
+
+& ((pc1c = 2) => (y1 = TRUE))
+& ((pc2c = 2) => (y2 = TRUE))
+& (((pc1c = 2) & (ss=2) & (pc1c = 2)) => (cs2c=0))
+
+&	((cs1c = 1) => ((y1 = TRUE) & ((y2 = FALSE) or (ss = 2)))) 
+&	((cs2c = 1) => ((y2 = TRUE) & ((y1 = FALSE) or (ss = 1))) )
+
+/*?----- correctness properties : mutual exclusion -------?*/
+&       not((cs1c = 1) & (cs2c = 1))        
+
+INITIALISATION
+	pc1c := 0
+||	pc2c := 0
+||	y1, y2 := FALSE, FALSE
+||      cs1c,cs2c := 0,0
+||      ss := 1
+
+OPERATIONS
+/*? Merging the events from the first system ?*/ 
+	readyP1 =   /*? Process 1 is ready to ask CS again ?*/
+	SELECT
+		pc1c = 0
+	THEN 	
+		cs1c := 0          /* free ing the CS */
+	||	y1 := FALSE          
+	||	pc1c := 1          /* now ready to ask again */
+	END
+; 
+	askCS1 =                   /*? Process 1 asking the CS ?*/
+	SELECT
+		pc1c = 1           /* should be ready */
+	THEN
+		y1 := TRUE         /* Process asked */
+	||	ss := 1            /* Process 1 is the last */
+	||	pc1c := 2          /* ready t enter CS */
+	END
+;
+	inCS1 =                    /*? Process 1 enters its CS ?*/
+	SELECT
+		(pc1c = 2) & ((y2 = FALSE) or (ss = 2))
+				   /* Process 1 should be ready and  */
+				   /* process 2 doesnt ask or is the last to ask */
+	THEN
+		cs1c := 1          /* Process 1 is in the CS */
+	||	pc1c := 0          /* ready to free the CS   */
+	END 
+;
+/*? Merging the events from the second system ?*/ 
+	readyP2 =                  /*? Process 1 is ready to ask CS again ?*/
+	SELECT
+		pc2c = 0
+	THEN 	
+		cs2c := 0           /* free ing the CS */
+	||	y2 := FALSE          
+	||	pc2c := 1           /* now ready to ask again */
+	END
+; 
+	askCS2 =                    /*? Process 1 asking the CS ?*/
+	SELECT
+		pc2c = 1            /* should be ready */
+	THEN
+		y2 := TRUE          /* Process asked */
+	||	ss := 2             /* Process 1 is the last */
+	||	pc2c := 2           /* ready t enter CS */
+	END
+;
+	inCS2 =                     /*? Process 1 enters CS ?*/
+	SELECT
+		(pc2c = 2) & ((y1 = FALSE) or (ss = 1))
+				    /* Process 1 should be ready and  */
+				    /* process 2 doesnt ask or is the last to ask */
+	THEN
+		cs2c := 1           /* Process 1 is in the CS */
+	||	pc2c := 0           /* ready to free the CS   */
+	END 
+END
+
+/*?
+Resultat des preuves au 25 fevrier 2004
++------------------+-------+------+-------+-------+------+-----+
+|                  | NbObv | NbPO | NbPRi | NbPRa | NbUn | %Pr |
++------------------+-------+------+-------+-------+------+-----+
+|   Initialisation |     7 |    3 |     0 |     3 |    0 | 100 |
+|   readyP1        |    18 |    2 |     0 |     2 |    0 | 100 |
+|   askCS1         |    19 |    4 |     0 |     4 |    0 | 100 |
+|   inCS1          |    34 |    8 |     0 |     8 |    0 | 100 |
+|   readyP2        |    16 |    2 |     0 |     2 |    0 | 100 |
+|   askCS2         |    19 |    3 |     0 |     3 |    0 | 100 |
+|   inCS2          |    34 |    8 |     0 |     8 |    0 | 100 |
++------------------+-------+------+-------+-------+------+-----+
+| peterson_R       |   147 |   30 |     0 |    30 |    0 | 100 |
++------------------+-------+------+-------+-------+------+-----+
+
+?*/

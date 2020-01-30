@@ -1,0 +1,32 @@
+REFINEMENT        TeamR
+
+REFINES           Team
+
+CONSTANTS f
+PROPERTIES f:NAT --> NAT & !x.(x:NAT => (f(x)+f(x) <= x & f(x)+f(x)>=x-1))
+
+VARIABLES         teamr
+
+INVARIANT         teamr : 1..11 >-> 1..22
+                  & ran(teamr) = team
+
+INITIALISATION    teamr := % nn . (nn : 1..11 | nn)
+
+OPERATIONS
+
+  substitute(pp , rr) = PRE pp:ran(teamr) & rr /: ran(teamr) & rr: 1..22 & rr >22  THEN
+  teamr(teamr~(pp)) := rr END;
+
+  aa <-- query(pp) = 
+  IF pp : ran(teamr)
+  THEN aa := in
+  ELSE aa := out
+  END
+
+END
+
+
+
+
+
+

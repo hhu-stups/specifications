@@ -1,0 +1,15 @@
+MACHINE M0
+VARIABLES xx
+CONCRETE_VARIABLES ii
+INVARIANT
+  xx:BOOL &
+  ii:0..10 &
+  (ii>0 => xx=FALSE)
+INITIALISATION xx := TRUE || ii :=0
+OPERATIONS
+  Incii = PRE ii<10 THEN ii:=ii+1 || xx := FALSE END
+ASSERTIONS
+  ii:0..10 &
+  (ii>0 => xx=FALSE)
+END
+

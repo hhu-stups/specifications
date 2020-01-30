@@ -1,0 +1,36 @@
+{:properties 7,
+ :definitions 8,
+ :deferred_sets 0,
+ :number-of-transitions 2675,
+ :deadlock false,
+ :file
+ "./prob-examples/ASM/TranslationToB/ExtremaFinding_Undef_normalized.mch",
+ :enumerated_sets 2,
+ :variables 5,
+ :number-of-states 657,
+ :included-machines
+ ["./prob-examples/ASM/TranslationToB/ExtremaFinding_Undef_normalized.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "7ce93d3635d16b60157332e2b62f538343b3cdf9faf2646cbc82c62641b62ef4",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 22190,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :b}

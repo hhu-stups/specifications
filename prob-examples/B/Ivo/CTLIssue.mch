@@ -1,0 +1,15 @@
+MACHINE CTLIssue
+DEFINITIONS
+  ASSERT_CTL == "AF {x=4}";
+  ASSERT_LTL == "F {x=4}"
+VARIABLES x
+INVARIANT
+ x:INTEGER
+INITIALISATION x:=0
+OPERATIONS
+  Op1 = SELECT x=0 THEN x::{1,2}
+        WHEN x=1 or x=2 THEN x:=3
+        WHEN x=3 THEN x::{4}
+        END
+END
+

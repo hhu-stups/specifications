@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 1,
+ :deadlock true,
+ :file
+ "./prob-examples/B/ExternalFunctions/ExternalExistenceError.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/ExternalFunctions/ExternalExistenceError.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 1,
+ :operations 1,
+ :sha256
+ "8102ad11f9c1e3ca7b5b689d5a1c95f1d6cd5a81892112e6bb943b71e874ca5c",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

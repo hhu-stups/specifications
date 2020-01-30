@@ -1,0 +1,6 @@
+MODEL
+   BseesA
+SEES AseesB
+CONSTANTS b
+PROPERTIES b:NAT1 & a<b
+END

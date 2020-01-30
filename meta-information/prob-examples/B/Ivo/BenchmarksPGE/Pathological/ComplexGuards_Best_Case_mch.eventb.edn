@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 99983,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksPGE/Pathological/ComplexGuards_Best_Case_mch.eventb",
+ :enumerated_sets 0,
+ :variables 20,
+ :number-of-states 99982,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksPGE/Pathological/ComplexGuards_Best_Case_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 21,
+ :sha256
+ "a2f0de6d5f52e272a4e9a70215b3a380ed8a6ae3b7367807f328129454a1c615",
+ :invariants 20,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 276370,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :eventb}

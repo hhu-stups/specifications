@@ -1,0 +1,36 @@
+{:properties 22,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 1026,
+ :deadlock true,
+ :file
+ "./prob-examples/B/PragmasUnits/CaseStudies/Abrial_Hybrid/hybrid_nuclear/C_m2.mch",
+ :enumerated_sets 0,
+ :variables 8,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/PragmasUnits/CaseStudies/Abrial_Hybrid/hybrid_nuclear/C_m2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "d358d5df52453a63af8e936ae9f98e8ccfa6b0bb642d3bc49638464ee1001d40",
+ :invariants 38,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 110,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 12,
+ :formalism :b}

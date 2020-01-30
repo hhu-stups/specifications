@@ -1,0 +1,18 @@
+MACHINE VariousScopes
+SETS
+ ID1;ID2;ID3
+DEFINITIONS
+ scope_ID1 == 2..3;
+ scope_ID2 == {a};
+ scope_ID3 == 1
+CONSTANTS iv1,iv2,iv3
+PROPERTIES
+ iv1:ID1 & iv2:ID2 & iv3:ID3
+VARIABLES xx
+INVARIANT
+ xx:ID3
+INITIALISATION xx:=iv3
+OPERATIONS
+  Set(yy) = PRE yy:ID3 THEN xx:= yy END
+END
+

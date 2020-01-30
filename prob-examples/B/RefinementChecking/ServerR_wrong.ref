@@ -1,0 +1,32 @@
+REFINEMENT ServerR_wrong
+
+REFINES Server
+
+SETS
+  SessionID = {sid1,sid2,sid3}
+  
+VARIABLES
+  session
+  
+INVARIANT
+  session : Process +-> SessionID &
+   logged_in = dom(session)
+  
+INITIALISATION
+  session := {}
+  
+OPERATIONS
+
+  LogIn(pp) =
+    PRE pp: Process /* & pp /: dom(session) */ THEN
+     ANY sid WHERE sid: SessionID & sid /: ran(session) THEN
+      session := ({pp} <<| session) \/ {pp |-> sid}
+     END
+    END;
+    
+  LogOut(pp) =
+    PRE pp: Process & pp: dom(session) THEN
+      session := {pp} <<| session 
+    END
+    
+END

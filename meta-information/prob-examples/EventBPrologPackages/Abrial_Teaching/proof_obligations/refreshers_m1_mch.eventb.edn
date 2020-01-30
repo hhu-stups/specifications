@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Teaching/proof_obligations/refreshers_m1_mch.eventb",
+ :enumerated_sets 0,
+ :variables 7,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Abrial_Teaching/proof_obligations/refreshers_m1_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "5413344cc5c01ba55144a40b4484780b34296832cb9f5203ad3add91cbd8836e",
+ :invariants 7,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 2,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

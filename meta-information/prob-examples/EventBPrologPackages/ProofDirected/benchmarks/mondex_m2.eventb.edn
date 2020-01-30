@@ -1,0 +1,36 @@
+{:properties 10,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 5202,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/ProofDirected/benchmarks/mondex_m2.eventb",
+ :enumerated_sets 0,
+ :variables 10,
+ :number-of-states 2692,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/ProofDirected/benchmarks/mondex_m2.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 2,
+ :operations 6,
+ :sha256
+ "797fc3b71ee5e47e17802efd297f7e5f9658f758827e324b4d5d44606256a6e8",
+ :invariants 19,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 2380,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 5,
+ :formalism :eventb}

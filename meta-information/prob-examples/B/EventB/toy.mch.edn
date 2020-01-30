@@ -1,0 +1,23 @@
+{:number-of-transitions 17,
+ :deadlock false,
+ :file "./prob-examples/B/EventB/toy.mch",
+ :number-of-states 4,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "ac9316ae7546c2c934a6fe83184feb3ea5b081a47407d79bd20988849db4676b",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated false,
+ :formalism :b}

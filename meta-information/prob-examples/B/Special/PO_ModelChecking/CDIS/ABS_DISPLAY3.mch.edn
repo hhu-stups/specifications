@@ -1,0 +1,24 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Special/PO_ModelChecking/CDIS/ABS_DISPLAY3.mch",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "3844da18151d38e4bcd50015942064449d66998efcce6f6f3d4820de991a7b46",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :b}

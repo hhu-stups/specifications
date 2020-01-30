@@ -1,0 +1,7 @@
+MACHINE InvalidAssignmentToLetVar
+VARIABLES xx
+INVARIANT xx : INTEGER
+INITIALISATION xx := 0
+OPERATIONS
+  op = LET zz BE zz=1 IN zz := 0 END
+END

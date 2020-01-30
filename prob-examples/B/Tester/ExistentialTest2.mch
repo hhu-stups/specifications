@@ -1,0 +1,14 @@
+MACHINE Any
+SETS
+ ID={aa,bb}
+CONSTANTS iv
+PROPERTIES
+ iv:ID
+VARIABLES xx
+INVARIANT
+ xx:ID & #yy.(yy:ID)
+INITIALISATION xx:=iv
+OPERATIONS
+  Set = ANY yy WHERE yy:ID THEN xx:=yy END
+END
+

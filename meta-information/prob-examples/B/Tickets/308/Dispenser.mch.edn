@@ -1,0 +1,36 @@
+{:properties 7,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 80,
+ :deadlock false,
+ :file "./prob-examples/B/Tickets/308/Dispenser.mch",
+ :enumerated_sets 2,
+ :variables 2,
+ :number-of-states 24,
+ :included-machines
+ ["./prob-examples/B/Tickets/308/Dispenser.mch"
+  "./prob-examples/B/Tickets/308/Vend_Data.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "05d5a6f46d555de2d4192ee138671bac786b1fcc61525bed17d1f3cc12ae07e4",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :b}

@@ -1,0 +1,80 @@
+/*
+ - File automatically generated -
+ ============================================================================
+ Name        : CoffeeMachine_1_i.imp
+ Author      : 
+ Version     : 0.1
+ Copyright   : 
+ Description : Definition of the B implementation associated to the SysML instance CoffeeMachine_1 
+ ============================================================================
+ */
+IMPLEMENTATION
+	CoffeeMachine_1_i
+REFINES
+	CoffeeMachine_1
+SEES
+    Def_Types
+IMPORTS
+	 part1.Controller_1,
+	 part2.OutputInterface_1,
+	 part3.Input_Interface_1
+OPERATIONS
+	/* --------------- Block main operation --------------- */
+	CoffeeMachine_1_schedule =
+	VAR
+		/* local variables used for buffering values */
+		l_CreditAmount,
+		l_GrindStatus,
+		l_MakeCoffee_CoffeeSelected,
+		l_MakeCoffee_SugarLevel,
+		l_WaterTemperature,
+		l_AddSugar,
+		l_ChangeAmount,
+		l_GiveChange,
+		l_GrindCoffee,
+		l_MixCoffeeAndWater,
+		l_NewCup,
+		l_SugarQuantity,
+		l_WaterHeating
+	IN
+
+	part3.Input_Interface_1_schedule;
+	l_CreditAmount <-- part3.Read_CreditAmount;
+	l_GrindStatus <-- part3.Read_GrindStatus;
+	l_MakeCoffee_CoffeeSelected <-- part3.Read_MakeCoffee_CoffeeSelected;
+	l_MakeCoffee_SugarLevel <-- part3.Read_MakeCoffee_SugarLevel;
+	l_WaterTemperature <-- part3.Read_WaterTemperature;
+
+	part1.Phase_In;		
+	part1.Write_CreditAmount(l_CreditAmount);
+	part1.Write_GrindStatus(l_GrindStatus);
+	part1.Write_MakeCoffee_CoffeeSelected(l_MakeCoffee_CoffeeSelected);
+	part1.Write_MakeCoffee_SugarLevel(l_MakeCoffee_SugarLevel);
+	part1.Write_WaterTemperature(l_WaterTemperature);
+	part1.Phase_ScheduleReq;		
+	part1.Controller_1_schedule;
+	l_AddSugar <-- part1.Read_AddSugar;
+	l_ChangeAmount <-- part1.Read_ChangeAmount;
+	l_GiveChange <-- part1.Read_GiveChange;
+	l_GrindCoffee <-- part1.Read_GrindCoffee;
+	l_MixCoffeeAndWater <-- part1.Read_MixCoffeeAndWater;
+	l_NewCup <-- part1.Read_NewCup;
+	l_SugarQuantity <-- part1.Read_SugarQuantity;
+	l_WaterHeating <-- part1.Read_WaterHeating;
+
+	part2.Write_AddSugar(l_AddSugar);
+	part2.Write_ChangeAmount(l_ChangeAmount);
+	part2.Write_GiveChange(l_GiveChange);
+	part2.Write_GrindCoffee(l_GrindCoffee);
+	part2.Write_MixCoffeeAndWater(l_MixCoffeeAndWater);
+	part2.Write_NewCup(l_NewCup);
+	part2.Write_SugarQuantity(l_SugarQuantity);
+	part2.Write_WaterHeating(l_WaterHeating);
+	part2.OutputInterface_1_schedule
+	
+	/* Update instance outputs */
+	END
+
+	/* --------------- Block Write functions --------------- */
+	/* --------------- Block Read functions --------------- */
+END

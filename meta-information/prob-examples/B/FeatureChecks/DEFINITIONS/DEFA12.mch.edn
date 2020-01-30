@@ -1,0 +1,37 @@
+{:properties 4,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock true,
+ :file "./prob-examples/B/FeatureChecks/DEFINITIONS/DEFA12.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 3,
+ :included-machines
+ ["./prob-examples/B/FeatureChecks/DEFINITIONS/DEFA12.mch"
+  "./prob-examples/B/FeatureChecks/DEFINITIONS/DEFA1.mch"
+  "./prob-examples/B/FeatureChecks/DEFINITIONS/DEFA2.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "d9a98ef474aa88be71c87f507f83549541c4b54eff545cc910d0292b8a6cdf5e",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

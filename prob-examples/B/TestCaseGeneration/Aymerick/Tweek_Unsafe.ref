@@ -1,0 +1,15 @@
+REFINEMENT Tweek_Unsafe
+REFINES Tweek
+VARIABLES a
+/* ProB does not yet find INVARIANT violation ! */
+INITIALISATION
+  a := 3
+OPERATIONS
+   add_unsafe = 
+    SELECT
+       1=1 /* a < 5 */
+    THEN 
+         a := a + 1
+    END
+END
+

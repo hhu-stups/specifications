@@ -1,0 +1,36 @@
+{:properties 17,
+ :definitions 36,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file "./prob-examples/B/Tickets/SLOT-PERFORMANCE6/data.mch",
+ :enumerated_sets 9,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/SLOT-PERFORMANCE6/data.mch"
+  "./lib/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 1,
+ :operations 0,
+ :sha256
+ "cb50c8a9b665ac8b1d8846d1dafeb53a39422b7598fa189151269d6a0d348872",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 1361063936,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 80,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 11,
+ :formalism :b}

@@ -1,0 +1,37 @@
+{:properties 0,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/While/WhileAssignTupleChoose_v3.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/While/WhileAssignTupleChoose_v3.mch"
+  "./lib/CHOOSE.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "2d5a7e899759aafc50f9cad67600b91367f8434235c9026dea6e9a0e8c92f141",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 2180,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

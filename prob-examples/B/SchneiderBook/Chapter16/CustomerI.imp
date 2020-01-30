@@ -1,0 +1,19 @@
+IMPLEMENTATION    CustomerI
+
+REFINES           Customer
+
+SEES              Price, Goods
+
+IMPORTS           Set(GOODS)
+
+INVARIANT         set = purchases
+
+OPERATIONS
+
+  pp <-- buy(gg) = 
+  BEGIN
+    pp <-- pricequery(gg);
+    IF pp <= limit(gg) THEN add(gg) END
+  END
+
+END

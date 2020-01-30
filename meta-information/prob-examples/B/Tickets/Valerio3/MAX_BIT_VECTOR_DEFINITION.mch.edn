@@ -1,0 +1,37 @@
+{:properties 28,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Tickets/Valerio3/MAX_BIT_VECTOR_DEFINITION.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/Valerio3/MAX_BIT_VECTOR_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio3/BIT_DEFINITION.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 32,
+ :operations 0,
+ :sha256
+ "15ad4a938cc5e2aaa9ca66240c43fe7d9762f35e01395a36078b0f9faa9e78c7",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 21,
+ :formalism :b}

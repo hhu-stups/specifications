@@ -1,0 +1,36 @@
+{:properties 1000,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 1024002,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/Generated/GeneratedMod1000.mch",
+ :enumerated_sets 0,
+ :variables 1000,
+ :number-of-states 1025,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/Generated/GeneratedMod1000.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1000,
+ :sha256
+ "6585c156ae9c44dafb4f8443f0d2cb387fda3c1263a1af404968cf73a47c5f02",
+ :invariants 1000,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 173540,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1000,
+ :formalism :b}

@@ -1,0 +1,10 @@
+MACHINE FunTest
+SETS
+ ID
+DEFINITIONS
+ scope_ID == 1..4
+CONSTANTS f
+PROPERTIES
+ f:ID --> ID & f~: ID +-> ID
+END
+

@@ -1,0 +1,36 @@
+{:properties 4,
+ :definitions 28,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Kodkod/ExternalFunction/SudokuAsConstantsNorvigFeasible_Kodkod.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Kodkod/ExternalFunction/SudokuAsConstantsNorvigFeasible_Kodkod.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "3584b3d88091540f83e8ea82bdf94ce56d972160ae801396c9bb47d43f5b8087",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 1,
+ :formalism :b}

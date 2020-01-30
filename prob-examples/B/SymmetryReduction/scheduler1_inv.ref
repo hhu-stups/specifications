@@ -1,0 +1,78 @@
+REFINEMENT scheduler1_inv
+
+REFINES scheduler0
+
+
+VARIABLES proc, readyq, activep, activef, idleset
+
+INVARIANT  
+    proc : POW(PROC) &
+    readyq : seq(PROC) &
+    activep : PROC & activef : BOOL &
+    idleset : POW(PROC) &
+    
+   (activef=TRUE => idleset \/ ran(readyq) \/ {activep} = proc) &
+   (activef=FALSE => idleset \/ ran(readyq) = proc) &
+
+   idleset /\ ran(readyq) = {} &
+   (activef=TRUE => idleset /\ {activep} = {}) &
+   (activef=TRUE => ran(readyq) /\ {activep} = {}) &
+
+   /* this is a bit redundant: */
+   !sub.(sub<: proc => sub <: idleset \/ ran(readyq) \/ {activep})
+INITIALISATION  
+    proc:={}  ||  readyq:={} ||
+    activep::PROC || activef := FALSE ||
+    idleset := {}
+    
+OPERATIONS
+
+new(p) =
+    PRE
+        p : PROC - proc 
+    THEN
+        idleset := idleset \/ {p} ||
+        proc := proc \/ {p}
+    END;
+
+del(p) =
+    PRE
+        p : PROC &
+        p : idleset
+    THEN
+        proc := proc-{p} ||
+        idleset := idleset - {p} 
+    END;
+    
+ready(p) =
+    PRE
+        p : idleset
+    THEN
+        readyq:=readyq<-p ||
+        idleset := idleset - {p}         
+    END;
+            
+enter(p) =
+    PRE
+        p : PROC &
+        readyq/=<> &
+        p = first(readyq)    &
+        activef=FALSE  
+    THEN
+        activep:=p ||
+        readyq := tail(readyq) ||
+        activef:=TRUE
+    END;
+            
+leave(p) =
+    PRE
+        p : PROC &
+        activef=TRUE &
+        p = activep
+    THEN
+        idleset := idleset \/ {p} ||
+        activef := FALSE
+    END
+
+END
+

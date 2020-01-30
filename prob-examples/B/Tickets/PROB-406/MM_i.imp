@@ -1,0 +1,31 @@
+IMPLEMENTATION MM_i REFINES MM
+
+IMPORTS 
+    a1.A1,
+    a2.A2,
+    b1.B1,
+    b2.B2
+
+PROMOTES
+    a1.x1.opx1,    /* required implementation - resolved by promoting operation of imported machine */
+    b1.x1.opx1
+  
+OPERATIONS
+
+    op1 = BEGIN
+        a1.x1.opx1
+    END;
+    
+    vv<--op2 = BEGIN 
+        vv<--a2.opx2
+    END;
+    
+    op3 = BEGIN 
+        b1.x1.opx1 
+    END;
+    
+    vv<--op4 = BEGIN 
+        vv<--b2.opx2
+    END
+    
+END

@@ -1,0 +1,1023 @@
+/****************************************************************************
+* Cruise1.ref
+* Revision 2.2  2003-10-03
+* Added ACCGetsActualNoObstacle to handle delay between radar and acc
+* sub-systems consistently. Updated invariant to allow for these new
+* transient states.
+* Merged RadarGetsActual* events to a single event.
+* Other misc updates.
+* Proved and terminated version.
+*
+* Revision 2.1  2003-09-18
+* Merged RadarTurnsOn* events to a single event.
+* Replaced LongControlSaysBrakePedalPressed with LongControlBrakePedalInfo
+* (with different definition).
+*
+* Revision 2.0  2003-08-14
+* the true refinement was moved to Cruise2. Cruise1 is now a intermediate
+* level for proof purposes (gathering both VehicleTry* and ACCCalculatesTorque)
+* Cruise1 is a pure copy of Cruise2, with added VehicleTry* stuff.
+* Terminated version.
+*
+* Revision 1.3  2003-06-27
+* Unterminated version after the Brussel session
+*
+* Revision 1.2.1 2003-06-02
+* Added new variables and invariants for them.
+*
+* Revision 1.1  2003-05-19
+* Initial version of new refinement created at workshop in Paris 2003-05-19.
+* 
+*****************************************************************************/
+
+/* does not yet compile with ProB because of
+  EstimateSpecVal
+*/
+
+REFINEMENT
+	Cruise_finite1R1
+
+REFINES
+	Cruise_finite1
+
+DEFINITIONS
+
+/*	AccAborts == removed; */
+	
+	AccSSLaws(at, od, tgwbm, ct) ==
+		/* when no obstacle, or far but detected nearest obstacle law */
+		(od = ODfar => ct = ACTspeed) &
+		/* when close obstacle and TG torque is less than to keep speed */
+		(at = FALSE & od = ODclose & tgwbm = FALSE => ct = ACTdistance) &
+		/* when close obstacle and TG torque is more than to keep speed */
+		(at = FALSE & od = ODclose & tgwbm = TRUE => ct = ACTspeed)
+		/* no law when ACC adapts to a new obstacle !!! */
+	;
+
+	ACCEvolGetsActual == removed
+	;
+
+	ACCEvolTransient == removed
+	;
+	
+	BrakePedalInfoMayBeAvailable == removed
+	;
+
+	/* copied from spec, for proof gluing only */
+	AccLaws(od, vtks, vtktg, tgawbm) ==
+		/* do something law */
+		(vtks = TRUE or vtktg = TRUE) &
+		/* keep speed if far or no obstacle */
+		(od = ODfar => vtks = TRUE) &
+		/* keep time gap otherwise, if not too fast */
+		(od = ODclose & tgawbm = FALSE => vtktg = TRUE) & 
+		/* keep speed, if time gap keeping would be too fast */
+		(od = ODclose & tgawbm = TRUE => vtks = TRUE);
+
+	/* for proof: tell the correct corresponding VehicleTry* values */
+	EstimateSpecVal(cog, transient, act) ==
+		ANY vtks2, vtktg2 WHERE
+			vtks2 : BOOL &
+			vtktg2 : BOOL &
+			(ObstaclePresent = FALSE => vtktg2 = FALSE) &
+			(cog = FALSE & CruiseActive = TRUE =>
+				AccLaws(ObstacleDistance, vtks2, vtktg2,
+				TimeGapAttitudeWouldBeMore)
+			) &
+			(act = ACTspeed => vtks2 = TRUE) &
+			(RadarInfoOK = TRUE & transient = FALSE & act = ACTdistance =>
+				vtktg2 = TRUE)
+		THEN
+			VehicleTryKeepTimeGap := vtktg2 ||
+			VehicleTryKeepSpeed := vtks2
+		END
+
+
+SETS
+	ACTset = {ACTno, ACTspeed, ACTdistance};
+	BPset = {BPerror, BPpressed, BPreleased}
+
+
+VARIABLES
+
+	/* inherited observables */
+	CruiseActive,
+	ObstaclePresent,
+	ObstacleDistance,
+	ClosestObstacleChanged,
+	NumberOfSetCruise,
+	CruiseActivationInProgress,
+	TimeGapAttitudeWouldBeMore,
+
+	/* radar SS */
+	RadarOn,
+	RadarInfoOK,
+	RadarInitiateDelay,
+	RadarReactionDelay,
+	RadarTransient,
+	RadarSaysObstaclePresent,
+
+	/* speed SS */
+	SpeedCondOK, SpeedInfoOK,
+
+	/* curve SS */
+	CurveCondOK, CurveInfoOK,
+
+	/* longitudinal control SS */
+	LongControlCondOK, LongControlOK,
+	LongControlBrakePedalPressed,
+	LongControlBrakePedalInfo,
+
+	/* ACC SS */
+	ACCCondOK,
+	ACCSpeedCruiseAllowed,
+	ACCCalculatesTorque,
+	ACCTransient,
+	ACCReactionDelay,
+	ACCEstimationObstacleDistance,
+	ACCOrdersRadarOn,
+	ACCTorqueTGWouldBeMore,
+
+	/* Used only in this intermediate refinement to simplify proof */
+	VehicleTryKeepTimeGap,
+	VehicleTryKeepSpeed
+
+
+INVARIANT
+
+/**** TYPING ****/
+	RadarOn : BOOL &
+	RadarInfoOK : BOOL &
+	RadarInitiateDelay : BOOL &
+	RadarReactionDelay : BOOL &
+	RadarTransient : BOOL &
+	RadarSaysObstaclePresent : BOOL &
+	SpeedCondOK : BOOL & 
+	SpeedInfoOK : BOOL &
+	CurveCondOK : BOOL & 
+	CurveInfoOK : BOOL &
+	LongControlCondOK : BOOL & 
+	LongControlOK : BOOL &
+	LongControlBrakePedalPressed : BOOL &
+	LongControlBrakePedalInfo : BPset &
+	ACCCondOK : BOOL &
+	ACCSpeedCruiseAllowed : BOOL &
+	ACCCalculatesTorque : ACTset &
+	ACCTransient : BOOL &
+	ACCReactionDelay : BOOL &
+	ACCEstimationObstacleDistance : ODset &
+	ACCOrdersRadarOn : BOOL &
+	ACCTorqueTGWouldBeMore : BOOL &
+
+
+/**** CONSISTENCY ****/
+	(RadarOn = FALSE => RadarSaysObstaclePresent = FALSE &
+		ACCTransient = FALSE & ACCReactionDelay = FALSE) &
+	(CruiseActive = FALSE => RadarTransient = FALSE & RadarReactionDelay = FALSE) &
+	(RadarSaysObstaclePresent = FALSE => RadarInfoOK = FALSE) &
+	(ACCTransient = FALSE & RadarSaysObstaclePresent = FALSE =>
+		ACCEstimationObstacleDistance = ODfar) &
+	(ACCSpeedCruiseAllowed = TRUE => SpeedCondOK = TRUE & ACCCondOK = TRUE) &
+
+
+/**** RADAR'S LAWS ****/
+	/* radar SS initiates fast enough law */
+	(RadarOn = FALSE & ACCOrdersRadarOn = TRUE => RadarInitiateDelay = TRUE) &
+	(RadarInitiateDelay = TRUE => CruiseActivationInProgress = TRUE) &
+	
+	/* radar turns off if ACC SS wants */
+	(ACCOrdersRadarOn = FALSE => RadarOn = FALSE) &
+	
+	/* radar fast enough law (necessary, not sufficient) */
+	(RadarReactionDelay = TRUE => ClosestObstacleChanged = TRUE) &
+	(RadarTransient = TRUE => RadarReactionDelay = TRUE) &
+	
+	/* radar correctness when it detects a near obstacle */
+	(RadarTransient = FALSE => RadarInfoOK = RadarSaysObstaclePresent) &
+	
+	/* law for radar accuracy */
+	(RadarOn = TRUE & RadarTransient = FALSE =>
+		RadarSaysObstaclePresent = ObstaclePresent) &
+
+
+/**** SPEED'S LAWS ****/
+	/* good speed measures anytime when possible law
+	   (+ consistency if SpeedCondOK = FALSE) */
+	SpeedInfoOK = SpeedCondOK &
+
+
+/**** CURVE'S LAWS ****/
+	/* good curve measures anytime when possible law
+	   (+ consistency if CurveCondOK = FALSE) */
+	CurveInfoOK = CurveCondOK &
+
+
+/**** LONGITUDINAL CONTROL'S LAWS ****/
+	/* good long control anytime when possible law
+	   (+ consistency if LongControlCondOK = FALSE) */
+	LongControlOK = LongControlCondOK &
+	
+	/* correct pedal info law */
+	(LongControlCondOK = TRUE =>
+		(LongControlBrakePedalInfo = BPpressed =>
+			LongControlBrakePedalPressed = TRUE) &
+		(LongControlBrakePedalInfo = BPreleased =>
+			LongControlBrakePedalPressed = FALSE)) &
+	(LongControlBrakePedalInfo = BPerror => LongControlCondOK = FALSE) &
+
+
+/**** ACC'S LAWS ****/
+	/* no parasite torque control law */
+	(CruiseActive = FALSE => ACCCalculatesTorque = ACTno) &
+
+	/* ACC SS fast enough law (necessary, not sufficient) */
+	(ACCReactionDelay = TRUE =>
+		ClosestObstacleChanged = TRUE or CruiseActivationInProgress = TRUE) &
+	(ACCTransient = TRUE => ACCReactionDelay = TRUE) &
+
+	/* stop if brake law */
+	(LongControlBrakePedalInfo = BPpressed => CruiseActive = FALSE) &
+
+	(ACCTransient = FALSE & ACCEstimationObstacleDistance = ODclose =>
+		RadarSaysObstaclePresent = TRUE) &
+
+	(ACCReactionDelay = FALSE & RadarSaysObstaclePresent = FALSE =>
+		ACCEstimationObstacleDistance = ODfar ) &
+
+	/* stop if failure law */
+	(SpeedCondOK = FALSE => CruiseActive = FALSE) &
+	(CurveCondOK = FALSE => CruiseActive = FALSE) &
+	(LongControlOK = FALSE => CruiseActive = FALSE) &
+	(ACCCondOK = FALSE => CruiseActive = FALSE) &
+
+	/* stop if too slow */
+	(ACCSpeedCruiseAllowed = FALSE => CruiseActive = FALSE) &
+
+	/* use the radar law */
+	ACCOrdersRadarOn = CruiseActive &
+
+	/* good choice of calculus laws */
+	(CruiseActive = TRUE =>
+		AccSSLaws(ACCTransient, ACCEstimationObstacleDistance,
+		ACCTorqueTGWouldBeMore, ACCCalculatesTorque)
+	) &
+
+	/* only if not transient, object measures represent reality */
+	(RadarInfoOK = TRUE & RadarTransient = FALSE & ACCTransient = FALSE =>
+		ACCEstimationObstacleDistance = ObstacleDistance &
+		ACCTorqueTGWouldBeMore = TimeGapAttitudeWouldBeMore
+	) &
+
+
+/**** GLUINGS ****/
+	/* as speed measures are always good, speed torque gives speed attitude */
+	(ACCCalculatesTorque = ACTspeed => VehicleTryKeepSpeed = TRUE) &
+
+	/* only if good object measures, distance torque gives tg attitude */
+	(RadarInfoOK = TRUE & RadarTransient = FALSE & ACCTransient = FALSE & 
+		ACCCalculatesTorque = ACTdistance => VehicleTryKeepTimeGap = TRUE) &
+
+	/* no forgotten condition gluing invariant */
+	(SpeedCondOK = TRUE &
+	 CurveCondOK = TRUE &
+	 LongControlOK = TRUE &
+	 LongControlBrakePedalPressed = FALSE &
+	 ACCCondOK = TRUE &
+	 ACCSpeedCruiseAllowed = TRUE => CruiseAllowed = TRUE) &
+	(SpeedCondOK = FALSE => CruiseAllowed = FALSE) &
+	(CurveCondOK = FALSE => CruiseAllowed = FALSE) &
+	(LongControlOK = FALSE => CruiseAllowed = FALSE) &
+	(LongControlBrakePedalPressed = TRUE => CruiseAllowed = FALSE) &
+	(ACCCondOK = FALSE => CruiseAllowed = FALSE) &
+	(ACCSpeedCruiseAllowed = FALSE => CruiseAllowed = FALSE)
+	
+
+
+ASSERTIONS
+	/* stable obstacle (more than max delay)
+	   forces stable states and all delays expired */
+	(ClosestObstacleChanged = FALSE => 
+		RadarTransient = FALSE &
+		RadarReactionDelay = FALSE);
+	(ClosestObstacleChanged = FALSE & CruiseActivationInProgress = FALSE =>
+		ACCTransient = FALSE &
+		ACCReactionDelay = FALSE);
+	(RadarTransient = TRUE => ClosestObstacleChanged = TRUE);
+	(RadarReactionDelay = TRUE => ClosestObstacleChanged = TRUE);
+	(ACCTransient = TRUE =>
+		ClosestObstacleChanged = TRUE or CruiseActivationInProgress = TRUE);
+
+	/* inexpensive handy laws (created during model tuning phase) */
+	(ACCEstimationObstacleDistance = ODclose => RadarOn = TRUE);
+	(CruiseActive = FALSE => ACCTransient = FALSE & ACCReactionDelay = FALSE);
+	(ClosestObstacleChanged = TRUE => CruiseActive = TRUE);
+	(RadarReactionDelay = FALSE => RadarTransient = FALSE);
+	(ACCReactionDelay = FALSE => ACCTransient = FALSE);
+	(CruiseActivationInProgress = FALSE => RadarInitiateDelay = FALSE);
+	(RadarInitiateDelay = FALSE & ACCOrdersRadarOn = TRUE => RadarOn = TRUE);
+	(CruiseActive = FALSE => ClosestObstacleChanged = FALSE);
+	(RadarOn = FALSE => RadarInfoOK = FALSE)
+
+
+
+INITIALISATION
+	CruiseActive := FALSE ||
+	ObstaclePresent := FALSE ||
+	ObstacleDistance := ODfar ||
+	ClosestObstacleChanged := FALSE ||
+	NumberOfSetCruise := 0 ||
+	CruiseActivationInProgress := FALSE ||
+	TimeGapAttitudeWouldBeMore := FALSE ||
+
+	RadarOn := FALSE ||
+	RadarInfoOK := FALSE ||
+	RadarInitiateDelay := FALSE ||
+	RadarReactionDelay := FALSE ||
+	RadarTransient := FALSE ||
+	RadarSaysObstaclePresent := FALSE ||
+
+	SpeedCondOK := FALSE ||
+	SpeedInfoOK := FALSE ||
+
+	CurveCondOK := FALSE ||
+	CurveInfoOK := FALSE ||
+
+	LongControlCondOK := FALSE ||
+	LongControlOK := FALSE ||
+	LongControlBrakePedalPressed := FALSE ||
+	LongControlBrakePedalInfo := BPreleased ||
+
+	ACCCondOK := FALSE ||
+	ACCSpeedCruiseAllowed := FALSE ||
+	ACCCalculatesTorque := ACTno ||
+	ACCTransient := FALSE ||
+	ACCReactionDelay := FALSE ||
+	ACCEstimationObstacleDistance := ODfar ||
+	ACCOrdersRadarOn := FALSE ||
+	ACCTorqueTGWouldBeMore := FALSE ||
+
+	VehicleTryKeepSpeed := FALSE || 
+	VehicleTryKeepTimeGap := FALSE
+
+OPERATIONS
+
+/* Radar sub-system */
+
+	RadarTurnsOn =
+	SELECT
+		RadarOn = FALSE &
+		ACCOrdersRadarOn = TRUE
+	THEN
+		RadarOn := TRUE ||
+		IF ObstaclePresent = TRUE THEN
+			RadarSaysObstaclePresent := TRUE ||
+			RadarInfoOK := TRUE ||
+			/* ACC SS part */
+			ACCReactionDelay := TRUE ||
+			ACCTransient := TRUE
+		END
+	END;
+
+	RadarInitiateDelayFinished =
+	SELECT
+		RadarInitiateDelay = TRUE &
+		(ACCOrdersRadarOn = TRUE => RadarOn = TRUE)
+	THEN
+		RadarInitiateDelay := FALSE
+	END;
+
+	RadarReactionDelayFinished =
+	SELECT
+		RadarReactionDelay = TRUE &
+		RadarTransient = FALSE
+	THEN
+		RadarReactionDelay := FALSE
+	END;
+
+	RadarGetsActual =
+	SELECT
+		CruiseActive = TRUE &
+		RadarOn = TRUE &
+		RadarTransient = TRUE
+	THEN
+		RadarTransient := FALSE ||
+		RadarSaysObstaclePresent := ObstaclePresent ||
+		IF (ObstaclePresent = TRUE) THEN
+			RadarInfoOK := TRUE
+		ELSE
+			RadarInfoOK := FALSE
+		END ||
+		/* ACC SS part */
+		ACCReactionDelay := TRUE ||
+		ACCTransient := TRUE
+	END;
+
+/* Speed measurement sub-system */
+
+	SpeedCondBecomesOk =
+	SELECT
+		SpeedCondOK = FALSE
+	THEN
+		SpeedCondOK := TRUE ||
+		SpeedInfoOK := TRUE
+	END;
+
+/* Curve measurement sub-system */
+
+	CurveCondBecomesOk =
+	SELECT
+		CurveCondOK = FALSE
+	THEN
+		CurveCondOK := TRUE ||
+		CurveInfoOK := TRUE
+	END;
+
+/* Longitudinal control sub-system */
+
+	LongControlCondBecomesOk =
+	SELECT
+		LongControlCondOK = FALSE
+	THEN
+		LongControlCondOK := TRUE ||
+		LongControlOK := TRUE ||
+		IF LongControlBrakePedalPressed = TRUE THEN
+			LongControlBrakePedalInfo := BPpressed
+		ELSE
+			LongControlBrakePedalInfo := BPreleased
+		END
+	END;
+
+	LongControlBrakePedalIsPressed = 
+	SELECT
+		LongControlBrakePedalPressed = FALSE
+	THEN
+		LongControlBrakePedalPressed := TRUE ||
+		IF LongControlCondOK = TRUE THEN
+			LongControlBrakePedalInfo := BPpressed ||
+			/* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+	       RadarInitiateDelay := FALSE ||
+		   RadarReactionDelay := FALSE ||
+		   RadarTransient := FALSE ||
+		   /* remains from spec, for gluing only */
+		   VehicleTryKeepSpeed := FALSE || 
+		   VehicleTryKeepTimeGap := FALSE  /* Shared part */
+		ELSE
+			ANY lcbpi WHERE
+			  lcbpi : BPset &
+			  (lcbpi = BPpressed => LongControlBrakePedalPressed = TRUE) &
+			  (lcbpi = BPreleased => LongControlBrakePedalPressed = FALSE)
+		    THEN
+			  LongControlBrakePedalInfo := lcbpi
+		    END
+		END
+	END;
+
+	LongControlBrakePedalIsReleased = 
+	SELECT
+		LongControlBrakePedalPressed = TRUE
+	THEN
+		LongControlBrakePedalPressed := FALSE ||
+		IF LongControlCondOK = TRUE THEN
+			LongControlBrakePedalInfo := BPreleased
+		ELSE
+			ANY lcbpi WHERE
+			    lcbpi : BPset &
+		    	(lcbpi = BPpressed => LongControlBrakePedalPressed = TRUE) &
+		    	(lcbpi = BPreleased => LongControlBrakePedalPressed = FALSE)
+		    THEN
+		    	LongControlBrakePedalInfo := lcbpi
+	    	END
+		END
+	END;
+
+/* ACC sub-system */
+
+	ACCCondBecomesOk =
+	SELECT
+		ACCCondOK = FALSE
+	THEN
+		ACCCondOK := TRUE
+	END;
+
+	ACCSpeedBecomesAllowed = 
+	SELECT
+		ACCSpeedCruiseAllowed = FALSE &
+		SpeedCondOK = TRUE &
+		ACCCondOK = TRUE
+	THEN
+		ACCSpeedCruiseAllowed := TRUE
+	END;
+
+	SetCruiseSpeed = 
+	SELECT
+		SpeedCondOK = TRUE &
+		CurveCondOK = TRUE &
+		LongControlCondOK = TRUE &
+		LongControlBrakePedalPressed = FALSE &
+		ACCSpeedCruiseAllowed = TRUE &
+		ACCCondOK = TRUE
+	THEN
+		CruiseActive := TRUE ||
+		ACCOrdersRadarOn := TRUE ||
+		IF ACCOrdersRadarOn = FALSE THEN
+			RadarInitiateDelay := TRUE ||
+			CruiseActivationInProgress := TRUE
+		END ||
+		ANY ct, tgwbm, tgawbm2 WHERE
+			ct : ACTset &
+			tgwbm : BOOL &
+			tgawbm2 : BOOL &
+
+			AccSSLaws(ACCTransient, ACCEstimationObstacleDistance, tgwbm, ct) &
+			(ObstacleDistance = ODfar => tgawbm2 = FALSE) &
+			(RadarInfoOK = TRUE & RadarTransient = FALSE &
+				ACCTransient = FALSE =>	tgwbm = tgawbm2)
+		THEN
+			ACCCalculatesTorque := ct ||
+			ACCTorqueTGWouldBeMore := tgwbm ||
+			TimeGapAttitudeWouldBeMore := tgawbm2;
+			EstimateSpecVal(ClosestObstacleChanged,
+				bool(RadarTransient = TRUE or ACCTransient = TRUE), ct)
+		END ||
+		NumberOfSetCruise := NumberOfSetCruise + 1
+	END;
+
+	CruiseOff = 
+	SELECT 
+		CruiseActive = TRUE
+	THEN 
+		/* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	ACCSwitchToDistanceAttitude = 
+	SELECT
+		CruiseActive = TRUE &
+		ACCEstimationObstacleDistance = ODclose &
+		ACCTorqueTGWouldBeMore = TRUE &
+		ACCTransient = FALSE &
+		RadarTransient = FALSE /* simplification */
+	THEN
+		ACCTorqueTGWouldBeMore := FALSE ||
+		ACCCalculatesTorque := ACTdistance ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		VehicleTryKeepTimeGap := TRUE ||
+		VehicleTryKeepSpeed :: BOOL
+	END;
+
+	ACCSwitchToSpeedAttitude = 
+	SELECT
+		CruiseActive = TRUE &
+		ACCEstimationObstacleDistance = ODclose &
+		ACCTorqueTGWouldBeMore = FALSE &
+		ACCTransient = FALSE &
+		RadarTransient = FALSE /* simplification */
+	THEN
+		ACCTorqueTGWouldBeMore := TRUE ||
+		ACCCalculatesTorque := ACTspeed ||
+		TimeGapAttitudeWouldBeMore := TRUE ||
+		VehicleTryKeepTimeGap :: BOOL ||
+		VehicleTryKeepSpeed := TRUE
+	END;
+
+	ACCGetsActual = 
+	SELECT
+		ACCTransient = TRUE &
+		RadarTransient = FALSE &
+		CruiseActivationInProgress = FALSE
+	THEN
+		ACCTransient := FALSE ||
+		BEGIN
+		ACCEstimationObstacleDistance := ObstacleDistance ||
+		ACCTorqueTGWouldBeMore := TimeGapAttitudeWouldBeMore ||
+		ANY ct WHERE
+			ct : ACTset &
+			AccSSLaws(FALSE,ObstacleDistance,TimeGapAttitudeWouldBeMore,ct)
+		THEN
+			ACCCalculatesTorque := ct
+		END
+		END;
+		EstimateSpecVal(FALSE, FALSE, ACCCalculatesTorque)
+	END;
+
+	ACCGetsActual2 = 
+	SELECT
+		ACCTransient = TRUE &
+		RadarTransient = FALSE &
+		CruiseActivationInProgress = TRUE &
+		RadarInitiateDelay = FALSE
+	THEN
+		ACCTransient := FALSE ||
+		BEGIN
+		 ACCEstimationObstacleDistance := ObstacleDistance ||
+		ACCTorqueTGWouldBeMore := TimeGapAttitudeWouldBeMore ||
+		ANY ct WHERE
+			ct : ACTset &
+			AccSSLaws(FALSE,ObstacleDistance,TimeGapAttitudeWouldBeMore,ct)
+		THEN
+			ACCCalculatesTorque := ct
+		END
+		END;
+		EstimateSpecVal(FALSE, FALSE, ACCCalculatesTorque)
+	END;
+
+	ACCGetsActualTransient = 
+	SELECT
+		ACCTransient = TRUE &
+		RadarTransient = TRUE &
+		CruiseActivationInProgress = FALSE
+	THEN
+		ACCTransient := FALSE ||
+		BEGIN
+		  ANY ct, od, twbm WHERE
+			ct : ACTset &
+			od : ODset &
+			twbm : BOOL &
+			AccSSLaws(FALSE,od,twbm,ct) &
+			(od = ODclose => RadarSaysObstaclePresent = TRUE)
+		 THEN
+			ACCCalculatesTorque := ct ||
+			ACCEstimationObstacleDistance := od ||
+			ACCTorqueTGWouldBeMore := twbm
+		 END
+	    END;
+		EstimateSpecVal(TRUE, TRUE, ACCCalculatesTorque)
+	END;
+
+	ACCGetsActual2Transient = 
+	SELECT
+		ACCTransient = TRUE &
+		RadarTransient = TRUE &
+		CruiseActivationInProgress = TRUE &
+		RadarInitiateDelay = FALSE
+	THEN
+		ACCTransient := FALSE ||
+		BEGIN
+		  ANY ct, od, twbm WHERE
+			ct : ACTset &
+			od : ODset &
+			twbm : BOOL &
+			AccSSLaws(FALSE,od,twbm,ct) &
+			(od = ODclose => RadarSaysObstaclePresent = TRUE)
+		 THEN
+			ACCCalculatesTorque := ct ||
+			ACCEstimationObstacleDistance := od ||
+			ACCTorqueTGWouldBeMore := twbm
+		 END
+		END;
+		EstimateSpecVal(TRUE, TRUE, ACCCalculatesTorque)
+	END;
+
+	ACCReactionDelayFinished =
+	SELECT
+		ACCReactionDelay = TRUE &
+		ACCTransient = FALSE
+	THEN
+		ACCReactionDelay := FALSE
+	END;
+
+/* SHARED EVENTS */
+
+	SpeedCondBecomesNok = 
+	SELECT
+		SpeedCondOK = TRUE
+	THEN
+		SpeedCondOK := FALSE ||
+		SpeedInfoOK := FALSE ||
+		ACCSpeedCruiseAllowed := FALSE ||
+	/* Shared part */
+		/* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	CurveCondBecomesNok = 
+	SELECT
+		CurveCondOK = TRUE
+	THEN
+		CurveCondOK := FALSE ||
+		CurveInfoOK := FALSE ||
+	/* Shared part */
+	    /* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	LongControlCondBecomesNok = 
+	SELECT
+		LongControlCondOK = TRUE
+	THEN
+		LongControlCondOK := FALSE ||
+		LongControlOK := FALSE ||
+		ANY lcbpi WHERE
+			lcbpi : BPset &
+			(lcbpi = BPpressed => LongControlBrakePedalPressed = TRUE) &
+			(lcbpi = BPreleased => LongControlBrakePedalPressed = FALSE)
+		THEN
+			LongControlBrakePedalInfo := lcbpi
+		END ||
+	/* Shared part */
+	    /* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	ACCCondBecomesNok =
+	SELECT
+		ACCCondOK = TRUE
+	THEN
+		ACCCondOK := FALSE ||
+		ACCSpeedCruiseAllowed := FALSE ||
+	/* Shared part */
+	    /* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	ACCSpeedBecomesNotAllowed = 
+	SELECT
+		ACCSpeedCruiseAllowed = TRUE
+	THEN
+		ACCSpeedCruiseAllowed := FALSE ||
+		IF CruiseActive = TRUE THEN
+			/* Shared part */
+			/* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+		END
+	END;
+
+	RadarNokConditionDetection = 
+	SELECT
+		CruiseActive = TRUE
+	THEN
+		/* Shared part */
+		/* observables */
+		CruiseActive := FALSE ||
+		ClosestObstacleChanged := FALSE ||
+		NumberOfSetCruise := 0 ||
+		CruiseActivationInProgress := FALSE ||
+		/* ACC SS */
+		ACCOrdersRadarOn := FALSE ||
+		ACCCalculatesTorque := ACTno ||
+		ACCEstimationObstacleDistance := ODfar ||
+		ACCReactionDelay := FALSE ||
+		ACCTransient := FALSE ||
+		ACCTorqueTGWouldBeMore := FALSE ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		/* radar SS */
+		RadarOn := FALSE ||
+		RadarSaysObstaclePresent := FALSE ||
+		RadarInfoOK := FALSE ||
+		RadarInitiateDelay := FALSE ||
+		RadarReactionDelay := FALSE ||
+		RadarTransient := FALSE ||
+		/* remains from spec, for gluing only */
+		VehicleTryKeepSpeed := FALSE || 
+		VehicleTryKeepTimeGap := FALSE 
+	END;
+
+	ObstacleDistanceBecomesClose = 
+	SELECT
+		ObstaclePresent = TRUE &
+		ObstacleDistance = ODfar
+	THEN
+		ObstacleDistance := ODclose ||
+		IF
+			CruiseActive = TRUE &
+			RadarOn = TRUE &
+			RadarTransient = FALSE &
+			ACCTransient = FALSE
+		THEN
+			ACCEstimationObstacleDistance := ODclose ||
+			ANY twbm, ct, tgawbm2 WHERE
+				twbm : BOOL &
+				ct : ACTset &
+				tgawbm2 : BOOL &
+				AccSSLaws(ACCTransient, ODclose, twbm, ct) &
+				(RadarInfoOK = TRUE => twbm = tgawbm2)
+			THEN
+				ACCTorqueTGWouldBeMore := twbm ||	/* ACC sub-system part */
+				ACCCalculatesTorque := ct ||	/* ACC sub-system part */
+				TimeGapAttitudeWouldBeMore := tgawbm2;
+				EstimateSpecVal(FALSE, FALSE, ct)
+			END
+		END
+	END;
+
+	ObstacleDistanceBecomesBig = 
+	SELECT
+		ObstacleDistance = ODclose
+	THEN
+		ObstacleDistance := ODfar ||
+		IF
+			CruiseActive = TRUE &
+			RadarTransient = FALSE &
+			ACCTransient = FALSE
+		THEN
+			/* ACC sub-system part */
+			ACCEstimationObstacleDistance := ODfar ||
+			ACCTorqueTGWouldBeMore := FALSE ||
+			ACCCalculatesTorque := ACTspeed
+		END ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		IF CruiseActive = TRUE THEN VehicleTryKeepSpeed := TRUE END
+	END;
+
+/* OBSERVABLES */
+
+	ObstacleNewFar = 
+	BEGIN
+		ObstaclePresent := TRUE ||
+		ObstacleDistance := ODfar ||
+		IF CruiseActive = TRUE THEN
+			ClosestObstacleChanged := TRUE ||
+			/* Radar sub-system part */
+			RadarReactionDelay, RadarTransient := TRUE, TRUE
+		END ||
+		IF CruiseActive = TRUE THEN TimeGapAttitudeWouldBeMore := FALSE END
+	END;
+
+	ObstacleNewClose = 
+	BEGIN
+		ObstaclePresent := TRUE ||
+		ObstacleDistance := ODclose ||
+		IF CruiseActive = TRUE THEN
+			ClosestObstacleChanged := TRUE ||
+			TimeGapAttitudeWouldBeMore :: BOOL ||
+			/* Radar sub-system part */
+			RadarReactionDelay, RadarTransient := TRUE, TRUE
+		END
+	END;
+
+	ObstacleDisappears = 
+	SELECT 
+		ObstaclePresent = TRUE 
+	THEN 
+		ObstaclePresent := FALSE ||
+		IF CruiseActive = TRUE THEN
+			ClosestObstacleChanged := TRUE ||
+			RadarReactionDelay, RadarTransient := TRUE, TRUE
+		END ||
+		ObstacleDistance := ODfar ||
+		TimeGapAttitudeWouldBeMore := FALSE ||
+		VehicleTryKeepTimeGap := FALSE
+	END;
+
+	VehicleReactionDelay = 
+	SELECT
+		ClosestObstacleChanged = TRUE &
+		RadarReactionDelay = FALSE &
+		ACCReactionDelay = FALSE
+	THEN
+		ClosestObstacleChanged := FALSE
+	END;
+
+	CruiseActivationDelayFinished =
+	SELECT
+		CruiseActivationInProgress = TRUE &
+		RadarOn = TRUE &
+		RadarInitiateDelay = FALSE &
+		(ClosestObstacleChanged = FALSE => ACCReactionDelay = FALSE)
+	THEN
+		CruiseActivationInProgress := FALSE
+	END
+
+END

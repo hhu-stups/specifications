@@ -1,0 +1,23 @@
+REFINEMENT        Booksr(BOOK)
+
+REFINES           Books
+DEFINITIONS
+  scope_BOOK==1..3;
+  SET_PREF_MININT==-1;
+  SET_PREF_MAXINT==4;
+  SET_PREF_MAX_INITIALISATIONS==8
+
+VARIABLES         scheme
+
+INVARIANT         scheme : iseq(BOOK) & ran(scheme) = BOOK - read
+
+INITIALISATION    scheme :: perm(BOOK)
+
+OPERATIONS
+
+ /* is_perm = PRE scheme : perm(BOOK) THEN skip END; */
+
+  bb <-- newbook = PRE scheme /= <> THEN  /* added by mal */
+                        bb := first(scheme);scheme := tail(scheme) END
+
+END

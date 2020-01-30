@@ -1,0 +1,36 @@
+{:properties 9,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 17,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Vizing_Breitner/m05_CDpath_as_path_mch.eventb",
+ :enumerated_sets 0,
+ :variables 6,
+ :number-of-states 11,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Vizing_Breitner/m05_CDpath_as_path_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "5156954dc0cd2aaad5185281a410ee0c56cc08cff969984e38ccca7923b7014f",
+ :invariants 26,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 120,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :eventb}

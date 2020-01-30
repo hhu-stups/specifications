@@ -1,0 +1,16 @@
+/* Lift
+ * Author: 
+ * Creation date: Mon Jun 8 2009
+ */
+SYSTEM
+    Lift
+CONSTANTS mx
+    PROPERTIES mx=3
+VARIABLES lvl
+INVARIANT lvl:NAT1
+    /* VARIANT mx-lvl */ /* not yet supported by parser */
+INITIALISATION lvl := 1
+EVENTS 
+    up(ii) = SELECT ii:NAT1 & lvl+ii<=mx THEN lvl := lvl+ii END;
+    down = SELECT lvl>1 THEN lvl := lvl-1 END
+END

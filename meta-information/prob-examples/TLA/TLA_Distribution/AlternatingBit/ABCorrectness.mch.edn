@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 37,
+ :deadlock false,
+ :file
+ "./prob-examples/TLA/TLA_Distribution/AlternatingBit/ABCorrectness.mch",
+ :enumerated_sets 1,
+ :variables 5,
+ :number-of-states 21,
+ :included-machines
+ ["./prob-examples/TLA/TLA_Distribution/AlternatingBit/ABCorrectness.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "7384a219b8108cfd555810dc89eb398d236819bf49492ec1fd6fe9dca2f8c295",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 80,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

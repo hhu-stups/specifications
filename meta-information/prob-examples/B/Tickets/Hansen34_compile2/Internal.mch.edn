@@ -1,0 +1,23 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/Tickets/Hansen34_compile2/Internal.mch",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "26ea2eaa4fea2418f12311df5064e2e5504aff6c8cf7d1b60a97430417c23af0",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :b}

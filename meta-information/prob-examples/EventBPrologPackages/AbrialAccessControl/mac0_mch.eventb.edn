@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 20,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/AbrialAccessControl/mac0_mch.eventb",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 13,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/AbrialAccessControl/mac0_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "50eb50d51d6f87f339fd216155a08c0e6da6cef731b5477a3963e062811e3daf",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 80,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :eventb}

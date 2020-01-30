@@ -1,0 +1,15 @@
+IMPLEMENTATION
+   Simple10Imp2
+REFINES Simple10
+OPERATIONS
+ r<-- ret10 =
+    BEGIN
+      r:=10;
+      WHILE 1>0 DO
+        r:=r-1
+        INVARIANT r>0
+        VARIANT r
+      END;
+     r:=10
+    END
+END

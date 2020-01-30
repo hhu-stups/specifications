@@ -1,0 +1,18 @@
+IMPLEMENTATION
+   MaxImp
+REFINES MaxR2
+IMPORTS Scalar(0)
+INVARIANT
+  z=maxsofar
+OPERATIONS
+  add_value(n) = VAR v IN
+    v<-- value;
+    IF n>=v THEN
+      modify(n)
+    END
+  END;
+  m <-- getmax = 
+   BEGIN
+     m <-- value
+   END
+END

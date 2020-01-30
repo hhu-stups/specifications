@@ -1,0 +1,19 @@
+IMPLEMENTATION
+   MulSimpleImp
+REFINES Mul
+OPERATIONS
+ res <-- Mult(a,b) =
+   VAR t,x IN
+     t := 0;
+     x := a;
+     WHILE x>0 DO
+       x:=x-1;
+       t := t+b
+     INVARIANT
+       x:NAT & t:NAT &
+       a*b = x*b + t
+     VARIANT x
+     END;
+     res := t
+   END
+END

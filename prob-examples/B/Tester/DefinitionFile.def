@@ -1,0 +1,3 @@
+DEFINITIONS
+   INV == (x:NATURAL & y:NATURAL & x>y);
+   GRD1 == y<x-1

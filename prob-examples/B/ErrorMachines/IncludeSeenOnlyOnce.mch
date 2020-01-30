@@ -1,0 +1,4 @@
+MACHINE IncludeSeenOnlyOnce
+SEES IncludeSeenOnlyOnce1
+INCLUDES a.IncludeSeenOnlyOnce0, b.IncludeSeenOnlyOnce0
+END

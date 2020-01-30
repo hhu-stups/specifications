@@ -1,0 +1,9 @@
+MACHINE included
+VARIABLES
+  yy
+INVARIANT
+  yy:NAT
+INITIALISATION
+  yy := 0
+END
+

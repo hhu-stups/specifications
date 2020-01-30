@@ -1,0 +1,36 @@
+{:properties 37,
+ :definitions 0,
+ :deferred_sets 9,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/arinc653model-master/M4_Mach_IPC_Conds_mch.eventb",
+ :enumerated_sets 12,
+ :variables 51,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/arinc653model-master/M4_Mach_IPC_Conds_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 73,
+ :sha256
+ "67b528642c0e36a26076c83d463f2f5c7c8c863c442a989c7e881b4072b372cb",
+ :invariants 72,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 26,
+ :formalism :eventb}

@@ -1,0 +1,29 @@
+REFINEMENT        TownsRRR(TOWN)
+
+REFINES           TownsRR
+
+VARIABLES         parent, nn
+
+INVARIANT         parent : TOWN --> TOWN & nn : NAT
+                  & rep = iterate(parent,nn)
+                  & ! tt . (tt : TOWN => parent(rep(tt)) = rep(tt))
+
+INITIALISATION    nn := 0 || parent := id(TOWN)
+
+OPERATIONS
+
+  link(tt1 , tt2) = 
+  VAR rep1, rep2 
+  IN rep1 := iterate(parent,nn)(tt1); rep2 := iterate(parent,nn)(tt2); 
+    IF rep1 /= rep2
+    THEN parent(rep1) := rep2; nn := nn + 1
+    END
+  END;
+
+  ans <-- connectedquery(tt1 , tt2) = 
+  IF iterate(parent,nn)(tt1) = iterate(parent,nn)(tt2)
+  THEN ans := connected
+  ELSE ans := notconnected
+  END
+
+END

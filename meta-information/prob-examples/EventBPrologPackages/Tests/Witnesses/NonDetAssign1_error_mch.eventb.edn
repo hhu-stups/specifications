@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Tests/Witnesses/NonDetAssign1_error_mch.eventb",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Tests/Witnesses/NonDetAssign1_error_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "0493cf7c191356794c327a9350decc6661addb597e015a92ff8e93ae760a835e",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

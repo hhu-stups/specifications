@@ -1,0 +1,37 @@
+{:properties 3,
+ :definitions 9,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Tickets/RecordPartiallyTyped/Knowledge_loop.mch",
+ :enumerated_sets 2,
+ :variables 1,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tickets/RecordPartiallyTyped/Knowledge_loop.mch"
+  "./prob-examples/B/Tickets/RecordPartiallyTyped/Dataset.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "1317463eb2e4b882e6e92e953f8ed01d22e26e58cd080960e05edc51adc2b443",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 2,
+ :formalism :b}

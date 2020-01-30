@@ -1,0 +1,36 @@
+/*
+* Taken from ClearSy - Modelling in B Tutorial
+* see http://www.tools.clearsy.com/wp1/?page_id=161
+*/
+
+IMPLEMENTATION utils_i
+
+REFINES utils
+
+OPERATIONS
+   rr <-- minimum ( aa , bb) =
+   BEGIN
+       IF aa >= bb
+       THEN
+           rr := bb
+       ELSE
+           rr := aa
+       END
+   END
+;
+   rr <-- maximum ( aa , bb , cc ) =
+   BEGIN
+       IF aa >= bb
+       THEN
+           IF aa >= cc THEN
+               rr := aa
+           ELSE
+               rr := cc
+           END
+       ELSIF bb >= cc THEN
+           rr := bb
+       ELSE
+           rr := cc
+       END
+   END
+END

@@ -1,0 +1,4 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  SET_PREF_MAX_INITIALISATIONS == 1;
+  SET_PREF_MAX_OPERATIONS == 1;

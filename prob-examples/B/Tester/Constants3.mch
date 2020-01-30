@@ -1,0 +1,17 @@
+MACHINE Constants 
+SETS
+	ROUTEELEMENT = {route_el1,route_el2}
+CONSTANTS
+	PLACEELEMENT, FUNC, qqt
+PROPERTIES
+	PLACEELEMENT : POW1(ROUTEELEMENT)  &  FUNC: ROUTEELEMENT +-> ROUTEELEMENT & card(FUNC) = 1 &
+	route_el1 : dom(FUNC) & route_el2 : ran(FUNC) & qqt = {} & qqt: POW(ROUTEELEMENT)
+VARIABLES
+    pp, qq
+INVARIANT
+   pp : PLACEELEMENT & qq : POW(PLACEELEMENT)
+INITIALISATION
+   pp :: PLACEELEMENT || qq := {}
+OPERATIONS
+   cc <-- apply_func(pe) = PRE pe: PLACEELEMENT & pe: dom(FUNC) THEN cc := FUNC(pe) END
+END

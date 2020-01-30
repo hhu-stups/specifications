@@ -1,0 +1,36 @@
+{:properties 38,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 200002,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksEnablingAnalysis/Abrial_LandingGear3/m4_mch.eventb",
+ :enumerated_sets 1,
+ :variables 21,
+ :number-of-states 200002,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksEnablingAnalysis/Abrial_LandingGear3/m4_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 3,
+ :operations 26,
+ :sha256
+ "f29e3cc08ab1b463d2f8f9ba8e80715ad0ec08f15b794449f1e3dff8ba1009df",
+ :invariants 33,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 184550,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 8,
+ :invariant-violated false,
+ :constants 6,
+ :formalism :eventb}

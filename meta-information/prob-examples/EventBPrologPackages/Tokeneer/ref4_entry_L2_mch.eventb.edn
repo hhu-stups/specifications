@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 0,
+ :deferred_sets 8,
+ :number-of-transitions 9,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Tokeneer/ref4_entry_L2_mch.eventb",
+ :enumerated_sets 7,
+ :variables 45,
+ :number-of-states 9,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Tokeneer/ref4_entry_L2_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 33,
+ :sha256
+ "fd3e2ac85222bf409578a35002ad3736f0213cfdeb43f9898d0873e14f125e83",
+ :invariants 38,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 100,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :eventb}

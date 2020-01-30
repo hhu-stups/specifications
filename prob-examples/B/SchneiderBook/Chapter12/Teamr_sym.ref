@@ -1,0 +1,31 @@
+MACHINE        Teamr_sym
+/* A version of Steve Schneider's machine, but where symmetry of deferred sets can be exploited */
+SETS	Players; Answer = {in,out}
+DEFINITIONS scope_Players == 1..22
+PROPERTIES card(Players) = 22
+
+VARIABLES         teamr
+
+INVARIANT         teamr : 1..11 >-> Players
+
+INITIALISATION    teamr :: 1..11 >-> Players
+
+OPERATIONS
+
+  substitute(pp , rr) = PRE pp:ran(teamr) & rr /: ran(teamr) & rr: Players THEN
+  teamr(teamr~(pp)) := rr END;
+
+  aa <-- query(pp) = PRE pp:Players THEN
+  IF pp : ran(teamr)
+  THEN aa := in
+  ELSE aa := out
+  END
+ END
+
+END
+
+
+
+
+
+

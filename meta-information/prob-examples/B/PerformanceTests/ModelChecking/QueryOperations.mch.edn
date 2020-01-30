@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 20020,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/ModelChecking/QueryOperations.mch",
+ :enumerated_sets 1,
+ :variables 3,
+ :number-of-states 4006,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/ModelChecking/QueryOperations.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "8a6feac6a9d58411d1c2afcb035084467868edbef440d12148af18e26d5b7d1c",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 314572800,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 7070,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

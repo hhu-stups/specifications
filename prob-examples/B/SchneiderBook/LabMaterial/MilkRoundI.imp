@@ -1,0 +1,21 @@
+IMPLEMENTATION    MilkRoundI
+
+REFINES           MilkRound
+
+SEES              Bool_TYPE
+
+IMPORTS           Array(length)
+
+INVARIANT         round = arr
+
+INITIALISATION    ???
+
+OPERATIONS
+
+  add(ii , ee) = enter(ii, ee);
+
+  ee <-- request(ii) = ee <-- query(ii);
+
+  nn <-- total = ???
+
+END

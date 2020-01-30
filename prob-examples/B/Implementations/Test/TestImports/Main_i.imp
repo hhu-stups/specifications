@@ -1,0 +1,13 @@
+/* Main_i
+ * Author: 
+ * Creation date: 30/08/2016
+ */
+
+IMPLEMENTATION Main_i
+REFINES Main
+    IMPORTS Var
+
+OPERATIONS
+    ss <-- Get = BEGIN ss <-- GetXX END
+
+ END

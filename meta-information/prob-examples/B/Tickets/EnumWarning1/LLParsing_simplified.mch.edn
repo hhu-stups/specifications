@@ -1,0 +1,37 @@
+{:properties 4,
+ :definitions 25,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Tickets/EnumWarning1/LLParsing_simplified.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/B/Tickets/EnumWarning1/LLParsing_simplified.mch"
+  "./prob-examples/B/Tickets/EnumWarning1/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "935172e51168b8002235aed7196ae9b6cc67132e0e1afaf8a49e48396a543a56",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 190,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

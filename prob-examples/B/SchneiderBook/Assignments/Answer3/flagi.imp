@@ -1,0 +1,43 @@
+IMPLEMENTATION    FlagI
+
+REFINES           Flag
+
+IMPORTS           Colours(COLOUR,num)
+
+INVARIANT         cols = colours
+
+OPERATIONS
+
+  sort = 
+  VAR rr, ww, bb, col IN
+    rr := 0;
+    ww := 0;
+    bb := num;
+    WHILE ww < bb
+     DO 
+      col <-- read_colour(ww+1);
+      IF (col = white) 
+        THEN ww := ww + 1
+        END;    
+      IF col = red 
+        THEN swap(ww+1, rr+1); 
+             ww := ww + 1;
+             rr := rr + 1
+        END;
+      IF col = blue
+        THEN swap(ww+1, bb);
+             bb := bb - 1
+        END
+      INVARIANT rr : 0..num 
+            & ww : 0..num
+            & bb : 0..num
+            & rr <= ww & ww <= bb
+            & cols([1..rr]) <: {red}
+            & cols([rr+1..ww]) <: {white}
+            & cols([bb+1..num]) <: {blue} 
+    VARIANT bb - ww
+   END
+  END
+
+END
+

@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 4,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Tickets/Kodkod7_QueensBug/Queen_BoardVersion_v6.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/Tickets/Kodkod7_QueensBug/Queen_BoardVersion_v6.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "b5bc28add849c89fe0afbda70fc210eb37b79fdec0c51a2d0da9620253081b20",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 10,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

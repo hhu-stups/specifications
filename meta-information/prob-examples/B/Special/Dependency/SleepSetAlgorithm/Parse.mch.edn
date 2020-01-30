@@ -1,0 +1,36 @@
+{:properties 8,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 78,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Special/Dependency/SleepSetAlgorithm/Parse.mch",
+ :enumerated_sets 2,
+ :variables 5,
+ :number-of-states 60,
+ :included-machines
+ ["./prob-examples/B/Special/Dependency/SleepSetAlgorithm/Parse.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "9cf121f3e086840b651704e9a419207853eb7a5bd5c0c59ce0af177b94cf636d",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 50,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 5,
+ :formalism :b}

@@ -1,0 +1,36 @@
+{:properties 953,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 6,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/SATLIB/blocksworld_medium.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 4,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/SATLIB/blocksworld_medium.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "ec97e77e87521bd778afcf81008f8769933fbabe52852c03984c4f2656f8f93b",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 116,
+ :formalism :b}

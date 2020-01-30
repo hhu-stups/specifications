@@ -1,0 +1,26 @@
+IMPLEMENTATION    PositionCounterI
+
+REFINES           PositionCounter
+
+IMPORTS           counter_Nvar(maximum)
+
+SEES              Bool_TYPE
+
+INVARIANT         counter_Nvar = pos
+
+INITIALISATION    counter_STO_NVAR(1)
+
+OPERATIONS
+
+  posinc = 
+  VAR bb IN
+    bb <-- counter_PRE_INC_NVAR;
+    IF bb = TRUE 
+    THEN counter_INC_NVAR
+    ELSE counter_STO_NVAR(1)
+    END
+  END;
+
+  pp <-- posget = pp <-- counter_VAL_NVAR
+
+END

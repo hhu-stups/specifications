@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Tickets/Hansen23_WhilePerformance/WhileSlow.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/Hansen23_WhilePerformance/WhileSlow.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "25ee9212ec81958b731826b6c2e76a6ead39c54b0a9c4d3ef2629dd438a5fb03",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 635699200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 1050,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

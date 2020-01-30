@@ -1,0 +1,2 @@
+DEFINITIONS
+ CallOrApply(x1) == F(x1)

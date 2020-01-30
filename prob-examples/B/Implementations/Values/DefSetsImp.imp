@@ -1,0 +1,10 @@
+IMPLEMENTATION DefSetsImp
+REFINES DefSets
+VALUES
+  AbsSet = 0..10
+//CONSTANTS bij PROPERTIES bij: AbsSet >->> 0..10
+OPERATIONS
+  res <-- GetID(a) = BEGIN res :: (1..11) END
+// ASSERTIONS
+// 2 : AbsSet
+END

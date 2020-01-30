@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 7,
+ :deferred_sets 1,
+ :number-of-transitions 6,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Presentations/RodinIndustryDay07/scheduler0.mch",
+ :enumerated_sets 1,
+ :variables 2,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/Presentations/RodinIndustryDay07/scheduler0.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "369324d3d4c0e34c9837dcb3512ed1b3cbae462c089c2961666f38172427bc79",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 100,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

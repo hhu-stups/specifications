@@ -1,0 +1,38 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 4,
+ :deadlock false,
+ :file "./prob-examples/B/Tickets/Hansen21_Sees/RuleGroup2.mch",
+ :enumerated_sets 2,
+ :variables 8,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/B/Tickets/Hansen21_Sees/RuleGroup2.mch"
+  "./prob-examples/B/Tickets/Hansen21_Sees/RuleGroup1.mch"
+  "./prob-examples/B/Tickets/Hansen21_Sees/RulesTable.mch"
+  "./prob-examples/B/Tickets/Hansen21_Sees/RuleContext.mch"],
+ :comment "",
+ :files 4,
+ :static_assertions 0,
+ :operations 16,
+ :sha256
+ "1446b291885824ec30e10334fea1695a26e341b938eaf68a73035ac89e3060cb",
+ :invariants 6,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 180,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

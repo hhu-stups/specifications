@@ -1,0 +1,47 @@
+{:properties 99,
+ :definitions 42,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/Tickets/Valerio6/Z80_Simple.mch",
+ :enumerated_sets 2,
+ :variables 12,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tickets/Valerio6/Z80_Simple.mch"
+  "./prob-examples/B/Tickets/Valerio6/MEMORY.mch"
+  "./prob-examples/B/Tickets/Valerio6/ALU.mch"
+  "./prob-examples/B/Tickets/Valerio6/BIT_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/MAX_BIT_VECTOR_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/BYTE_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/POWER2.mch"
+  "./prob-examples/B/Tickets/Valerio6/POWER.mch"
+  "./prob-examples/B/Tickets/Valerio6/BV16_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/UCHAR_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/SCHAR_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/SSHORT_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio6/USHORT_DEFINITION.mch"],
+ :comment "",
+ :files 13,
+ :static_assertions 58,
+ :operations 6,
+ :sha256
+ "f289f13a790a9afaecb587a6bfed85db736cf159cdee3f9dd89d83df6ea82298",
+ :invariants 12,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 2,
+ :invariant-violated :unknown,
+ :constants 93,
+ :formalism :b}

@@ -1,0 +1,39 @@
+{:properties 12,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 356,
+ :deadlock false,
+ :file "./prob-examples/B/Tickets/308/Controller.mch",
+ :enumerated_sets 2,
+ :variables 5,
+ :number-of-states 124,
+ :included-machines
+ ["./prob-examples/B/Tickets/308/Controller.mch"
+  "./prob-examples/B/Tickets/308/Vend_Data.mch"
+  "./prob-examples/B/Tickets/308/Basic_Controller.mch"
+  "./prob-examples/B/Tickets/308/Dispenser.mch"
+  "./prob-examples/B/Tickets/308/Coin_Slot.mch"],
+ :comment "",
+ :files 5,
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "0f91f7450feff3acb713331230374f3da1a5c20e745eb40c52505f1fc64059ed",
+ :invariants 4,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 170,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 6,
+ :formalism :b}

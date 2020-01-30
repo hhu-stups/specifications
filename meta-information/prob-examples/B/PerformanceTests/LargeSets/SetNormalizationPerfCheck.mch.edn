@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 501,
+ :deadlock true,
+ :file
+ "./prob-examples/B/PerformanceTests/LargeSets/SetNormalizationPerfCheck.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :number-of-states 501,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/LargeSets/SetNormalizationPerfCheck.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "51cfc775208662bef79dcb2148835dabb01bcd19078df23696cd03b5998629a6",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 524288000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 7680,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

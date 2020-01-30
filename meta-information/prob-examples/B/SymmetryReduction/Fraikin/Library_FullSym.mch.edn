@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 19,
+ :deferred_sets 2,
+ :number-of-transitions 372716,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SymmetryReduction/Fraikin/Library_FullSym.mch",
+ :enumerated_sets 0,
+ :variables 4,
+ :number-of-states 35543,
+ :included-machines
+ ["./prob-examples/B/SymmetryReduction/Fraikin/Library_FullSym.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 10,
+ :sha256
+ "2bbb0f13f25ccb0c28533ce39c04fa5aa4d7d4cdf3b817fe9d2fedfa6f0f9a37",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 131960,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

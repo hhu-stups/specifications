@@ -1,0 +1,19 @@
+REFINEMENT
+   FileTransfer1
+/* A file is now divided into a number of blocks */
+REFINES FileTransfer0
+SETS BLOCK
+DEFINITIONS
+  BUFFER == (1..block_size --> BLOCK)
+CONSTANTS block_size, split
+PROPERTIES block_size:NAT1 &
+  split : DATA >-> BUFFER
+VARIABLES sendq,recvq,finished
+INVARIANT sendq:BUFFER & recvq:BUFFER &
+  sendq = split(sender) & recvq = split(receiver)
+INITIALISATION
+  sendq := split(empty) || recvq := split(empty) || finished := FALSE
+OPERATIONS
+  start_transfer(d) = BEGIN finished := FALSE || sendq := split(d) END;
+  send = BEGIN finished := TRUE || recvq := sendq END
+END

@@ -1,0 +1,37 @@
+{:properties 1,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 23,
+ :deadlock false,
+ :file "./prob-examples/B/Tester/OpCalls/GetTrain_v2/GetTrain3.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 4,
+ :included-machines
+ ["./prob-examples/B/Tester/OpCalls/GetTrain_v2/GetTrain3.mch"
+  "./prob-examples/B/Tester/OpCalls/GetTrain_v2/GetTrain2.mch"
+  "./prob-examples/B/Tester/OpCalls/GetTrain_v2/GetTrain.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "b55eade90ca0a37dab41ceeb4b1b34c2a58aea830129e4943109fa3f384a0620",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 190,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

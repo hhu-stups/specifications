@@ -1,0 +1,38 @@
+{:properties 5,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Mathematical/GraphIso/GraphIso_Large_Random1000.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Mathematical/GraphIso/GraphIso_Large_Random1000.mch"
+  "./prob-examples/B/Mathematical/GraphIso/rnd-3-reg-1000-1.def"
+  "./prob-examples/B/Mathematical/GraphIso/rnd-3-reg-1000-2.def"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "095aa71994b0c7b93fac6c09c042164bf2c4f9147928c04ae6ea93d7d6f92cae",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 4,
+ :formalism :b}

@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 4633,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/Ref3_ControllerSensors_mch.eventb",
+ :enumerated_sets 8,
+ :variables 22,
+ :number-of-states 1146,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/Ref3_ControllerSensors_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 30,
+ :sha256
+ "035d075550e44edbfd08f58e51692c1eb210f9783d72e1fbc78f54f176c89433",
+ :invariants 25,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 5910,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

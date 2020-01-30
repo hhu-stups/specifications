@@ -1,0 +1,17 @@
+IMPLEMENTATION    TimeI
+
+REFINES           Time
+
+IMPORTS           time_Vvar(TIME)
+
+SEES              Timefields
+
+PROPERTIES        TIME = HOUR * MINUTE * SECOND * MM
+
+OPERATIONS
+
+  input(tt) = time_STO_VAR(tt);
+
+tt <-- output = tt <-- time_VAL_VAR
+
+END

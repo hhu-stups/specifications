@@ -1,0 +1,9 @@
+MACHINE DeepRecursion
+ABSTRACT_CONSTANTS inc
+PROPERTIES
+ inc = %x.(x:INTEGER|IF x < 1 THEN 1 ELSE 1+inc(x-1) END)
+ASSERTIONS
+ inc(100)=101;
+ inc(10000)=10001
+END
+

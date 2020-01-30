@@ -1,0 +1,46 @@
+REFINEMENT        BufferR
+
+REFINES           Buffer
+
+VARIABLES         buffarr, ff, ll, num
+
+INVARIANT         buffarr : 1..capacity --> ELEM
+                  & ff : 1..capacity
+                  & ll : 1..capacity
+                  & num : 0..capacity
+                  & num = size(contents)
+                  & (ll-ff) mod capacity = num mod capacity
+                  & !nn . (nn:1..size(contents) => contents(nn) = buffarr((nn+ff-2 mod capacity)+1))
+
+INITIALISATION    buffarr :: 1..capacity --> ELEM;
+                  ff := 1; ll := 1; num := 0 
+
+OPERATIONS
+
+  add(ee) = 
+  BEGIN
+    buffarr(ll) := ee; ll := (ll mod capacity)+1; num := num+1
+  END;
+
+  ee <-- remove = 
+  BEGIN
+    ee := buffarr(ff); ff := (ff mod capacity)+1; num := num-1
+  END;
+
+  rr <-- emptyquery = 
+  BEGIN
+    IF num = 0
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END;
+
+  rr <-- fullquery = 
+  BEGIN
+    IF num = capacity
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END
+
+END

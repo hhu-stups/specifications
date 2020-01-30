@@ -1,0 +1,24 @@
+{:number-of-transitions 8,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Tickets/PROB-335/RecordDetectionBugSimple.mch",
+ :number-of-states 8,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "e910e55bdf4a0339b01d1731e90f87771f2e94229fa4781a4ffda1a27744f618",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated false,
+ :formalism :b}

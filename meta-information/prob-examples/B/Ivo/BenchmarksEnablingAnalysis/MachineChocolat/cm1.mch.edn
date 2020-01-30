@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 82,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksEnablingAnalysis/MachineChocolat/cm1.mch",
+ :enumerated_sets 1,
+ :variables 2,
+ :number-of-states 23,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksEnablingAnalysis/MachineChocolat/cm1.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "bbd6660c6b92fa5a0bad9b07affcf1febf9f89bb21e3ccc28e1e06594b52a920",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 50,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

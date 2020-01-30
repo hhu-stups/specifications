@@ -1,0 +1,85 @@
+DEFINITIONS
+/* This Library DEFINITION file provides a convenient access to the ProB
+   external functions for printing information to screen or to a file */
+/* Include it into your machine by putting the file in the same directory
+   as the remaining files of your project and then writing 
+  DEFINITIONS
+      "LibraryIO.def"
+*/
+ PRINT(x) == skip;
+ EXTERNAL_SUBSTITUTION_PRINT(T) == T; /* declare as external for any type T */
+ PRINTF(s,x) == skip;
+ EXTERNAL_SUBSTITUTION_PRINTF(T) == STRING*T;
+ FPRINTF(file,s,x) == skip;
+ EXTERNAL_SUBSTITUTION_FPRINTF(T) == STRING*STRING*T;
+ 
+ printf(format_string,value) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_printf(T) == STRING*T;
+    /* example: printf("result: ~w~n",1+2) */
+    /* printf could also be used as external function STRING*T --> BOOL */
+
+ fprintf(file,s,x) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_fprintf(T) == STRING*STRING*T;
+    /* fprintf could also be used as external function STRING*STRING*T --> BOOL */
+
+ vprintf(format_string,value) == value; 
+ EXTERNAL_FUNCTION_vprintf(T) == STRING*T --> T; /* value printf: print and return value as result */
+  /* example: vprintf("result: ~w~n",1+2) */
+
+ fvprintf(file,format_string,value) == value; 
+ EXTERNAL_FUNCTION_fvprintf(T) == STRING*STRING*T --> T; /* value printf: print and return value as result */
+ 
+ observe(value) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_observe(T) == T;
+ tobserve(value) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_tobserve(T) == T;
+ ENUMERATE(value) == TRUE=TRUE;
+ EXTERNAL_PREDICATE_ENUMERATE(T) == T;
+ 
+ EXTERNAL_FUNCTION_TIME == STRING --> INTEGER;
+ TIME(s) == 0;
+ EXTERNAL_FUNCTION_TIMESTAMP_INFO == STRING*INTEGER --> INTEGER;
+ TIMESTAMP_INFO(s,ticks) == 0;
+ EXTERNAL_FUNCTION_TIMESTAMP == INTEGER*INTEGER*INTEGER*INTEGER*INTEGER*INTEGER --> INTEGER;
+ TIMESTAMP(Year,Month,Day,Hour,Min,Sec) == 0;
+ EXTERNAL_FUNCTION_GET_INFO == STRING --> STRING;
+ GET_INFO(s) == "INFO";
+ 
+ EXTERNAL_PREDICATE_SET_PREF == STRING*STRING;
+ SET_PREF(a,b) == (1=1);
+ 
+ EXTERNAL_SUBSTITUTION_SEE == (STRING);
+ SEE(file) == skip;
+ 
+ EXTERNAL_FUNCTION_GET_CODE == (STRING --> INTEGER);
+ GET_CODE(file) == 0;
+ EXTERNAL_FUNCTION_GET_CODE_STDIN == (INTEGER);
+ GET_CODE_STDIN == 0;
+ 
+ EXTERNAL_SUBSTITUTION_SEEN == STRING;
+ SEEN(file) == skip;
+ 
+ EXTERNAL_FUNCTION_READ_FILE_AS_STRINGS == (STRING --> seq(STRING));
+ READ_FILE_AS_STRINGS(file) == <>;
+ 
+ EXTERNAL_FUNCTION_READ_LINE == (STRING --> STRING);
+ READ_LINE(file) == "";
+ 
+ EXTERNAL_FUNCTION_CURRENT_FILE_POSITION == (STRING * STRING --> INTEGER);
+ CURRENT_FILE_POSITION(file,pos) == 0;
+ 
+ EXTERNAL_PREDICATE_EOF == (STRING);
+ EOF(file) == (1=1);
+ EXTERNAL_PREDICATE_EOF_STDIN == (STRING);
+ EOF_STDIN(dummy) == (1=1);
+ 
+ EXTERNAL_FUNCTION_DELTA_WALLTIME == (INTEGER);
+ DELTA_WALLTIME == 0;
+ 
+ ARGV(x) == "";
+ EXTERNAL_FUNCTION_ARGV == INTEGER --> STRING;
+ ARGC == 0;
+ EXTERNAL_FUNCTION_ARGC == INTEGER;
+  
+ EXTERNAL_SUBSTITUTION_ADD_ERROR(T) == (STRING*T);
+ ADD_ERROR(x,e) == skip;

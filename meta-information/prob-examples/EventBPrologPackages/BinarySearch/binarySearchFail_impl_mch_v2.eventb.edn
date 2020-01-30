@@ -1,0 +1,36 @@
+{:properties 8,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 15610,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/BinarySearch/binarySearchFail_impl_mch_v2.eventb",
+ :enumerated_sets 0,
+ :variables 6,
+ :number-of-states 13857,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/BinarySearch/binarySearchFail_impl_mch_v2.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 11,
+ :operations 10,
+ :sha256
+ "3786c94c8725fd487cb279f7425aca0a0ed382fcfa3df70c374aa745b0a0c8f0",
+ :invariants 32,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 3510,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 6,
+ :formalism :eventb}

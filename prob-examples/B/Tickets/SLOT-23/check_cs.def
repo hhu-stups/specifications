@@ -1,0 +1,29 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  "LibraryIO.def";
+  /* XXX: testcases */
+  /*
+   * Checks a set of unit-pairs for conflicts, based on a groups and semesterChoice for each unit
+   */
+  CHECK_CS(conflict_set, groupChoice, semesterChoice, local_sessions) ==
+    /* XXX check statically wether u1 and u2 are definetely in conflict or not in conflict*/
+    !(u1, u2).( (u1, u2) : conflict_set & semesterChoice(u1) = semesterChoice(u2) =>
+      #(group1, group2).(
+        group1 = unit_group(u1, groupChoice(u1))
+        &
+        group2 = unit_group(u2, groupChoice(u2))
+        &
+        !(s1, s2).(s1 : local_sessions[group1'sessions] &
+                   s2 : local_sessions[group2'sessions] =>
+          (   /* Two conditions for units to be compatible */
+            ( /* if they are on a rhythm that might interfere, their slots must be different */
+              s1'rhythm = s2'rhythm /* both in the same rhythm */
+              or s1'rhythm = 0      /* first weekly */
+              or s2'rhythm = 0      /* second weekly */
+            ) => s1'slot /= s2'slot
+          )
+        )
+      )
+    )
+    & printf("Groups: ~w~n", groupChoice)
+    & printf("Semesters: ~w~n", semesterChoice);

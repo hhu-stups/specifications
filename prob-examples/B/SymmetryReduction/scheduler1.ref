@@ -1,0 +1,94 @@
+REFINEMENT scheduler1
+
+REFINES scheduler0
+
+DEFINITIONS scope_PROCxx == 1..2;
+  ASSERT_LTL == "G ([new] -> X e(del))"
+
+/* LTL Formulas
+
+G ([new] -> X e(del))  --> TRUE
+
+G ([ready] -> F e(enter))   now FALSE
+   Compiled /tmp/ltl_prob.pl
+ LTL check took 0.380 seconds
+ ! An error occurred !
+ ! source(ltl)
+ ! error while executing trace
+
+G ([ready] -> X F e(enter))   now FALSE, but:
+ ltl: Optimizing the counterexample failed
+ ltl: error while executing trace
+
+G ([ready] -> X e(enter))   CounterExample Found -> in state after [ready]
+
+[ready] -> X e(enter)  does not seem to work in a state where ready is enabled 
+                       but in the next state after ready enter is not
+
+*/
+
+VARIABLES proc, readyq, activep, activef, idleset
+
+INVARIANT  
+    proc : POW(PROC) &
+    readyq : seq(PROC) &
+    activep : PROC & activef : BOOL &
+    idleset : POW(PROC)
+    
+              
+INITIALISATION  
+    proc:={}  ||  readyq:={} ||
+    activep::PROC || activef := FALSE ||
+    idleset := {}
+    
+OPERATIONS
+
+new(p) =
+    PRE
+        p : PROC - proc 
+    THEN
+        idleset := idleset \/ {p} ||
+        proc := proc \/ {p}
+    END;
+
+del(p) =
+    PRE
+        p : PROC &
+        p : idleset
+    THEN
+        proc := proc-{p} ||
+        idleset := idleset - {p} 
+    END;
+    
+ready(p) =
+    PRE
+        p : idleset
+    THEN
+        readyq:=readyq<-p ||
+        idleset := idleset - {p}         
+    END;
+            
+enter(p) =
+    PRE
+        p : PROC &
+        readyq/=<> &
+        p = first(readyq)    &
+        activef=FALSE  
+    THEN
+        activep:=p ||
+        readyq := tail(readyq) ||
+        activef:=TRUE
+    END;
+            
+leave(p) =
+    PRE
+        p : PROC &
+        activef=TRUE &
+        p = activep
+    THEN
+        idleset := idleset \/ {p} ||
+        activef := FALSE
+    END
+
+END
+

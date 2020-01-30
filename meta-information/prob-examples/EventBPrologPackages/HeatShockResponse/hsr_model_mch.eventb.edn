@@ -1,0 +1,36 @@
+{:properties 5,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/HeatShockResponse/hsr_model_mch.eventb",
+ :enumerated_sets 0,
+ :variables 10,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/HeatShockResponse/hsr_model_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 17,
+ :sha256
+ "0111b56b981346479e127000ba7ce2aa9c74e7a2c86e71dfbc0a00307584d8b5",
+ :invariants 13,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 5,
+ :formalism :eventb}

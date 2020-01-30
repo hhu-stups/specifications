@@ -1,0 +1,45 @@
+REFINEMENT
+   MultiFlowR1
+REFINES MultiFlowSpec
+/* In this refinement we add:
+   -  a route between for every pair of DEVICES given by the constant function Routes
+   -  every device has a set of local_queues, one for each possible source and destination
+   -  packets are no longer consumed directly, they are transmitted from source to destination
+      via the route given by Routes
+*/
+DEFINITIONS scope_PACKETS==1..3
+CONSTANTS Routes  /* Routes gives for every pair of Devices a route */
+PROPERTIES
+  Routes:(DEVICES*DEVICES) --> iseq1(DEVICES) &
+  !(x,y).(x:DEVICES & y:DEVICES => first(Routes(x,y))=y & last(Routes(x,y))=x)
+VARIABLES local_queue
+INVARIANT
+  local_queue: (DEVICES*DEVICES-->(DEVICES --> iseq(RPACKETS))) &
+
+ /* the one queue between source and destination is now split up into multiple queues along the Route between
+    source and destinatin */
+  !(dest,source).(dest:DEVICES & source:DEVICES =>
+     messages(dest,source) = conc(  (Routes(dest,source) ; local_queue(dest,source))))
+INITIALISATION
+  local_queue :=  %(x,y).(x:DEVICES&y:DEVICES| %d.(d:DEVICES|<>))
+OPERATIONS
+  generate_packet(dest,source,p) = PRE dest:DEVICES & source:DEVICES & dest/=source & p:PACKETS & p/=emptyp  &
+      p/: ran(conc(  (Routes(dest,source) ; local_queue(dest,source)))) 
+     THEN
+      local_queue(dest,source) := local_queue(dest,source) <+ {source |-> (local_queue(dest,source)(source)<-p)}
+    END;
+  transmit_packet(dest,source,p,i) = PRE dest:DEVICES & source:DEVICES & dest/=source & p:PACKETS & p/=emptyp & i:NATURAL1 THEN
+              SELECT  i:1..(size(Routes(dest,source))-1) & local_queue(dest,source)(Routes(dest,source)(i)) /= <> &
+                 p= last(local_queue(dest,source)(Routes(dest,source)(i))) THEN
+                 local_queue(dest,source) := local_queue(dest,source) <+ 
+                                { Routes(dest,source)(i) |-> front(local_queue(dest,source)(Routes(dest,source)(i))),
+                                  Routes(dest,source)(i+1) |-> (local_queue(dest,source)(Routes(dest,source)(i+1)) <- p) } 
+              END
+    END;
+  r <-- consume_packet(dest,source) = PRE dest:DEVICES & source:DEVICES & dest/=source  THEN
+      SELECT local_queue(dest,source)(dest) /= {} THEN
+         r:= last(local_queue(dest,source)(dest)) ||
+         local_queue(dest,source) := local_queue(dest,source) <+ {dest |-> front(local_queue(dest,source)(dest))}
+      END
+    END
+END

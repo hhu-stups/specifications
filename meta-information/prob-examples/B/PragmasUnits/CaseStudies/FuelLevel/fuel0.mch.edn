@@ -1,0 +1,37 @@
+{:properties 5,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 898,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PragmasUnits/CaseStudies/FuelLevel/fuel0.mch",
+ :enumerated_sets 1,
+ :variables 3,
+ :number-of-states 68,
+ :included-machines
+ ["./prob-examples/B/PragmasUnits/CaseStudies/FuelLevel/fuel0.mch"
+  "./prob-examples/B/PragmasUnits/CaseStudies/FuelLevel/ctx.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "bb6917c295c25e48f87fe7cf94250d46bf64842473ae572227588f205fde7ae6",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 160,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

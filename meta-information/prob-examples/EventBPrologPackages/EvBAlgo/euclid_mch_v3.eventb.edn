@@ -1,0 +1,36 @@
+{:properties 7,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 11,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/EvBAlgo/euclid_mch_v3.eventb",
+ :enumerated_sets 0,
+ :variables 3,
+ :number-of-states 10,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/EvBAlgo/euclid_mch_v3.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 4,
+ :operations 4,
+ :sha256
+ "067c59450fb53da3b1e290d3f223ebfc003a5f690311292d9564233d507056bf",
+ :invariants 5,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 20,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 5,
+ :formalism :eventb}

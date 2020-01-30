@@ -1,0 +1,40 @@
+REFINEMENT DbConcr /* taken from paper by Mikhailov & Butler, ZB 2002 */
+REFINES DbAbstr
+SETS
+ LINKS
+CONSTANTS nil
+PROPERTIES
+ nil:LINKS
+VARIABLES stDb, grDb, next, head
+INVARIANT
+ stDb : LINKS >+> STUDENTS &
+ grDb : LINKS +-> GRADES &
+ next : LINKS >+> LINKS &
+ head : LINKS &
+ dom(stDb) = dom(grDb) &
+ /* part of text missing */
+ dom(grDb) = dom(next)
+INITIALISATION stDb, grDb, next, head:={},{},{},nil
+OPERATIONS
+  append(st,gr) = PRE st:STUDENTS & gr:GRADES & st /: ran(stDb) THEN
+     ANY ll WHERE ll:LINKS - dom(next) - {nil} THEN
+        IF next={} THEN
+          head := ll || next := {ll|->nil} || stDb := {ll|->st} || grDb := {ll |->gr}
+        ELSE
+           stDb(ll) :=st ||
+           grDb(ll) := gr ||
+           ANY xx,next1 WHERE
+             xx:dom(next) & xx|->nil : next &
+            next1 : LINKS >+> LINKS &
+            !yy.(yy:LINKS & yy:dom(next)-{xx} => next1(yy) = next(yy)) &
+            next1(xx) = ll &
+            next1(ll) = nil 
+            /* & dom(next1) = dom(next) \/ {ll} */  /* <---- MISSING CONSTRAINT */
+           THEN
+               next := next1
+           END
+        END
+     END
+  END
+END
+

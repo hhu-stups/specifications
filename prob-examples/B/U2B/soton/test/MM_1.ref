@@ -1,0 +1,66 @@
+REFINEMENT MM_1 
+REFINES
+	MM_0
+/*" U2B3.6.11 generated this component from Package MM_1 "*/
+SETS
+	MM={thisMM}
+VARIABLES
+	WR,
+	wr,
+	nodes
+INVARIANT
+	WR : MM --> POW(ND) &
+	wr : MM --> POW(ND) &
+	nodes : MM --> POW(ND) &
+	WR(thisMM)<:nodes(thisMM) &
+	(WR(thisMM)/={} => wr(thisMM)={})
+INITIALISATION
+	WR :: MM --> POW(ND) ||
+	wr :: MM --> POW(ND) ||
+	nodes :: MM --> POW(ND)
+
+EVENTS
+ take =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd:WR(thisMM)
+	THEN
+		wr(thisMM):={nd} ||
+		WR(thisMM):={}
+	END
+END
+;
+ idle =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd/:wr(thisMM)
+	THEN
+		skip
+	END
+END
+;
+ switch_ok =
+ANY nd WHERE &
+	nd:ND
+THEN
+	SELECT
+		nd/:WR(thisMM) &
+		wr(thisMM)={}
+	THEN
+		WR(thisMM):=WR(thisMM)\/{nd}
+	END
+END
+;
+ free =
+BEGIN
+	SELECT
+		wr(thisMM)/={}
+	THEN
+		wr(thisMM):={}
+	END
+END
+END

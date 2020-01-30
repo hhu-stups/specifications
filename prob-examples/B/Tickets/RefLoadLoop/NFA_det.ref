@@ -1,0 +1,17 @@
+REFINEMENT NFA_det1
+REFINES NFA_det
+DEFINITIONS
+  Alphabet == {0,1}
+ABSTRACT_CONSTANTS deltass
+PROPERTIES
+ /* rekursive Definition der erweiterten Uebergangsfunktion */
+ deltass = %(ZZ,s).(ZZ<:S & s=<>|ZZ) \/
+          %(ZZ,s).(ZZ<:S & s/=<> | UNION(z).(z:ZZ|deltass(delta(z,first(s)),tail(s))))
+VARIABLES curs
+INVARIANT curs <: S
+INITIALISATION curs:={z0}
+OPERATIONS
+  Go(input) = PRE input:Alphabet THEN curs:= deltass(curs,[input]) END;
+  Accept = PRE curs /\ F /= {} THEN skip END
+END
+

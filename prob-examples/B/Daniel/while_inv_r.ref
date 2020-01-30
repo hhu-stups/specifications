@@ -1,0 +1,12 @@
+REFINEMENT while_inv_r
+REFINES while_inv
+VARIABLES
+  concrete
+INVARIANT
+  concrete : NAT & abstract = concrete
+INITIALISATION
+  concrete := 0
+OPERATIONS
+  inc = BEGIN concrete := abstract + 1 END
+END
+

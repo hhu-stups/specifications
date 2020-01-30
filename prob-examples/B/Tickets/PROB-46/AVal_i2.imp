@@ -1,0 +1,18 @@
+IMPLEMENTATION
+   AVal_i2
+REFINES
+   AVal
+/* This machine is ok for Atelier-B */
+CONCRETE_VARIABLES count
+INVARIANT
+ count:NATURAL & count : NAT
+INITIALISATION count:=1
+LOCAL_OPERATIONS
+  Inc = count := count + 1 /* Specification */
+OPERATIONS
+  Inc = count := count + 1; /* Implementation */
+  Validate = BEGIN
+    count := count + 1;
+    IF count < 3 THEN Inc END
+  END
+END

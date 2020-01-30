@@ -1,0 +1,7 @@
+MACHINE InvalidAssignmentElementOf
+VARIABLES xx
+INVARIANT xx : INTEGER
+INITIALISATION xx := 0
+OPERATIONS
+     op(arg) = PRE arg:INTEGER THEN arg :: {1,2,3} END
+END

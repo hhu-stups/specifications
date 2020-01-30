@@ -1,0 +1,21 @@
+REFINEMENT SwapR
+
+REFINES Swap
+  
+VARIABLES
+   cc1,cc2
+ 
+ INITIALISATION
+  cc1 :: Color || cc2 := red
+  
+ OPERATIONS
+ 
+ swap = BEGIN
+    VAR t IN t:= cc1; cc1  := cc2 ; cc2 := t END
+   END/*;
+
+ swap2 = VAR tt,ss IN tt := cc1; ss := cc2; cc1 := ss; cc2 := tt END*/
+/* ;
+ swap3 = LET cc BE cc = cc1 IN cc1 := cc2; cc2 := cc END */
+   
+ END

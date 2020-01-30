@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 596733,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/buggy_v1/Ref5_Switch_mch.eventb",
+ :enumerated_sets 8,
+ :variables 29,
+ :number-of-states 86612,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/buggy_v1/Ref5_Switch_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 38,
+ :sha256
+ "0328bf2ff0e2f88669bbbed8fbeb42050c143bbc5df45bd75283415ab527e67d",
+ :invariants 18,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 485580,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

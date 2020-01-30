@@ -1,0 +1,23 @@
+REFINEMENT Login_with_expire1b
+REFINES Login_with_expire
+CONSTANTS myperm
+PROPERTIES myperm: Session >->> Session
+VARIABLES active1,expire1
+INVARIANT
+   active1<:Session & expire1<:Session & active1 /\ expire1 =  {} 
+ 	 & active1=myperm[active] & expire1= myperm[expire]   /*gluing invariant*/
+INITIALISATION
+  active1 := myperm[{}] || expire1 := myperm[{}] 
+OPERATIONS
+   res <-- Login = ANY s WHERE s :Session &  s/: active1 &  s/:expire1 THEN
+                     res := myperm~(s) || active1 := active1 \/ {s} 
+                   END;
+   Logout(s2,e) =  PRE s2: Session & e: BOOL THEN
+                   ANY s WHERE s: Session & s = myperm(s2) & s: active1 THEN
+                      active1 := active1 - {s} ||
+                     IF e=TRUE THEN
+                       expire1:=expire1 \/ {s}
+                     END
+                   END
+                  END
+END

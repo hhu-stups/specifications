@@ -1,0 +1,37 @@
+{:properties 12,
+ :definitions 29,
+ :deferred_sets 0,
+ :number-of-transitions 361678,
+ :deadlock false,
+ :file "./prob-examples/B/MobileComm/TrafficLightWarning/System.mch",
+ :enumerated_sets 1,
+ :variables 5,
+ :number-of-states 53871,
+ :included-machines
+ ["./prob-examples/B/MobileComm/TrafficLightWarning/System.mch"
+  "./prob-examples/B/MobileComm/TrafficLightWarning/Car.mch"
+  "./prob-examples/B/MobileComm/TrafficLightWarning/TrafficLight.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 20,
+ :sha256
+ "bbdfa52c6c32ab20096efdf4fdffd7679eeca21c8332cab1e34c3d0d6190492f",
+ :invariants 8,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 227510,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 7,
+ :formalism :b}

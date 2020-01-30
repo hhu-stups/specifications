@@ -1,0 +1,9 @@
+MACHINE WD_FunAppCheck
+DEFINITIONS
+  SET_PREF_TIME_OUT == 2000;
+CONSTANTS a,b,c
+PROPERTIES
+ a = 1
+& b = 2
+& c = {3|->3}(b)
+END

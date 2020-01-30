@@ -1,0 +1,37 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 1,
+ :number-of-transitions 3114,
+ :deadlock false,
+ :file "./prob-examples/B/SchneiderBook/Chapter11/Customer.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 333,
+ :included-machines
+ ["./prob-examples/B/SchneiderBook/Chapter11/Customer.mch"
+  "./prob-examples/B/SchneiderBook/Chapter11/Price.mch"
+  "./prob-examples/B/SchneiderBook/Chapter11/Goods.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "be8fa0be5f8ecfce2db9d2ea2777e2c56337602f71dcd84d65574ef8dc7d3740",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 440,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

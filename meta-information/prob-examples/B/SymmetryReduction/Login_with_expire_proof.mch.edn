@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 1,
+ :number-of-transitions 408,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SymmetryReduction/Login_with_expire_proof.mch",
+ :enumerated_sets 0,
+ :variables 5,
+ :number-of-states 144,
+ :included-machines
+ ["./prob-examples/B/SymmetryReduction/Login_with_expire_proof.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "639e4d53171f4825e01b28bc971b4dc6288f3adadeb2a6e448ba4e6903bcffc8",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 240,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

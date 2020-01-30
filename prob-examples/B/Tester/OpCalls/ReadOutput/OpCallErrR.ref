@@ -1,0 +1,21 @@
+/* OpCallR
+ * Author: 
+ * Creation date: 31/10/2017
+ */
+
+REFINEMENT OpCallR
+REFINES OpCall
+INCLUDES OpDef
+OPERATIONS
+ 
+      Caller(pp) = PRE  pp:INT & pp : 0..1 THEN
+            VAR res2,res IN
+                 res2 := 2;  /* with res2 = 1: all POs can be proven with res=2 it cannot */
+                 res := 11;
+                 res2 <-- myop(TRUE)
+             END
+         END
+         /* 
+     res <-- myop(pp) = PRE res:NAT & res=1 & pp:BOOL THEN  res := 0 END
+     */
+ END

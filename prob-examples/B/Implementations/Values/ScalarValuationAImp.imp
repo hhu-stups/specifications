@@ -1,0 +1,11 @@
+IMPLEMENTATION ScalarValuationAImp
+REFINES ScalarValuationA
+SEES ScalarValuationB
+VALUES
+  c1 = -100;
+  c2 = cteB2 - 4;
+  c3 = Blue;
+  EnsAbs1 = 0..512;
+  c4 = 42;
+  c5 = cteB1
+END

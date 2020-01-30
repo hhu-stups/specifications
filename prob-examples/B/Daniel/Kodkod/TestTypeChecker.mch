@@ -1,0 +1,11 @@
+MACHINE TestTypeChecker
+SETS
+ ID={aa,bb}
+VARIABLES xx
+INVARIANT
+ xx:ID
+INITIALISATION xx:=aa
+OPERATIONS
+  Set(yy) = BEGIN xx:= aa END
+END
+

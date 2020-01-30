@@ -1,0 +1,42 @@
+REFINEMENT JobshopR(JOB,limit)
+
+REFINES Jobshop
+ 
+VARIABLES jobarr ,counter 
+
+INVARIANT jobarr  : 1..limit +-> JOB & ran(jobarr) = jobs &
+          counter : 0..limit   
+
+INITIALISATION jobarr := {} || counter := 0
+
+OPERATIONS
+
+   	take(jj) = 
+	      BEGIN
+                  counter := counter + 1 ; jobarr(counter) := jj  
+              END;  
+
+	kk <-- process =
+		BEGIN
+		     kk := jobarr(counter) ||
+                     jobarr := {counter} <<| jobarr ||
+                      counter := counter- 1	
+		END ;
+
+		priorities(ll) = 
+		PRE ll: JOB THEN
+                     jobarr := jobarr |>> {ll} ||
+                     counter := counter- 1	
+		END ;  
+
+            new_dec(ll)  = BEGIN counter := counter -1 END;
+            dec = BEGIN counter := counter -1 END
+
+END
+
+/*        take(nn) = 
+		PRE nn: 0..limit-1 
+		THEN 
+                    counter := counter + 1 ; jobarr(counter) := nn  
+                END;  */
+   	

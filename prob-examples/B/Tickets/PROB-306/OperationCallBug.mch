@@ -1,0 +1,9 @@
+MACHINE OperationCallBug
+INCLUDES IncludedMachine
+VARIABLES x
+INVARIANT x:NAT
+INITIALISATION x:=0
+OPERATIONS
+  foo = BEGIN x <-- bar END 
+END
+

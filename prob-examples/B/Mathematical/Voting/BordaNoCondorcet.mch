@@ -1,0 +1,31 @@
+MACHINE PluralityNoCondorcetWinner
+/* Try to find a configuration such that there is a Condorcet winner but is not
+   the Borda winner and there is at least one other choice with strictly better (smaller) score
+Solution found (25 seconds):
+ {(Anna|->[E,F,G,H]),(Belle|->[E,F,G,H]),(Chris|->[F,G,H,E])}
+ */
+SETS
+ CHOICES = {E,F,G,H};
+ VOTERS= {Anna, Belle, Chris}
+DEFINITIONS
+  prefers(V,A,B) == (prefs(V)~(A) < prefs(V)~(B)); /* Voter V prefers A over B */
+  prefered(A,B) == card({x| x:VOTERS & prefers(x,A,B)}) > card({y|y:VOTERS & prefers(y,B,A)});
+  NotCondorcetWinner(A) == #B.(B:CHOICES & prefered(B,A) );
+  PVotes(A) == card({x| x:VOTERS & prefs(x)(1)=A}); /* How often is A in first position */
+  BordaScore(A) == SIGMA(x).(x:VOTERS|prefs(x)~(A)); /* Sum of positions */
+CONSTANTS prefs, EScore
+PROPERTIES
+  prefs : VOTERS --> perm(CHOICES) &
+  
+  EScore = BordaScore(E) & /* Number of votes for E */
+  !B.(B:CHOICES & B/=E => prefered(E,B)) & /* E is the Condorcet Winner */ 
+  #B.(B:CHOICES & B/=E & BordaScore(B)<EScore) /* E is not the overall winner */
+OPERATIONS
+  Prefers(V,A,B) = PRE V:VOTERS & A:CHOICES & B:CHOICES & prefers(V,A,B) THEN skip END;
+  Prefered(A,B) = PRE A:CHOICES & B:CHOICES & prefered(A,B) THEN skip END;
+  CondorcetWinner(A) = PRE A:CHOICES & !B.(B:CHOICES & B/=A => prefered(A,B)) THEN skip END;
+  CondorcetLooser(A) = PRE A:CHOICES & !B.(B:CHOICES & B/=A => prefered(B,A)) THEN skip END;
+  r <-- Borda(A) = PRE A:CHOICES THEN r := BordaScore(A) END;
+  r <-- Votes(A) = PRE A:CHOICES THEN r := PVotes(A) END
+END
+

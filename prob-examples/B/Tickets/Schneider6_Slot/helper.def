@@ -1,0 +1,159 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  "check_cs.def";
+  SEMESTERS==1..6;
+
+  let(V,VE,E) == UNION(V).(V=VE|E);
+
+  GROUP_CHOICE(f, domain) == (/*{{{*/
+    f : domain --> min_group..max_group
+    &
+    !(u).( u : domain =>
+      f(u) : unit_groups(u)
+    )
+  /*  & printf_nonvar("Setup group_choice: ~w~n",f) */
+  );/*}}}*/
+
+  G_CHECK_UNITS_WITH_IGNORED_SESSIONS(s1, s2, mixed, ru, semesterChoice, local_slots, ignored_sessions, groupChoice) == #(conflict_set).(
+      printf("G_CHECK_UNITS_WITH_IGNORED_SESSIONS", "") &
+      GROUP_CHOICE(groupChoice, ru)
+      &
+      /* Set of unit-pairs to be checked for conflicts */
+      conflict_set: ru <-> ru
+      &
+      conflict_set = {(u1, u2)| u1 : s1 & u2 : s2 &
+          local_slots[unit_sessions(u1)] /\ local_slots[unit_sessions(u2)] /= {}/* only check units potentially in conflict (i.e. some slots in common) */
+      }
+      \/
+      {(u1, u2)| u1 : s1 & u2 : mixed &
+          local_slots[unit_sessions(u1)] /\ local_slots[unit_sessions(u2)] /= {}/* only check units potentially in conflict (i.e. some slots in common) */
+      }
+      \/
+      {(u1, u2)| u1 : s2 & u2 : mixed &
+          local_slots[unit_sessions(u1)] /\ local_slots[unit_sessions(u2)] /= {}/* only check units potentially in conflict (i.e. some slots in common) */
+      }
+      \/
+      {(u1, u2)| u1 : mixed & u2 : mixed & /* pairs of units in optional modules */
+          u1 < u2 /* symmetry breaking */
+          &
+          local_slots[unit_sessions(u1)] /\ local_slots[unit_sessions(u2)] /= {}/* only check units potentially in conflict (i.e. some slots in common) */
+      }
+      &
+      /* printf("CS: ~w~n", conflict_set) */
+      /* & */
+      CHECK_CS(conflict_set, groupChoice, semesterChoice, local_slots, ignored_sessions)
+    );
+  /*
+   * Mixed mode checking helper
+   * cc : COURSES
+   * semester : SEMESTERS
+   * s1 <: AllUnits
+   * s2 <: AllUnits
+   * mixed <: AllUnits
+   * local_slots: mapping from sessions to slots
+   * ignored_sessions <: sessions to be ignored in checks
+   *
+   * Semesterwise check units in s1, s2 and mixed for conflicts
+   *
+   * Note:
+   * Units in mixed are checked against all other units (s1, s2 and mixed)
+   * Units in s1 and s2 are only checked against elements in the other sets
+   */
+  CHECK_UNITS_IN_SEMESTER_WITH_IGNORED_SESSIONS(semester, s1, s2, mixed, local_slots, ignored_sessions, groupChoice) == #(ru, semesterChoice).(
+      ru = s1 \/ s2 \/ mixed
+      &
+      semesterChoice = ru * {semester}
+      &
+      G_CHECK_UNITS_WITH_IGNORED_SESSIONS(s1, s2, mixed, ru, semesterChoice, local_slots, ignored_sessions, groupChoice)
+    );
+
+  /*
+   * Mixed mode checking helper
+   * s1 <: AllUnits
+   * s2 <: AllUnits
+   * mixed <: AllUnits
+   * local_slots: mapping from sessions to slots
+   * ignored_sessions <: sessions to be ignored in checks
+   *
+   * Globally check units in s1, s2 and mixed for conflicts
+   *
+   * Note:
+   * Units in mixed are checked against all other units (s1, s2 and mixed)
+   * Units in s1 and s2 are only checked against elements in the other sets
+   */
+  CHECK_UNITS_GLOBAL_WITH_IGNORED_SESSIONS(s1, s2, mixed, local_slots, ignored_sessions, groupChoice, semesterChoice) == #(ru).(
+      printf("CHECK_UNITS_GLOBAL_WITH_IGNORED_SESSIONS~n", "") &
+      ru = (s1 \/ s2 \/ mixed)
+      &
+      semesterChoice : ru --> SEMESTERS
+      &
+      G_CHECK_UNITS_WITH_IGNORED_SESSIONS(s1, s2, mixed, ru, semesterChoice, local_slots, ignored_sessions, groupChoice)
+    );
+  /* a selection function from a set of integers; e.g., min/max/random_element by changing this we may compute different unsat cores (for cores of more than two units) */
+  select(Set) == min(Set);
+
+  sel == %x.(x<:INTEGER|select(x));
+
+  multi_select(SetOfSets) ==
+     {x | card(x) <= card(SetOfSets) & x <: union(SetOfSets) & !w.(w:SetOfSets => w /\ x /= {})};
+     /* example multi_select({{1,2,3},{3,4}}) = {{1,3},{1,4},{2,3},{2,4},{3},{3,4}} */
+
+   /* a definition for the if-then-else construct; note: Test must be a boolean variable */
+   ifte(Test,ThenExpr,ElseExpr) == (%(iif).(iif=0 & (Test=TRUE)|ThenExpr) \/
+                                    %(iif).(iif=0 & (Test=FALSE)|ElseExpr)) (0);
+
+  SHARED_PROPERTIES ==
+  unit_group = %(u, g). ( u: AllUnits & g : dom(units(u)'groups) | units(u)'groups(g) )
+  &
+  /* sessions accessor as a proper B function so that we can compute image */
+  get_sessions = %(r).(r:struct(sessions:POW(INTEGER)) | r'sessions)
+  &
+  /* compute the slots that a unit can use */
+  AllUnits = dom(units) &
+  AllSessions = dom(sessions) &
+  /* compute all possible groups for a given unit */
+  all_unit_groups = %un.(un:AllUnits|ran(units(un)'groups))
+  &
+  /* compute all possible group ids a given unit */
+  unit_groups = %un.(un:AllUnits|dom(units(un)'groups))
+  &
+  /* compute all possible sessions-ids which a given unit may use : */
+  unit_sessions = %(u).(u : AllUnits |union(get_sessions[all_unit_groups(u)]))
+  &
+  /* map units to all it's sessions that are in a group with only one session */
+  unit_group_single_session = %(u).(u : AllUnits | union({s| s : get_sessions[all_unit_groups(u)] & card(s) = 1}))
+  &
+  unit_group_multiple_session = %(u).(u : AllUnits | union({s| s : get_sessions[all_unit_groups(u)] & card(s) > 1}))
+  &
+  /* mapping course and units to min and max group */
+  unit_min_group = %u.(u:AllUnits | min(dom(units(u)'groups)))
+  &
+  unit_max_group = %u.(u:AllUnits | max(dom(units(u)'groups)))
+  &
+  /* computing overall lower and upper bound on group numbers */
+  min_group = min(ran(unit_min_group))
+  &
+  max_group = max(ran(unit_max_group))
+  /* slot accessor as a proper B function so that we can compute image */
+  /* & */
+  /* get_slot = %(r).(r:struct(duration:INTEGER, rhythm:INTEGER, slot:SLOTS) | r'slot) */
+  /* & */
+  /* unit_map = %(core).(core <: dom(units)| {(u, gid,slot) */
+  /*                   | u : core & #(g,s).((gid,g) : units(u)'groups & s : g'sessions & slot=get_slot(sessions(s)))}) */
+  /* & */
+  /* session_unit = {s, u| s : AllSessions & u : AllUnits & s : union(get_sessions[ran(units(u)'groups)])}; */
+  /* #(unit2sem,session2uid).( /1* LET *1/ */
+  /*                       unit2sem = {u,sem| #(c).((c,sem,u):mapping)} & */
+  /*                       session2uid = {ss,u_id | #(u,g).((u_id,u):units & g:ran(u'groups) & ss:g'sessions)} & */
+  /* session_semester = */
+  /*  %(idx).(idx : AllSessions | unit2sem[session2uid[{idx}]] */
+  /*  ) /1* XXX extract values from set *1/ */
+  /* ) */
+  /* ======================================== */
+  /* Used in tests */
+  /* ======================================== */
+  /* a function that computes a table of the constraints for a set of units (e.g., obtained
+     by calling unsat_core or UNSAT_CORE, e.g.,:
+      unit_map(UNSAT_CORE(jap,rom,1)) or unit_map[disjoint_cores(UnitsForCombination(jud,lin,1),1)]) */
+
+

@@ -1,0 +1,27 @@
+REFINEMENT        ProgressR
+
+REFINES           Progress
+
+SETS              STATUS = {training, selling, managing}
+
+VARIABLES         level
+
+INVARIANT         level : NAME +-> STATUS
+                  & dom(level) = employee
+                  & trainee = level~[{training}]
+                  & sales = level~[{selling}]
+                  & manager = level~[{managing}]
+
+INITIALISATION    level := {}
+
+OPERATIONS
+
+  join(ee) = level(ee) := training;
+
+  promotetrainee(ee) = level(ee) := selling;
+
+  promotesales(ee) = level(ee) := managing;
+
+  fired(ee) = level := {ee} <<| level
+
+END

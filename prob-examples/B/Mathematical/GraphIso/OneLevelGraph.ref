@@ -1,0 +1,38 @@
+REFINEMENT
+   OneLevelGraph
+REFINES OneArcLabelGraph
+DEFINITIONS
+  LN == (N*C) /* level node */
+CONSTANTS lg
+PROPERTIES
+  lg : LN <-> LN &
+  !(c,n1,n2).(c:C & n1:N & n2:N => (((n1|->c) |-> (n2|->c) : lg) <=> (n1|->n2 : g(c)))) &
+  !(c1,c2,n).(c1:C & c2:C & c1 /= c2 & n:N =>  (n|->c1) |-> (n|->c2) : lg) &
+   !(c1,c2,n1,n2).(c1:C & c2:C & c1 /= c2 & n1:N & n2:N & n1/=n2 
+                     =>  (n1|->c1) |-> (n2|->c2) /: lg)
+VARIABLES
+  vlg
+INVARIANT vlg: LN<->LN &
+  !(c,n1,n2).(c:C & n1:N & n2:N => (((n1|->c) |-> (n2|->c) : vlg) <=> (n1|->n2 : vg(c)))) &
+  !(c1,c2,n).(c1:C & c2:C & c1 /= c2 & n:N =>  (n|->c1) |-> (n|->c2) : vlg) &
+   !(c1,c2,n1,n2).(c1:C & c2:C & c1 /= c2 & n1:N & n2:N & n1/=n2 
+                     =>  (n1|->c1) |-> (n2|->c2) /: vlg)
+INITIALISATION
+  vlg := lg
+OPERATIONS
+  r <-- edge(n1,n2,c) =
+      IF (n1|->c) |-> (n2|->c) : vlg THEN
+          r := TRUE
+      ELSE
+          r := FALSE
+      END;
+ permute(p) = ANY nvlg WHERE nvlg: LN<->LN &
+                !(c1,c2,n1,n2).(c1:C & c2:C & n1:N & n2:N =>
+                    ( ((n1|->c1)|->(n2|->c2):vlg)
+                       <=>
+                      ((p(n1)|->c1)|->(p(n2)|->c2):nvlg )
+                    ))
+              THEN
+    vlg := nvlg
+ END
+END

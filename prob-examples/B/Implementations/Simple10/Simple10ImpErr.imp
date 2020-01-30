@@ -1,0 +1,15 @@
+IMPLEMENTATION
+   Simpl10ImpErr
+REFINES Simple10
+OPERATIONS
+ r <-- ret10 =
+      VAR x IN
+          x:=0;
+          WHILE x/=10 DO
+             x:=x+1
+          INVARIANT x:NATURAL & x<10   /* INVARIANT FALSE when x=10 */
+          VARIANT 10-x
+          END;
+          r := x
+       END
+END

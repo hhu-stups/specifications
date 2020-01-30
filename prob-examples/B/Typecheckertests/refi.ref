@@ -1,0 +1,25 @@
+/*
+  This testcase should test some behaviour in case of refinement:
+  - the inherited variable cnt gets the same type as in the definition
+  - the operation "add" inherits a precondition from the abstract definition.
+  - the operation "inc" must be copied from the abstraction
+*/
+REFINEMENT refi(P,p)
+REFINES abstract
+DEFINITIONS
+  TEST_var_k    == "abstract_variables/k: integer";
+  TEST_var_cnt  == "abstract_variables/cnt: integer";
+  TEST_prom_add  == "promoted/add: op([global('P')],[])";
+  TEST_prom_size == "promoted/getSize: op([],[integer])";
+  TEST_prom_inc  == "promoted/inc: op([],[])";
+  /* the next statement checks if the 5>7 predicate is still in the operation */
+  TEST_pre_add   == "operation_bodies/add/ * /precondition/ * /greater: pred"
+VARIABLES k,cnt
+INVARIANT k:INTEGER & k=card(x)
+INITIALISATION
+  k := 0 || cnt := 0
+OPERATIONS
+  add(e) = BEGIN k := k+1 END;
+  s <-- getSize = BEGIN s := k END
+END
+

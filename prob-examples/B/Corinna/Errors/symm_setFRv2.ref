@@ -1,0 +1,26 @@
+REFINEMENT symm_setFRv2
+
+REFINES symm_setv2
+
+VARIABLES mem
+
+INVARIANT mem : iseq(PERSON) & ran(mem) = member
+
+INITIALISATION mem := []
+
+
+OPERATIONS
+
+add(pp) = 
+	PRE pp : PERSON /* & pp /: ran(mem)*/
+	THEN mem := pp -> mem
+	END;
+
+delete(pp) = 
+	PRE pp : PERSON & pp : ran(mem)
+	THEN ANY nn WHERE nn : 1..size(mem) 
+		THEN mem := mem /|\ nn-1 ^ (mem \|/ nn) 
+		END
+	END
+ 
+END

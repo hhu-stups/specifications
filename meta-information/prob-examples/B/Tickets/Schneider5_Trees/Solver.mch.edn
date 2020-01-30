@@ -1,0 +1,41 @@
+{:properties 43,
+ :definitions 67,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/Tickets/Schneider5_Trees/Solver.mch",
+ :enumerated_sets 2,
+ :variables 1,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tickets/Schneider5_Trees/Solver.mch"
+  "./prob-examples/B/Tickets/Schneider5_Trees/preferences.def"
+  "./prob-examples/B/Tickets/Schneider5_Trees/LibraryIO.def"
+  "./prob-examples/B/Tickets/Schneider5_Trees/check_cs.def"
+  "./prob-examples/B/Tickets/Schneider5_Trees/helper.def"
+  "./prob-examples/B/Tickets/Schneider5_Trees/external_functions.def"
+  "./prob-examples/B/Tickets/Schneider5_Trees/data.mch"],
+ :comment "",
+ :files 7,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "0418485a68ab954c4ea144b3841aaa2322279cbc2b773f21c5c87cb0e9c845c4",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 32,
+ :formalism :b}

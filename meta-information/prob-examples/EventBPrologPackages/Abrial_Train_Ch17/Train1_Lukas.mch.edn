@@ -1,0 +1,36 @@
+{:properties 16,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 3638294,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/Train1_Lukas.mch",
+ :enumerated_sets 2,
+ :variables 7,
+ :number-of-states 627778,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/Train1_Lukas.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "010f011cf65dce96e2bdc9e23d5c097891fb54a27e40c3b77e892b23c8539174",
+ :invariants 14,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 1128500,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 4,
+ :formalism :b}

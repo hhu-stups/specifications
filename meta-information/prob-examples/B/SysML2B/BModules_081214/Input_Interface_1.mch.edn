@@ -1,0 +1,37 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 162400,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SysML2B/BModules_081214/Input_Interface_1.mch",
+ :enumerated_sets 3,
+ :variables 5,
+ :number-of-states 400,
+ :included-machines
+ ["./prob-examples/B/SysML2B/BModules_081214/Input_Interface_1.mch"
+  "./prob-examples/B/SysML2B/BModules_081214/Def_Types.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 6,
+ :sha256
+ "2079c8b7a890f30660c55893254079503ecb826b021637e40fd8e59bd90d42aa",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 6020,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

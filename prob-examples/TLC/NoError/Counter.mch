@@ -1,0 +1,10 @@
+MACHINE Counter
+CONSTANTS k
+PROPERTIES k = 10
+VARIABLES x
+INVARIANT x : 1 .. k
+INITIALISATION x := 1
+OPERATIONS
+inc = PRE x < k THEN x := x + 1 END;
+reset = PRE x = k THEN x:= 1 END
+END

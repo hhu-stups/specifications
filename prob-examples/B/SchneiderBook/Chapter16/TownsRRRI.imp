@@ -1,0 +1,50 @@
+IMPLEMENTATION    TownsRRRI
+
+REFINES           TownsRRR
+
+IMPORTS           Garray(TOWN), Counter
+
+INVARIANT         garray = parent & nn = counter
+
+OPERATIONS
+
+  link(tt1 , tt2) = 
+  VAR mm, rep1, rep2, ii IN
+    mm <-- read;
+    ii := 0;
+    rep1 := tt1;
+    rep2 := tt2;
+    WHILE ii < mm
+    DO rep1 <-- get(rep1);
+       rep2 <-- get(rep2);
+       ii := ii + 1
+    INVARIANT iterate(parent, nn-ii)(rep1) = iterate(parent,nn)(tt1) 
+            & iterate(parent, nn-ii)(rep2) = iterate(parent,nn)(tt2) 
+            & ii : NAT & ii <= nn & rep1 : TOWN & rep2 : TOWN & garray = parent & mm = counter & counter = nn
+    VARIANT nn - ii
+    END;
+    IF rep1 /= rep2 THEN set(rep1, rep2); inc END
+  END;
+
+  ans <-- connectedquery(tt1 , tt2) = 
+  VAR mm, rep1, rep2, ii IN
+    mm <-- read;
+    ii := 0;
+    rep1 := tt1;
+    rep2 := tt2;
+    WHILE ii < mm
+    DO rep1 <-- get(rep1);
+       rep2 <-- get(rep2);
+       ii := ii + 1
+    INVARIANT iterate(parent, nn-ii)(rep1) = iterate(parent,nn)(tt1) 
+            & iterate(parent, nn-ii)(rep2) = iterate(parent,nn)(tt2) 
+            & ii : NAT & ii <= nn & rep1 : TOWN & rep2 : TOWN & garray = parent & mm = counter & counter = nn
+    VARIANT nn - ii
+    END;
+    IF rep1 = rep2
+    THEN ans := connected
+    ELSE ans := notconnected
+    END
+  END    
+
+END

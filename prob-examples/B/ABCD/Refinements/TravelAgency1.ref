@@ -1,0 +1,411 @@
+REFINEMENT  TravelAgency1
+
+REFINES TravelAgency
+
+SETS
+    STATE1 = { v1, v2, v3, v4, v5, v6, v7}
+
+VARIABLES
+    /* AGENCY DB */
+    session,
+    session_user,
+    session_response,
+    session_card,
+    session_state1,
+    session_request,
+    session_room,
+    session_car,
+    agency_hotel_bookings,
+    agency_rental_bookings,
+    users_hotel,
+    users_rental,
+
+    /* HOTEL DB */
+    hotel_bookings,
+    hotel_request,
+    hotel_user,
+    hotel_room,
+    hotel_resp,
+
+    /* RENTAL DB */
+    rental_bookings,
+    rental_request,
+    rental_user,
+    rental_car,
+    rental_resp,
+
+    /* COMMS */
+    msg_hotel_request,
+    msg_rental_request,
+    msg_hotel_resp,
+    msg_rental_resp
+
+DEFINITIONS
+    rooms_available(h) ==  (dom(agency_hotel_bookings) /\ rooms_hotel~[{h}]) /= rooms_hotel~[{h}] ;
+    cars_available(r) == (dom(agency_rental_bookings) /\ cars_rental~[{r}]) /= cars_rental~[{r}]
+
+INVARIANT
+    session_state1: session --> STATE1 &
+    session_room : session +-> ROOM &
+    session_car : session +-> CAR &
+
+    hotel_bookings : HOTEL --> (ROOM +-> USER) &
+    hotel_request : HOTEL --> (SESSION +-> REQUEST) &
+    hotel_user : HOTEL --> (SESSION +-> USER) &
+    hotel_room : HOTEL --> (SESSION +-> ROOM) &
+    hotel_resp : HOTEL --> (SESSION +-> RESP) &
+
+    rental_bookings : CAR_RENT --> (CAR +-> USER) &
+    rental_request : CAR_RENT --> (SESSION +-> REQUEST) &
+    rental_user : CAR_RENT --> (SESSION +-> USER) &
+    rental_car : CAR_RENT --> (SESSION +-> CAR) &
+    rental_resp : CAR_RENT --> (SESSION +-> RESP) &
+
+    msg_hotel_request : HOTEL --> POW(SESSION * USER * REQUEST) &
+    msg_rental_request : CAR_RENT --> POW(SESSION * USER * REQUEST) &
+    msg_hotel_resp: HOTEL --> POW(SESSION * RESP * FIN(ROOM)) &
+    msg_rental_resp: CAR_RENT --> POW(SESSION * RESP * FIN(CAR))
+
+INITIALISATION
+    /* AGENCY DB */
+    session := {} ||
+    session_user := {} ||
+    session_response := {} ||
+    session_card := {} ||
+    session_state1 := {} ||
+    session_request := {} ||
+    agency_hotel_bookings := {} ||
+    agency_rental_bookings := {} ||
+    users_hotel := {} ||
+    users_rental := {} ||
+    session_room := {} ||
+    session_car := {} ||
+
+    /* HOTEL DB */
+    hotel_bookings := %hotel.(hotel:HOTEL | {}) ||
+    hotel_request := %hotel.(hotel:HOTEL | {}) ||
+    hotel_user := %hotel.(hotel:HOTEL | {}) ||
+    hotel_room := %hotel.(hotel:HOTEL | {}) ||
+    hotel_resp := %hotel.(hotel:HOTEL | {}) ||
+
+    /* RENTAL DB */
+    rental_bookings := %rental.(rental:CAR_RENT | {}) ||
+    rental_request := %rental.(rental:CAR_RENT | {}) ||
+    rental_user := %rental.(rental:CAR_RENT | {}) ||
+    rental_car := %rental.(rental:CAR_RENT | {}) ||
+    rental_resp := %rental.(rental:CAR_RENT | {}) ||
+
+    /* COMMS */
+    msg_hotel_request := %hotel.(hotel:HOTEL | {}) ||
+    msg_rental_request := %rental.(rental:CAR_RENT | {}) ||
+    msg_hotel_resp := %hotel.(hotel:HOTEL | {}) ||
+    msg_rental_resp := %rental.(rental:CAR_RENT | {})
+
+OPERATIONS
+    sid_ <-- login(uu) =
+        ANY sid WHERE sid:SESSION & sid/:session
+        THEN
+          session := session \/ {sid} ||
+          session_user(sid) := uu ||
+          session_response(sid) := undef ||
+          session_card(sid) := unknown ||
+          session_state1(sid) := v1 ||
+          session_request(sid) := none ||
+          sid_ := sid
+        END;
+
+    chooseService(sid,req) =
+        SELECT sid:session & session_state1(sid)=v1 & req/=none
+        THEN
+          session_state1(sid) := v2 ||
+          session_request(sid) := req
+        END;
+
+    enterCard(sid)=
+        SELECT sid:session & session_state1(sid)=v2
+        THEN
+          CHOICE
+            session_card(sid) := valid ||
+            session_state1(sid) := v3
+          OR
+            session_card(sid) := wrong
+          END
+        END;
+
+    pickShop(sid,req)=
+        SELECT sid:session & session_state1(sid) = v3
+        THEN
+          SELECT req=br & session_user(sid)/:dom(users_hotel)
+          THEN
+            ANY hh WHERE hh:HOTEL THEN users_hotel(session_user(sid)) := hh END ||
+            session_state1(sid) := v4
+          WHEN req=bc & session_user(sid)/:dom(users_rental)
+          THEN
+            ANY rr WHERE rr:CAR_RENT THEN users_rental(session_user(sid)) := rr END ||
+            session_state1(sid) := v4
+          END
+          WHEN (req=ur & session_user(sid)/:dom(users_hotel)) or
+               (req=uc & session_user(sid)/:dom(users_rental))
+          THEN
+            session_response(sid) := impossible
+        END;
+
+    sendRequestHotel(sid,hh)=
+        SELECT sid:session & session_state1(sid)=v4 & session_request(sid):{br,ur} &
+               users_hotel(session_user(sid))=hh
+        THEN
+          session_state1(sid) := v5 ||
+          msg_hotel_request(hh) :=  msg_hotel_request(hh) \/ {sid |-> session_user(sid) |-> session_request(sid)}
+        END;
+
+    sendRequestRental(sid,rr)=
+        SELECT sid:session & session_state1(sid)=v4 & session_request(sid):{bc,uc} &
+           users_rental(session_user(sid))=rr
+        THEN
+          session_state1(sid) := v5 ||
+          msg_rental_request(rr) := msg_rental_request(rr) \/
+                    {sid |-> session_user(sid) |-> session_request(sid)}
+        END;
+
+    recvRequestHotel(hh)=
+        ANY msg, sid, uu, req WHERE msg:msg_hotel_request(hh) & sid:SESSION & uu:USER &
+                                    req:REQUEST & msg = (sid |-> uu |-> req)
+        THEN
+          SELECT sid /: dom(hotel_request(hh))
+          THEN
+            hotel_request(hh)(sid) := req ||
+            hotel_user(hh)(sid) := uu ||
+            hotel_resp(hh)(sid) := undef ||
+            msg_hotel_request(hh) := msg_hotel_request(hh) - {msg}
+          END
+        END;
+
+    recvRequestRental(rr)=
+        ANY msg, sid, uu, req WHERE msg:msg_rental_request(rr) & sid:SESSION & uu:USER &
+                                    req:REQUEST & msg = (sid |-> uu |-> req)
+        THEN
+          SELECT sid /: dom(rental_request(rr))
+          THEN
+            rental_request(rr)(sid) := req ||
+            rental_user(rr)(sid) := uu ||
+            rental_resp(rr)(sid) := undef ||
+            msg_rental_request(rr) := msg_rental_request(rr) - {msg}
+          END
+        END;
+
+    bookRoom(hh)=
+        ANY sid WHERE sid:dom(hotel_request(hh)) & sid:dom(hotel_resp(hh)) &
+                      hotel_request(hh)(sid)=br & hotel_resp(hh)(sid)=undef
+        THEN
+          IF rooms_available(hh)
+          THEN
+            ANY rr WHERE rr : ROOM-dom(hotel_bookings(hh)) & rooms_hotel(rr) = hh
+            THEN
+              hotel_bookings(hh) := hotel_bookings(hh) \/ {rr |-> hotel_user(hh)(sid)} ||
+              hotel_resp(hh)(sid) := done ||
+              hotel_room(hh)(sid) := rr
+            END
+          ELSE hotel_resp(hh)(sid) := impossible
+          END
+        END;
+
+    bookCar(rr)=
+        ANY sid WHERE sid:dom(rental_request(rr)) & sid:dom(rental_resp(rr)) &
+                      rental_request(rr)(sid)=bc & rental_resp(rr)(sid)=undef
+        THEN
+          IF cars_available(rr)
+          THEN
+            ANY cc WHERE cc : CAR-dom(rental_bookings(rr)) & cars_rental(cc) = rr
+            THEN
+              rental_bookings(rr) := rental_bookings(rr) \/ {cc |-> rental_user(rr)(sid)} ||
+              rental_resp(rr)(sid) := done ||
+              rental_car(rr)(sid) := cc
+            END
+          ELSE rental_resp(rr)(sid) := impossible
+          END
+        END;
+
+    unbookRoom(hh)=
+        ANY sid WHERE sid:dom(hotel_request(hh)) & sid:dom(hotel_resp(hh)) &
+                      hotel_request(hh)(sid)=ur & hotel_resp(hh)(sid)=undef
+        THEN
+          IF hotel_user(hh)(sid):ran(hotel_bookings(hh))
+          THEN
+            ANY rr WHERE rr:dom(hotel_bookings(hh)) & hotel_bookings(hh)(rr)=hotel_user(hh)(sid)
+            THEN
+              hotel_bookings(hh) := {rr} <<| hotel_bookings(hh) ||
+              hotel_resp(hh)(sid) := done ||
+              hotel_room(hh)(sid) := rr
+            END
+          ELSE hotel_resp(hh)(sid) := impossible
+          END
+        END;
+
+    unbookCar(rr)=
+        ANY sid WHERE sid:dom(rental_request(rr)) & sid:dom(rental_resp(rr)) &
+                      rental_request(rr)(sid)=ur & rental_resp(rr)(sid)=undef
+        THEN
+          IF rental_user(rr)(sid):ran(rental_bookings(rr))
+          THEN
+            ANY cc WHERE cc:dom(rental_bookings(rr)) & rental_bookings(rr)(cc)=rental_user(rr)(sid)
+            THEN
+              rental_bookings(rr) := {cc} <<| rental_bookings(rr) ||
+              rental_resp(rr)(sid) := done ||
+              rental_car(rr)(sid) := cc
+            END
+          ELSE rental_resp(rr)(sid) := impossible
+          END
+        END;
+
+    replyRequestHotel(hh)=
+        ANY sid WHERE sid:dom(hotel_resp(hh)) & hotel_resp(hh)(sid)/=undef
+        THEN
+          IF sid : dom(hotel_room(hh))
+          THEN
+            msg_hotel_resp(hh) := msg_hotel_resp(hh) \/ {sid|->hotel_resp(hh)(sid)|->{hotel_room(hh)(sid)}} ||
+            hotel_room(hh) := {sid} <<| hotel_room(hh)
+          ELSE
+            msg_hotel_resp(hh) := msg_hotel_resp(hh) \/ {sid |-> hotel_resp(hh)(sid) |-> {}}
+          END ||
+          hotel_request(hh) := {sid} <<| hotel_request(hh) ||
+          hotel_user(hh) := {sid} <<| hotel_user(hh) ||
+          hotel_resp(hh) := {sid} <<| hotel_resp(hh)
+        END;
+
+    replyRequestRental(rr)=
+        ANY sid WHERE sid:dom(rental_resp(rr)) & rental_resp(rr)(sid)/=undef
+        THEN
+          IF sid : dom(rental_car(rr))
+          THEN
+            msg_rental_resp(rr) := msg_rental_resp(rr)\/{sid|->rental_resp(rr)(sid)|->{rental_car(rr)(sid)}} ||
+            rental_car(rr) := {sid} <<| rental_car(rr)
+          ELSE
+            msg_rental_resp(rr) := msg_rental_resp(rr)\/{sid|->rental_resp(rr)(sid)|->{}}
+          END ||
+          rental_request(rr) := {sid} <<| rental_request(rr) ||
+          rental_user(rr) := {sid} <<| rental_user(rr) ||
+          rental_resp(rr) := {sid} <<| rental_resp(rr)
+        END;
+
+    recvReplyHotel(hh)=
+        ANY msg, sid, resp, ss WHERE msg:msg_hotel_resp(hh) & sid:session & resp:RESP & ss:FIN(ROOM) &
+                                     msg=(sid,resp,ss) & session_state1(sid)=v5
+        THEN
+          IF resp = done
+          THEN
+            ANY rr WHERE rr:ss THEN session_room(sid) := rr END
+          END ||
+          session_response(sid) := resp ||
+          session_state1(sid) := v6 ||
+          msg_hotel_resp(hh) := msg_hotel_resp(hh) - {msg}
+        END;
+
+    recvReplyRental(rr)=
+        ANY msg, sid, resp, ss WHERE msg:msg_rental_resp(rr) & sid:session & resp:RESP & ss:FIN(CAR) &
+                                     msg=(sid,resp,ss) & session_state1(sid)=v5
+        THEN
+          IF resp = done
+          THEN
+            ANY cc WHERE cc:ss THEN session_car(sid) := cc END
+          END ||
+          session_response(sid) := resp ||
+          session_state1(sid) := v6 ||
+          msg_rental_resp(rr) := msg_rental_resp(rr) - {msg}
+        END;
+
+    resp <-- respBookRoom(sid)=
+          SELECT sid:session & session_state1(sid)=v6 & session_request(sid)=br
+          THEN
+            SELECT session_response(sid) = done /*& sid:dom(session_room)*/
+            THEN
+              agency_hotel_bookings(session_room(sid)) := session_user(sid)
+            ELSE
+              IF session_user(sid):dom(users_hotel) & session_user(sid)/:ran(agency_hotel_bookings)
+              THEN
+                users_hotel := {session_user(sid)} <<| users_hotel
+              END
+            END ||
+            resp := session_response(sid) ||
+            session_state1(sid) := v7
+          END;
+
+    resp <-- respUnbookRoom(sid)=
+          SELECT sid:session & session_state1(sid)=v6 & session_request(sid)=ur
+          THEN
+            SELECT session_response(sid) = done /*& sid:dom(session_room)*/
+            THEN
+              agency_hotel_bookings := {session_room(sid)} <<| agency_hotel_bookings ||
+              IF agency_hotel_bookings~[{session_user(sid)}] = {session_room(sid)}
+              THEN
+                users_hotel := {session_user(sid)} <<| users_hotel
+              END
+            ELSE
+              skip
+            END ||
+            resp := session_response(sid) ||
+            session_state1(sid) := v7
+          END;
+
+    resp <-- respBookCar(sid)=
+          SELECT sid:session & session_state1(sid)=v6 & session_request(sid)=bc
+          THEN
+            SELECT session_response(sid) = done /*& sid:dom(session_car)*/
+            THEN
+              agency_rental_bookings(session_car(sid)) := session_user(sid)
+            ELSE
+              IF session_user(sid):dom(users_rental) & session_user(sid)/:ran(agency_rental_bookings)
+              THEN
+                users_rental := {session_user(sid)} <<| users_rental
+              END
+            END ||
+            resp := session_response(sid) ||
+            session_state1(sid) := v7
+          END;
+
+    resp <-- respUnbookCar(sid)=
+          SELECT sid:session & session_state1(sid)=v6 & session_request(sid)=uc
+          THEN
+            SELECT session_response(sid) = done /*& sid:dom(session_car)*/
+            THEN
+              agency_rental_bookings := {session_car(sid)} <<| agency_rental_bookings ||
+              IF agency_rental_bookings~[{session_user(sid)}] = {session_car(sid)}
+              THEN
+                users_rental := {session_user(sid)} <<| users_rental
+              END
+            ELSE
+              skip
+            END ||
+            resp := session_response(sid) ||
+            session_state1(sid) := v7
+          END;
+
+   again(sid)=
+        SELECT sid:session & session_state1(sid)=v7
+        THEN
+          session_state1(sid) := v1 ||
+          session_request(sid) := none ||
+          session_response(sid) := undef ||
+          session_card(sid) := unknown ||
+          IF sid:dom(session_car) THEN session_car := {sid} <<| session_car END ||
+          IF sid:dom(session_room) THEN session_room := {sid} <<| session_room END
+        END;
+
+
+    logout(sid)=
+        PRE sid:SESSION
+        THEN
+          SELECT sid:session & (session_state1(sid)=v7 or (session_state1(sid)=v2 & session_card(sid)=wrong) or
+                                                          (session_state1(sid)=v3 & session_response(sid)=impossible))
+          THEN
+            session := session - {sid} ||
+            session_user := {sid} <<| session_user ||
+            session_response := {sid} <<| session_response ||
+            session_card := {sid} <<| session_card ||
+            session_state1 := {sid} <<| session_state1 ||
+            session_request := {sid} <<| session_request ||
+            IF sid:dom(session_car) THEN session_car := {sid} <<| session_car END ||
+            IF sid:dom(session_room) THEN session_room := {sid} <<| session_room END
+          END
+        END
+END
+

@@ -1,0 +1,8 @@
+MACHINE AssertError
+CONSTANTS k
+PROPERTIES
+k = rec(a: 1, b: "String")
+OPERATIONS
+  Set = BEGIN ASSERT 1=2 THEN skip END  END
+END
+

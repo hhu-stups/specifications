@@ -1,0 +1,211 @@
+/*
+ - File automatically generated -
+ ============================================================================
+ Name        : Controller_1_i.imp
+ Author      : 
+ Version     : 0.1
+ Copyright   : 
+ Description : Definition of the B implementation associated to the SysML instance Controller_1 
+ ============================================================================
+ */
+IMPLEMENTATION
+	Controller_1_i
+REFINES
+	Controller_1
+SEES
+    Def_Types
+IMPORTS
+	 part1.Selector_1,
+	 part2.TempController_1,
+	 part3.CoffeeMaker_1,
+	 part4.Timer
+CONCRETE_VARIABLES
+	/* Inputs */
+	CreditAmount,	
+	GrindStatus,	
+	MakeCoffee_CoffeeSelected,	MakeCoffee_SugarLevel,	
+	WaterTemperature,	
+	
+	/* Outputs */
+	AddSugar,	
+	ChangeAmount,	
+	GiveChange,	
+	GrindCoffee,	
+	MixCoffeeAndWater,	
+	NewCup,	
+	SugarQuantity,	
+	WaterHeating,	
+
+	/* Local variables */
+	/* Phase variable */
+	Phase
+INITIALISATION
+	/* Phase variable */
+	Phase := in;
+
+    /* Inputs */
+	CreditAmount := 0;
+	GrindStatus := nonActive;
+	MakeCoffee_CoffeeSelected := FALSE;
+	MakeCoffee_SugarLevel := level2;
+	WaterTemperature := 30;
+	
+
+	/* Outputs */
+	AddSugar := FALSE;
+	ChangeAmount := 0;
+	GiveChange := FALSE;
+	GrindCoffee := FALSE;
+	MixCoffeeAndWater := FALSE;
+	NewCup := FALSE;
+	SugarQuantity := 2;
+	WaterHeating := FALSE
+	
+
+	/* Local Variables */
+	
+OPERATIONS
+	/* --------------- Block main operation --------------- */
+	Controller_1_schedule =
+	VAR
+		/* local variables used for buffering values */
+		l_AddSugar,
+		l_GrindCoffee,
+		l_MixCoffeeAndWater,
+		l_NewCup,
+		l_StartTimer,
+		l_SugarQuantity,
+		l_TimeOut,
+		l_TimerValue,
+		l_ChangeAmount,
+		l_GiveChange,
+		l_StartNewCoffee,
+		l_SugarLevel,
+		l_WaterHeating
+	IN
+
+	part1.Phase_In;		
+	part1.Write_CreditAmount(CreditAmount);
+	part1.Write_MakeCoffee_CoffeeSelected(MakeCoffee_CoffeeSelected);
+	part1.Write_MakeCoffee_SugarLevel(MakeCoffee_SugarLevel);
+	part1.Phase_ScheduleReq;		
+	part1.Selector_1_schedule;
+	l_ChangeAmount <-- part1.Read_ChangeAmount;
+	l_GiveChange <-- part1.Read_GiveChange;
+	l_StartNewCoffee <-- part1.Read_StartNewCoffee;
+	l_SugarLevel <-- part1.Read_SugarLevel;
+
+	part2.Write_WaterTempMeasure(WaterTemperature);
+	part2.TempController_1_schedule;
+	l_WaterHeating <-- part2.Read_WaterHeating;
+
+	part3.Write_GrindStatus(GrindStatus);
+	part3.Write_StartNewCoffee(l_StartNewCoffee);
+	part3.Write_SugarLevel(l_SugarLevel);
+	part3.Write_WaterTemperature(WaterTemperature);
+	part3.CoffeeMaker_1_schedule;
+	l_AddSugar <-- part3.Read_AddSugar;
+	l_GrindCoffee <-- part3.Read_GrindCoffee;
+	l_MixCoffeeAndWater <-- part3.Read_MixCoffeeAndWater;
+	l_NewCup <-- part3.Read_NewCup;
+	l_StartTimer <-- part3.Read_StartTimer;
+	l_SugarQuantity <-- part3.Read_SugarQuantity;
+	l_TimeOut <-- part3.Read_TimeOut;
+	l_TimerValue <-- part3.Read_TimerValue;
+
+	part4.Write_StartTimer(l_StartTimer);
+	part4.Write_TimeOut(l_TimeOut);
+	part4.Write_TimerValue(l_TimerValue);
+	part4.Timer_schedule;
+	
+	/* Update instance outputs */
+	AddSugar := l_AddSugar;		
+	ChangeAmount := l_ChangeAmount;		
+	GiveChange := l_GiveChange;		
+	GrindCoffee := l_GrindCoffee;		
+	MixCoffeeAndWater := l_MixCoffeeAndWater;		
+	NewCup := l_NewCup;		
+	SugarQuantity := l_SugarQuantity;		
+	WaterHeating := l_WaterHeating;		
+	/* Update Phase */
+		Phase := out
+	END;
+
+	/* --------------- Block Write functions --------------- */
+	Write_CreditAmount(temp_var)=
+	BEGIN
+		CreditAmount := temp_var
+	END;
+
+	Write_GrindStatus(temp_var)=
+	BEGIN
+		GrindStatus := temp_var
+	END;
+
+	Write_MakeCoffee_CoffeeSelected(temp_var)=
+	BEGIN
+		MakeCoffee_CoffeeSelected := temp_var
+	END;
+
+	Write_MakeCoffee_SugarLevel(temp_var)=
+	BEGIN
+		MakeCoffee_SugarLevel := temp_var
+	END;
+
+	Write_WaterTemperature(temp_var)=
+	BEGIN
+		WaterTemperature := temp_var
+	END;
+
+	/* --------------- Block Read functions --------------- */
+	ret_var <-- Read_AddSugar =
+	BEGIN
+		ret_var := AddSugar
+	END;
+
+	ret_var <-- Read_ChangeAmount =
+	BEGIN
+		ret_var := ChangeAmount
+	END;
+
+	ret_var <-- Read_GiveChange =
+	BEGIN
+		ret_var := GiveChange
+	END;
+
+	ret_var <-- Read_GrindCoffee =
+	BEGIN
+		ret_var := GrindCoffee
+	END;
+
+	ret_var <-- Read_MixCoffeeAndWater =
+	BEGIN
+		ret_var := MixCoffeeAndWater
+	END;
+
+	ret_var <-- Read_NewCup =
+	BEGIN
+		ret_var := NewCup
+	END;
+
+	ret_var <-- Read_SugarQuantity =
+	BEGIN
+		ret_var := SugarQuantity
+	END;
+
+	ret_var <-- Read_WaterHeating =
+	BEGIN
+		ret_var := WaterHeating
+	END;
+
+	/* --------------- Block Phase functions --------------- */
+	Phase_In =
+	BEGIN
+		Phase := in
+	END;
+
+	Phase_ScheduleReq =
+	BEGIN
+		Phase := scheduleReq
+	END
+END

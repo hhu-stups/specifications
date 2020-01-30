@@ -1,0 +1,36 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  "preferences.def";
+  "LibraryIO.def";
+
+  random_element(x) == max(x);
+  EXTERNAL_FUNCTION_random_element(T) == POW(T) --> T;
+
+  CHOOSE(X) == "a member of X";
+  EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T);
+
+  EXTERNAL_FUNCTION_UNSAT_CORE(T) == (POW(T)-->BOOL)*POW(T) --> POW(T);
+  UNSAT_CORE(Fun,Set) == Set;
+
+  EXTERNAL_FUNCTION_MAX_SAT(T) == (POW(T)-->BOOL)*POW(T) --> POW(T);
+  MAX_SAT(Fun,Set) == Set;
+
+  EXTERNAL_FUNCTION_UNSAT_CORE_ACC(T) == (POW(T)-->BOOL)*POW(T)*POW(T) --> POW(T);
+  UNSAT_CORE_ACC(Fun,Set,Acc) == Set\/Acc;
+  
+  EXTERNAL_FUNCTION_UNSAT_CORE_ACC_TIMEOUT(T) == (POW(T)-->BOOL)*POW(T)*POW(T)*INTEGER --> POW(T);
+  UNSAT_CORE_ACC_TIMEOUT(Fun,Set,Acc,TO) == Set\/Acc;
+
+  EXTERNAL_PREDICATE_ASSERT_TRUE == BOOL * STRING;
+  ASSERT_TRUE(P,Msg) == (1=1);
+
+  CPRINTF(Fmt, Params) == ((DEBUG=TRUE)=>printf(Fmt, [Params]));
+  
+  EXTERNAL_PREDICATE_CHECK_DET(X)==X;
+  CHECK_DET(x)==(1=1);
+  
+  EXTERNAL_PREDICATE_LESS(X)==X*X;
+  LESS(x,y)==(1=1);
+  
+  EXTERNAL_FUNCTION_PROJECT_INFO == STRING --> POW(STRING);
+  PROJECT_INFO(x) == {}

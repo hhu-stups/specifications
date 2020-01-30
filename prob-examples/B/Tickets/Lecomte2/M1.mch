@@ -1,0 +1,7 @@
+MACHINE M1
+INCLUDES M0
+CONSTANTS two, four
+PROPERTIES
+ two = 2 & four=4
+END
+

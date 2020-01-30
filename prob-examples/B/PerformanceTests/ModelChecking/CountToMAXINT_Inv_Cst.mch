@@ -1,0 +1,9 @@
+MACHINE CountToMAXINT_Inv_Cst
+CONSTANTS mx, valid
+PROPERTIES mx = 100 & valid = {0,1,mx}
+VARIABLES cc
+INVARIANT cc:0..mx
+INITIALISATION cc:=0
+OPERATIONS
+  Inc = BEGIN cc:=cc+1 END
+END

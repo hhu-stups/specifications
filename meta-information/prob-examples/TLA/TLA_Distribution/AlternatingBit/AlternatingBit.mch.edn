@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/TLA/TLA_Distribution/AlternatingBit/AlternatingBit.mch",
+ :enumerated_sets 1,
+ :variables 7,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/TLA/TLA_Distribution/AlternatingBit/AlternatingBit.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "143e9cdef7015bfa58d73c1b19bb0cc09af4f9e30a44dc01f55f418a30904c4e",
+ :invariants 7,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 1,
+ :formalism :b}

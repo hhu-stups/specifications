@@ -1,0 +1,41 @@
+REFINEMENT        PapersR
+
+REFINES           Papers
+
+SETS              STATUS = {present, absent}
+
+VARIABLES         papersarr, num
+
+INVARIANT         papersarr : HOUSE --> STATUS
+                  & papers = papersarr~[{present}]
+                  & num = card(papers)
+
+INITIALISATION    papersarr := HOUSE * {absent}; num := 0
+
+OPERATIONS
+
+  addpaper(pp) = 
+  BEGIN
+    IF papersarr(pp) = absent
+    THEN num := num + 1;
+         papersarr(pp) := present
+    END
+  END;
+
+  nn <-- roundsize = nn := num;
+
+  removepaper(pp) = 
+  BEGIN
+    papersarr(pp) := absent;
+    num := num - 1
+  END;
+
+  ans <-- paperquery(pp) = 
+  BEGIN
+    IF papersarr(pp) = absent
+    THEN ans := no
+    ELSE ans := yes
+    END
+  END
+
+END

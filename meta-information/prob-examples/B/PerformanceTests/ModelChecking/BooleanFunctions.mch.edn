@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 65538,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/ModelChecking/BooleanFunctions.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 32769,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/ModelChecking/BooleanFunctions.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "14b3e85889a3529c3877920a2dfd5582f9d99485d1616599128e312789e609d1",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 262144000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 53160,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 1,
+ :formalism :b}

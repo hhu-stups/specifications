@@ -1,0 +1,11 @@
+*
+!*/
+!/**/*.mch
+!/**/*.eventb
+!/**/*.imp
+!/**/*.ref
+!/**/*.def
+!/**/*.sys
+!/**/*.edn
+!.gitignore
+!README.md

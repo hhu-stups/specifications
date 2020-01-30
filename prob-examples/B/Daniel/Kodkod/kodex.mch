@@ -1,0 +1,13 @@
+MACHINE kodex
+SETS
+ E
+CONSTANTS N,X
+PROPERTIES
+ card(E) = 4 &
+ N <: 1..3 & X : POW1(E) & card(N) >= card(X)
+VARIABLES v
+INVARIANT
+ v:N
+INITIALISATION v::N
+END
+

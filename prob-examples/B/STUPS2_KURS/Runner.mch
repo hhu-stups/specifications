@@ -1,0 +1,14 @@
+MACHINE Untitled
+SETS
+ ID={aa,bb}
+CONSTANTS iv
+PROPERTIES
+ iv:POW(NAT) & iv=1..0
+VARIABLES xx
+INVARIANT
+ xx:ID
+INITIALISATION xx:=aa
+OPERATIONS
+  Set(yy) = PRE yy:ID THEN xx:= yy END
+END
+

@@ -1,0 +1,11 @@
+REFINEMENT Robot1 REFINES Robot0
+VARIABLES Dt1,Da1
+INVARIANT
+          Dt1 = dt0 & Da1 : {vid, occ}
+INITIALISATION
+          Dt1, Da1 := vid, vid
+OPERATIONS
+          Chgt = SELECT Da1=occ & Dt1=vid THEN Da1, Dt1 := vid, occ END;
+          Dchgt = SELECT Dt1=occ THEN Dt1 := vid END;
+          arr_p = SELECT Da1=vid THEN Da1 := occ END
+ END

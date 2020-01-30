@@ -1,0 +1,9 @@
+MACHINE sametype
+SETS
+ ID={aa,bb}
+VARIABLES xx
+INVARIANT
+ xx = {1,2,3}
+INITIALISATION xx:={}
+END
+

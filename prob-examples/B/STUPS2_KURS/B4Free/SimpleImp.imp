@@ -1,0 +1,14 @@
+IMPLEMENTATION
+   SimpleImp
+REFINES Simple
+VALUES nr=9
+CONCRETE_VARIABLES xx
+INVARIANT xx:NAT
+INITIALISATION xx := 0
+OPERATIONS
+  Run = IF xx<nr THEN
+          xx := xx+1
+        ELSE
+          xx := 0
+        END
+END

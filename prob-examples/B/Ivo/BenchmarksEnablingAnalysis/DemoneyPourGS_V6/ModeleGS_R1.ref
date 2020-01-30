@@ -1,0 +1,451 @@
+REFINEMENT ModeleGS_R1
+REFINES ModeleGS
+  
+
+CONSTANTS
+/*  APDU_Le_Reponse,
+  TLV_Len,*/
+  NbTransactionMaxiDansVieCarte,
+  SoldeMaxi,
+  MaxEssaisPIN,
+  Int8,
+  Int16,
+  SecurityLevels,
+  SecuLevel_Public,
+  SecuLevel_Debit,
+  SecuLevel_Credit,
+  SecuLevel_CreditIdent,
+  SecuLevel_Admin,
+  
+  TypeTransactions,
+  Trans_Credit,
+  Trans_Debit,
+  Trans_None
+  
+  
+PROPERTIES
+  Int8 = 0..255 &
+  Int16 = -32768..32767 &
+  
+  
+  SecuLevel_Public      = -1 &
+  SecuLevel_Debit       =  0 &
+  SecuLevel_Credit      =  1 &
+  SecuLevel_CreditIdent =  2 &
+  SecuLevel_Admin       =  3 &
+  SecurityLevels = {SecuLevel_Public,
+                    SecuLevel_Debit,
+                    SecuLevel_Credit,
+                    SecuLevel_CreditIdent,
+                    SecuLevel_Admin} &
+
+  Trans_None   = 0 &
+  Trans_Debit  = 1 &
+  Trans_Credit = 2 &
+  TypeTransactions = {Trans_Credit,
+                      Trans_Debit,
+                      Trans_None} &
+
+
+/*  APDU_Le_Reponse : Int8 &
+  TLV_Len = 1*7 +  
+            1*7 + 
+            4+2+2+2+2+16+16 &*/
+  
+  NbTransactionMaxiDansVieCarte : Int16 &
+  NbTransactionMaxiDansVieCarte >= 0 &
+  
+
+  SoldeMaxi : Int16 &
+  SoldeMaxi > 0 &
+  
+  MaxEssaisPIN : Int8 &
+  MaxEssaisPIN > 0
+
+
+
+
+VARIABLES 
+  /* Variables héritées du système abstrait */
+  CurLifeState, DEMONEYSelected, APDU_EmisParCarte, APDU_EmisParTerminal, APDU_RecuParCarte_INS, 
+  APDU_EmisParCarte_StatusWord, APDU_RecuParCarte_TraiteParJCRE, Commande_DEMONEY,
+  
+  /* Nouvelles variables */
+  APDU_EmisParTerminal_P1, 
+  APDU_EmisParTerminal_P2,
+  SecurisationEc,
+  TransactionEc,
+  EtatCanal,
+  ProchainEtatCanal,
+  NbTransactionsRestantes,
+  NbEssaisPINRestant,
+  PINBlocked,
+  SoldeCourant,
+  SommeTransEc
+
+  
+INVARIANT  
+  APDU_EmisParTerminal_P1 : Int16 &
+  APDU_EmisParTerminal_P2 : Int16 &
+  
+  SecurisationEc : BOOL &
+  TransactionEc : TypeTransactions &
+  
+  EtatCanal : SecurityLevels &
+  ProchainEtatCanal : SecurityLevels &
+  
+  NbTransactionsRestantes : 0..NbTransactionMaxiDansVieCarte & 
+  ((TransactionEc>Trans_None) => (NbTransactionsRestantes > 0)) &
+  ((TransactionEc>Trans_None) => (EtatCanal>=SecuLevel_Debit)) &
+  
+  
+  NbEssaisPINRestant : 0..MaxEssaisPIN &
+  PINBlocked : BOOL &
+  
+  SoldeCourant : Int16 &
+  SoldeCourant : 0..SoldeMaxi &
+  SommeTransEc : Int16 &
+  
+  (((TransactionEc = Trans_Debit) or (TransactionEc = Trans_Credit)) =>  (SommeTransEc >=0)) &
+  ((TransactionEc = Trans_Debit) => ((SoldeCourant - SommeTransEc) : 0..SoldeMaxi)) &
+  ((TransactionEc = Trans_Credit) => ((SoldeCourant + SommeTransEc) : 0..SoldeMaxi))
+
+  
+INITIALISATION
+  CurLifeState := Personalization ||
+  DEMONEYSelected := FALSE ||
+  APDU_EmisParCarte := FALSE ||
+  APDU_EmisParTerminal := FALSE ||
+  APDU_RecuParCarte_INS :: APDUCommands ||
+  APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok ||
+  APDU_RecuParCarte_TraiteParJCRE := FALSE ||
+  Commande_DEMONEY := DEM_CMD_None ||
+  
+  
+  APDU_EmisParTerminal_P1 :: Int16 ||
+  APDU_EmisParTerminal_P2 :: Int16 ||
+  SecurisationEc := FALSE ||
+  TransactionEc := Trans_None ||
+  EtatCanal := SecuLevel_Public ||
+  ProchainEtatCanal := SecuLevel_Public ||
+  NbTransactionsRestantes := NbTransactionMaxiDansVieCarte ||
+  NbEssaisPINRestant :=MaxEssaisPIN ||
+  PINBlocked := FALSE ||
+  SoldeCourant := 0 ||
+  SommeTransEc := 0
+  
+ASSERTIONS
+    ((APDU_EmisParCarte_StatusWord = APDU_ISOSW_Ok) <=> 
+        ((APDU_EmisParCarte_StatusWord = APDU_ISOSW_Ok & TransactionEc=Trans_None) or 
+         (APDU_EmisParCarte_StatusWord = APDU_ISOSW_Ok & TransactionEc/=Trans_None)))
+         
+  & ((APDU_EmisParCarte_StatusWord /= APDU_ISOSW_Ok) <=> 
+        ((APDU_EmisParCarte_StatusWord /= APDU_ISOSW_Ok & TransactionEc=Trans_None) or 
+         (APDU_EmisParCarte_StatusWord /= APDU_ISOSW_Ok & TransactionEc/=Trans_None)))
+
+
+
+OPERATIONS
+/*************************************************
+* Retrait de la carte => Reset
+*/
+  Reset = BEGIN
+    DEMONEYSelected := FALSE ||
+    APDU_EmisParCarte := FALSE ||
+    APDU_EmisParTerminal := FALSE ||
+    APDU_RecuParCarte_TraiteParJCRE := FALSE ||
+    SecurisationEc := FALSE ||
+    TransactionEc := Trans_None ||
+    EtatCanal := SecuLevel_Public || 
+    Commande_DEMONEY := DEM_CMD_None || 
+    APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok ||
+    IF PINBlocked=FALSE THEN
+      NbEssaisPINRestant := MaxEssaisPIN
+    END
+  END
+
+;
+
+/*************************************************
+* Aucun APDU n'est à traiter, alors le terminal 
+* emet une nouvelle commande.
+*/
+  Terminal_EmissionAPDU = SELECT APDU_EmisParTerminal = FALSE & APDU_EmisParCarte = FALSE THEN
+    APDU_RecuParCarte_TraiteParJCRE := FALSE
+ || CHOICE
+      APDU_RecuParCarte_INS := APDU_INS_Select 
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_GetData
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_StoreData
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_InitializeUpdate
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_ExternalAuthentification
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_InitializeTransaction
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_CompleteTransaction
+    OR 
+      APDU_RecuParCarte_INS := APDU_INS_VerifyPIN
+    END
+  END
+
+;
+
+/*************************************************
+* La dernière commande émise viens de terminer sans erreur 
+* (où alors les eurreurs ont déjà été traitées)
+*/
+  Terminal_AquiteAPDU = SELECT APDU_EmisParTerminal = TRUE & 
+                               APDU_EmisParCarte = TRUE & 
+                               APDU_EmisParCarte_StatusWord = APDU_ISOSW_Ok THEN
+    APDU_EmisParTerminal := FALSE 
+ || APDU_EmisParCarte := FALSE
+ || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+  END
+
+;
+
+/*************************************************
+* La dernière commande émise viens de terminer avec une erreur 
+*/
+  Terminal_TraiteErreur = SELECT APDU_EmisParTerminal = TRUE & 
+                                 APDU_EmisParCarte = TRUE & 
+                                 APDU_EmisParCarte_StatusWord /= APDU_ISOSW_Ok THEN
+    
+    SecurisationEc := FALSE
+ || TransactionEc := Trans_None
+ || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+  END
+
+;
+
+/*************************************************
+* Le JCRE pré-traite la commande reçue
+*/
+  JCRE_TraitementAPDU = SELECT APDU_EmisParTerminal = TRUE & APDU_RecuParCarte_TraiteParJCRE = FALSE & APDU_EmisParCarte = FALSE THEN
+    IF APDU_RecuParCarte_INS = APDU_INS_Select THEN
+      IF DEMONEYSelected = TRUE THEN
+        Commande_DEMONEY := DEM_CMD_Deselect
+      ELSE
+        Commande_DEMONEY:= DEM_CMD_Select
+      END
+    ELSE
+      IF DEMONEYSelected=TRUE THEN
+        Commande_DEMONEY := DEM_CMD_Process
+      ELSE
+        /* Ce cas est celui l'applet n'est pas sélectionnée avant d'être appelé */
+        APDU_EmisParCarte := TRUE 
+     || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_ConditionOfUseFailed
+      END
+    END
+  END
+  
+  
+;
+
+/*************************************************
+* Commande DEMONEY DESELECT
+*/
+  DEMONEY_Deselect = SELECT APDU_EmisParTerminal = TRUE & 
+                            APDU_RecuParCarte_TraiteParJCRE = FALSE &
+                            Commande_DEMONEY = DEM_CMD_Deselect &
+                            APDU_EmisParCarte = FALSE
+  THEN
+    IF SecurisationEc = FALSE & TransactionEc = Trans_None THEN
+      DEMONEYSelected:=FALSE
+   || Commande_DEMONEY:= DEM_CMD_Select
+    ELSE
+      APDU_EmisParCarte := TRUE 
+   || SecurisationEc := FALSE
+   || TransactionEc := Trans_None
+   || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_ConditionOfUseFailed
+   || Commande_DEMONEY:= DEM_CMD_None
+    END
+  END
+  
+;
+
+/*************************************************
+* Commande DEMONEY SELECT
+*/
+  DEMONEY_Select = SELECT APDU_EmisParTerminal = TRUE & 
+                          APDU_RecuParCarte_TraiteParJCRE = FALSE &
+                          Commande_DEMONEY = DEM_CMD_Select &
+                          APDU_EmisParCarte = FALSE
+  THEN
+    IF SecurisationEc = FALSE & TransactionEc = Trans_None & DEMONEYSelected = FALSE THEN
+      DEMONEYSelected:=TRUE
+   || APDU_RecuParCarte_TraiteParJCRE := TRUE
+   || EtatCanal := SecuLevel_Public
+   || TransactionEc := Trans_None
+    ELSE
+      /*DEMONEYSelected:=FALSE
+   || */APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_ConditionOfUseFailed
+   || APDU_EmisParCarte := TRUE
+    END
+ || Commande_DEMONEY:= DEM_CMD_None
+  END
+  
+  
+;
+
+/*************************************************
+* Commande DEMONEY PROCESS
+*/
+  DEMONEY_Process = SELECT APDU_EmisParTerminal = TRUE & 
+                           APDU_RecuParCarte_TraiteParJCRE = TRUE &
+                           Commande_DEMONEY = DEM_CMD_Process &
+                           APDU_EmisParCarte = FALSE
+  THEN
+    IF CurLifeState=Processing & (   APDU_RecuParCarte_INS = APDU_INS_InitializeUpdate 
+                                  or APDU_RecuParCarte_INS = APDU_INS_ExternalAuthentification 
+                                  or APDU_RecuParCarte_INS = APDU_INS_InitializeTransaction 
+                                  or APDU_RecuParCarte_INS = APDU_INS_CompleteTransaction 
+                                  or APDU_RecuParCarte_INS = APDU_INS_VerifyPIN) 
+    or (TransactionEc>Trans_None & APDU_RecuParCarte_INS /= APDU_INS_CompleteTransaction)
+    or (TransactionEc=Trans_None & APDU_RecuParCarte_INS  = APDU_INS_CompleteTransaction)
+    or (SecurisationEc=TRUE  & APDU_RecuParCarte_INS /= APDU_INS_ExternalAuthentification)
+    or (SecurisationEc=FALSE & APDU_RecuParCarte_INS  = APDU_INS_ExternalAuthentification)
+    THEN
+      APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_ConditionOfUseFailed
+   || SecurisationEc := FALSE
+   || TransactionEc := Trans_None
+    ELSE
+      CASE APDU_RecuParCarte_INS OF
+    /*?========================================
+     * Commande Select
+     * Commande GetData
+     */
+        EITHER APDU_INS_Select,APDU_INS_GetData THEN 
+          /* Meme traitement pour GetData et Select */
+          APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+    /*?========================================
+     * Commande StoreData
+     */
+        OR APDU_INS_StoreData THEN 
+          IF EtatCanal = SecuLevel_Admin THEN
+            APDU_EmisParCarte_StatusWord ::TypesOfStatus
+          ; IF APDU_EmisParCarte_StatusWord = APDU_ISOSW_Ok THEN CurLifeState := Processing END
+          ELSE 
+             APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_SecurityStatusFailed
+          END
+       
+    /*?========================================
+     * Commande InitializeUpdate
+     */
+        OR APDU_INS_InitializeUpdate THEN 
+          CHOICE
+            /* Si P1 ne représente pas un jeu de clefs valide */
+            APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_IncorrectParamsP1P2
+          OR
+            /* Tout va bien, on envoi un TLV tel que décrit en Table 16, P.33 */
+            APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+          ; EtatCanal := SecuLevel_Public
+          ; ProchainEtatCanal :: {SecuLevel_Debit, SecuLevel_Credit, SecuLevel_Admin}
+          ; SecurisationEc := TRUE
+          END  
+    /*?========================================
+     * Commande ExternalAuthentification
+     */
+        OR APDU_INS_ExternalAuthentification THEN 
+          CHOICE
+            /* Si Authentification ratée */
+            APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_AuthFailed
+          OR
+    /* Tout va bien */
+            APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+          ; EtatCanal:=ProchainEtatCanal
+          ; SecurisationEc := FALSE
+          END  
+    /*?========================================
+     * Commande InitializeTransaction
+     */
+        OR APDU_INS_InitializeTransaction THEN
+          IF (APDU_EmisParTerminal_P1<= EtatCanal) & (APDU_EmisParTerminal_P1:0..2) THEN 
+            IF NbTransactionsRestantes > 0 THEN 
+              ANY SommeTrEc WHERE SommeTrEc : Int16 THEN SommeTransEc := SommeTrEc END
+            ; CHOICE
+                /* Les erreurs restantes */
+                APDU_EmisParCarte_StatusWord :: {APDU_ISOSW_Err_FunctionNotSupported , /* Si le code PIN n'est pas configuré ou le compte en banque non décrit */
+                                                 APDU_ISOSW_Err_SecurityStatusFailed , /* le niveau de sécurité n'est pas C-MAC ou R-MAC */
+                                                 APDU_DEMSW_ERR_CurrencyError, /* If the transaction currency is different from the purse currency */
+                                                 APDU_DEMSW_ERR_DebitTooHigh,
+                                                 APDU_DEMSW_ERR_CreditTooHigh}
+              OR 
+                IF SommeTransEc<0 THEN 
+                  APDU_EmisParCarte_StatusWord := APDU_DEMSW_ERR_InvalidAmount
+                ELSE
+                  IF APDU_EmisParTerminal_P1 = 0 THEN
+                    IF SoldeCourant-SommeTransEc>=0 THEN
+                  /* Débit sans erreur */
+                      APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+                   || TransactionEc := Trans_Debit
+                    ELSE
+                      APDU_EmisParCarte_StatusWord := APDU_DEMSW_ERR_DebitTooHigh
+                    END
+                  ELSE
+                    ASSERT APDU_EmisParTerminal_P1 : 1..2 THEN
+                      IF (SoldeMaxi-SoldeCourant>=SommeTransEc) THEN
+                  /* Crédit sans erreur */
+                        APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+                     || TransactionEc := Trans_Credit
+                      ELSE
+                        APDU_EmisParCarte_StatusWord := APDU_DEMSW_ERR_CreditTooHigh
+                      END
+                    END
+                  END
+                END
+              END
+            ELSE
+              APDU_EmisParCarte_StatusWord := APDU_DEMSW_ERR_MaxNumOfTransactionReached
+            END
+          ELSE
+          /* Erreur dans la configuration ou les paramètres */
+            IF APDU_EmisParTerminal_P1:0..2 THEN
+              APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_SecurityStatusFailed
+            ELSE
+              APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_IncorrectParamsP1P2
+            END 
+          END
+    /*?========================================
+     * Commande CompleteTransaction
+     */
+        OR APDU_INS_CompleteTransaction THEN
+          IF TransactionEc = Trans_Credit THEN
+            SoldeCourant:=SoldeCourant+SommeTransEc
+          ELSE
+            SoldeCourant:=SoldeCourant-SommeTransEc
+          END
+       || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+       || NbTransactionsRestantes := NbTransactionsRestantes-1
+       || TransactionEc := Trans_None
+    /*?========================================
+     * Commande VerifyPIN
+     */
+        OR APDU_INS_VerifyPIN THEN
+          IF PINBlocked=TRUE or NbEssaisPINRestant = 0 THEN
+            PINBlocked:=TRUE
+         || APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_PinBlocked
+          ELSE
+            NbEssaisPINRestant := NbEssaisPINRestant-1
+         || CHOICE
+              APDU_EmisParCarte_StatusWord :: {APDU_ISOSW_Err_PinBlocked, APDU_ISOSW_Err_PinFailed}
+            OR
+              APDU_EmisParCarte_StatusWord := APDU_ISOSW_Ok
+           || EtatCanal := SecuLevel_CreditIdent
+            END
+          END
+    /*?========================================
+     * Commande Non encore traitée
+     */
+        ELSE 
+          APDU_EmisParCarte_StatusWord := APDU_ISOSW_Err_InstructionNotSupported
+        END 
+      END
+    END
+ || APDU_EmisParCarte := TRUE
+ || Commande_DEMONEY := DEM_CMD_None
+  END
+END

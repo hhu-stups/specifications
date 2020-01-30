@@ -1,0 +1,2 @@
+package(load_event_b_project([],[event_b_context(none,'ExpressionTest',[extends(none,[]),constants(none,[]),abstract_constants(none,[]),axioms(none,[not_equal(rodinpos('ExpressionTest',axm1,'('),typeof(none,event_b_identity(none),pow_subset(none,cartesian_product(none,identifier(none,'S'),identifier(none,'S')))),typeof(none,empty_set(none),pow_subset(none,cartesian_product(none,identifier(none,'S'),identifier(none,'S')))))]),theorems(none,[]),sets(none,[deferred_set(none,'S')])])],[exporter_version(3)],_Error)).
+

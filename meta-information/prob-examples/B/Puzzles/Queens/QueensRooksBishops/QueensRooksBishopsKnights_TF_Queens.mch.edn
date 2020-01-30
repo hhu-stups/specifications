@@ -1,0 +1,37 @@
+{:properties 6,
+ :definitions 50,
+ :deferred_sets 0,
+ :number-of-transitions 184,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Puzzles/Queens/QueensRooksBishops/QueensRooksBishopsKnights_TF_Queens.mch",
+ :enumerated_sets 1,
+ :variables 0,
+ :number-of-states 184,
+ :included-machines
+ ["./prob-examples/B/Puzzles/Queens/QueensRooksBishops/QueensRooksBishopsKnights_TF_Queens.mch"
+  "./lib/LibraryIO.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "d17d39d36a2609a2acf910ffa3a2e7597f2f37dc463ea313967c0bad0a312eb0",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 50,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

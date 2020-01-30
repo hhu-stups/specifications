@@ -1,0 +1,36 @@
+{:properties 15,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Frappier_HL3/M4_mch.eventb",
+ :enumerated_sets 3,
+ :variables 26,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Frappier_HL3/M4_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 16,
+ :sha256
+ "6f9a66ad57efb9d4338dc33bbfdc6c07bc0c7c49739bd158d8d3291377b36f3d",
+ :invariants 40,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 10,
+ :formalism :eventb}

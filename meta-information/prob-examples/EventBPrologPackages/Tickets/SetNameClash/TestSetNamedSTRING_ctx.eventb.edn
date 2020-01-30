@@ -1,0 +1,24 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Tickets/SetNameClash/TestSetNamedSTRING_ctx.eventb",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "6f90f0bdad4063ff53e62077a97889bd7f0eddfdb349ba097069780a9fc7bf99",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :eventb}

@@ -1,0 +1,36 @@
+{:properties 16,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/Train_1_beebook_tlc_extended.mch",
+ :enumerated_sets 2,
+ :variables 7,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/Train_1_beebook_tlc_extended.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "8cc706a0d1dc769fc85cb26fedf23d8b10f287a2e11f365ba5450eb9ab0febc9",
+ :invariants 20,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 3,
+ :invariant-violated :unknown,
+ :constants 4,
+ :formalism :b}

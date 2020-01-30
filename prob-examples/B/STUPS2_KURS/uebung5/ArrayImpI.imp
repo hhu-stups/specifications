@@ -1,0 +1,73 @@
+IMPLEMENTATION  ArrayImpI
+
+REFINES ArrayImp
+
+VALUES length = 5
+
+IMPORTS InitArray100
+
+INVARIANT array = initarray
+
+OPERATIONS 
+
+reverse = 
+	VAR temp,i, feld, ll IN 
+		feld <-- get;
+		temp <-- get;
+		i:=1;
+		ll <-- getsize;
+		WHILE i<= ll DO
+			set(i,temp(ll-i+1));
+			/*feld <-- get;*/
+			i:=i+1
+		INVARIANT i:1..ll & ll : NAT 
+		& feld : 1..ll --> ELEMENTS &  temp : 1..ll --> ELEMENTS &
+			  ! (j).(j : NAT1 & j<i => initarray(j) = temp(ll-j+1))
+		VARIANT size(temp)-i
+		END;
+		feld <-- get
+	END
+
+END
+
+
+
+/*
+MODEL ArrayImp
+
+SETS ELEM
+
+CONSTANTS length
+
+PROPERTIES length : NAT1 
+
+VARIABLES array
+
+INVARIANT array : 1..length --> ELEM 
+
+INITIALISATION array :: 1..length --> ELEM
+
+OPERATIONS
+
+reverse = ANY aa 
+	WHERE aa : 1..length --> ELEM & !(i).(i: NAT & i:dom(array) => array(i) = aa(size(array)-i+1)) 
+	THEN array := aa
+	END
+END
+
+VARIABLES array 
+
+INVARIANT  array : 1..length --> ELEM 
+
+
+INITIALISATION 
+	VAR i IN
+		i:=1;
+		WHILE i<= length DO
+			array(i) := elem;
+			i:=i+1
+		INVARIANT ! (j).(j : NAT & j<=i => array(j)= elem)
+		VARIANT length-1
+		END
+	END
+*/

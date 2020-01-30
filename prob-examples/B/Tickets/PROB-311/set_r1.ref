@@ -1,0 +1,36 @@
+REFINEMENT set_r1
+REFINES set
+
+VARIABLES
+    ff
+
+INVARIANT
+    ff : ELEM --> BOOL &
+/*    (!xx . (xx : ELEM => ((xx : ss) <=> (ff(xx)=TRUE)))) */
+    dom(ff |> {TRUE}) = ss
+
+INITIALISATION
+    ff := ELEM * {FALSE}
+
+OPERATIONS
+    add(ee) =
+        PRE
+            ee : ELEM
+        THEN
+            ff(ee) := TRUE
+        END;
+
+    remove(ee) =
+        PRE
+            ee : ELEM
+        THEN
+            ff(ee) := FALSE
+        END;
+
+    rr <-- in(ee) =
+        PRE
+            ee : ELEM
+        THEN
+            rr := ff(ee)
+        END
+END

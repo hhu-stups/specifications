@@ -1,0 +1,14 @@
+REFINEMENT SimpleCounter2
+REFINES SimpleCounter1
+VARIABLES counter, maxi
+INVARIANT
+  maxi : 0..10
+INITIALISATION 
+  counter := minc || maxi := 10
+OPERATIONS
+  Inc1 = SELECT counter+1 <= maxc & maxi >0 THEN counter := counter+1 || maxi := maxi-1 END;
+  Inc2 = SELECT counter+2 <= maxc & maxi >0  THEN counter := counter+2 || maxi := maxi-1 END;
+  Dec1 ref Decrease = SELECT counter-1 >= minc THEN counter := counter-1 END;
+  Decrease = SELECT 1=2 THEN skip END
+END
+

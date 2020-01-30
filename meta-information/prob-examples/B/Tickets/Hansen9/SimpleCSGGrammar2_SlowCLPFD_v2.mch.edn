@@ -1,0 +1,36 @@
+{:properties 4,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Tickets/Hansen9/SimpleCSGGrammar2_SlowCLPFD_v2.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Tickets/Hansen9/SimpleCSGGrammar2_SlowCLPFD_v2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "fa9a2113b9725bc56a1a814a5429e32e4654d6de9bfc3e411ad4bfbf51fb20fb",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 3,
+ :formalism :b}

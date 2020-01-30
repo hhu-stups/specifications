@@ -1,0 +1,36 @@
+{:properties 15,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 174625,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksPOR/Sieve/sieve_parallel_mch.eventb",
+ :enumerated_sets 0,
+ :variables 28,
+ :number-of-states 48486,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksPOR/Sieve/sieve_parallel_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 17,
+ :sha256
+ "e27250cabb9234621f2a417312b730310398e4a1e544129de0913d0f8757eb7a",
+ :invariants 23,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 87640,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 11,
+ :formalism :eventb}

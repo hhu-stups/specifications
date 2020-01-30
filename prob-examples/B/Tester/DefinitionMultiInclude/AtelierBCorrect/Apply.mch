@@ -1,0 +1,15 @@
+MACHINE Apply
+DEFINITIONS
+ F==ff;
+ "CallOrApplyD.def"
+ABSTRACT_CONSTANTS ff,rr
+PROPERTIES
+ ff = %x2.(x2:INTEGER|x2+1) &
+ rr = CallOrApply(1)
+VARIABLES yy
+INVARIANT yy:INTEGER
+INITIALISATION yy := 0
+OPERATIONS
+    OpF(x3) = PRE x3:NAT THEN
+        yy := ff(x3) END
+END

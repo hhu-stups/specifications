@@ -1,0 +1,64 @@
+IMPLEMENTATION    CheckoutsI
+
+REFINES           Checkouts
+
+IMPORTS           Pfun(COUNTER, queues_SEQOBJ),
+                  queues_seq_obj(CUSTOMER, card(COUNTER) + 1, 2 * card(CUSTOMER))
+
+SEES              queues_seq_ctx, Bool_TYPE
+
+INVARIANT         queues = (pfun ; queues_seqstruct) 
+                  & pfun : opencounters >->> queues_seqtok
+
+OPERATIONS
+
+  open(co) = 
+  VAR bb, pp IN
+    bb, pp <-- queues_CRE_SEQ_OBJ;
+    set(co, pp)
+  END;
+
+  close(co) = 
+  VAR pp IN
+    pp <-- get(co);
+    queues_KIL_SEQ_OBJ(pp);
+    remove(co)
+  END;
+
+  join(co , cu) = 
+  VAR pp, bb IN
+    pp <-- get(co);
+    bb <-- queues_PSH_SEQ_OBJ(pp, cu)
+  END;
+
+  cu <-- serve(co) =
+  VAR pp IN
+    pp <-- get(co);
+    cu <-- queues_VAL_SEQ_OBJ(pp,1);
+    queues_CUT_SEQ_OBJ(pp, 1)
+  END;
+
+cu <-- leave(co,ii) =
+  VAR pp, bb, tmp IN
+    pp <-- get(co);
+    cu <-- queues_VAL_SEQ_OBJ(pp,ii);
+    bb,tmp <-- queues_CRE_SEQ_OBJ;
+    bb <-- queues_CPY_SEQ_OBJ(pp,tmp);
+    queues_KEP_SEQ_OBJ(pp,ii-1);
+    queues_CUT_SEQ_OBJ(tmp, ii);
+    bb <-- queues_APP_SEQ_OBJ(pp,tmp);
+    queues_KIL_SEQ_OBJ(tmp)
+  END;
+
+rotate(co,ii) =
+  VAR pp, bb, tmp IN
+    pp <-- get(co);
+    bb,tmp <-- queues_CRE_SEQ_OBJ;
+    bb <-- queues_CPY_SEQ_OBJ(pp,tmp);
+    queues_KEP_SEQ_OBJ(tmp,ii);
+    queues_CUT_SEQ_OBJ(pp, ii);
+    bb <-- queues_APP_SEQ_OBJ(pp,tmp);
+    queues_KIL_SEQ_OBJ(tmp)
+  END
+
+END

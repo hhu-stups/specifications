@@ -1,0 +1,27 @@
+IMPLEMENTATION
+   MulSimpleImp
+REFINES Mul
+DEFINITIONS
+  SET_PREF_MAXINT==6;
+  SET_PREF_MININT==-1;
+  SET_PREF_MAX_OPERATIONS==40
+OPERATIONS
+ res <-- Mult(a,b) =
+  IF a>=0 & b>=0 & a<=3 & b<=3 THEN  /* PRE partially repeated as SELECT for ProB */
+   VAR t,x IN
+     t := 0;
+     x := a;
+     WHILE x>0 DO
+       x:=x-1;
+       t := t+b
+     INVARIANT
+       x:NAT & t:NAT &
+       a*b = x*b + t /* *2 for INV violation */
+     VARIANT x /* b for Variant not decreasing error; TRUE or x-2 for Variant not Natural */
+     END;
+     res := t
+   END
+  ELSE
+     res := -1
+  END
+END

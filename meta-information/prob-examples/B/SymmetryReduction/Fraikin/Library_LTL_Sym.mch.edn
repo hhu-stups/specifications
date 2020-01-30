@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 17,
+ :deferred_sets 2,
+ :number-of-transitions 372716,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SymmetryReduction/Fraikin/Library_LTL_Sym.mch",
+ :enumerated_sets 0,
+ :variables 4,
+ :number-of-states 35543,
+ :included-machines
+ ["./prob-examples/B/SymmetryReduction/Fraikin/Library_LTL_Sym.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 10,
+ :sha256
+ "0ee045eca8c1dd25c4c987207b26f0b1a0c08ac30dfd374c90575c4f4dead2d4",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 130880,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

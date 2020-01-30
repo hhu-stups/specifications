@@ -1,0 +1,36 @@
+{:properties 20,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/SAT_Tests/IntervalSMTProblem2.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/SAT_Tests/IntervalSMTProblem2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "55a0ff1bf2b50d783394ec275af50d5e0ac692252d8d0635d52dfd239d68be34",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :b}

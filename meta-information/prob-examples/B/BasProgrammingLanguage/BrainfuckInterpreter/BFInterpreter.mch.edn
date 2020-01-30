@@ -1,0 +1,38 @@
+{:properties 2,
+ :definitions 13,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file
+ "./prob-examples/B/BasProgrammingLanguage/BrainfuckInterpreter/BFInterpreter.mch",
+ :enumerated_sets 1,
+ :variables 7,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/B/BasProgrammingLanguage/BrainfuckInterpreter/BFInterpreter.mch"
+  "./prob-examples/B/BasProgrammingLanguage/BrainfuckInterpreter/LibraryIO.def"
+  "./prob-examples/B/BasProgrammingLanguage/BrainfuckInterpreter/Tape.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "67293954fac381913c64b39cb173dbe146826f14024ed04747cfed7d3287be63",
+ :invariants 4,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

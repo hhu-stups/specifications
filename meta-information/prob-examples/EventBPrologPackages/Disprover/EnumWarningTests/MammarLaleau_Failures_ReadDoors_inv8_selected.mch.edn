@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 40,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Disprover/EnumWarningTests/MammarLaleau_Failures_ReadDoors_inv8_selected.mch",
+ :enumerated_sets 1,
+ :variables 0,
+ :number-of-states 40,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Disprover/EnumWarningTests/MammarLaleau_Failures_ReadDoors_inv8_selected.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 1,
+ :operations 0,
+ :sha256
+ "ee2a6142ae85f358824d70b1d1727f0b31bb479e75b3ee4ffa1c1b5915859a78",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 20,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

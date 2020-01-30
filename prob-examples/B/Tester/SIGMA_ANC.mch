@@ -1,0 +1,5 @@
+MACHINE SIGMA_ANC
+
+OPERATIONS
+  enter = skip
+END

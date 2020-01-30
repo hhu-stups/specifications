@@ -1,0 +1,19 @@
+IMPLEMENTATION    FifoI(ELEM,cap)
+
+REFINES           Fifo
+
+IMPORTS           Archive(ELEM)
+
+INVARIANT         entries \|/ read = contents
+
+OPERATIONS
+
+  input(ee) = enter(ee);
+
+  ee <-- output = 
+  BEGIN
+  incread;
+  ee <-- lookup  /* error if nothing input before : Precondintion violation generated  */
+  END
+
+END

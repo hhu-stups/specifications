@@ -1,0 +1,25 @@
+REFINEMENT        AllocateR
+
+REFINES           Allocate
+
+DEFINITIONS
+  SET_PREF_MAXINT == 4
+/* SEES              Bool_TYPE */
+
+VARIABLES         allocated
+
+INITIALISATION    allocated := {}
+
+OPERATIONS
+
+  choose(nn) = PRE nn: NAT1 THEN allocated := allocated \/ {nn} END;
+
+  aa <-- query(nn) = PRE nn: NAT1 THEN
+      IF nn : allocated THEN aa := TRUE ELSE aa := FALSE END
+    END;
+
+  nna <-- allocate = PRE NAT1-allocated /= {} THEN
+            nna := min(NAT1-allocated) ; allocated := allocated \/ {nna}
+         END
+
+END

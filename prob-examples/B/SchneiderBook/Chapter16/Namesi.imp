@@ -1,0 +1,12 @@
+IMPLEMENTATION    NamesI
+
+REFINES           Names
+
+PROPERTIES        FORENAME = STRING & SURNAME = STRING
+
+SEES              String_TYPE
+
+OPERATIONS
+  read(nn) = skip
+
+END

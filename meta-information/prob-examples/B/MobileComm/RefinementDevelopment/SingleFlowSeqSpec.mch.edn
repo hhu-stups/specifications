@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 20,
+ :deadlock false,
+ :file
+ "./prob-examples/B/MobileComm/RefinementDevelopment/SingleFlowSeqSpec.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 6,
+ :included-machines
+ ["./prob-examples/B/MobileComm/RefinementDevelopment/SingleFlowSeqSpec.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "f5e6d2179a299864b77fd66ede598ae1063200fd7a43af521357aa419791d639",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

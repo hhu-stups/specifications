@@ -1,0 +1,8 @@
+MACHINE Csts
+CONCRETE_CONSTANTS PosMin, PosMax
+ABSTRACT_CONSTANTS PosInit
+PROPERTIES
+ PosMin : INT &
+ PosMax : NAT &
+ PosInit : INT
+END

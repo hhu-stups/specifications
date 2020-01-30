@@ -1,0 +1,8 @@
+MACHINE SetUnion
+VARIABLES n, x, S
+INVARIANT n:NATURAL & x:NATURAL & S<:NATURAL
+INITIALISATION n:=100; x:=0; S:={}
+OPERATIONS
+add = PRE x+1<n & x/:S THEN S:= S\/{x}; x:=x+1 END;
+op = skip
+END

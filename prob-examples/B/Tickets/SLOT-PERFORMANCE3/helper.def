@@ -1,0 +1,15 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  SEMESTERS==1..6;
+  /* a selection function from a set of integers; e.g., min/max/random_element by changing this we may compute different unsat cores (for cores of more than two units) */
+  select(Set) == min(Set);
+
+  sel == %x.(x<:INTEGER|select(x));
+
+  multi_select(SetOfSets) ==
+     {x | card(x) <= card(SetOfSets) & x <: union(SetOfSets) & !w.(w:SetOfSets => w /\ x /= {})};
+     /* example multi_select({{1,2,3},{3,4}}) = {{1,3},{1,4},{2,3},{2,4},{3},{3,4}} */
+
+   /* a definition for the if-then-else construct; note: Test must be a boolean variable */
+   ifte(Test,ThenExpr,ElseExpr) == (%(iif).(iif=0 & (Test=TRUE)|ThenExpr) \/
+                                    %(iif).(iif=0 & (Test=FALSE)|ElseExpr)) (0);

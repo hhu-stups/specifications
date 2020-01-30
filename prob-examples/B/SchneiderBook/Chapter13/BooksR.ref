@@ -1,0 +1,16 @@
+REFINEMENT        BooksR(BOOK)
+
+REFINES           Books
+
+VARIABLES         scheme
+
+INVARIANT         scheme : iseq(BOOK) & ran(scheme) = BOOK - read
+
+INITIALISATION    scheme :: perm(BOOK)
+
+OPERATIONS
+
+  bb <-- newbook = PRE scheme /= <> THEN  /* added by mal */
+                        bb := first(scheme);scheme := tail(scheme) END
+
+END

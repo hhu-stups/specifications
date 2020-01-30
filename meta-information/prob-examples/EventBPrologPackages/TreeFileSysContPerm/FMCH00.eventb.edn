@@ -1,0 +1,36 @@
+{:properties 6,
+ :definitions 0,
+ :deferred_sets 1,
+ :number-of-transitions 5,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/TreeFileSysContPerm/FMCH00.eventb",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 3,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/TreeFileSysContPerm/FMCH00.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 10,
+ :operations 4,
+ :sha256
+ "a371b5f862cf22e567e94df56662f71c74ca4ccc76a58a939fee3ee49e48c0d0",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 9,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :eventb}

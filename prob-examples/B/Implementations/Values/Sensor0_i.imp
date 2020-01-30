@@ -1,0 +1,24 @@
+/* Sensor0_i
+ * Author: Michael Leuschel
+ * Creation date: 22/11/2016
+ */
+
+IMPLEMENTATION Sensor0_i
+REFINES Sensor0
+
+VALUES
+ LowerBound=1;
+ UpperBound=2
+CONCRETE_VARIABLES val
+ 
+INITIALISATION 
+    val := (1..3) * {LowerBound}
+ 
+OPERATIONS
+      ChangeValue(ii,new) = BEGIN val(ii) := new END;
+
+      res <-- ValuesOK = IF ran(val) <: LowerBound..UpperBound THEN res := TRUE 
+               ELSE res := FALSE END
+
+ END
+ 

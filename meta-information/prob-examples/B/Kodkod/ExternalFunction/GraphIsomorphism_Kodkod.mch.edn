@@ -1,0 +1,36 @@
+{:properties 8,
+ :definitions 10,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Kodkod/ExternalFunction/GraphIsomorphism_Kodkod.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/Kodkod/ExternalFunction/GraphIsomorphism_Kodkod.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 3,
+ :operations 1,
+ :sha256
+ "b1581d04fc0a2cf0b3f8c42061d994c9a228c6b909889c02a47a889ce7c2daad",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

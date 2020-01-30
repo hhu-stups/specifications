@@ -1,0 +1,43 @@
+/* DispenserRefinement
+ * Author: Noe
+ * Creation date: Lun Ago 31 2009
+ */
+REFINEMENT
+   DispenserRefinement(lifetime)
+REFINES
+    Dispenser
+SEES
+    Vend_Data
+VARIABLES
+    drinks, givenR
+INVARIANT
+    drinks : NAT &
+    givenR : NAT &
+    givenR <= lifetime &
+    ((drinks = 0)) <=> (dstate = unstocked) & givenR = given
+INITIALISATION
+    drinks := 0 || givenR := 0
+OPERATIONS
+    restock =
+    IF drinks + 10 <= lifetime
+    THEN drinks := drinks + 10
+    END;
+    
+   give_drink =
+   PRE
+       drinks > 0 & givenR < lifetime
+   THEN
+       drinks := drinks - 1 || givenR := givenR + 1
+   END;
+
+   bb <-- is_stocked =
+   IF drinks > 0
+   THEN
+       bb := TRUE
+   ELSE
+       bb := FALSE
+   END;
+   
+   count <-- number_given =
+   count := givenR
+END

@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 12,
+ :deadlock true,
+ :file "./prob-examples/B/Tickets/REPL_ID_Visibility/M1_x_y.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 12,
+ :included-machines
+ ["./prob-examples/B/Tickets/REPL_ID_Visibility/M1_x_y.mch"
+  "./prob-examples/B/Tickets/REPL_ID_Visibility/M2_seen.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "d31a2bdc29b864090972296b7bd601a0d6163dc238f32906c5cea24e2f2e60d4",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 40,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

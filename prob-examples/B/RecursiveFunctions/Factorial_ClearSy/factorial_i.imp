@@ -1,0 +1,18 @@
+IMPLEMENTATION factorial_i
+REFINES factorial_v3
+
+OPERATIONS
+    res <-- calcfact(nn)=
+    BEGIN
+        VAR ii IN
+            ii := nn;
+            res := 1;
+            WHILE 1 < ii DO
+                res := res * ii;
+                ii := ii - 1
+            INVARIANT 0 <= ii & ii <= nn & (fact(nn) = fact(ii) * res)
+            VARIANT ii
+            END
+        END
+    END
+END

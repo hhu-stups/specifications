@@ -1,0 +1,21 @@
+MACHINE
+    REF_APP
+
+
+SETS
+    SS = { SS1, SS2 };
+    TT
+
+CONCRETE_CONSTANTS gg
+ABSTRACT_CONSTANTS
+    ff
+
+PROPERTIES
+    ff : BOOL &
+    gg : BOOL &
+    ff = gg &
+    gg = TRUE
+VARIABLES xx
+INVARIANT xx:BOOL
+INITIALISATION xx := ff
+END

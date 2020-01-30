@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 6,
+ :deferred_sets 0,
+ :number-of-transitions 15212,
+ :deadlock false,
+ :file
+ "./prob-examples/B/LTL/MammarFrappier/FlightSystem_corrected_3_3.mch",
+ :enumerated_sets 2,
+ :variables 2,
+ :number-of-states 2198,
+ :included-machines
+ ["./prob-examples/B/LTL/MammarFrappier/FlightSystem_corrected_3_3.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "b14b28fb94d031814e2e7bc3db0ffad120cffa31e03c5e0e2ecb201b47d19189",
+ :invariants 4,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 4550,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 6,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

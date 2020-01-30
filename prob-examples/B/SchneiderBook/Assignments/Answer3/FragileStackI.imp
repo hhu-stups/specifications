@@ -1,0 +1,18 @@
+IMPLEMENTATION    FragileStackI
+
+REFINES           FragileStack
+
+IMPORTS           FragStack_Vseq(ITEM, dep)
+
+INVARIANT         FragStack_Vseq = items
+
+OPERATIONS
+
+  putin(ii) = FragStack_PSH_SEQ(ii);
+
+  ii <-- takeout = 
+  BEGIN
+    ii <-- FragStack_LST_SEQ; FragStack_POP_SEQ
+  END
+
+END

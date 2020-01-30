@@ -1,0 +1,23 @@
+REFINEMENT        Colours2R
+
+REFINES           Colours2
+
+VARIABLES         in, out
+
+INVARIANT         in : cols & out : COLOUR & (cols /= COLOUR => out : COLOUR - cols) & in /= out
+
+INITIALISATION    in := red || out := blue
+
+OPERATIONS
+
+  add(cc) = BEGIN IF cc = out THEN out :: COLOUR - {in, out} END END;
+
+  cc <-- inquery = cc := in;
+
+  cc <-- outquery = cc := out;
+
+  change = skip;
+
+  invert = VAR tt IN tt := in; in := out; out := tt END 
+
+END

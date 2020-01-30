@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 2580,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Pitesti/SimpleVar_mch.eventb",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 2525,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Pitesti/SimpleVar_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "2f959ae7ef47c45ea25fde0d95af5afbfb3de558fdeeaadff040c5e62814082e",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 280,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :eventb}

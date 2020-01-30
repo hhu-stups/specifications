@@ -1,0 +1,37 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 3,
+ :number-of-transitions 111804,
+ :deadlock false,
+ :file "./prob-examples/B/ABCD/USER_CLASS.mch",
+ :enumerated_sets 1,
+ :variables 4,
+ :number-of-states 29885,
+ :included-machines
+ ["./prob-examples/B/ABCD/USER_CLASS.mch"
+  "./prob-examples/B/ABCD/CAR_CLASS.mch"
+  "./prob-examples/B/ABCD/ROOM_CLASS.mch"],
+ :comment "",
+ :files 3,
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "2282ec8b6da8ac698e0dd2f770d31609f8c8d00bad2743b95736300211f54101",
+ :invariants 6,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 262144000,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 28140,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 0,
+ :formalism :b}

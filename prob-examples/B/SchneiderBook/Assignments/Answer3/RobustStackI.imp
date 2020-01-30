@@ -1,0 +1,31 @@
+IMPLEMENTATION    RobustStackI
+
+REFINES           RobustStack
+
+SEES              Bool_TYPE
+
+IMPORTS           Stack(EL, height)
+
+INVARIANT         rstack = stack
+
+OPERATIONS
+
+  rep <-- enter(ee) = 
+  VAR tt IN
+    tt <-- fullquery;
+    IF tt = yes
+    THEN rep := FALSE
+    ELSE push(ee);rep:=TRUE
+    END
+  END;
+
+  rep , ee <-- rem = 
+  VAR tt IN
+    tt <-- emptyquery;
+    IF tt = yes
+    THEN ee := def ; rep := FALSE
+    ELSE ee <-- pop ; rep := TRUE
+    END
+  END
+
+END

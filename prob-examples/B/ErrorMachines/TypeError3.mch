@@ -1,0 +1,8 @@
+MACHINE TypeError3
+VARIABLES x
+INVARIANT x:INTEGER
+INITIALISATION x:= 1
+OPERATIONS
+  inc = x:=x \/ {1};
+  dec = PRE x>0 THEN x:=x-1 END
+END

@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 6,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Tickets/Hansen16/BecomeElementDeadlockTest.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 6,
+ :included-machines
+ ["./prob-examples/B/Tickets/Hansen16/BecomeElementDeadlockTest.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "8567a185b569f11a73a6134fa4f2ae3956b2da1ad7099376d00d36db79a0afed",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 80,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

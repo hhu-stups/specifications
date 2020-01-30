@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/ABCD/TraceChecking/TravelAgency_TraceCheck.mch",
+ :enumerated_sets 10,
+ :variables 11,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/ABCD/TraceChecking/TravelAgency_TraceCheck.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "8d0f54d9ac9d951499c15884d38ef971d1d1d5847834e5967f400aac3974802a",
+ :invariants 33,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 0,
+ :formalism :b}

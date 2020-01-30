@@ -1,0 +1,16 @@
+/*
+ * This file demonstrates a refinement that re-uses both variables xx and yy
+ * from the abstract model. The variable xx is introduced directly here,
+ * but yy is introduced in an included machine.
+ */
+REFINEMENT refinement
+REFINES abstract
+INCLUDES included
+VARIABLES
+  xx
+INVARIANT
+  xx:NAT
+INITIALISATION
+  xx := 0
+END
+

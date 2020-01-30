@@ -1,0 +1,93 @@
+REFINEMENT
+    cr2
+
+REFINES
+    cm1  
+
+SETS
+    CustCommand = {smallAsked,bigAsked,none}
+
+VARIABLES
+    credit, chocTray, stateCustCom
+
+INVARIANT
+    stateCustCom : CustCommand &
+    (stateCustCom=smallAsked => credit > 0) &
+    (stateCustCom=bigAsked => credit > 1) &
+    (chocTray=full => stateCustCom=none)
+
+INITIALISATION
+    credit, chocTray, stateCustCom := 0, empty, none
+
+ASSERTIONS
+    ((chocTray=empty) <=> (
+               (chocTray=empty & stateCustCom=none) or 
+               (chocTray=empty & stateCustCom=smallAsked) or 
+               (chocTray=empty & stateCustCom=bigAsked)
+               ))&
+               
+    ((chocTray=full) <=> (
+               (chocTray=full & stateCustCom=none) or 
+               (chocTray=full & stateCustCom=smallAsked) or 
+               (chocTray=full & stateCustCom=bigAsked)
+               ))
+
+OPERATIONS
+  put1 =  SELECT      /*? mettre 1 euro dans le credit ?*/
+    credit < MaxCredit
+  THEN
+    credit := credit+1
+  END
+
+;
+
+  put2 =  SELECT      /*? mettre deux euro dans le credit ?*/
+    credit < MaxCredit-1
+  THEN
+    credit := credit+2
+  END
+
+;
+
+  askSmall = SELECT
+    credit > 0 & chocTray=empty &
+    stateCustCom=none
+  THEN
+    stateCustCom := smallAsked
+  END
+
+;
+
+  askBig = SELECT
+    credit > 1 & chocTray=empty &
+    stateCustCom=none
+  THEN
+    stateCustCom := bigAsked
+  END
+
+;    
+
+  small = SELECT      /*? demander un petit chocolat ?*/                
+    stateCustCom=smallAsked
+  THEN
+    credit, chocTray := credit-1, full ||
+    stateCustCom := none
+  END
+
+;
+
+  big = SELECT      /*? demander un gros chocolat ?*/                
+    stateCustCom=bigAsked
+  THEN
+    credit, chocTray := credit-2, full ||
+    stateCustCom := none
+  END
+
+;
+
+  collect = SELECT    /*? prendre le chocolat ?*/
+    chocTray = full
+  THEN
+    chocTray := empty
+  END
+END

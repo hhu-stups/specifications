@@ -1,0 +1,27 @@
+IMPLEMENTATION    ProjectsI
+
+REFINES           Projects
+
+SEES              Bool_TYPE, Scalar_TYPE, String_TYPE, ProjectsBaseCtx
+
+IMPORTS           ProjectsBase(100,100,100)
+
+PROPERTIES        TITLE = STRING & STAFF = STRING
+
+INVARIANT         projects = (title~;supervisor;staff_name) 
+
+OPERATIONS
+
+  rep <-- new_project(tt , ss) = 
+  VAR rr1, rr2, staffbase, bb IN
+    rr1, bb <-- key_search_title(tt);
+    rr2, staffbase <-- key_search_staff_name(ss);
+    IF (rr1 = TRUE or rr2 = FALSE)
+    THEN rep := FALSE
+    ELSE 
+      rep, bb <-- make_project_base(staffbase);
+      IF rep = TRUE THEN rr1 <-- mod_title(bb, tt) END
+    END
+  END
+
+END

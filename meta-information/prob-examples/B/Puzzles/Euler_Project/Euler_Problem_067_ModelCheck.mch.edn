@@ -1,0 +1,37 @@
+{:properties 2,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 101,
+ :deadlock true,
+ :file
+ "./prob-examples/B/Puzzles/Euler_Project/Euler_Problem_067_ModelCheck.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 101,
+ :included-machines
+ ["./prob-examples/B/Puzzles/Euler_Project/Euler_Problem_067_ModelCheck.mch"
+  "./prob-examples/B/Puzzles/Euler_Project/triangle_Euler67.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 1,
+ :operations 1,
+ :sha256
+ "e1ca3f142b77e64cd2ba19f19f54fd856e1f4e565a559119d852d68f2f734dc0",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 209715200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 840,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 2,
+ :formalism :b}

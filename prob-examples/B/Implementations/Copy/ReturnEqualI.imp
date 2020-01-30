@@ -1,0 +1,14 @@
+IMPLEMENTATION
+   ReturnEqualI
+REFINES ReturnEqual
+OPERATIONS
+  r <-- Copy(x) =
+     BEGIN
+        r:= 0;
+        WHILE r<x DO
+           r := r+1
+           INVARIANT r:NAT & r<=x
+           VARIANT x-r
+        END
+     END
+END

@@ -1,0 +1,66 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  SEMESTERS==1..6;
+  /* a selection function from a set of integers; e.g., min/max/random_element by changing this we may compute different unsat cores (for cores of more than two units) */
+  select(Set) == min(Set);
+
+  sel == %x.(x<:INTEGER|select(x));
+
+  multi_select(SetOfSets) ==
+     {x | card(x) <= card(SetOfSets) & x <: union(SetOfSets) & !w.(w:SetOfSets => w /\ x /= {})};
+     /* example multi_select({{1,2,3},{3,4}}) = {{1,3},{1,4},{2,3},{2,4},{3},{3,4}} */
+
+   /* a definition for the if-then-else construct; note: Test must be a boolean variable */
+   ifte(Test,ThenExpr,ElseExpr) == (%(iif).(iif=0 & (Test=TRUE)|ThenExpr) \/
+                                    %(iif).(iif=0 & (Test=FALSE)|ElseExpr)) (0);
+
+  SHARED_PROPERTIES == unit_group = %(u, g). ( u: AllUnits & g : dom(units(u)'groups) | units(u)'groups(g) )
+  &
+  /* sessions accessor as a proper B function so that we can compute image */
+  get_sessions = %(r).(r:struct(sessions:POW(INTEGER), title:STRING) | r'sessions)
+  &
+  /* compute the slots that a unit can use */
+  AllUnits = dom(units) &
+  AllSessions = dom(sessions) &
+  /* compute all possible groups for a given unit */
+  all_unit_groups = %un.(un:AllUnits|unit_group[{un}*(unit_min_group(un)..unit_max_group(un))])
+  &
+  /* compute all possible sessions-ids which a given unit may use : */
+  unit_sessions = %(u).(u : AllUnits |union(get_sessions[all_unit_groups(u)]))
+  &
+  /* map units to all it's sessions that are in a group with only one session */
+  unit_group_single_session = %(u).(u : AllUnits | union({s| s : get_sessions[all_unit_groups(u)] & card(s) = 1}))
+  &
+  unit_group_multiple_session = %(u).(u : AllUnits | union({s| s : get_sessions[all_unit_groups(u)] & card(s) > 1}))
+  &
+  /* mapping course and units to min and max group */
+  unit_min_group = %u.(u:AllUnits | min(dom(units(u)'groups)))
+  &
+  unit_max_group = %u.(u:AllUnits | max(dom(units(u)'groups)))
+  &
+  /* computing overall lower and upper bound on group numbers */
+  min_group = min(ran(unit_min_group))
+  &
+  max_group = max(ran(unit_max_group))
+  &
+  #(unit2sem,session2uid).( /* LET */
+                        unit2sem = {u,sem| #(c).((c,sem,u):mapping)} &
+                        session2uid = {ss,u_id | #(u,g).((u_id,u):units & g:ran(u'groups) & ss:g'sessions)} &
+  session_semester =
+   %(idx).(idx : AllSessions | unit2sem[session2uid[{idx}]]
+   ) /* XXX extract values from set */
+  )
+  /* ======================================== */
+  /* Used in tests */
+  /* ======================================== */
+  /* a function that computes a table of the constraints for a set of units (e.g., obtained
+     by calling unsat_core or UNSAT_CORE, e.g.,:
+      unit_map(UNSAT_CORE(jap,rom,1)) or unit_map[disjoint_cores(UnitsForCombination(jud,lin,1),1)]) */
+  /* slot accessor as a proper B function so that we can compute image */
+  &
+  get_slot = %(r).(r:struct(duration:INTEGER, rhythm:INTEGER, slot:SLOTS) | r'slot)
+  &
+  unit_map = %(core).(core <: dom(units)| {(u, gid,slot)
+                    | u : core & #(g,s).((gid,g) : units(u)'groups & s : g'sessions & slot=get_slot(sessions(s)))})
+
+

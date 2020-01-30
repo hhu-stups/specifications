@@ -1,0 +1,14 @@
+MACHINE SeqTest2
+SETS
+ ID={aa,bb}
+CONSTANTS iv
+PROPERTIES
+ iv:seq(ID) & iv: POW(INTEGER*ID) & size(iv)>0
+VARIABLES xx
+INVARIANT
+ xx:ID
+INITIALISATION xx:=first(iv)
+OPERATIONS
+  Set(yy) = PRE yy:ID THEN xx:= yy END
+END
+

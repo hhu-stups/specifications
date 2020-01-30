@@ -1,0 +1,39 @@
+{:properties 44,
+ :definitions 18,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock true,
+ :file "./prob-examples/B/Tickets/Valerio3/BYTE_DEFINITION.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/Valerio3/BYTE_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio3/BIT_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio3/MAX_BIT_VECTOR_DEFINITION.mch"
+  "./prob-examples/B/Tickets/Valerio3/POWER2.mch"
+  "./prob-examples/B/Tickets/Valerio3/POWER.mch"],
+ :comment "",
+ :files 5,
+ :static_assertions 52,
+ :operations 0,
+ :sha256
+ "5103e9b364d926711a3a653c5c76b1059cdb098418ff5462b2302b67f3801492",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 50,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 36,
+ :formalism :b}

@@ -1,0 +1,81 @@
+SYSTEM P0
+SETS
+    /* pragma value("0..10") */
+    NODES; 
+    /* pragma value("0..10") */
+    REQUESTS 
+    
+    
+VARIABLES
+    active_requests, /* requests either being processed or waiting for being processed (pending) */
+    past_requests, /* completed requests */
+    cancelled_requests, /* requests that were not successfuly completed (halted or neither initiated) */
+    active_nodes, /* nodes able to process requests, if free */
+    allocations /* association of request to nodes, maximum 1 request per node, maximum 1 node per request */
+    
+INVARIANT
+    active_requests <: REQUESTS &
+    past_requests <: REQUESTS &
+    cancelled_requests <: REQUESTS &
+    active_requests /\ past_requests /\ cancelled_requests = {} &
+    active_nodes <: NODES &
+    allocations : active_nodes +->> active_requests
+    
+INITIALISATION
+    active_requests := {} ||
+    past_requests := {} ||
+    cancelled_requests := {} ||
+    active_nodes := {} ||
+    allocations := {}
+    
+EVENTS
+    addNode =
+    ANY node WHERE
+        node: NODES - active_nodes
+    THEN
+        active_nodes := active_nodes \/ {node}
+    END;
+    
+    receiveRequest =
+    ANY request, free_nodes WHERE
+        request: REQUESTS - active_requests - past_requests - cancelled_requests & 
+        free_nodes = active_nodes - dom(allocations)
+    THEN
+        IF free_nodes = {} THEN
+            active_requests := active_requests \/ {request}
+        ELSE
+            ANY node WHERE
+                node: free_nodes 
+            THEN
+                active_requests := active_requests \/ {request} ||
+                allocations := allocations <+ {node |-> request}
+            END    
+        END
+    END;
+    
+    initiatePendingRequest =
+    ANY request WHERE
+        request: active_requests - ran(allocations) &
+        not(active_nodes - dom(allocations) = {})
+    THEN
+        ANY node WHERE
+            node: active_nodes - dom(allocations) 
+        THEN
+            active_requests := active_requests \/ {request} ||
+            allocations := allocations <+ {node |-> request}
+        END    
+    END;
+    
+    completeActiveRequest =
+    ANY node, request WHERE
+        node: active_nodes &
+        request: active_requests &
+        node |-> request: allocations 
+    THEN
+        allocations := allocations - {node |-> request} ||
+        active_nodes := active_nodes - {node} ||
+        active_requests := active_requests - {request} ||
+        past_requests := past_requests \/ {request}
+    END
+    
+END

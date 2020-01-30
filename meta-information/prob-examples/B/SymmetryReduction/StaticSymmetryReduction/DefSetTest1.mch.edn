@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 1,
+ :deferred_sets 1,
+ :number-of-transitions 6,
+ :deadlock true,
+ :file
+ "./prob-examples/B/SymmetryReduction/StaticSymmetryReduction/DefSetTest1.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 6,
+ :included-machines
+ ["./prob-examples/B/SymmetryReduction/StaticSymmetryReduction/DefSetTest1.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "bad92086c317011e4df6801cf79a4d7a9608aa673f84f33c52f26790b6a1d293",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

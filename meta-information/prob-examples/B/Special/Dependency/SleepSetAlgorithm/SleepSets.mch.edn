@@ -1,0 +1,37 @@
+{:properties 5,
+ :definitions 3,
+ :deferred_sets 0,
+ :number-of-transitions 3091,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Special/Dependency/SleepSetAlgorithm/SleepSets.mch",
+ :enumerated_sets 2,
+ :variables 6,
+ :number-of-states 632,
+ :included-machines
+ ["./prob-examples/B/Special/Dependency/SleepSetAlgorithm/SleepSets.mch"
+  "./prob-examples/B/Special/Dependency/SleepSetAlgorithm/LTS.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "ddf3f2a2db223063b81af1526f99fc203d77240be8cdc7dcb314f196a26b20cc",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 860,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 3,
+ :formalism :b}

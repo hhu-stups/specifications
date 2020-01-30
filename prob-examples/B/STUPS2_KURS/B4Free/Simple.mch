@@ -1,0 +1,9 @@
+MODEL
+   Simple
+CONSTANTS
+   nr
+PROPERTIES
+   nr:NAT1 & nr<10
+OPERATIONS
+  Run = skip
+END

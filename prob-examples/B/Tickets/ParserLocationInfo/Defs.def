@@ -1,0 +1,7 @@
+DEFINITIONS
+   SameCard(a,b) ==
+       card(a)=card(b);
+   Compr(x,y) == {a| a:x & a+1:x & a=TRUE} /= {}; // type error
+   MyConstr(x,y) == Compr(x,y);
+   ElementOf(a,b) == (a:b)
+   

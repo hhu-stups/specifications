@@ -1,0 +1,15 @@
+REFINEMENT SimpleCounter1
+REFINES SimpleCounter
+PROPERTIES minc=-3 & maxc=4
+VARIABLES counter
+INVARIANT
+  counter : minc .. maxc
+INITIALISATION 
+  counter := minc
+OPERATIONS
+  Inc1 ref Increase = SELECT counter+1 <= maxc THEN counter := counter+1 END;
+  Inc2 ref Increase = SELECT counter+2 <= maxc THEN counter := counter+2 END;
+  Increase = SELECT 1=2 THEN skip END;
+  Decrease = ANY ii WHERE ii:1..2 & counter-ii >= minc THEN counter := counter-ii END
+END
+

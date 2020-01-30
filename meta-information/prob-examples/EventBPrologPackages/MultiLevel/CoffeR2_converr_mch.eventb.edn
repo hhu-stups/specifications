@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/MultiLevel/CoffeR2_converr_mch.eventb",
+ :enumerated_sets 1,
+ :variables 4,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/MultiLevel/CoffeR2_converr_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 14,
+ :operations 3,
+ :sha256
+ "449f3248b85222cc78db05527ea7c170a48c5932d2244fd9db4fc8b68837069c",
+ :invariants 4,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 40,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :eventb}

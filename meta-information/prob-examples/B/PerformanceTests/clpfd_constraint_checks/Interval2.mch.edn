@@ -1,0 +1,36 @@
+{:properties 8,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 6,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/clpfd_constraint_checks/Interval2.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 4,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/clpfd_constraint_checks/Interval2.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 1,
+ :operations 1,
+ :sha256
+ "354f9f08f1eda1071568335b2920f7187eaf295a727e388e52cf8a6c3c17537f",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

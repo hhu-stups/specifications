@@ -1,0 +1,13 @@
+/*
+* Taken from ClearSy - Modelling in B Tutorial
+* see http://www.tools.clearsy.com/wp1/?page_id=161
+*/
+
+IMPLEMENTATION ctx_i
+REFINES ctx
+
+VALUES
+   TANK_CAPACITY = 1000;
+   MAX_CONSUMPTION = 10;
+   WARNING_CAPACITY = 100
+END

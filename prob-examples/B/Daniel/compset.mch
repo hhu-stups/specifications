@@ -1,0 +1,8 @@
+MACHINE compset
+VARIABLES xx
+INVARIANT
+ xx : NAT
+INITIALISATION
+  ANY y WHERE y:1..2 THEN xx := {z|0<=z & z<=y} END
+END
+

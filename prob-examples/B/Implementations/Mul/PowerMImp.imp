@@ -1,0 +1,25 @@
+IMPLEMENTATION
+   PowerMImp
+REFINES PowerM
+DEFINITIONS
+ SET_PREF_MAXINT==9;
+ SET_PREF_MAX_OPERATIONS==45
+
+OPERATIONS
+res <-- power(a,b) = 
+	VAR x,y IN 
+		x := 1;
+		y := b;
+		WHILE y>0 DO
+			x:=a*x;
+			y:=y-1
+		INVARIANT x:NAT & y:NAT &a**b = x*a**y 
+			/* (y>0 & y<b)=>(a**b = a**(b-y)*a**y & x=a**(b-y))*/
+			/*	 & x= PI(j).(j:NAT1 & j<=(b-y+1)|a )*/
+		VARIANT y
+		END;
+		res := x
+	END
+
+END
+/*PROPERTIES  !(a,b).(a:INTEGER & b: NATURAL =>  a**b = a*a**(b-1))*/

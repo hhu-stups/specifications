@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 2,
+ :deferred_sets 5,
+ :number-of-transitions 248045,
+ :deadlock false,
+ :file "./prob-examples/B/Tickets/PROB-320/Hierarchical_temp.mch",
+ :enumerated_sets 0,
+ :variables 13,
+ :number-of-states 3990,
+ :included-machines
+ ["./prob-examples/B/Tickets/PROB-320/Hierarchical_temp.mch"
+  "./prob-examples/B/Tickets/PROB-320/Core.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 18,
+ :sha256
+ "ca8f048cbbbf3190467b9f0452558bf3b2b590fc42d568a4164653792dc5f46e",
+ :invariants 11,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 471859200,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 41180,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 0,
+ :formalism :b}

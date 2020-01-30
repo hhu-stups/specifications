@@ -1,0 +1,36 @@
+{:properties 15,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/EventBPrologPackages/PO_Master/pomasterEvent_mch.eventb",
+ :enumerated_sets 9,
+ :variables 50,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/PO_Master/pomasterEvent_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 67,
+ :sha256
+ "2b42d386d10ecb007ab9325a3f2c094a87e6899eb142c2fa0e17196017f189cb",
+ :invariants 39,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 12,
+ :formalism :eventb}

@@ -1,0 +1,35 @@
+REFINEMENT
+   fact2
+
+REFINES
+   fact1
+
+VARIABLES ff,gg,nn
+
+INVARIANT 
+	ff : NATURAL &
+	gg : NATURAL &
+	nn : (1..N+1) &
+	gg = fact(nn-1)
+
+INITIALISATION 
+	ff :: NATURAL || 
+	gg := 1 || 
+	nn := 1
+
+OPERATIONS
+
+prog =	SELECT
+		nn <= N
+	THEN
+		nn := nn+1 ||
+		gg := nn*gg
+	END ;
+
+final =	SELECT
+		nn>N
+	THEN
+		ff := gg
+	END
+
+END

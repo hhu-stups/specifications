@@ -1,0 +1,21 @@
+IMPLEMENTATION    RoomsI
+
+REFINES           Rooms
+
+PROPERTIES        ROOM = 1..124 & small = {nn | nn : 1..124 & nn mod 2 = 1} & defaultprice = 70
+
+OPERATIONS
+
+ss <-- sizequery(rr) = 
+  IF rr mod 2 = 1
+  THEN ss := little
+  ELSE ss := big
+  END;
+
+pp <-- pricequery(rr) =
+  IF rr mod 2 = 1
+  THEN pp := defaultprice
+  ELSE pp := defaultprice * 3 / 2
+  END
+
+END

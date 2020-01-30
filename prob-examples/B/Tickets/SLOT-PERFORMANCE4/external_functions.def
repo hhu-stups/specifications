@@ -1,0 +1,7 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  random_element(x) == max(x);
+  EXTERNAL_FUNCTION_random_element(T) == POW(T) --> T;
+
+  CHOOSE(X) == "a member of X";
+  EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T);

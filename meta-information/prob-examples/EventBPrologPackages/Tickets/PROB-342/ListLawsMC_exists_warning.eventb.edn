@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 2359297,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Tickets/PROB-342/ListLawsMC_exists_warning.eventb",
+ :enumerated_sets 0,
+ :variables 4,
+ :number-of-states 262144,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Tickets/PROB-342/ListLawsMC_exists_warning.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "d2577d5b75921457eb9291b65bd1990259678cebd7f193402bd7bc10076cb799",
+ :invariants 94,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 620160,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

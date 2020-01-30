@@ -1,0 +1,14 @@
+MACHINE Half
+DEFINITIONS
+   SET_PREF_MAXINT == 4
+CONSTANTS
+ f
+PROPERTIES
+ f: NAT --> NAT & !x.(x:NAT => (f(x)+f(x)<=x & f(x)+f(x)+1 >= x) )
+VARIABLES x
+INVARIANT
+   x:NAT
+INITIALISATION x:= MAXINT
+OPERATIONS
+  halve = x := f(x)
+END

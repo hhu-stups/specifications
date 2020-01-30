@@ -1,0 +1,21 @@
+IMPLEMENTATION
+  loop_invariant
+REFINES loop_invariant_abstract
+DEFINITIONS
+  SET_PREF_MININT == 0;
+  SET_PREF_MAXINT == 20;
+CONCRETE_VARIABLES x
+INITIALISATION
+  x:=0
+OPERATIONS
+  set(new) =
+  BEGIN
+  WHILE x < new DO
+    x := x+1
+  INVARIANT 
+    x >= x$0 & x <= new
+  VARIANT 
+    new - x
+  END
+  END
+END

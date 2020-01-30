@@ -1,0 +1,9 @@
+MACHINE MachineWithParameters(a,B)
+CONSTRAINTS a:NAT
+VARIABLES x
+INVARIANT x:0..a
+INITIALISATION x:=0
+OPERATIONS
+  step = IF x=a THEN x:=0 ELSE x:=x+1 END
+END
+

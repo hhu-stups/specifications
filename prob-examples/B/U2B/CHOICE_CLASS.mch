@@ -1,0 +1,1 @@
+MACHINE CHOICE_CLASS /*" U2B3.7.10 generated this component from Class CHOICE 28/05/2004 13:34:34 "*/DEFINITIONSinvariant == (	xx : 1..3)VARIABLES	xxINVARIANT	invariantINITIALISATION	xx :(invariant )OPERATIONS inc  =BEGIN	CHOICE xx:=1 OR xx:=2 OR xx:=3 END	/*ANY vv WHERE vv:1..3 THEN xx:=vv END*/ENDEND

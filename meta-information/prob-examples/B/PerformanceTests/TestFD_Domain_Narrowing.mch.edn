@@ -1,0 +1,36 @@
+{:properties 24,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 492,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PerformanceTests/TestFD_Domain_Narrowing.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 48,
+ :included-machines
+ ["./prob-examples/B/PerformanceTests/TestFD_Domain_Narrowing.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "55cd590fdd00e448a1f54f70ddaa8d25754f78797977c99e839315c375f40a51",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 70,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

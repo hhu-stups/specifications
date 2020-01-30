@@ -1,0 +1,23 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/U2B/soton/test/MM_0.mch",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "2dbb53f6cc7bcddf86976e5117652873790d33f7e9760a188a32e138526b546a",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :b}

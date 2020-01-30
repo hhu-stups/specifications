@@ -1,0 +1,10 @@
+MACHINE MostSimpleMachine
+DEFINITIONS MAX == 20000
+VARIABLES count
+INVARIANT
+ count:INTEGER & count <= MAX
+INITIALISATION count:=0
+OPERATIONS
+  Inc = BEGIN count := count + 1 END
+END
+

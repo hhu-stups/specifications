@@ -1,0 +1,36 @@
+{:properties 22,
+ :definitions 0,
+ :deferred_sets 13,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksPOR/BPEL2B/Model_Machine_4_NoDeadlock_v3.eventb",
+ :enumerated_sets 0,
+ :variables 14,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksPOR/BPEL2B/Model_Machine_4_NoDeadlock_v3.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 15,
+ :sha256
+ "e1913af8a0246ba7c6485dfe2a4a5c1d910f172eac1086ada06eee8da83ef908",
+ :invariants 26,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated :unknown,
+ :constants 15,
+ :formalism :eventb}

@@ -1,0 +1,36 @@
+{:properties 20,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 0,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Advance/Abrial_Hybrid/hybrid_nuclear/C_m2_mch.eventb",
+ :enumerated_sets 0,
+ :variables 8,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Advance/Abrial_Hybrid/hybrid_nuclear/C_m2_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "0a5bed8bf8e105dcd22fa378251288b3e3d8fede67f75dff801d4ea6755df343",
+ :invariants 24,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 0,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated false,
+ :constants 12,
+ :formalism :eventb}

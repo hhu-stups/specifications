@@ -1,0 +1,8 @@
+REFINEMENT MachineWithParametersErr2(a,C) /* Error: One parameter renamed: C must be B */
+REFINES MachineWithParameters
+CONSTRAINTS a:NAT
+VARIABLES x
+INITIALISATION x:=0
+OPERATIONS
+  step = IF x=a THEN x:=0 ELSE x:=x+1 END
+END

@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 292,
+ :deadlock false,
+ :file
+ "./prob-examples/B/PragmasUnits/InternalRepresentationTests/SequenceOperations_internal.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 219,
+ :included-machines
+ ["./prob-examples/B/PragmasUnits/InternalRepresentationTests/SequenceOperations_internal.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "7ded43d54d0d085f954479b9e4f694b39069cfe4742531e2665d757f9b90e9ed",
+ :invariants 2,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

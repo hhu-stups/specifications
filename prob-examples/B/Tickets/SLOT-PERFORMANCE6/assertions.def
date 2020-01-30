@@ -1,0 +1,55 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+"check_cs.def";
+
+ASSERTION1 == course_names = dom(course_modules);
+
+ASSERTION2 == dom(course_module_combinations) = dom(course_modules);
+
+REQ_course_module_combinations  == /*@label REQ_course_module_combinations */
+   !course.(course:course_names =>
+       union(course_module_combinations(course)) = course_modules(course));
+
+REQ_courses_name == /*@label REQ_courses_name */
+   !course.(course:course_names =>
+       courses(course)'name=course);
+
+REQ_UNIQUE_courses_idx == /*@label REQ_UNIQUE_courses_idx */
+    !(c1,c2).(c1:course_names & c2:course_names & c1/=c2
+      => courses(c1)'idx /= courses(c2)'idx);
+
+REQ_UNIQUE_modules_idx ==
+    /*@label REQ_UNIQUE_modules_idx */
+    !(m1,m2).(m1:dom(modules) & m2:dom(modules) & m1/=m2
+      => modules(m1)'idx /= modules(m2)'idx);
+
+REQ_credit_points_consistent ==
+    /*@label REQ_credit_points_consistent */
+    !(c1,m2).(c1:course_names & m2:course_modules(c1)
+      => (courses(c1)'credit_points <0  <=>  modules(m2)'credit_points <0));
+
+REQ_groups_do_not_share_units ==
+    /*@label REQ_groups_do_not_share_units */
+    !(x).(x : UNITS =>
+      LET y
+      BE
+        y= ran(units(x)'groups)
+      IN
+        LET z BE
+          z = %(x).(x : struct(half_semester:INTEGER, sessions:POW(SESSIONS))| x'sessions)[y]
+        IN
+        !(a,b).(a : z & b : z & a /= b => inter({a,b}) = {})
+        END
+      END
+    );
+
+REQ_groups_are_conflict_free ==
+    /*@label REQ_groups_are_conflict_free */
+    LET groups
+    BE
+      groups = union(ran(%(x).(x: ran(units) | x'groups)))
+    IN
+      !(gid, g).((gid, g) : groups & card(g'sessions) > 1 =>
+                 !(s1, s2).(s1 /= s1 & s1 : g'sessions & s2 : g'sessions =>
+                            COMPATIBLE_SESSIONS(s1, s2, slots, sessions)))
+    END;

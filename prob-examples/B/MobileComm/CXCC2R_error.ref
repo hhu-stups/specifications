@@ -1,0 +1,13 @@
+REFINEMENT CXCC2R
+REFINES CXCC2
+ INCLUDES Ether 
+ DEFINITIONS
+  FT_TYPE == (from:NODES & to:NODES & from/=to)
+ VARIABLES routes
+INVARIANT routes: POW(iseq1(NODES))
+INITIALISATION
+  routes := {}
+ OPERATIONS 
+  initializeConnection(from,to) =  
+   VAR r IN r <-- getRoute(from,to);routes := routes \/ r END 
+END

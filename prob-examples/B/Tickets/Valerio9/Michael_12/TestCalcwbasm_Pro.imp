@@ -1,0 +1,204 @@
+/*************************************************************************
+Copyright (c) 2008 Valerio Medeiros Jr,David Deharbe
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+    * Neither the name of the Universidade Federal do Rio Grande do Norte nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*************************************************************************/
+IMPLEMENTATION
+    TestCalcwbasm_Pro
+REFINES
+    Test_Pro
+    
+    
+SEES
+    ALU ,
+    BIT_DEFINITION,
+/*    BIT_VECTOR_DEFINITION,*/
+    BYTE_DEFINITION,
+    BV16_DEFINITION,
+    
+    UCHAR_DEFINITION,
+    SCHAR_DEFINITION,
+    SSHORT_DEFINITION,
+    USHORT_DEFINITION/*,
+    POWER2 */
+    
+IMPORTS
+    Z80
+    
+INVARIANT
+    
+    byte_uchar(io_ports(uchar_byte(2))) =  (free_water_level ) &
+   	byte_uchar(io_ports(uchar_byte(3))) =  (oil_level)
+    
+INITIALISATION
+    ext_update_io_ports(2,uchar_schar(0));
+    ext_update_io_ports(3,uchar_schar(0))
+
+OPERATIONS
+    
+    update_level(initial_level, final_level) =
+    ASSERT 
+        initial_level : UCHAR & final_level  : UCHAR 
+        & final_level <= initial_level 
+    THEN
+        VAR local_pc IN
+            local_pc := 0;
+            set_pc(local_pc);
+
+            
+            WHILE local_pc < 9 DO
+                
+                CASE local_pc OF
+                    EITHER 0 THEN
+                        /* A extern event */                        
+                        ext_update_io_ports(0,uchar_schar(initial_level));
+                        /* Receiving data from the input */
+                        IN_A_9n0(0)
+                    OR 1 THEN
+                        LD_r_r_(b0,a0)
+                    OR 2 THEN
+                        /* A extern event */ 
+                        ext_update_io_ports(1,uchar_schar(final_level));
+                        /* Receiving data from the input */
+                        IN_A_9n0(1)
+                    OR 3 THEN
+                        LD_r_r_(c0,a0)
+                    OR 4 THEN
+                        LD_r_r_(a0,b0)
+                    OR 5 THEN
+                        SUB_A_r(c0)
+                    OR 6 THEN
+                        /* Sending data to the output */
+                        OUT_9n0_A(2) 
+                    OR 7 THEN
+                        LD_r_r_(a0,c0)
+                    OR 8 THEN
+                        /* Sending data to the output */
+                        OUT_9n0_A(3) 
+                        
+                    END
+                END;
+                local_pc <-- get_pc
+                
+                
+            INVARIANT
+                local_pc : 0..9 & rgs8 : id_reg_8 --> BYTE 
+                & r_  : BYTE & io_ports : BYTE --> BYTE 
+                & pc : 0..9 & free_water_level : UCHAR &
+                (local_pc = 0 => ( pc = 0 & instruction_next(pc) = 1 &
+                        byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+					   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level )    
+                )&
+
+				(local_pc = 1 => ( instruction_next(pc) = 2 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &
+                    byte_uchar( rgs8(a0) ) = ( initial_level )   &
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&
+                
+                (local_pc = 2 => ( instruction_next(pc) = 3 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &
+                    byte_uchar( rgs8(b0) ) = ( initial_level ) &
+                    byte_uchar( rgs8(a0) ) = ( initial_level ) &
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&
+
+                (local_pc = 3 => ( instruction_next(pc) = 4 &
+                    byte_uchar(io_ports(uchar_byte(0))) =  initial_level &
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &    
+					byte_uchar( rgs8(a0) ) = ( final_level ) &
+					byte_uchar( rgs8(b0) ) = ( initial_level )&
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&
+					
+                (local_pc = 4 => ( instruction_next(pc) = 5 &
+                    byte_uchar(io_ports(uchar_byte(0))) =  initial_level &
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &    
+                    byte_uchar( rgs8(a0) ) = ( final_level ) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+   					byte_uchar( rgs8(b0) ) = ( initial_level ) &
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&
+                
+                
+                (local_pc = 5  => ( instruction_next(pc) = 6 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level & 
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &    
+                    byte_uchar( rgs8(a0) ) = ( initial_level ) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+                    byte_uchar( rgs8(b0) ) = ( initial_level ) &
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&             
+
+				(local_pc = 6  => ( instruction_next(pc) = 7 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &                    
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &    
+   					byte_uchar( rgs8(a0) ) = ( (initial_level - final_level) mod 256) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+   					byte_uchar( rgs8(b0) ) = ( initial_level ) &
+
+                    byte_uchar(io_ports(uchar_byte(2))) =  free_water_level &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level ) )&
+                
+                (local_pc = 7  => ( instruction_next(pc) = 8 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &    
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &
+   					byte_uchar( rgs8(a0) ) = ( (initial_level - final_level) mod 256) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+   					byte_uchar( rgs8(b0) ) = ( initial_level ) &
+   					byte_uchar(io_ports(uchar_byte(2))) =   ((initial_level - final_level) mod 256)&
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level
+				))&
+
+                (local_pc = 8  => ( instruction_next(pc) = 9 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &    
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &
+   					byte_uchar( rgs8(a0) ) = ( final_level) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+   					byte_uchar( rgs8(b0) ) = ( initial_level ) &
+   					byte_uchar(io_ports(uchar_byte(2))) =   ((initial_level - final_level) mod 256)&
+				   	byte_uchar(io_ports(uchar_byte(3))) =  oil_level
+				)) &
+
+                (local_pc = 9  => ( pc = 9 &
+   					byte_uchar(io_ports(uchar_byte(0))) =  initial_level &    
+   					byte_uchar(io_ports(uchar_byte(1))) =  final_level &
+   					byte_uchar( rgs8(a0) ) = ( final_level) &
+   					byte_uchar( rgs8(c0) ) = ( final_level ) &
+   					byte_uchar( rgs8(b0) ) = ( initial_level ) &
+   					byte_uchar(io_ports(uchar_byte(2))) =   ((initial_level - final_level) mod 256) &
+				   	byte_uchar(io_ports(uchar_byte(3))) =  final_level
+				   	))
+
+
+
+
+            VARIANT (9 - local_pc) END          
+            
+        END
+    END
+    
+END
+

@@ -1,0 +1,25 @@
+IMPLEMENTATION
+	systeme_i
+
+REFINES
+	systeme
+
+IMPORTS
+	systeme1
+,	systeme2
+
+OPERATIONS
+	evenement =
+ 
+	VAR
+		out1, out2
+	IN
+		out1:(out1: 0..10)
+
+	;	out2:(out2: 0..10)
+
+	;	out1, out2 <-- operation1
+
+	;	operation2 (out1, out2)
+	END
+END

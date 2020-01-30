@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 5040,
+ :deadlock true,
+ :file "./prob-examples/B/Implementations/Values/ScalarValuationA.mch",
+ :enumerated_sets 1,
+ :variables 0,
+ :number-of-states 5040,
+ :included-machines
+ ["./prob-examples/B/Implementations/Values/ScalarValuationA.mch"
+  "./prob-examples/B/Implementations/Values/ScalarValuationB.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 0,
+ :sha256
+ "d39f3cf528a2c70486f1ce71957df8e3f2de689a8c437592a4d089a93b910216",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 1000,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 5,
+ :formalism :b}

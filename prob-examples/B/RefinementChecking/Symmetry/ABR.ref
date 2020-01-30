@@ -1,0 +1,16 @@
+REFINEMENT ABR
+/* 
+With Symmetry-Hash ProB refinement checker currently finds counter example:
+ initialise_machine
+ MoveAB(aa)
+ MoveAB(bb)
+*/
+REFINES AB
+VARIABLES a,b
+INVARIANT
+ a<:ID & b<:ID
+INITIALISATION a,b : (a<:ID & b<:ID & a /\ b = {} & a\/b = ID)
+OPERATIONS
+  MoveAB(yy) = PRE yy:ID & yy:b THEN b := b-{yy} || a := a \/ {yy} END;
+  MoveBA(yy) = PRE yy:ID & yy:a THEN a := a-{yy} || b := b \/ {yy} END
+END

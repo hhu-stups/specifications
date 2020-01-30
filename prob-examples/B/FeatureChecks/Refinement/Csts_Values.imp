@@ -1,0 +1,13 @@
+IMPLEMENTATION Csts_Values
+REFINES Csts
+CONCRETE_CONSTANTS
+  PosInit, PosMoyenne
+PROPERTIES
+  PosMoyenne : INT
+VALUES
+  PosMin = -100;
+  PosMax = 100;
+  PosMoyenne = 0;
+  PosInit = 50
+END
+

@@ -1,0 +1,37 @@
+{:properties 16,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock false,
+ :file
+ "./prob-examples/B/FeatureChecks/INCLUDES_USES_SEES/PreCheck/TLS2.mch",
+ :enumerated_sets 1,
+ :variables 9,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/FeatureChecks/INCLUDES_USES_SEES/PreCheck/TLS2.mch"
+  "./prob-examples/B/FeatureChecks/INCLUDES_USES_SEES/PreCheck/TLS1.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "9deacf350c7123984b855ba70bf5853c18759689ee4e08786cb197ca410d53f3",
+ :invariants 14,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 30,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 8,
+ :formalism :b}

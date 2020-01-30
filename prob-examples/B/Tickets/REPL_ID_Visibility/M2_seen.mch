@@ -1,0 +1,9 @@
+MACHINE M2_seen
+CONSTANTS one,two
+PROPERTIES
+ one=1 & two=2
+VARIABLES three
+INVARIANT three:NATURAL
+INITIALISATION three := one+two
+END
+

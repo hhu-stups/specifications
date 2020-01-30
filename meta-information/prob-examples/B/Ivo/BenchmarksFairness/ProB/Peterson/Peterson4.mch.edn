@@ -1,0 +1,36 @@
+{:properties 2,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksFairness/ProB/Peterson/Peterson4.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksFairness/ProB/Peterson/Peterson4.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "61851e712103f0e71beff4a28cfb952bd57ed8886155874128022811ba0957c5",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated true,
+ :constants 2,
+ :formalism :b}

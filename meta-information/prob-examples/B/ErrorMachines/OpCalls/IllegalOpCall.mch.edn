@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 2,
+ :deadlock false,
+ :file "./prob-examples/B/ErrorMachines/OpCalls/IllegalOpCall.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/ErrorMachines/OpCalls/IllegalOpCall.mch"
+  "./prob-examples/B/ErrorMachines/OpCalls/Copy.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "e2e880ef4a43ada639b42fdb966c2ca325cfb2f16e932f29f944a0eded8d096e",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 100,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

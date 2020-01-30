@@ -1,0 +1,30 @@
+IMPLEMENTATION    FifoI2(ELEM, cap)
+
+REFINES           Fifo
+
+IMPORTS           Varray(cap, ELEM), SizeCounter(cap), 
+                  PositionCounter(cap)
+
+INVARIANT         sze = size(contents) &
+                  (((array \|/ (pos-1)) ^ (array /|\ (pos - 1))) /|\ sze) = contents
+
+OPERATIONS
+
+  input(ee) = 
+  VAR ii,jj,pp IN
+    ii <-- szeget;
+    jj <-- posget;
+    pp := ((ii + jj - 1) mod cap) + 1;
+    set(pp,ee);
+    szeinc
+  END;
+    
+  ee <-- output = 
+  VAR pp IN
+    pp <-- posget;
+    ee <-- get(pp);
+    posinc;
+    szedec
+  END
+
+END

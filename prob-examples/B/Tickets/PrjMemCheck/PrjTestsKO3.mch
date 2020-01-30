@@ -1,0 +1,7 @@
+MACHINE
+    PrjTestsKO3
+CONSTANTS p1
+PROPERTIES p1 = prj1({1},{2})
+ASSERTIONS
+    prj2(NAT1,{2})((1,3)) = 3  /* WD ERROR */
+END

@@ -1,0 +1,1 @@
+MACHINE ChannelsVARIABLES  	chan : seq(MSG)	OPERATIONSSend(mm) =	SELECT		chan=<>	THEN		chan:=<mm>	END ;	mm<--Recv =	SELECT 		chan/=<>	THEN		mm:=head(chan) || chan:=tail(chan)	END		END

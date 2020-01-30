@@ -1,0 +1,10 @@
+REFINEMENT Comp1 REFINES CompMain0
+INCLUDES
+ c0.COUNTER(0), c1.COUNTER(1)  /* we decompose CompMain0 into two instances of COUNTER */
+INVARIANT
+ x=c0.c & y=c1.c /* x goes to machine c0, y to c1 */
+OPERATIONS
+ x_even = BEGIN c0.even END; /* this event goes to machine c0 */
+ y_even = BEGIN c1.even END; /* this event goes to machine c1 */
+ up(n) = SELECT n>0 THEN c0.up(n) || c1.up(n) END /* shared event */
+END

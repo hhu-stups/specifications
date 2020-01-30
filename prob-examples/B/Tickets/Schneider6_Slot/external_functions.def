@@ -1,0 +1,16 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  random_element(x) == max(x);
+  EXTERNAL_FUNCTION_random_element(T) == POW(T) --> T;
+
+  CHOOSE(X) == "a member of X";
+  EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T);
+  
+  EXTERNAL_FUNCTION_UNSAT_CORE(T) == (POW(T)-->BOOL)*POW(T) --> POW(T);
+  UNSAT_CORE(Fun,Set) == Set;
+  
+  EXTERNAL_FUNCTION_MAX_SAT(T) == (POW(T)-->BOOL)*POW(T) --> POW(T);
+  MAX_SAT(Fun,Set) == Set;
+  
+  EXTERNAL_FUNCTION_UNSAT_CORE_ACC(T) == (POW(T)-->BOOL)*POW(T)*POW(T) --> POW(T);
+  UNSAT_CORE_ACC(Fun,Set,Acc) == Set\/Acc;

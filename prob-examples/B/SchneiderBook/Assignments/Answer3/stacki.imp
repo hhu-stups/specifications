@@ -1,0 +1,41 @@
+IMPLEMENTATION    StackI
+
+REFINES           Stack
+
+IMPORTS           FragileStack(ELEM, maxdepth), height_Nvar(maxdepth)
+
+INVARIANT         stack = items
+
+OPERATIONS
+
+  push(ee) = 
+  BEGIN
+    putin(ee);
+    height_INC_NVAR
+  END;
+
+  ee <-- pop = 
+  BEGIN
+    ee <-- takeout;
+    height_DEC_NVAR
+  END;
+
+  rr <-- emptyquery = 
+  VAR tt IN
+    tt <-- height_VAL_NVAR;
+    IF tt = 0
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END;
+
+  rr <-- fullquery = 
+  VAR tt IN
+    tt <-- height_VAL_NVAR;
+    IF tt = maxdepth
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END
+
+END

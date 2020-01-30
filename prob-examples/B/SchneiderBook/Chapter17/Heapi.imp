@@ -1,0 +1,65 @@
+IMPLEMENTATION    HeapI
+
+REFINES           Priorityqueue
+
+IMPORTS           Heaparray, Counter
+
+CONSTANTS         parent
+
+PROPERTIES        parent : (NAT1 - {1}) --> NAT1
+                  & ! xx . (xx : NAT1 - {1} => parent(xx) = xx/2)
+
+INVARIANT         (#pp . (pp : 1..counter >->> 1..counter & queue = (pp;heaparray))) 
+                  & counter = size(queue)
+                  & !xx . (xx : 2..counter => (heaparray(xx/2) <= heaparray(xx)))
+
+OPERATIONS
+
+  insert(nn) = 
+  BEGIN
+    inc;
+    VAR ii IN
+    ii <-- number;
+    append(nn);
+    WHILE ii > 1
+    DO siftup(ii) ; ii := ii / 2
+    INVARIANT ii : 1..counter & counter = size(queue)+1 
+              & !(xx,yy) . (xx:2..counter-1 & yy : 1..counter-1 => ((xx|->yy : closure(parent) & (xx /= ii)) => heaparray(yy) <= heaparray(xx)))
+          & ! xx . (xx : NAT => card(heaparray~[{xx}]) = card((queue<-nn)~[{xx}]))
+    VARIANT ii
+    END
+    END
+    END;
+
+/* Note that if a variable controlled by the implementation is to
+remain constant through the loop, then this must be stated explicitly
+in the invariant.  There will then be a proof obligation to check that
+the variable does not change on any pass through the loop. */
+
+  nn <-- extract = 
+  BEGIN
+  nn <-- next;
+  dec;
+  chophead;
+   VAR zz, ii,flag IN
+   zz <-- number;
+   IF zz > 0 THEN 
+    ii := 1;
+    flag := 0;
+    WHILE flag = 0
+    DO flag,ii <-- siftdown(ii)
+    INVARIANT ii : 1..counter & counter = size(queue) - 1 & nn = queue(1) &
+              ! xx . (xx : NAT => card(heaparray~[{xx}]) = card(tail(queue)~[{xx}])) 
+              & flag : 0..1
+              & !(xx,yy) . (xx:2..counter & yy : 1..counter => ((xx|->yy : closure(parent) & (yy /= ii)) => heaparray(yy) <= heaparray(xx)))
+     & (flag = 1 => 
+       (((2 * ii <= counter) => heaparray(2*ii) >= heaparray(ii))
+        &
+        ((2 * ii + 1 <= counter) => heaparray(2*ii + 1) >= heaparray(ii))))
+    VARIANT 1 + counter - ii - flag
+    END
+    END
+   END
+  END
+
+END

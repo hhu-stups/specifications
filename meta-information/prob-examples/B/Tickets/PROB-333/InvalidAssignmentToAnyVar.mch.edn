@@ -1,0 +1,24 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file
+ "./prob-examples/B/Tickets/PROB-333/InvalidAssignmentToAnyVar.mch",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "b95e9b2371a2396449676bcecef044a84d2759f24af294b00ee5b7428e402536",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :b}

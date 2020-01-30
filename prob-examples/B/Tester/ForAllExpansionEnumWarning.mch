@@ -1,0 +1,7 @@
+MACHINE ForAllExpansionEnumWarning
+DEFINITIONS
+ SET_PREF_EXPAND_FORALL_UPTO == 100;
+ SET_PREF_MAXINT == 3
+ASSERTIONS
+  (!x.(x:NATURAL & x>=0 => card(1..x) = x))
+END

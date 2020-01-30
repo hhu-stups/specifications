@@ -1,0 +1,23 @@
+REFINEMENT        ExamR
+
+REFINES           Exam
+
+VARIABLES         total, num
+
+INVARIANT         total = SIGMA (zz) . (zz : dom(marks) | marks(zz))
+                  & num = card(dom(marks))
+
+INITIALISATION    total := 0 ; num := 0
+
+OPERATIONS
+
+  enter(cc , nn) = 
+  BEGIN 
+    total := total + nn || num := num + 1
+  END;
+
+  aa <-- average = aa := total / num;
+
+  nn <-- number = nn := num
+
+END

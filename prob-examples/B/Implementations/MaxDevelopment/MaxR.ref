@@ -1,0 +1,13 @@
+REFINEMENT
+   MaxR
+REFINES Max
+VARIABLES maxsofar
+INVARIANT maxsofar : NAT &
+  (values /= {} => maxsofar = max(values)) &
+  (values = {} => maxsofar = 0) /* Audience: why is this required ? */
+INITIALISATION
+ maxsofar := 0
+OPERATIONS
+ add_value(n) = maxsofar := max({maxsofar,n});
+ m <-- getmax = m:= maxsofar
+END

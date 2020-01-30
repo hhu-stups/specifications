@@ -1,0 +1,78 @@
+IMPLEMENTATION    FullStatsI
+
+REFINES           FullStats
+
+SEES              Bool_TYPE
+
+IMPORTS           marks_Narr(maxmark+1,200),
+                  sum_Nvar(200*maxmark* maxmark),
+                  number_Nvar(200*maxmark)
+
+INITIALISATION    VAR ii IN
+                  ii := 1;
+                  WHILE ii <= maxmark+1
+                  DO marks_STO_NARR(ii,0);
+                     ii := ii + 1
+                  INVARIANT ii : 1..maxmark+2
+                            & marks_Narr[1..ii-1] <: {0}
+                  VARIANT maxmark+2 - ii
+                  END
+                  END
+
+INVARIANT         ! xx . (xx : 0..maxmark => marks(xx) = marks_Narr(xx+1)) &
+                  sum_Nvar = SIGMA (zz) . (zz : 0..maxmark | zz * marks(zz) ) &
+                  number_Nvar = SIGMA (zz) . (zz : 0..maxmark | marks(zz) ) 
+
+OPERATIONS
+
+  enter(new) = marks_ADD_NARR(new+1,1);
+
+  av <-- average = 
+  VAR ss, tt IN
+  ss <-- number_VAL_NVAR;
+  tt <-- sum_VAL_NVAR;
+  av := tt / ss
+  END;
+
+  num <-- query(mm) = 
+     num <-- marks_VAL_NARR(mm+1);
+
+  num <-- query_over(mm) = 
+  VAR temp, tt, ii IN
+  ii := mm+1;
+  tt := 0;
+  WHILE ii <= maxmark+1
+  DO temp <-- marks_VAL_NARR(ii); 
+     tt:=tt + temp;
+     ii := ii+1
+  INVARIANT ii : NAT & ii <= maxmark+1 &
+            tt = SIGMA (zz) . (zz : mm+1..ii-1 | marks_Narr(zz))
+  VARIANT maxmark+2-ii
+  END;
+  num := temp
+  END;
+
+  rep <-- query_number(nn) = 
+  VAR temp, ii, bb IN
+    ii := 1;
+    bb := FALSE;
+    WHILE ii <= maxmark + 1 & bb = FALSE
+    DO temp <-- marks_VAL_NARR(ii);
+       IF temp = nn THEN bb := TRUE END;
+       ii := ii + 1
+    INVARIANT ii : NAT1 & ii <= maxmark + 2 &
+       ((bb = TRUE) <=> (nn : marks_Narr[1..ii-1]) )
+    VARIANT maxmark + 2 - ii
+    END;
+    rep := bb
+  END
+
+END
+
+
+
+
+
+
+
+

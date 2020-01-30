@@ -1,0 +1,13 @@
+MACHINE Sub
+DEFINITIONS
+  A == 6;
+  B == 4;
+  C == 2;
+  "MyDefs.def"
+CONSTANTS x
+PROPERTIES
+  x = A+B+C &
+  PREDABC
+ASSERTIONS
+  PREDABC
+END

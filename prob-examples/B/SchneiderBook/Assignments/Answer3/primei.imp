@@ -1,0 +1,26 @@
+IMPLEMENTATION    PrimeI
+
+REFINES           Prime
+
+SEES              Bool_TYPE
+
+OPERATIONS
+
+  rep <-- prime_query(nn) = 
+  VAR ii, rr IN
+  ii := 2;
+  rr := TRUE;
+  WHILE (ii < nn-1 & rr = TRUE)
+  DO 
+    IF nn mod ii = 0 THEN rr := FALSE END;
+    ii := ii + 1
+  INVARIANT 
+    ii : NAT & ii <= nn-1 &
+    rr = TRUE <=> 
+      (! xx . (xx : 2..ii-1 => nn mod xx /= 0))
+  VARIANT nn - ii
+  END;
+  rep := rr
+  END 
+
+END

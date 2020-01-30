@@ -1,0 +1,8 @@
+MACHINE VerySimpleSATProblem
+CONSTANTS x1,x2,x3,x4
+PROPERTIES
+ (x1=FALSE or x2=FALSE) &
+ (x1=FALSE or x3=FALSE) &
+ (x1=FALSE or x2=TRUE or x4=FALSE)
+END
+

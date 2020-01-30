@@ -1,0 +1,42 @@
+REFINEMENT        StackR
+
+REFINES           Stack
+
+VARIABLES         stackarr, hwm
+
+INVARIANT         stackarr : 1..maxdepth --> ELEM                  & hwm : NAT
+                  & 1..hwm <| stackarr = rev(stack)
+
+INITIALISATION    stackarr :: 1..maxdepth --> ELEM ; hwm := 0
+
+OPERATIONS
+
+  push(ee) = 
+  BEGIN
+    hwm := hwm+1 ; 
+    stackarr(hwm) := ee
+  END;
+
+  ee <-- pop = 
+  BEGIN
+    ee := stackarr(hwm);
+    hwm := hwm - 1
+  END;
+
+  rr <-- emptyquery = 
+  BEGIN
+    IF hwm = 0
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END;
+
+  rr <-- fullquery = 
+  BEGIN
+    IF hwm = maxdepth
+    THEN rr := yes
+    ELSE rr := no
+    END
+  END
+
+END

@@ -1,0 +1,101 @@
+REFINEMENT MM_3 
+REFINES
+	MM_2
+/*" U2B3.6.11 generated this component from Package MM_3 "*/
+SETS
+	MM_3={thisMM_3}
+CONSTANTS
+	nb
+PROPERTIES
+	nb : ND >-> NATURAL &
+	!(xx,yy).(xx:ND & yy:ND & nb(xx)=nb(yy)=> xx=yy)
+VARIABLES
+	WA,
+	XR,
+	WR,
+	wr
+INVARIANT
+	WA : MM_3 --> POW(ND) &
+	XR : MM_3 --> POW(ND) &
+	WR : MM_3 --> POW(ND) &
+	wr : MM_3 --> POW(ND)
+INITIALISATION
+	WA :: MM_3 --> POW(ND) ||
+	XR :: MM_3 --> POW(ND) ||
+	WR :: MM_3 --> POW(ND) ||
+	wr :: MM_3 --> POW(ND)
+
+EVENTS
+ take =
+ANY thisND WHERE
+	thisND:ND
+THEN
+	SELECT
+		nb(thisND)=min(nb[WR]) &
+		WR/={} &
+		WA={}
+	THEN
+		wr:={thisND}||
+		WR:={} ||
+		XR:={}
+	END
+END
+;
+ idle =
+ANY thisND WHERE
+	thisND:ND
+THEN
+	SELECT
+		thisND/:wr & thisND/:WA
+	THEN
+		skip
+	END
+END
+;
+ switch_ok =
+ANY thisND WHERE
+	thisND:ND
+THEN
+	SELECT
+		thisND:WA
+	THEN
+		WR:=WR\/{thisND} ||
+		WA:=WA-{thisND}
+	END
+END
+;
+ rise =
+ANY thisND WHERE
+	thisND:ND
+THEN
+	SELECT
+		thisND/:WA &
+		thisND/:XR &
+		WR={} &
+		wr={}
+	THEN
+		WA:=WA\/{thisND}
+	END
+END
+;
+ switch_ko =
+ANY thisND WHERE
+	thisND:ND
+THEN
+	SELECT
+		thisND:WA
+	THEN
+		WA:=WA-{thisND} ||
+		XR:=XR\/{thisND}
+	END
+END
+;
+ free =
+BEGIN
+	SELECT
+		wr(thisMM_3)/={}
+	THEN
+		wr(thisMM_3):={}
+	END
+END
+END

@@ -1,0 +1,16 @@
+MACHINE ASSERT_EXPR_Test
+
+DEFINITIONS
+ EXTERNAL_FUNCTION_ASSERT_EXPR(T) == BOOL * STRING *T --> T;
+ ASSERT_EXPR(P,Msg,V) == V
+VARIABLES xx
+INVARIANT
+ xx:NATURAL & 
+ ASSERT_EXPR(bool(xx<10),"xx has reached 10",xx) <20
+INITIALISATION xx:=0
+OPERATIONS
+  Increment = SELECT xx<20 THEN
+    xx := ASSERT_EXPR(bool(xx<11),"xx has reached 11",xx)+5 END
+
+END
+

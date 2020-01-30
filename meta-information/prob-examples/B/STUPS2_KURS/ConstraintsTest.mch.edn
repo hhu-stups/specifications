@@ -1,0 +1,23 @@
+{:number-of-transitions :unknown,
+ :deadlock :unknown,
+ :file "./prob-examples/B/STUPS2_KURS/ConstraintsTest.mch",
+ :number-of-states :unknown,
+ :included-machines [],
+ :comment "",
+ :sha256
+ "0ada16e19cb55a50dac6fef0220bc84158e19826fe36002f9510126d88aae21e",
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :invariant-violated :unknown,
+ :formalism :b}

@@ -1,0 +1,38 @@
+{:properties 1,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 6060,
+ :deadlock false,
+ :file "./prob-examples/B/Benchmarks/Chapter_10/Safes.mch",
+ :enumerated_sets 4,
+ :variables 3,
+ :number-of-states 390,
+ :included-machines
+ ["./prob-examples/B/Benchmarks/Chapter_10/Safes.mch"
+  "./prob-examples/B/Benchmarks/Chapter_10/Locks.mch"
+  "./prob-examples/B/Benchmarks/Chapter_10/Doors.mch"
+  "./prob-examples/B/Benchmarks/Chapter_10/Keys.mch"],
+ :comment "",
+ :files 4,
+ :static_assertions 0,
+ :operations 11,
+ :sha256
+ "23dd0a6a29684f53a19cfce981be01c4786156d8f55d77e43b695d63ae91a84f",
+ :invariants 4,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 1110,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

@@ -1,0 +1,37 @@
+REFINEMENT        JukeboxR
+
+REFINES           Jukebox
+
+CONSTANTS         freefreq
+
+PROPERTIES        freefreq : NAT1
+
+VARIABLES         creditr, playlist, free
+
+INVARIANT         creditr : NAT & creditr = credit
+                  & playlist : iseq(TRACK) & ran(playlist) = playset
+                  & free : 0..freefreq                  
+
+
+INITIALISATION    creditr := 0 ; playlist := <> ; free := 0  /* seq comp in INIT: is that ok ??? */
+
+OPERATIONS
+
+  pay(cc) = PRE cc: NAT THEN creditr := min({creditr + cc, limit}) END;
+
+  select(tt) =  PRE tt: TRACK  /* added by mal */ 
+  THEN
+    IF tt /: ran(playlist) THEN playlist := playlist <- tt END;
+    IF free = freefreq 
+    THEN CHOICE free := 0 OR creditr := creditr - 1 END
+    ELSE free := free + 1 ; creditr := creditr - 1 END
+  END;
+
+  tt <-- play = PRE playlist /= <> THEN
+            tt := first(playlist) ; playlist := tail(playlist) END ;
+
+  penalty = IF playlist /= <> THEN playlist := tail(playlist)
+            ELSIF creditr > 0 THEN creditr := creditr - 1
+            END
+
+END

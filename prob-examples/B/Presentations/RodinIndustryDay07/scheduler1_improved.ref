@@ -1,0 +1,77 @@
+REFINEMENT scheduler1_improved
+
+REFINES scheduler0
+
+DEFINITIONS scope_PROC == 1..15;
+  ASSERT_LTL == "G ([new] -> X e(del)) ";
+  ASSERT_LTL0 == "G ([del] -> X e(new)) ";
+  ASSERT_LTL1 == "G ([enter] -> X e(leave)) ";
+  ASSERT_LTL2 == "G ([leave] -> X e(enter)) ";
+  ASSERT_LTL3 == "G ([new] -> X e(ready)) "
+VARIABLES proc, readyq, activep, activef, idleset
+
+INVARIANT  
+    proc : POW(PROC) &  /* created */
+    readyq : seq(PROC) & /* readyq */
+    activep : POW(PROC) &  /* Powerset to avoid extra states compared to scheduler1_improved.prom */
+    activef : BOOL &
+    idleset : POW(PROC)  /* idle */
+    
+              
+INITIALISATION  
+    proc:={}  ||  readyq:={} ||
+    activep:={} || activef := FALSE ||
+    idleset := {}
+    
+OPERATIONS
+
+new(p) =
+    PRE
+        p : PROC - proc 
+    THEN
+        idleset := idleset \/ {p} ||
+        proc := proc \/ {p}
+    END;
+
+del(p) =
+    PRE
+        p : PROC &
+        p : idleset
+    THEN
+        proc := proc-{p} ||
+        idleset := idleset - {p} 
+    END;
+    
+ready(p) =
+    PRE
+        p : idleset
+    THEN
+        readyq:=readyq<-p ||
+        idleset := idleset - {p}         
+    END;
+            
+enter(p) =
+    PRE
+        p : PROC &
+        readyq/=<> &
+        p = first(readyq)    &
+        activef=FALSE  
+    THEN
+        activep:={p} ||
+        readyq := tail(readyq) ||
+        activef:=TRUE
+    END;
+            
+leave(p) =
+    PRE
+        p : PROC &
+        activef=TRUE &
+        p : activep
+    THEN
+        idleset := idleset \/ {p} ||
+        activef := FALSE ||
+        activep := {}
+    END
+
+END
+

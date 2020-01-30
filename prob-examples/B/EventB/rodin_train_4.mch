@@ -1,0 +1,17 @@
+MODEL train_4
+DEFINITIONS SET_PREF_SHOW_EVENTB_ANY_VALUES==TRUE 
+SETS B;R;S
+CONSTANTS fst,lst,nxt,rtbl,SIG,blpt,lft,rht
+PROPERTIES (rtbl : (B <-> R)) & (dom(rtbl) = B) & (ran(rtbl) = R) & (nxt : (R --> (B >+> B))) & (fst : (R --> B)) & (lst : (R --> B)) & ((fst)~ <: rtbl) & ((lst)~ <: rtbl) & ! r.((r : R) => ((r : R) => (fst(r) /= lst(r)))) & ! r.((r : R) => ((r : R) => ! S.((S : POW(B)) => (((S <: B) & (S <: (nxt(r)[S]))) => (S = {}))))) & ! r.((r : R) => ((r : R) => (nxt(r) : ((((rtbl)~[{r}]) - {lst(r)}) >->> (((rtbl)~[{r}]) - {fst(r)}))))) & ! (r,s).((r : R & s : R) => (((r : R) & (s : R) & (r /= s)) => (fst(r) /: (((rtbl)~[{s}]) - {fst(s),lst(s)})))) & ! (r,s).((r : R & s : R) => (((r : R) & (s : R) & (r /= s)) => (lst(r) /: (((rtbl)~[{s}]) - {fst(s),lst(s)})))) & (SIG : (ran(fst) >->> S)) & (blpt <: B) & (lft : (blpt --> B)) & (rht : (blpt --> B)) & ((lft /\ rht) = {}) & ! r.((r : R) => ((r : R) => (((lft \/ rht) /\ (nxt(r) \/ (nxt(r))~)) : (blpt +-> B)))) & ((blpt /\ ran(fst)) = {}) & ((blpt /\ ran(lst)) = {})
+VARIABLES GRN,LBT,OCC,TRK,frm,resbl,resrt,rsrtbl
+INVARIANT (resrt <: R) & (resbl <: B) & (rsrtbl : (resbl --> resrt)) & (rsrtbl <: rtbl) & (OCC <: resbl) & ! r.((r : R) => ((r : R) => (((nxt(r)[(((rtbl)~[{r}]) - ((rsrtbl)~[{r}]))]) /\ (((rsrtbl)~[{r}]) - OCC)) = {}))) & ! r.((r : R) => ((r : R) => ((nxt(r)[((rsrtbl)~[{r}])]) <: ((rsrtbl)~[{r}])))) & ! r.((r : R) => ((r : R) => ((nxt(r)[(((rsrtbl)~[{r}]) - OCC)]) <: (((rsrtbl)~[{r}]) - OCC)))) & (TRK : (B >+> B)) & (frm <: resrt) & ((rsrtbl[OCC]) <: frm) & ! r.((r : R) => ((r : (resrt - frm)) => ((rtbl |> {r}) = (rsrtbl |> {r})))) & ! (x,y).((x : B & y : B) => (((x |-> y) : TRK) => # r.((r : R) & ((r : R) & ((x |-> y) : nxt(r)))))) & ! r.((r : R) => ((r : frm) => ((((rsrtbl)~[{r}]) <| nxt(r)) = (((rsrtbl)~[{r}]) <| TRK)))) & (LBT <: OCC) & ! (a,b).((a : B & b : B) => (((b : LBT) & (b : ran(nxt(rsrtbl(b)))) & (a = (nxt(rsrtbl(b)))~(b)) & (a : dom(rsrtbl))) => (rsrtbl(a) /= rsrtbl(b)))) & (GRN <: S) & (((lft \/ rht) /\ (TRK \/ (TRK)~)) : (blpt +-> B))
+INITIALISATION resrt := ({}) || resbl := ({}) || rsrtbl := ({}) || OCC := ({}) || TRK := ({}) || frm := ({}) || LBT := ({}) || GRN := ({})
+OPERATIONS
+ route_reservation = ANY r WHERE (r /: resrt) & ((((rtbl)~[{r}]) /\ resbl) = {}) THEN resrt := ((resrt)\/({r})) || rsrtbl := ((rsrtbl)\/((rtbl)|>({r}))) || resbl := ((resbl)\/(((rtbl)~)[{r}])) END ;
+ route_freeing = ANY r WHERE (r : (resrt - ran(rsrtbl))) THEN resrt := ((resrt)\({r})) || frm := ((frm)\({r})) END ;
+ FRONT_MOVE_1 = ANY b WHERE (b : dom(SIG)) & (SIG(b) : GRN) THEN OCC := ((OCC)\/({b})) || LBT := ((LBT)\/({b})) || GRN := ((GRN)\({(SIG)(b)})) END ;
+ FRONT_MOVE_2 = ANY b WHERE (b : OCC) & (b : dom(TRK)) & (TRK(b) /: OCC) THEN OCC := ((OCC)\/({(TRK)(b)})) END ;
+ BACK_MOVE_1 = ANY b WHERE (b : LBT) & (b /: dom(TRK)) THEN OCC := ((OCC)\({b})) || rsrtbl := (({b})<<|(rsrtbl)) || resbl := ((resbl)\({b})) || LBT := ((LBT)\({b})) END ;
+ BACK_MOVE_2 = ANY b WHERE (b : LBT) & (b : dom(TRK)) & (TRK(b) : OCC) THEN OCC := ((OCC)\({b})) || rsrtbl := (({b})<<|(rsrtbl)) || resbl := ((resbl)\({b})) || LBT := (((LBT)\({b}))\/({(TRK)(b)})) END ;
+ point_positionning = ANY r WHERE (r : (resrt - frm)) THEN TRK := ((((dom((nxt)(r)))<<|(TRK))|>>(ran((nxt)(r))))\/((nxt)(r))) END 
+END

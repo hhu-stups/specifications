@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 22045,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/SSF/DSAOCSSv002/StuffForClassicProB/ModeProtocolMachine_mch.eventb",
+ :enumerated_sets 2,
+ :variables 8,
+ :number-of-states 8352,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/SSF/DSAOCSSv002/StuffForClassicProB/ModeProtocolMachine_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 7,
+ :operations 8,
+ :sha256
+ "4114b9adc38747d93cdfbf3a7d1b38765f39fd85c2a8e0bb9c5ea740db59c7e0",
+ :invariants 13,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 26240,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

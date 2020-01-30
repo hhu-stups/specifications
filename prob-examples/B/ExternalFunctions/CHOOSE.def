@@ -1,0 +1,14 @@
+DEFINITIONS
+/* This Library DEFINITION file provides a convenient access to the ProB
+   external function implementing the Hilbert Choose operator which
+   returns for a set a designated element of the set.
+   Note that CHOOSE is deterministic and is a mathematical function, i.e.,
+   it will always return the same element given the same set.
+*/
+/* Include it into your machine by putting the file in the same directory
+   as the remaining files of your project and then writing 
+  DEFINITIONS
+      "CHOOSE.def"
+*/
+ CHOOSE(X) == "a member of X";
+ EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T)

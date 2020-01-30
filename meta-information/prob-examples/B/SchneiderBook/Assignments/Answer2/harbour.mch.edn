@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 45,
+ :deadlock false,
+ :file
+ "./prob-examples/B/SchneiderBook/Assignments/Answer2/harbour.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :number-of-states 15,
+ :included-machines
+ ["./prob-examples/B/SchneiderBook/Assignments/Answer2/harbour.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "6b81cc82e39fb6961e58675e38000036fe2549ade45f759bf1e0e5b12bad6e1b",
+ :invariants 6,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 150,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

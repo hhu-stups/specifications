@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 6,
+ :deadlock false,
+ :file "./prob-examples/B/Tickets/StdLib/ChooseExternal.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/Tickets/StdLib/ChooseExternal.mch"
+  "./lib/CHOOSE.def"],
+ :comment "",
+ :files 2,
+ :static_assertions 9,
+ :operations 2,
+ :sha256
+ "ec6bacc857b995bc2b45c13c110e205f3d0bd18ec324201650b8a193f34dfebd",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 140,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

@@ -1,0 +1,19 @@
+IMPLEMENTATION
+   MaxImpVector
+REFINES MaxR2
+IMPORTS Vector0
+DEFINITIONS SET_PREF_MAXINT == 5
+INVARIANT
+  x=maxsofar
+OPERATIONS
+  add_value(n) = VAR v,w IN
+    v,w<-- value;
+    IF n>=v THEN
+      modify(n,w)
+    END
+  END;
+  m <-- getmax = 
+   VAR w IN
+     m,w <-- value
+   END
+END

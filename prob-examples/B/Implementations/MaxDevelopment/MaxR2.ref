@@ -1,0 +1,10 @@
+REFINEMENT
+   MaxR2
+REFINES MaxR
+VARIABLES maxsofar
+INITIALISATION maxsofar := 0
+OPERATIONS
+  add_value(n) = IF n>maxsofar THEN
+    maxsofar := n 
+  END
+END

@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 3,
+ :deadlock false,
+ :file
+ "./prob-examples/B/RecursiveFunctions/RecursiveSigmaCHOOSEv1.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/B/RecursiveFunctions/RecursiveSigmaCHOOSEv1.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 5,
+ :operations 2,
+ :sha256
+ "379b3f7cadfe4ba2011cded977326e6045c633b7f5bcb63b5bb2909257d72026",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 140,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :b}

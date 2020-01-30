@@ -1,0 +1,36 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 292198,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/Ref6_CockpitLights_mch.eventb",
+ :enumerated_sets 9,
+ :variables 35,
+ :number-of-states 44791,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/ABZ_Landing_Gear_Journal/Ref6_CockpitLights_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 44,
+ :sha256
+ "b6577d7c042024e88bd9b5d1ad6ba19fc1c3bb8b3177f83c8abbe06ee78559fb",
+ :invariants 36,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 299390,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 1,
+ :formalism :eventb}

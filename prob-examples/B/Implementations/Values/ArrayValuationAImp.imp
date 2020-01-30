@@ -1,0 +1,9 @@
+IMPLEMENTATION ArrayValuationAImp
+REFINES ArrayValuationA
+SEES ArrayValuationB
+VALUES
+  t1 = t4;
+  t2 = {1|->FALSE, 2|->TRUE};
+  t3 = EnsAbs*{BOOL}*{0}
+END
+

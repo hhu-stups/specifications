@@ -1,0 +1,42 @@
+IMPLEMENTATION    SortarrayI(cap)
+
+REFINES           Sortarray
+
+IMPORTS           Priorityqueue, Array(cap)
+
+PROMOTES          get, set
+
+INVARIANT         queue = <> & array = aa
+
+OPERATIONS
+
+  sort = 
+  BEGIN
+  VAR ii, nn IN
+    ii := 0;
+    WHILE ii < cap
+    DO ii := ii + 1;
+       nn <-- get(ii);
+       insert(nn)
+    INVARIANT ii : NAT & ii <= cap & 
+              # pp . (pp : 1..ii >->> 1..ii & (pp;queue) = 1..ii <| array) &
+              array = aa
+    VARIANT cap - ii
+    END
+  END;
+  VAR ii, nn IN
+    ii := 0;
+    WHILE ii < cap
+    DO ii := ii + 1;
+       nn <-- extract;
+       set(ii,nn)
+    INVARIANT ii : NAT & ii <= cap &
+              # pp . (pp : 1..cap >->> 1..cap & (pp;(queue ^ (1..ii <| array))) = aa) &
+              ! xx . (xx : 1..ii-1 => array(xx) <= array(xx+1)) &
+              ! (xx,yy) . (xx : ran(queue) & yy : array[1..ii] => yy <= xx) 
+    VARIANT cap - ii
+    END
+  END   
+  END   
+
+END

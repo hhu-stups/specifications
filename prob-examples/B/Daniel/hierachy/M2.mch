@@ -1,0 +1,18 @@
+MACHINE M2(PP,pp)
+CONSTRAINTS
+  pp:NAT1
+SETS
+ ENUM2={uu};
+ D2
+CONSTANTS i2
+PROPERTIES
+ i2:ENUM2
+VARIABLES yy
+INVARIANT
+ yy:ENUM2
+INITIALISATION yy:=uu
+OPERATIONS
+  Set2(zz) = PRE zz:ENUM2 THEN yy:= zz END;
+  r <-- query1 = BEGIN r := yy END;
+  r <-- query2 = BEGIN r := i2 END
+END

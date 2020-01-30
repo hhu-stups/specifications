@@ -1,0 +1,21 @@
+IMPLEMENTATION
+   DivisionImplOk
+REFINES		Division
+DEFINITIONS SET_PREF_MAXINT == 5; SET_PREF_MAX_OPERATIONS == 30
+
+OPERATIONS
+   q, r <-- div(a, b) = 
+	/* PRE	a : NAT & b : NAT1 */
+	BEGIN	
+		r := a;
+		q := 0;
+		WHILE 		r >= b
+		DO		q := q+1;
+				r := r-b
+		INVARIANT	r : NAT & 
+				q : NAT &
+				r+(q*b) = a
+		VARIANT		r
+		END
+	END	
+END

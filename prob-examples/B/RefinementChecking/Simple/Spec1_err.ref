@@ -1,0 +1,15 @@
+REFINEMENT Spec1_err
+REFINES Spec
+CONSTANTS c1
+PROPERTIES c1: ID
+VARIABLES xx2
+INVARIANT
+ xx2:ID
+INITIALISATION xx2 := c1
+OPERATIONS
+  Set(yy) = PRE yy:ID THEN xx2:= yy END;
+  SetNot(yy) = PRE yy: ID THEN
+                 IF yy=c1 THEN xx2 := bb ELSE xx2 := c1 END  /* error if bb=c1 */
+               END;
+  r <-- Getxx = BEGIN r := xx2 END
+END

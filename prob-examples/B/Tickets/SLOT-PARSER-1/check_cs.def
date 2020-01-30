@@ -1,0 +1,40 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  "LibraryIO.def";
+  /* XXX: testcases */
+  /*
+   * Checks a set of unit-pairs for conflicts, based on a groups and semesterChoice for each unit
+   */
+  SAME_RHYTHM(s1,s2) == (s1'rhythm = s2'rhythm /* both in the same rhythm */
+                         or s1'rhythm = 0      /* first weekly */
+                         or s2'rhythm = 0);    /* second weekly */
+  CHECK_CS(conflict_set, groupChoice, semesterChoice, local_sessions, ignored_sessions) ==
+    #(restricted_sessions).( restricted_sessions = (ignored_sessions <<| local_sessions)
+      &
+      /* XXX check statically wether u1 and u2 are definetely in conflict or not in conflict; see UnitsDefinitelyInConflict below */
+      !(u1, u2).( (u1, u2) : conflict_set & semesterChoice(u1) = semesterChoice(u2) =>
+        #(group1, group2).( /* LET */
+          group1 = unit_group(u1, groupChoice(u1))
+          &
+          group2 = unit_group(u2, groupChoice(u2))
+          &
+          !(s1, s2).(s1 : restricted_sessions[unit_group(u1, groupChoice(u1))'sessions] &
+                     s2 : restricted_sessions[unit_group(u2, groupChoice(u2))'sessions]
+              =>
+              (SAME_RHYTHM(s1,s2)
+                => /* if they are on a rhythm that might interfere, their slots must be different */
+                  s1'slot /= s2'slot
+              )
+          )
+        )
+      )
+    )
+    & printf("~nGroups: ~w~n", groupChoice)
+/*    & printf_nonvar("Groups (nonvar): ~w~n", groupChoice) & observe(groupChoice)
+    & printf("Local Sessions: ~w~n", local_sessions)  */
+    & printf("Semesters: ~w~n", semesterChoice);
+
+    MandatorySlotForUnit == {u,slt|card((units(u)'groups)) = 1 & #(gnr,gr,ss).(gnr|->gr:units(u)'groups & ss:gr'sessions & slt=sessions(ss)'slot)}; /* still takes too long to compute; should also be put as constant if we use it */
+    DefinitelyInConflict(u1,u2) == (MandatorySlotForUnit[{u1}] /\ MandatorySlotForUnit[{u2}] /= {});
+    NoObviousConflict(u1,u2) == (MandatorySlotForUnit[{u1}] /\ MandatorySlotForUnit[{u2}] = {});
+    UnitsDefinitelyInConflict == {u1,u2| u1:dom(MandatorySlotForUnit) & u2:dom(MandatorySlotForUnit) & u1<u2 & DefinitelyInConflict(u1,u2)};

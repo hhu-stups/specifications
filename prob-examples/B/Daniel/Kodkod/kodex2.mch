@@ -1,0 +1,12 @@
+MACHINE kodex
+SETS
+ S={a,b,c,d}
+CONSTANTS X,x,y
+PROPERTIES
+ x:X & y:X & X<:S & x/=y
+VARIABLES v
+INVARIANT
+ v:S
+INITIALISATION v:=a
+END
+

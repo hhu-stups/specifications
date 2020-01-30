@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 16,
+ :deadlock false,
+ :file "./prob-examples/B/Tester/OpCalls/SwitchParameters2.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :number-of-states 1,
+ :included-machines
+ ["./prob-examples/B/Tester/OpCalls/SwitchParameters2.mch"
+  "./prob-examples/B/Tester/OpCalls/SwitchParameters1.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "eb137c3e0e9805b3d942f4e8a558c877748df18f495dad2ed6f640613eb5d0fc",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 190,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

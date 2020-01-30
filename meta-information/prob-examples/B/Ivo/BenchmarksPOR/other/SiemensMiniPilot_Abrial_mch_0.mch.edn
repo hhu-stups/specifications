@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 2,
+ :deferred_sets 0,
+ :number-of-transitions 991,
+ :deadlock false,
+ :file
+ "./prob-examples/B/Ivo/BenchmarksPOR/other/SiemensMiniPilot_Abrial_mch_0.mch",
+ :enumerated_sets 1,
+ :variables 9,
+ :number-of-states 180,
+ :included-machines
+ ["./prob-examples/B/Ivo/BenchmarksPOR/other/SiemensMiniPilot_Abrial_mch_0.mch"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "808b1e582f27b1658bed2d5fe1626b6afda481c558aad0a947c050cbe7969b9c",
+ :invariants 8,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 120,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :b}

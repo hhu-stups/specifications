@@ -1,0 +1,41 @@
+REFINEMENT LiftR
+REFINES Lift
+DEFINITIONS
+  FLOORS == (groundf .. topf);
+  ASSERT_LTL == "G ([push_call_button(groundf)] -> X F {cur_floor=groundf & door_open=TRUE})";
+  ASSERT_LTL2 == "G ([push_inside_button(topf)] -> X F {cur_floor=topf & door_open=TRUE})";
+   /* These LTL properties are satsified by adding the controller below */
+  cur_floor_not_requested == (cur_floor /: inside_buttons \/ call_buttons );
+  floors_above_requested == {x|x:FLOORS & x: inside_buttons \/ call_buttons & x>cur_floor};
+  floors_below_requested == {x|x:FLOORS & x: inside_buttons \/ call_buttons & x<cur_floor};
+  MAXCPRESS == 2 /* Maximum number of times the call_button can be pressed without the lift moving */
+VARIABLES cur_floor, inside_buttons, door_open, call_buttons,direction_up,callcount
+INVARIANT  callcount:NAT 
+INITIALISATION
+  cur_floor := groundf || inside_buttons := {} || door_open := FALSE || call_buttons := {} ||
+  direction_up := FALSE || callcount := 0
+OPERATIONS
+  push_call_button(b) = PRE b:FLOORS & b/: call_buttons &
+     (b=cur_floor => callcount<MAXCPRESS) /* Limit nr of times call button can be pressed while lift is on current floor */
+   THEN
+    call_buttons := call_buttons \/ {b} || IF b=cur_floor THEN callcount := callcount+1 END
+  END;
+  reverse_lift_down = PRE cur_floor_not_requested & door_open = FALSE &
+         direction_up=TRUE  & floors_above_requested={} & floors_below_requested/={}
+         THEN
+      direction_up := FALSE
+  END;
+  reverse_lift_up = PRE cur_floor_not_requested & door_open = FALSE &
+          direction_up=FALSE & floors_below_requested={} & floors_above_requested/={}
+         THEN
+       direction_up := TRUE
+  END;
+  move_up = PRE door_open = FALSE & cur_floor <topf & direction_up=TRUE
+                & cur_floor_not_requested & floors_above_requested /= {} THEN
+    cur_floor := cur_floor +1 || callcount := 0
+  END;
+  move_down = PRE door_open = FALSE & cur_floor>groundf & direction_up=FALSE
+                &  cur_floor_not_requested & floors_below_requested /= {} THEN
+    cur_floor := cur_floor - 1 || callcount := 0
+  END
+END

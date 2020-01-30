@@ -1,0 +1,8 @@
+MACHINE
+    REF_APP_JUST_SETS
+
+SETS
+    SS = { SS1, SS2 };
+    TT
+
+END

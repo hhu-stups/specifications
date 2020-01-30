@@ -1,0 +1,39 @@
+{:properties 69,
+ :definitions 7,
+ :deferred_sets 0,
+ :number-of-transitions 34,
+ :deadlock true,
+ :file "./prob-examples/B/ExternalFunctions/SearchForFile.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 34,
+ :included-machines
+ ["./prob-examples/B/ExternalFunctions/SearchForFile.mch"
+  "./prob-examples/B/ExternalFunctions/LibraryFiles.mch"
+  "./prob-examples/B/ExternalFunctions/LibraryStrings.mch"
+  "./lib/LibraryStrings.def"
+  "./prob-examples/B/ExternalFunctions/LibraryMath.mch"],
+ :comment "",
+ :files 5,
+ :static_assertions 188,
+ :operations 3,
+ :sha256
+ "bde4db7690b2cf3b0c6764d3f283d4607068c2c271f187e83ffd78160805a934",
+ :invariants 0,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 60,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 43,
+ :formalism :b}

@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
+ :deadlock true,
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Modes/mode_m6_mch.eventb",
+ :enumerated_sets 2,
+ :variables 28,
+ :number-of-states :unknown,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Abrial_Modes/mode_m6_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 37,
+ :sha256
+ "81c0781048500dc02fa0b2ab2f5fe096c58dd21533298c8971f12c30ff1c93ba",
+ :invariants 15,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage :timeout,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time :timeout,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :invariant-violated :unknown,
+ :constants 0,
+ :formalism :eventb}

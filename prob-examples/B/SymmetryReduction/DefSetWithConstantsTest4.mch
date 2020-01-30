@@ -1,0 +1,7 @@
+MACHINE DefSetWithConstantsTest4
+DEFINITIONS SET_PREF_MAX_INITIALISATIONS == 10000
+SETS D
+ CONSTANTS a,b,c,d
+ PROPERTIES a:D & b:D & a/=b & c:D & d:D & card(D)=20
+END
+

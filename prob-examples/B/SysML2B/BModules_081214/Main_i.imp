@@ -1,0 +1,24 @@
+/*
+ - File automatically generated -
+ ============================================================================
+ Name        : Main_i.imp
+ Author      : 
+ Version     : 0.1
+ Copyright   : 
+ Description : Definition of the main B implementation which contains the main run cycle operation 
+ ============================================================================
+ */
+
+IMPLEMENTATION
+	Main_i
+REFINES
+	Main
+IMPORTS
+	Def_Types,
+	CoffeeMachine_1 
+OPERATIONS
+run_cycle =
+	BEGIN
+		CoffeeMachine_1_schedule
+	END
+END

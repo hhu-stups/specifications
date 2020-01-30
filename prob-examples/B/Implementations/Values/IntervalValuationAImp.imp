@@ -1,0 +1,10 @@
+IMPLEMENTATION IntervalValuationAImp
+REFINES IntervalValuationA
+SEES IntervalValuationB
+VALUES
+  c1 = cteInterv1;
+  c2 = 0..(MAXINT/2 - 1);
+  EnsAbs1 = 0..100;
+  c3 = 1..6;
+  c4 = cteInterv2
+END

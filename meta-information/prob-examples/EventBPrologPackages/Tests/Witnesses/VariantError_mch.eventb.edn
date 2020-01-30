@@ -1,0 +1,36 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :number-of-transitions 39,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Tests/Witnesses/VariantError_mch.eventb",
+ :enumerated_sets 0,
+ :variables 1,
+ :number-of-states 2,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Tests/Witnesses/VariantError_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "6b8603391e123a46ba8cdc18e33e11521860ab1203715c87679e416ca9e64df9",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 120,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 0,
+ :formalism :eventb}

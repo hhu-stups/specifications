@@ -1,0 +1,30 @@
+REFINEMENT        IroningR
+
+REFINES           Ironing
+
+SEES              Bool_TYPE
+
+VARIABLES         pilearr, counter
+
+INVARIANT         pilearr : 1..limit +-> ITEM 
+                  & counter : 0..limit
+                  & ((1..counter) <| pilearr) = pile
+
+INITIALISATION    pilearr := <> || counter := 0
+
+OPERATIONS
+
+  put(ii) = 
+  BEGIN
+    counter := counter + 1 ; pilearr(counter) := ii 
+  END ;
+
+  ii <-- take = 
+  BEGIN
+    ii := pilearr(counter) ; counter := counter - 1
+  END;
+
+bb <-- query(ii) =
+  IF ii : pilearr[1..counter] THEN bb := TRUE ELSE bb := FALSE END
+
+END

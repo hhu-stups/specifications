@@ -1,0 +1,49 @@
+REFINEMENT SaveSpecR
+ REFINES SaveSpec
+ SETS ALLFILENAME={a,b,c,cc,dd,ee};CONTENT={nix,bla,fasel,laber}
+CONSTANTS
+  empty,link,FILENAME,BACKUPFILENAME
+PROPERTIES empty:CONTENT  &  FILENAME <: ALLFILENAME & 
+   BACKUPFILENAME <: ALLFILENAME &
+   FILENAME \/ BACKUPFILENAME = ALLFILENAME & 
+   FILENAME /\ BACKUPFILENAME = {} & 
+   link: FILENAME >->> BACKUPFILENAME &
+   
+   /* fuer model check: */ empty = nix & FILENAME = {a,b,c} & link(a)=cc & link(b)=dd & link(c)=ee
+	
+
+	VARIABLES disk, opened, backuped 
+ INVARIANT disk:ALLFILENAME +-> CONTENT & opened: FILENAME +-> CONTENT & backuped: BACKUPFILENAME +-> CONTENT  
+ INITIALISATION disk,opened,backuped:={},{},{} 
+ OPERATIONS
+  create_new(filename)= PRE filename:FILENAME & filename /: dom(disk) THEN disk:= disk \/ {filename|->empty} END;
+  open_file(filename)= PRE filename:FILENAME & filename:dom(disk) & filename/:dom(opened) & link(filename)/:dom(disk)
+  							THEN opened:= opened\/ {filename|->disk(filename)} || 
+  						  	     backuped,disk:= backuped \/ {link(filename)|->disk(filename)},disk\/{link(filename)|->disk(filename)} 
+  
+  						END;
+  recover(filename)= PRE filename:FILENAME & filename:dom(disk) & filename/:dom(opened) & link(filename):dom(disk)
+  							THEN opened:= opened\/ {filename|->disk(link(filename))} || 
+  							     backuped := backuped \/ {link(filename)|->disk(link(filename)) } ||
+  							     disk:=disk-{ filename|->disk(filename) }  \/ { filename |-> disk(link(filename))}
+  
+  						END;
+  close_file(filename)= PRE filename:FILENAME  & filename:dom(opened) & link(filename):dom(backuped) 
+                        THEN 
+                         opened:=opened - {filename|->opened(filename)} || 
+                         backuped:=backuped - {link(filename)|->backuped(link(filename))}  ||
+                         disk:=disk-{ link(filename)|-> disk(link(filename)), filename|->disk(filename) }  \/ { filename |-> backuped(link(filename))}
+                        END;  
+  edit_file(filename, content) = PRE filename:FILENAME & filename:dom(opened) & content:CONTENT & content/=opened(filename)
+  								 THEN opened(filename):=content || disk(filename):=content
+  								 END;
+  save_file(filename)= PRE filename:FILENAME & filename:dom(opened) & backuped(link(filename))/=opened(filename) 
+  					   THEN backuped(link(filename)):=opened(filename) || disk (link(filename)):=opened(filename)
+  					   END;
+  crash = opened,backuped:={},{};		
+  r <-- getContent(filename)= PRE filename:FILENAME & filename:dom(disk) THEN r:=disk(filename) END;
+  r <-- isDirty(filename)= PRE filename:FILENAME & filename:dom(opened) THEN 
+                            IF backuped(link(filename))/=opened(filename) THEN r := TRUE ELSE r := FALSE END
+                           END
+                     
+END 

@@ -1,0 +1,26 @@
+REFINEMENT        TownsRR(TOWN)
+
+REFINES           TownsR
+
+VARIABLES         rep
+
+INVARIANT         rep : TOWN --> TOWN
+                  & ! (tt1,tt2) . (tt1 : TOWN & tt2:TOWN => ((class(tt1) = class(tt2)) <=> (rep(tt1) = rep(tt2))))
+
+INITIALISATION    rep := id(TOWN) 
+
+OPERATIONS
+
+  link(tt1 , tt2) = 
+  IF rep(tt1) /= rep(tt2)
+  THEN rep := rep <+ (rep~[{rep(tt1)}] * {rep(tt2)})
+  END;
+
+  ans <-- connectedquery(tt1 , tt2) = 
+  IF rep(tt1) = rep(tt2)
+  THEN ans := connected
+  ELSE ans := notconnected
+  END
+
+END
+

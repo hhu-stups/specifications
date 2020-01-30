@@ -1,0 +1,16 @@
+REFINEMENT Spec1_with_new_op_err
+REFINES Spec
+DEFINITIONS
+   SET_PREF_ALLOW_NEW_OPERATIONS_IN_REFINEMENT == FALSE // with FALSE we get an error message for Get2xx
+VARIABLES xx2
+INVARIANT
+  xx2:ID
+INITIALISATION xx2::ID
+OPERATIONS
+  Set(yy) = PRE yy:ID THEN xx2:= yy END;
+  SetNot(yy) = PRE yy: ID THEN
+                 IF yy=aa THEN xx2 := bb ELSE xx2 := aa END
+               END;
+  r <-- Getxx = BEGIN r := xx2 END;
+  r2 <-- Get2xx = BEGIN r2 := {aa|->1,bb|->2,cc|->3}(xx2) END
+END

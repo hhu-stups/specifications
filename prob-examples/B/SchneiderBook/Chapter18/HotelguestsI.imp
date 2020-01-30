@@ -1,0 +1,41 @@
+IMPLEMENTATION    HotelguestsI
+
+REFINES           Hotelguests
+
+PROPERTIES        ROOM = 1..sze
+
+IMPORTS           guests_Varr(NAME, sze)
+
+SEES              Bool_TYPE
+
+INVARIANT         guests_Varr = guests
+
+INITIALISATION    VAR ii IN
+                    ii := sze;
+                    WHILE ii > 0
+                    DO guests_STO_ARR(ii,empty); ii := ii - 1
+                    INVARIANT ii : 0..sze & (ii+1..sze) <| guests_Varr = (ii+1..sze) * {empty}
+                    VARIANT ii
+                    END
+                  END
+
+OPERATIONS
+
+  guestcheckin(rr , nn) = guests_STO_ARR(rr,nn);
+
+  guestcheckout(rr) = guests_STO_ARR(rr,empty);
+
+  nn <-- guestquery(rr) = nn <-- guests_VAL_ARR(rr);
+
+  rr <-- presentquery(nn) = 
+  VAR bb, ii IN
+    bb, ii <-- guests_SCH_LO_EQL_ARR(1,sze,nn);
+    IF bb = TRUE 
+    THEN rr := present 
+    ELSE rr := notpresent 
+    END
+  END;
+
+  guestswap(rr , ss) = guests_SWP_ARR(rr, ss)
+
+END

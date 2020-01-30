@@ -1,0 +1,32 @@
+REFINEMENT CXCC2R
+REFINES CXCC2
+ INCLUDES Ether 
+ DEFINITIONS
+  FT_TYPE == (from:NODES & to:NODES & from/=to)
+VARIABLES routes
+INVARIANT 
+  routes: POW(iseq1(NODES)) & 
+  aroutes <: routes &
+  !(p,q).((p:route & q:routes & p/=q) => (first(p)=first(q)=>last(p)/=last(q))) /* only one route between two nodes */
+INITIALISATION
+  routes := {}
+ OPERATIONS 
+  initializeConnection(from,to) =  PRE FT_TYPE &  !(r).(r:routes => (first(r)=from => last(r)/=to))  THEN 
+   VAR r IN r <-- getRoute(from,to);routes := routes \/ {r} END 
+   END;  
+   
+  transmit(source,dest,packet)=  PRE
+   (source:NODES & dest:NODES & packet:PACKETS & 
+    #(r).(r:routes & first(r)=source & last(r)=dest) ) /* a route exists*/
+  THEN 
+  VAR route,nexthop,cs IN
+    ANY r WHERE r:routes & first(r)=source & last(r)=dest THEN route:=r END;
+    nexthop := first(tail(route));
+    cs <--canSend(source,nexthop);
+    IF cs=1 THEN putIntoEther(source,nexthop,packet,DATA) END
+  END
+  END;
+   
+  receiveImpACK(node,packet)=PRE (node:NODES & packet:PACKETS & node:dom(dom(onAir))) THEN skip END 
+   
+END

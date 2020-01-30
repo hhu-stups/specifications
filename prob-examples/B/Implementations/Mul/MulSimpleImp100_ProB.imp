@@ -1,0 +1,30 @@
+IMPLEMENTATION
+   MulSimpleImp100
+REFINES Mul100
+/* Purpose: check whether ProB can handle long while loops with 
+   large Variant (x+100 instead of x) */
+ 
+DEFINITIONS
+  SET_PREF_MAXINT==3;
+  SET_PREF_MININT==-1;
+  SET_PREF_MAX_OPERATIONS==16
+OPERATIONS
+ res <-- Mult(a) =
+  IF a>=0 THEN  /* PRE partially repeated as SELECT for ProB */
+   VAR t,x IN
+     t := 0;
+     x := 100;
+     WHILE x>0 DO
+       x:=x-1;
+       t := t+a
+     INVARIANT
+       x:NATURAL & t:NATURAL &
+       100*a = x*a + t /* *2 for INV violation */
+     VARIANT x+100 /* b for Variant not decreasing error; TRUE or x-2 for Variant not Natural */
+     END;
+     res := t
+   END
+  ELSE
+     res := -1
+  END
+END

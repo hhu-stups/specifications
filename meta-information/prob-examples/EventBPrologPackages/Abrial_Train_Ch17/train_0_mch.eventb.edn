@@ -1,0 +1,36 @@
+{:properties 12,
+ :definitions 0,
+ :deferred_sets 2,
+ :number-of-transitions 136,
+ :deadlock false,
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/train_0_mch.eventb",
+ :enumerated_sets 0,
+ :variables 4,
+ :number-of-states 84,
+ :included-machines
+ ["./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/train_0_mch.eventb"],
+ :comment "",
+ :files 1,
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "dff311230ce2f88a4389f0325f042d40f53e947f015329b25f603d40adcb5fc1",
+ :invariants 6,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 110,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 4,
+ :formalism :eventb}

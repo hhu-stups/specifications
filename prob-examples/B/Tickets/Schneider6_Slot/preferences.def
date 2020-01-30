@@ -1,0 +1,8 @@
+/* vim: set syntax=b : */
+DEFINITIONS
+  SET_PREF_MAX_INITIALISATIONS == 1;
+  SET_PREF_MAX_OPERATIONS == 1;
+  /* XXX Enable for Production */
+  /* SET_PREF_MAX_DISPLAY_SET == 0; */
+
+  SET_PREF_RANDOMISE_ENUMERATION_ORDER == FALSE;

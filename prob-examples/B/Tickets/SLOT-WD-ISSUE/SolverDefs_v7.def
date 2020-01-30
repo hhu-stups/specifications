@@ -1,0 +1,695 @@
+/* vim: set syntax=B : */
+DEFINITIONS
+  "LibraryIO.def";
+  "LibraryMeta.def";
+  "external_functions.def";
+  BV(DD) == (DD --> BOOL);
+
+  COMPATIBLE_SESSIONS(s1,s2,local_slots,restricted_sessions) ==
+    LET
+      rs1, rs2
+    BE
+      rs1 = restricted_sessions(s1) &
+      rs2 = restricted_sessions(s2)   /* LET to avoid duplication in SAME_RHYTHM macro */
+    IN
+      (SAME_RHYTHM(rs1,rs2)
+        => /* if they are on a rhythm that might interfere, their slots must be different */
+        local_slots(s1) /= local_slots(s2))
+    END; // LET
+
+  INTERFERING_HALF_SEMESTERS(g1, g2) == (
+    g1'half_semester = g2'half_semester /* half semester long units can be in conflict if they are in the same half */
+    or g1'half_semester = 0  /* or if one of the units runs for the complete semester */
+    or g2'half_semester = 0);
+
+  // Event rhythms
+  WEEKLY == 0;
+  BIWEEKLY_EVEN == 1;
+  BIWEEKLY_ODD == 2;
+  BLOCK == 3;
+
+  SAME_RHYTHM(s1,s2) == s1'rhythm < BLOCK /* s1 is not a block event */
+                        &
+                        s2'rhythm < BLOCK /* s2 is not a block event */
+                        &
+                        (s1'rhythm = s2'rhythm      /* both in the same rhythm */
+                         or s1'rhythm = WEEKLY      /* first weekly */
+                         or s2'rhythm = WEEKLY);    /* second weekly */
+
+  COMPATIBLE(grp1,grp2) == COMPATIBLE_GROUPS(grp1, grp2, slots,sessions);
+  COMPATIBLE_GROUPS(grp1, grp2, local_slots, restricted_sessions) == (
+      //  printf("COMPATIBLE_GROUPS grp1: ~w~n",(grp1)) &
+      //  printf("COMPATIBLE_GROUPS grp2: ~w~n",(grp2)) &
+      //  printf("COMPATIBLE_GROUPS slots|->sessions: ~w~n",(local_slots, restricted_sessions)) &
+      LET
+        sessions1, sessions2
+      BE
+        //sessions1 = vprintf("sessions1=~w~n",groups(grp1)'sessions)
+        sessions1 = groups(grp1)'sessions
+        &
+        //sessions2 = vprintf("sessions2=~w~n",groups(grp2)'sessions)
+        sessions2 = groups(grp2)'sessions
+      IN
+        INTERFERING_HALF_SEMESTERS(groups(grp1), groups(grp2)) =>
+          !(s1).(s1 : (sessions1 /\ dom(restricted_sessions))
+              => !(s2).(s2 : (sessions2 /\ dom(restricted_sessions))
+                => COMPATIBLE_SESSIONS(s1,s2,local_slots,restricted_sessions)))
+          END // LET
+  );
+
+  INCOMPATIBLE_GROUP_PRUNING(au_1,grp1,au_2,groupChoice,local_slots,restricted_sessions) ==
+    /* this check tries to force propagation from group compatibility back to groupChoice ;
+       in principle this information is redundant and could be inferred by looking
+       at the other constraints set up by CHECK_CS
+    */
+       ((card(abstract_unit_groups[{au_2}]) > 1 & /* there are multiple group choices for unit2 possible */
+         card(abstract_unit_groups[{au_1}]) = 1) /* unit1 has only one group */
+         =>
+            CPRINTF("Checking aus (Pruning): ~w ~n",au_1|->au_2|->abstract_unit_groups[{au_1}]|->abstract_unit_groups[{au_2}]) &
+            !gc2.(gc2 : abstract_unit_groups[{au_2}]
+                 =>
+                   (
+                    not(COMPATIBLE_GROUPS(grp1, gc2, local_slots, restricted_sessions))
+                     => (CPRINTF("Pruning groupChoice (normal) ~w~n",(au_1|->au_2|->gc2)) &
+                         groupChoice(au_2) /= gc2  /* remove this group choice possibility */
+                         /* & CPRINTF("groupChoice = ~w~n",unit2|->groupChoice) */
+                         )
+                    )
+                )
+        );
+
+  CHECK_CS(abstractUnitChoice, groupChoice, semesterChoice, local_slots, ignored_sessions) == (
+    LET restricted_sessions
+    BE
+      restricted_sessions = vprintf("restricted_sessions = ~w~n",(ignored_sessions <<| sessions))
+    IN
+      /* XXX check statically wether u1 and u2 are definetely in conflict or
+       * not in conflict; */
+      !(au1).(au1 : abstractUnitChoice
+         => !(au2).(au2 : abstractUnitChoice  /* pairs of abstract units */
+             // if we move u1 < u2 here, ProB cannot currently deal efficiently with the forall !
+           => (
+           LET
+             group1, group2
+           BE
+             group1 = groupChoice(au1)
+             &
+             group2 = groupChoice(au2)
+           IN
+            (/* symmetry breaking */
+                LESS(au1, au2) //u1 /= u2
+                &
+                /* only check abstract units assigned to the same semester */
+                semesterChoice(au1) = semesterChoice(au2)
+                &
+                /* only check abstract units  potentially in conflict (i.e.
+                 * some slots in common) */
+                local_slots[groups(group1)'sessions] /\
+                local_slots[groups(group2)'sessions] /= {})
+              =>
+                CPRINTF("Checking groups = ~w~n",(group1,au1,group2,au2))
+                // TODO: reintroduce pruning based on abstract units
+                &
+                INCOMPATIBLE_GROUP_PRUNING(au1,group1, au2, groupChoice, local_slots, restricted_sessions)
+                &
+                INCOMPATIBLE_GROUP_PRUNING(au2,group2, au1, groupChoice, local_slots, restricted_sessions)
+                &
+                COMPATIBLE_GROUPS(group1, group2, local_slots, restricted_sessions)
+          END
+          )// LET group1, group2
+        ) // !(au2)
+      ) // !(au1)
+    END // LET
+    &
+    CPRINTF("~nGroups: ~w~n", groupChoice)
+    &
+    CPRINTF("Semesters: ~w~n", semesterChoice)
+  );
+
+  SHARED_PROPERTIES ==
+  unit_group = %(u, g).( u: UNITS & g : units(u)'groups | groups(g) )
+  &
+  /* sessions accessor as a proper B function so that we can compute image */
+  get_sessions = %(r).(r:struct(half_semester:INTEGER, sessions:POW(SESSIONS)) | r'sessions)
+  &
+  /* compute all possible groups for a given unit */
+  all_unit_groups = %un.(un:UNITS|groups[units(un)'groups])
+  &
+  /* compute all possible group ids a given unit */
+  unit_groups = %un.(un:UNITS|units(un)'groups)
+  &
+  /* compute all possible sessions-ids which a given unit may use : */
+  unit_sessions = %(u).(u : UNITS |union(get_sessions[all_unit_groups(u)]))
+  &
+  group_sessions = {g,s| g : GROUPS & s : groups(g)'sessions};
+
+
+    /*
+     * Third stage of validation, given a set of chosen abstract units check if
+     * they are feasible, i.e. there are actual units in the chosen semesters
+     * that are free of conflicits
+     *
+     * computed_abstract_units: Set of all abstract_unit, semester pairs chosen
+     * for validation
+     *
+     * TODO: should be removed once we now which propagation is better in this case
+     * computed_abstract_units2: Alternative setup of of computed_abstract_units for propagation
+     *
+     * p_u_ids: Set of units available for validation (used to compute the UC of units)
+     *
+     * semesterChoice: output variable assigned with the semester choice for each
+     * abstract unit.
+     *
+     * unitChoice: output variable assigned with pairs of chosen abstract and
+     * actual units.
+     *
+     * groupChoice: output variable assigned with the map from unit to chosen
+     * group.
+     */
+    CHECK_ABSTRACT_UNIT_CHOICE(computed_abstract_units, computed_abstract_units2,
+                               r_abstract_unit_semester_group, g_ids, semesterChoice,
+                               groupChoice, localSlots) == (
+      // TODO: UC support
+        LET
+          relevant_abstract_units,
+          rel_abstract_unit_semester_group
+        BE
+          /*
+           * au_semester/computed_abstract_units are pairs of abstract unit and semester, where
+           * semester is the semester recommended by the module.  while
+           * dom(abstract_unit_semester_group) are the pairs of abstract_unit
+           * and semester, where the semester represents a unit that is taught
+           * in that semester. Hence this restriction gives us the set of
+           * groups that satisfy the module's requirement for a choice of
+           * semester.
+           */
+          rel_abstract_unit_semester_group = computed_abstract_units <| r_abstract_unit_semester_group
+          &
+          relevant_abstract_units = dom(computed_abstract_units)
+        IN
+          /*
+           * CHECK that we did not loose any abstract units computing
+           * rel_abstract_unit_semester_group. Possible if there are no units
+           * (and groups) in a semester requried by an abstract unit
+           */
+         // tobserve(relevant_abstract_units) & observe(rel_abstract_unit_semester_group) &
+          //relevant_abstract_units = dom(dom(rel_abstract_unit_semester_group))
+          //&
+          semesterChoice : relevant_abstract_units --> SEMESTERS
+          &
+          groupChoice : relevant_abstract_units >-> g_ids
+          &
+          !(au).(au : dom(computed_abstract_units2) =>  // this is equivalent to relevant_abstract_units but instantiated earlier; possibly not as AVL
+            CPRINTF("Eager Constraining au=~w for groupChoice and semesterChoice~n",au) &
+            groupChoice(au) : abstract_unit_groups[{au}]
+            &
+           // groupChoice(au) : dom({a,b | a : b & b :unit_groups[abstract_unit_unit[{au}]]}) // this can cause backtracking problems: a:b instantiates b, which can lead to backtracking of set unifications
+            groupChoice(au) : union(unit_groups[abstract_unit_unit[{au}]]) /\ g_ids
+             &
+            semesterChoice(au) : computed_abstract_units2[{au}] // if au's appear just once in computed_abstract_units2 then this is equivalent to semesterChoice(au) = computed_abstract_units2[{au}]
+
+             // & CPRINTF("Eager constraining semesterChoice for ~w~n",(au,dom(abstract_unit_semester_group)[{au}]))
+             //  & semesterChoice(au) : dom(r_abstract_unit_semester_group)[{au}]  // moving test here makes CHECK({"BK-MOD-H-2013","BK-PHI-N-2013"}, courseModuleChoice, semesterChoice, groupChoice)  much slower; TO DO: investigate
+             // the following constraint is also duplicated below
+            // & (au, semesterChoice(au), groupChoice(au)) : computed_abstract_units2 <| abstract_unit_semester_group // rel_abstract_unit_semester_group
+          ) // forall au
+          &
+           !(au).(au : dom(computed_abstract_units2) =>
+            !(au2_sym).( au2_sym : equivalent_abstract_units[{au}]
+              =>
+              // NOTE: units may be equivalent but by assigning them to
+              // different semesters, they no longer are
+              (computed_abstract_units2[{au}] = computed_abstract_units2[{au2_sym}]
+                // & au2_sym : dom(computed_abstract_units2) // redundant if computed abstract units not empty
+                  => LESS(groupChoice(au),groupChoice(au2_sym))
+                     &
+                     printf_opt_trace("Eager Symmetry-Breaking equivalent aus: ~w~n",[(au,au2_sym)],FALSE)
+              )
+            // & (LEQ_SYM_BREAK(groupChoice(au2),groupChoice(au2_sym)) =>  computed_abstract_units2[{au}] /= computed_abstract_units2[{au2_sym}] )
+             )
+            ) // forall au
+          &
+          !(au).(au : relevant_abstract_units => // dom(union(ran(elective_helper)) \/ union(ran(mandatory_helper))) =>  // relevant_abstract_units =>
+            printf_opt_trace("Constraining au=~w for groupChoice and semesterChoice~n",[au],bool(1=2))
+          &
+            printf("au|->computed_abstract_units[{au}]=~w~n",[au|->computed_abstract_units[{au}]]) &
+            semesterChoice(au) : computed_abstract_units[{au}]
+            &
+            printf("au|->dom(rel_abstract_unit_semester_group)[{au}]=~w~n",[au|->dom(rel_abstract_unit_semester_group)[{au}]]) &
+             semesterChoice(au) : dom(r_abstract_unit_semester_group)[{au}]
+             &
+             // semesterChoice(au)  : dom(rel_abstract_unit_semester_group)[{au}]
+            // groupChoice(au) : dom({gid, sem| sem : SEMESTERS & (au, sem, gid) : rel_abstract_unit_semester_group})
+          // &  These constraints are made redundant by the following constraint below:
+            (au, semesterChoice(au), groupChoice(au))
+              : rel_abstract_unit_semester_group
+          ) // forall au
+          &
+          CHECK_CS(dom(computed_abstract_units2), // propagates better than : relevant_abstract_units,
+                   groupChoice, semesterChoice,
+                   localSlots, {}) // TODO use ignored_sessions,
+      END // LET
+    );
+
+
+    /*
+     * Second stage of validation, takes a set of chosen modules and a set of
+     * available abstract units to validate their feasibility
+     *
+     * p_module_ids: Set of module IDs of those modules selected for validation
+     *
+     * p_au_ids: Abstract Unit IDs available for validation (used to restrict the set of abstract units when computing an UC)
+     *
+     * semesterChoice: output variable assigned with the semester choice for each
+     * abstract unit.
+     *
+     * groupChoice: output variable assigned with the map from unit to chosen
+     * group.
+     */
+    CHECK_MODULE_COMBINATION(module_ids, semesterChoice, groupChoice, localSlots) ==
+            CHECK_MODULE_CHOICE(module_ids,
+                                union(module_abstract_units[module_ids]) /\ dom(abstract_unit_unit),
+                                semesterChoice,groupChoice,localSlots);
+    CHECK_MODULE_CHOICE(module_ids, au_ids, semesterChoice, groupChoice, localSlots) ==
+     (
+      // We check these properties on each set of abstract units computed
+      // 1. no abstract units that have no units
+      // 2. no abstract units that have no units in the required semesters
+      //    there is at least one unit in the semesters required
+      // 3. no pairs of abstract units that share their only one unit
+      LET r_abstract_unit_semester_group
+      BE  // a restricted version of abstract_unit_semester_group, only containing au's potentially of interest to module_ids and au_ids
+        r_abstract_unit_semester_group = {au,s,g| (au,s,g):abstract_unit_semester_group & au:au_ids}
+      IN
+      LET
+        au_semesters
+      BE
+        au_semesters = dom(r_abstract_unit_semester_group)
+      IN
+        LET
+          restricted_maus, restricted_maut
+        BE
+          /*
+           * filter module, abstract_units, semester mapping set with regard to the selected modules
+           */
+          restricted_maus = %(mm).(mm : module_ids | au_ids <| maus[{mm}])
+          &
+          /*
+           * filter module, abstract_units, type mapping set with regard to the selected modules
+           */
+          restricted_maut = %(mm).(mm : module_ids | au_ids <| maut[{mm}])
+        IN
+          LET possible_elective_units, mandatory_helper
+          BE
+            /*
+             * Helper relation to select elective units for each chosen module maps
+             * each module to pais of abstract_unit ID and a possible semester when
+             * to attend the unit
+             */
+             // TODO: restrict with abstract_unit_semester_group
+            possible_elective_units = {mm, ausem|
+              mm : module_ids & ausem : restricted_maus(mm)
+              &
+              #(au, sem).(
+                (au, sem) = ausem
+                &
+                (au, e) : restricted_maut(mm)
+              )
+            }
+            &
+            /*
+             * Helper relation to select mandatory units for each chosen module maps
+             * each module to pairs of abstract_unit ID and a possible semester when
+             * to attend the unit
+             */
+            mandatory_helper = %(mm).(mm : module_ids | {au, sem|
+                                        (au, sem) : restricted_maus(mm)
+                                        &
+                                        (au, m) : restricted_maut(mm)
+                                      })
+          IN
+            CPRINTF("module_ids ~w~n", module_ids)
+            &
+            CPRINTF("Restricted maus ~w~n", restricted_maus)
+            &
+            CPRINTF("Possible possible_elective_units: ~w~n", possible_elective_units) //& CHECK_DET(possible_elective_units)
+            &
+            mandatory_helper : module_ids --> POW(ABSTRACT_UNITS * SEMESTERS) // & observe(mandatory_helper)
+            &
+              !(mm).( mm : dom(mandatory_helper)
+               => !(aus1).( aus1 : mandatory_helper[{mm}]
+                => !(au).( au : dom(aus1)
+                 => (
+                      semesterChoice(au) : au_semesters[{au}]
+                      &
+                      groupChoice(au) : abstract_unit_groups[{au}]
+                      &
+                      // 1.
+                      au /: abstract_units_wo_units
+                      &
+                      // 2.
+                      #(u).((au , u) : abstract_unit_unit
+                            &
+                            units(u)'semesters /\
+                            module_abstract_unit_semester[{(mm, au)}] /= {}
+                           )
+                    )
+                  )
+              )) // forall mm
+            &
+            elective_helper : module_ids --> POW(ABSTRACT_UNITS * SEMESTERS) // & observe(elective_helper)
+            &
+            /* elective unit choice using helper relation
+             * for each module we choose a subset of the abstract units available in
+             * possible_elective_units such that the number of chosen units in each
+             * module is the minimun of either the required or the available units
+             * in that module.
+             */
+            !(mm).( mm : module_ids =>
+              LET pp_mm BE pp_mm = possible_elective_units[{mm}] // pp_mm is a mapping from abstract_units to possible semesters
+              IN
+               CPRINTF("Possible elective units = ~w~n",mm|->pp_mm) &
+               LET nr_el_units, exact_nr_of_units
+               BE nr_el_units = card(dom(pp_mm)) &
+                  exact_nr_of_units = modules(mm)'elective_units // exact number of units that have to be chosen
+               IN
+                IF nr_el_units <= exact_nr_of_units THEN
+                  IF nr_el_units=exact_nr_of_units THEN 1=1 ELSE
+                     CPRINTF("~n *** INCONSISTENCY IN DATA FOR REQUIRED NUMBER OF UNITS ***~n ~w~n",mm|->nr_el_units|->exact_nr_of_units)
+                  END &
+                   elective_helper(mm) = pp_mm
+                ELSE
+                  elective_helper(mm) : dom(pp_mm) +-> ran(pp_mm)
+                  & elective_helper(mm) <: pp_mm
+                  & card(elective_helper(mm)) = exact_nr_of_units
+                END // IF
+               END // LET
+               &
+               // we prohibit that an abstract unit occurs multiple times for different units:
+               !(au_1).(au_1:dom(elective_helper(mm))
+                  => // CPRINTF("Constraining elective helper ~w~n",mm) &
+                     !mm2.((mm2:module_ids & LESS(mm,mm2)
+                           // & CPRINTF("~nForcing elective helper uniqueness: (mm,mm2,au_1)=~w~n",(mm,mm2,au_1))
+                            )
+                              => au_1/:dom(elective_helper(mm2))
+                          ) // forall mm2
+                     &
+                     // no mandatory au should be chosen as an elective one in a different module
+                     !mm2.((mm2:module_ids & LESS(mm,mm2) & au_1:dom(mandatory_helper(mm2)))
+                              => au_1/:dom(mandatory_helper(mm2))
+                          ) // forall mm2
+                )
+              END // LET
+            ) // forall mm
+            &
+            CPRINTF("Mandatory_helper: ~w~n", mandatory_helper)
+            &
+            CPRINTF("Elective_helper: ~w~n", elective_helper)
+            &
+            LET
+              helper
+            BE
+              helper = elective_helper
+            IN
+              !(mm).( mm : dom(helper)
+               => !(aus2).( aus2 : helper[{mm}]
+                => !(au).( au : dom(aus2)
+                 => (
+                    semesterChoice(au) : au_semesters[{au}]
+                    &
+                    groupChoice(au) : abstract_unit_groups[{au}]
+                    &
+                  // 1.
+                  au /: abstract_units_wo_units
+                  &
+                  // 2.
+                  #(u).((au , u) : abstract_unit_unit
+                        &
+                        units(u)'semesters /\ module_abstract_unit_semester[{(mm, au)}] /= {}
+                        )
+                    )
+                   )
+                  )
+                )
+            END // LET
+            &
+            LET
+              computed_abstract_units,
+              computed_abstract_units2
+            BE
+              computed_abstract_units = union(ran(elective_helper) \/ ran(mandatory_helper))  // CRITICAL PROPAGATION
+              &
+              computed_abstract_units2 = union(ran(elective_helper)) \/ union(ran(mandatory_helper))  // this propagates better than above; but will not lead to an AVL tree; this leads to slowdown, e.g., for CHECK({"BK-GER-H-2013"}, cmc, gsc, cgc), maybe because we cannot use table constraints ?? TO DO - investigate
+            IN
+              // 3.
+              !(aauu1).(aauu1 : dom(computed_abstract_units)
+                         =>
+                        !(aauu2).(aauu2 : dom(computed_abstract_units)
+                                =>
+                                ((LESS(aauu1, aauu2)
+                                 &
+                                 aauu1 : abstract_unit_single_unit
+                                 &
+                                 aauu2 : abstract_unit_single_unit
+                                 )
+                                 => abstract_unit_unit[{aauu1}] /= abstract_unit_unit[{aauu2}]
+                                )
+                            )
+                        )
+              &
+              CPRINTF("computed_abstract_units: ~w~n", computed_abstract_units)
+              &
+              CHECK_ABSTRACT_UNIT_CHOICE(computed_abstract_units, computed_abstract_units2,
+                                         r_abstract_unit_semester_group,
+                                         GROUPS /* TODO choose a smaller set ? */,
+                                         semesterChoice, groupChoice, localSlots)
+            END // LET
+          END // LET
+        END // LET
+      END //LET
+      END //LET
+    ); // CHECK_MODULE_CHOICE
+
+  /*
+   * CHECK
+   *
+   * ccs: set of course_names to check (e.g. {"bsc-bio-N-2015"})
+   *
+   * courseModuleChoice: output variable assigned with the choice of modules
+   * for each course in ccs.
+   *
+   * semesterChoice: output variable assigned with the semester choice for each
+   * abstract unit.
+   *
+   * groupChoice: output variable assigned with the map from unit to chosen
+   * group.
+   */
+  CHECK(ccs, courseModuleChoice, semesterChoice, groupChoice) ==
+    CHECK_WITH_SLOTS(ccs, courseModuleChoice, semesterChoice, groupChoice, slots);
+
+  CHECK_WITH_SLOTS(ccs, courseModuleChoice, semesterChoice, groupChoice, localSlots) == (
+    ccs : POW1(course_names)
+    &
+    printf("~nCHECKING COURSES = ~w~n",[ccs])
+    &
+    /* TODO check if card(ccs) = 2 one is a major and one a minor */
+    ccs /\ impossible_courses = {} // courses are not impossible
+    &
+    /*
+     * NOTE the variables use in the predicate need to be defined in the
+     * context that uses the definition, quantifying them here has side effects
+     * on the enumeration order/speed.
+     * TODO: check if this is still true
+     */
+      courseModuleChoice : ccs --> POW(dom(modules))
+      &
+      LET
+        mandatory_modules_for_course
+      BE
+        mandatory_modules_for_course = union(mandatory_modules[ccs])
+      IN
+        IF(card(mandatory_modules_for_course) > 0)
+        THEN
+          #(groupChoiceForMandatoryModules, semesterChoiceForMandatoryModules,
+            /* variables used in defintion */
+            elective_helper).
+          (
+            CPRINTF("~nmandatory modules for courses = ~w~n",(ccs,mandatory_modules_for_course))
+            &
+            CHECK_MODULE_COMBINATION(mandatory_modules_for_course,
+                                semesterChoiceForMandatoryModules,
+                                groupChoiceForMandatoryModules,
+                                localSlots)
+          )
+        ELSE
+          CPRINTF("~nNo mandatory modules for course ~w~n",ccs)
+        END
+      END
+      &
+      /*
+       * pick one of the precomputed module combinations sets for each course
+       * in ccs.
+       */
+      !(course).(course : ccs =>
+        courseModuleChoice(course) : course_module_combinations(course)
+        &
+        CPRINTF("~ncourse_module_combinations for course = ~w~n",courseModuleChoice)
+      )
+      &
+      mms = union(ran(courseModuleChoice))
+      &
+      CHECK_MODULE_COMBINATION(mms, semesterChoice, groupChoice, localSlots)
+    );
+
+  UNSAT_CORE_MODULES(ccs) ==
+    LET
+      selected_modules
+    BE
+      /* choose any set of modules, as all must be in conflict */
+      selected_modules = LET
+        ff
+      BE
+        ff = course_module_combinations |> ran(course_module_combinations) - {{}}
+      IN
+        union(dom({mm, cc| cc : ccs & cc : dom(ff) & mm = CHOOSE(ff(cc))}))
+      END
+    IN
+    UNSAT_CORE(%(modules_for_uc).(modules_for_uc : POW(selected_modules) |
+      bool(
+        CPRINTF("SELECTED MODULES~w~n ", (modules_for_uc, selected_modules)) &
+        /* why do values that are not in selected modules appear in modules_for_uc ??? */
+        ASSERT_TRUE(bool(ccs <: course_names), "Provided courses are not a subset of course_names")
+        &
+        modules_for_uc <: selected_modules
+        &
+        #(groupChoice, semesterChoice,
+          /* variables used in defintion */
+          elective_helper).(
+            CHECK_MODULE_CHOICE(modules_for_uc, ABSTRACT_UNITS, semesterChoice, groupChoice, slots)
+        ))
+    ), selected_modules)
+    END;
+
+  UNSAT_CORE_ABSTRACT_UNITS(modules_in_uc) ==
+    LET
+      relevant_abstract_unit_ids
+    BE
+      relevant_abstract_unit_ids = dom(module_abstract_unit_semester)[modules_in_uc]
+    IN
+      UNSAT_CORE(%(abstract_units_for_uc).(abstract_units_for_uc : POW(relevant_abstract_unit_ids) |
+        bool(
+          #(groupChoice, semesterChoice,
+            /* variables used in defintion */
+            elective_helper).(
+              CHECK_MODULE_CHOICE(modules_in_uc, abstract_units_for_uc, semesterChoice, groupChoice,
+                                  slots)
+          )
+        )
+      ), relevant_abstract_unit_ids)
+    END;
+
+  UNSAT_CORE_GROUPS(modules_in_uc, aus_in_uc) ==
+    LET
+      relevant_groups
+    BE
+      relevant_groups = abstract_unit_groups[aus_in_uc]
+    IN
+      IF card(relevant_groups) = 1
+      THEN
+        relevant_groups
+      ELSE
+        UNSAT_CORE(%(groups_for_uc).(groups_for_uc : POW(relevant_groups) |
+          bool(
+            !(g1, g2).(g1 : groups_for_uc & g2 : groups_for_uc & LESS(g1, g2) =>
+              COMPATIBLE_GROUPS(g1, g2, slots, sessions)
+            )
+          )
+        ), relevant_groups)
+      END
+    END;
+
+
+  UNSAT_CORE_SESSIONSF ==
+      FUN = %(sessions_for_uc).(sessions_for_uc : POW1({session3,session4}) |
+        LET
+          local_sessions, local_slots
+        BE
+          //local_sessions = vprintf("local_sessions=~w~n",sessions_for_uc <| sessions)
+          local_sessions = sessions_for_uc <| sessions
+          &
+          //local_slots = vprintf("local_slots=~w~n",sessions_for_uc <| slots)
+          local_slots = sessions_for_uc <| slots
+        IN
+          bool(COMPATIBLE_GROUPS(group3, group4, local_slots, local_sessions))
+        END)
+        ;
+  UNSAT_CORE_SESSIONS(groups_in_uc) ==
+    LET
+      relevant_sessions
+    BE
+      relevant_sessions = group_sessions[groups_in_uc]
+    IN
+      UNSAT_CORE(%(sessions_for_uc).(sessions_for_uc : POW(relevant_sessions) |
+        LET
+          local_sessions, local_slots
+        BE
+          local_sessions = sessions_for_uc <| sessions
+          &
+          local_slots = sessions_for_uc <| slots
+        IN
+          bool(!(g1, g2).(g1 : groups_in_uc & g2 : groups_in_uc & LESS(g1, g2)
+          & CPRINTF("sessions_for_uc~w~n", sessions_for_uc)
+          & CPRINTF("local_slots~w~n", local_slots)
+          & CPRINTF("local_sessions~w~n", local_sessions)
+          & CPRINTF("relevant_sessions~w~n", relevant_sessions)
+          & CPRINTF("groups_in_uc~w~n", groups_in_uc)
+          & CPRINTF("g1, g2 ~w~n", (g1, g2)) =>
+              COMPATIBLE_GROUPS(g1, g2, local_slots, local_sessions)))
+        END), relevant_sessions)
+    END;
+
+  /* ALTERNATIVES(sess) == ( sess : SESSIONS */
+  /* ); */
+
+  LOCAL_ALTERNATIVES(ccss, session) == (
+    // TODO: consider only module combinations that contain session
+    LET
+      s, session_aus
+    BE
+      s = sessions(session)
+      &
+      session_aus = abstract_unit_unit~[{session_unit(session)}]
+    IN
+      LET
+        alternatives
+      BE
+        alternatives = {d, t | d : DAYS \ {sat, sun} & t : SLOTS } \ {(s'dow, s'slot)}
+      IN
+        UNION(d, t, local_slots).( (d, t) : alternatives
+                                   &
+                                   local_slots = (slots <+ {(session |-> (d,t))})
+            &
+            ccss <: course_names
+            &
+            card(ccss) <= 2
+            &
+            //
+            #(courseModuleChoice, groupChoice, semesterChoice,
+              /* variables used in defintion */
+              mms, elective_helper).(
+                // require a solution that contains the group of the session
+                group_sessions~(session) : ran(groupChoice)
+                &
+                // require that result contains one of the abstract units of the session
+                session_aus /\ dom(semesterChoice) /= {}
+                &
+                session_aus /\ dom(groupChoice) /= {}
+                &
+                CHECK_WITH_SLOTS(ccss, courseModuleChoice, semesterChoice, groupChoice, local_slots)
+              )
+            | {rec(day:d, slot:t)}
+        )
+      END // LET alternatives
+    END // LET s
+  );
+

@@ -1,0 +1,36 @@
+{:properties 3,
+ :definitions 1,
+ :deferred_sets 0,
+ :number-of-transitions 0,
+ :deadlock true,
+ :file "./prob-examples/B/Tickets/Mejia4/merge.mch",
+ :enumerated_sets 0,
+ :variables 2,
+ :number-of-states 0,
+ :included-machines
+ ["./prob-examples/B/Tickets/Mejia4/merge.mch"
+  "./prob-examples/B/Tickets/Mejia4/SortSet.mch"],
+ :comment "",
+ :files 2,
+ :static_assertions 3,
+ :operations 7,
+ :sha256
+ "df322a321e7a82e2014c72215e36f87fd558634479d4ac3ca706da7a4d050be6",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :memory-usage 157286400,
+   :model-checking-time-unit :msec,
+   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :timeout 1800000,
+   :model-checking-time 10,
+   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :invariant-violated false,
+ :constants 3,
+ :formalism :b}

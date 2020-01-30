@@ -1,0 +1,45 @@
+DEFINITIONS
+
+/* Strings */
+
+INT_TO_STRING(S) == "123"/* dummy value */;
+EXTERNAL_FUNCTION_INT_TO_STRING == (INTEGER --> STRING);
+
+STRING_SPLIT(x,y) == ["foo"];
+EXTERNAL_FUNCTION_STRING_SPLIT == ((STRING*STRING) --> (INTEGER<->STRING));
+
+STRING_APPEND(x,y) == "str";
+EXTERNAL_FUNCTION_STRING_APPEND == (STRING*STRING) --> STRING;
+
+STRING_IS_INT(S) == (1=1);
+EXTERNAL_PREDICATE_STRING_IS_INT == (STRING);
+
+STRING_TO_INT(S) == 0;
+EXTERNAL_FUNCTION_STRING_TO_INT == (STRING --> INTEGER);
+
+TO_STRING(S) == "0";
+EXTERNAL_FUNCTION_TO_STRING(X) == (X --> STRING);
+
+FORMAT_TO_STRING(S,List) == "0";
+EXTERNAL_FUNCTION_FORMAT_TO_STRING(X) == ((STRING*seq(X)) --> STRING);
+//FORMAT_TO_STRING("CT: a=~w, b=~w",[TO_STRING(a),TO_STRING(b)])
+
+/* SORT */
+SORT(X) == [];
+EXTERNAL_FUNCTION_SORT(T) == (POW(T)-->seq(T));
+
+      /* CHOOSE */
+  CHOOSE(X) == ["a member of X"];
+  EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T);
+
+    /* Prints */
+PRINT(x) == skip;
+EXTERNAL_SUBSTITUTION_PRINT(T) == T; /* declare as external for any type T */
+PRINTF(s,x) == skip;
+EXTERNAL_SUBSTITUTION_PRINTF(T) == STRING*T;
+printf(s,x) == TRUE=TRUE;
+EXTERNAL_PREDICATE_printf(T) == STRING*T;
+   /* printf could also be used as external function STRING*T --> BOOL */
+vprintf(s,x) == x;
+EXTERNAL_FUNCTION_vprintf(T) == STRING*T --> T;
+ /* value printf: print and return value as result */

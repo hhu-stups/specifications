@@ -1,0 +1,21 @@
+REFINEMENT Concrete
+REFINES Abstract
+DEFINITIONS
+ ASSERT_LTL_FALSE == "G( {t=1} => X {t=2})" /* This formula is a translation of the 
+ formula in Abstract.mch; even though Concrete is a Z (backward) refinement of Abstract, the formula
+ is false; note: it is not a B forward refinement */
+VARIABLES t
+INVARIANT
+ t:0..3 & 
+ (s=0 <=> t=0) &
+ (s:{1,2} <=> t=1) &
+ (s=3 <=> t=2) &
+ (s=4 <=> t=3)
+INITIALISATION t:=0
+OPERATIONS
+  AOp1 = SELECT t=0 THEN t := 1 END;
+  AOp2 = SELECT t=1 THEN
+            t :: {2,3}
+         END
+END
+
