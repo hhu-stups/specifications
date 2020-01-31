@@ -39,4 +39,67 @@ Updated versions can be submitted and stored in new files / directories.
 Comments in the meta-information can explain differences and relationships
 between several versions.
 
+## Acknowledgements
+
+We like to thank everyone who contributed to this repository.
+Our initial set of specifications contains examples from:
+
+- Jean-Raymond Abrial
+- Yamine Ait-Ameur
+- Guillaume Babin
+- David Basin
+- Nicolas Beauger
+- Jens Bendisposto
+- Karim Berkani
+- Christian Boland
+- Joachim Breitner
+- Lilian Burdy
+- Jerôme Burlando
+- Michael Butler
+- Nestor Catano
+- John Colley
+- John Derrick
+- Ivaylo Dobrikov
+- Carla Ferreira
+- Tomas Fischer
+- Benoît Fraikin
+- Marc Frappier
+- Vlad Gheorghe
+- Francois Guiziou
+- Dominik Hansen
+- Stefan Hallerstede
+- Akram Idani
+- Alexei Iliasov
+- Andrew Ireland
+- Michael Jastram
+- Sebastian Krings
+- Lukas Ladenberger
+- Thierry Lecomte
+- Yves Ledru
+- Stéphane Lo-Presti
+- Ammel Mammar
+- Atif Mashkoor
+- Thierry Massart
+- Valerio Medeiros Jr
+- Luis-Fernando Mejia
+- David Mentré
+- Stephan Merz
+- Atif Mashkoor
+- Marcel Oliveira
+- Ian Oliver
+- Daniel Plagge
+- Theophile Prevost
+- Klaus Reichl
+- Maria LLano Rodriguez
+- Manoranjan Satpathy
+- Malte Schmidt
+- David Schneider
+- Steve Schneider
+- Colin Snook
+- Corinna Spermann
+- Prateek Srivastava
+- Nicolas Stouls
+- Helen Treharne
+- Harald Wiegard
+- Jim Woodcock
 
