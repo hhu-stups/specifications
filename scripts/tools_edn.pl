@@ -32,10 +32,6 @@ edn_pair(Key/Val) -->
    ws_and_opt_comma.
 
 
-edn_key(KW) --> ":", id(L), {atom_codes(KW,L)}.
-edn_key(_) --> print_error('Not EDN key').
-
-
 edn_val(Nr) --> edn_number(Nr),!.
 edn_val(true) --> "true",!.
 edn_val(false) --> "false",!.
@@ -43,10 +39,10 @@ edn_val(nil) --> "nil",!.
 edn_val(string(S)) --> [34],any_chars_but_quotation(S),[34],!.
 edn_val(vector(V)) --> "[", !, edn_val_list(V).
 edn_val(map(V)) --> "{", !, edn_brace_list(V).
-edn_val(keyword(Key)) --> edn_key(Key),!.
+edn_val(keyword(KeyW)) --> ":", id(L), {atom_codes(KeyW,L)},!.
 edn_val(_) --> print_error('Not EDN value').
 
-
+% list of pairs inside map, also parsing ending brace
 edn_brace_list([]) --> "}",!.
 edn_brace_list(L)--> " ", !, edn_brace_list(L).
 edn_brace_list(L) --> newline, !, edn_brace_list(L).
@@ -54,12 +50,14 @@ edn_brace_list([H|T]) --> edn_pair(H), !, edn_brace_list(T).
 edn_brace_list(_) --> print_error('Not EDN map').
 
 
-end_val_list([]) --> "]",!.
-end_val_list(L) --> " ", !, end_val_list(L).
-end_val_list(L) --> newline, !, end_val_list(L).
-edn_val_list([H|T]) --> edn_val(H),!, end_val_list(T).
+% list of values inside a vector, also parsing ending square bracket
+edn_val_list([]) --> "]",!.
+edn_val_list(L) --> " ", !, edn_val_list(L).
+edn_val_list(L) --> newline, !, edn_val_list(L).
+edn_val_list([H|T]) --> edn_val(H),!, edn_val_list(T).
 edn_val_list(_) --> print_error('Not EDN vector').
 
+% identifier
 id(ID) --> "'",!,id2(ID),"'".
 id([H|T]) --> alpha(H), id2(T).
 id2([H|T]) --> alphadigit(H),!,id2(T).
@@ -73,6 +71,7 @@ alpha(X) --> [X],{X>=97, X=<122}.
 alphadigit(X) --> [X], ({X>=97,X=<122} ; {X>=65, X=<90} ; {X=45} ; {X=95} ; {X>=48, X=<57}).
 digit(D) --> [X],{X>=48, X=<57, D is X-48}.
 
+% possible chars in strings; TO DO: deal with escaping
 any_chars_but_quotation([C|T]) --> [C], {C \= 34}, any_chars_but_quotation(T).
 any_chars_but_quotation([]) --> "".
 
@@ -87,6 +86,7 @@ ws --> " ", !, ws.
 ws --> newline, !, ws.
 ws --> "".
 
+% non-optional whitespace:
 real_ws --> " ", !, ws.
 real_ws --> newline, !, ws.
 real_ws --> print_error('Expecting whitespace').
@@ -105,11 +105,12 @@ inc_line_counter :-
    N1 is N+1, assert(line_counter(N1)).
 
 
-
+% printing message with position info
 print_msg(Msg) :-
     line_counter(LineNr),
     format(user_output,'Line: ~w, ~w~n',[LineNr,Msg]).
 
+% printing error with position info and failing
 print_error(Error,L,_) :-
     (L = [LH|_] -> Next = [LH] ; Next= "EOF"),
     line_counter(LineNr),
