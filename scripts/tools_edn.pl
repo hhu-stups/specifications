@@ -37,7 +37,9 @@ edn_val(true) --> "true",!.
 edn_val(false) --> "false",!.
 edn_val(nil) --> "nil",!.
 edn_val(string(S)) --> [34],any_chars_but_quotation(S),[34],!.
-edn_val(vector(V)) --> "[", !, edn_val_list(V).
+edn_val(vector(V)) --> "[", !, edn_val_list(0'],V).
+edn_val(list(V)) --> "(", !, edn_val_list(0'),V).
+edn_val(set(V)) --> "#{", !, edn_val_list(0'},V).
 edn_val(map(V)) --> "{", !, edn_brace_list(V).
 edn_val(keyword(KeyW)) --> ":", id(L), {atom_codes(KeyW,L)},!.
 edn_val(_) --> print_error('Not EDN value').
@@ -51,11 +53,11 @@ edn_brace_list(_) --> print_error('Not EDN map').
 
 
 % list of values inside a vector, also parsing ending square bracket
-edn_val_list([]) --> "]",!.
-edn_val_list(L) --> " ", !, edn_val_list(L).
-edn_val_list(L) --> newline, !, edn_val_list(L).
-edn_val_list([H|T]) --> edn_val(H),!, edn_val_list(T).
-edn_val_list(_) --> print_error('Not EDN vector').
+edn_val_list(EndSymbol,[]) --> [EndSymbol],!.
+edn_val_list(EndSymbol,L) --> " ", !, edn_val_list(EndSymbol,L).
+edn_val_list(EndSymbol,L) --> newline, !, edn_val_list(EndSymbol,L).
+edn_val_list(EndSymbol,[H|T]) --> edn_val(H),!, edn_val_list(EndSymbol,T).
+edn_val_list(_EndSymbol,_) --> print_error('Not EDN vector/list/set').
 
 % identifier
 id(ID) --> "'",!,id2(ID),"'".
@@ -63,7 +65,8 @@ id([H|T]) --> alpha(H), id2(T).
 id2([H|T]) --> alphadigit(H),!,id2(T).
 id2([]) --> [].
 
-edn_number(N) --> digit(D), edn_nr2(D,N).
+edn_number(MN) --> "-",digit(D),!, edn_nr2(D,N), {MN is -N}.
+edn_number(N) --> digit(D),!, edn_nr2(D,N).
 edn_nr2(D,N) --> digit(D2), {Acc is D*10+D2}, edn_nr2(Acc,N).
 edn_nr2(A,A) --> "".
 
