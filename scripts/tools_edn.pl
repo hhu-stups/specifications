@@ -24,7 +24,8 @@ parse_edn(SourceCodes, EdnTerm) :-
 
 top_level_val(V) --> edn_val(V),ws.
 
-edn_pair(Key/Val) --> edn_key(Key), !, 
+edn_pair(Key/Val) --> 
+   edn_val(Key), !, 
    %{print_msg(key(Key))},
    real_ws, edn_val(Val), 
    {print_msg(pair(Key,Val))},
@@ -35,7 +36,7 @@ edn_key(KW) --> ":", id(L), {atom_codes(KW,L)}.
 edn_key(_) --> print_error('Not EDN key').
 
 
-edn_val(number(Nr)) --> edn_number(Nr),!.
+edn_val(Nr) --> edn_number(Nr),!.
 edn_val(true) --> "true",!.
 edn_val(false) --> "false",!.
 edn_val(nil) --> "nil",!.
