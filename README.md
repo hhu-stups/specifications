@@ -42,7 +42,7 @@ between several versions.
 
 ## Article
 
-The shared repository is described in this (https://rdcu.be/b4rpD)[ABZ'2020 article].
+The shared repository is described in this [ABZ'2020 article](https://rdcu.be/b4rpD).
 
 ## Acknowledgements
 
