@@ -24,13 +24,6 @@ parse_edn(SourceCodes, EdnTerm) :-
 
 top_level_val(V) --> edn_val(V),ws.
 
-edn_pair(Key/Val) --> 
-   edn_val(Key), !, 
-   %{print_msg(key(Key))},
-   real_ws, edn_val(Val), 
-   {print_msg(pair(Key,Val))},
-   ws_and_opt_comma.
-
 
 edn_val(Nr) --> edn_number(Nr),!.
 edn_val(true) --> "true",!.
@@ -40,16 +33,23 @@ edn_val(string(S)) --> [34],any_chars_but_quotation(S),[34],!.
 edn_val(vector(V)) --> "[", !, edn_val_list(0'],V).
 edn_val(list(V)) --> "(", !, edn_val_list(0'),V).
 edn_val(set(V)) --> "#{", !, edn_val_list(0'},V).
-edn_val(map(V)) --> "{", !, edn_brace_list(V).
+edn_val(map(V)) --> "{", !, edn_pair_list(V).
 edn_val(keyword(KeyW)) --> ":", id(L), {atom_codes(KeyW,L)},!.
 edn_val(_) --> print_error('Not EDN value').
 
 % list of pairs inside map, also parsing ending brace
-edn_brace_list([]) --> "}",!.
-edn_brace_list(L)--> " ", !, edn_brace_list(L).
-edn_brace_list(L) --> newline, !, edn_brace_list(L).
-edn_brace_list([H|T]) --> edn_pair(H), !, edn_brace_list(T).
-edn_brace_list(_) --> print_error('Not EDN map').
+edn_pair_list([]) --> "}",!.
+edn_pair_list(L)--> " ", !, edn_pair_list(L).
+edn_pair_list(L) --> newline, !, edn_pair_list(L).
+edn_pair_list([H|T]) --> edn_pair(H), !, edn_pair_list(T).
+edn_pair_list(_) --> print_error('Not EDN map').
+
+edn_pair(Key/Val) --> 
+   edn_val(Key), !, 
+   %{print_msg(key(Key))},
+   real_ws, edn_val(Val), 
+   {print_msg(pair(Key,Val))},
+   ws.
 
 
 % list of values inside a vector, also parsing ending square bracket
@@ -65,6 +65,7 @@ id([H|T]) --> alpha(H), id2(T).
 id2([H|T]) --> alphadigit(H),!,id2(T).
 id2([]) --> [].
 
+% EDN number; TO DO: floats
 edn_number(MN) --> "-",digit(D),!, edn_nr2(D,N), {MN is -N}.
 edn_number(N) --> digit(D),!, edn_nr2(D,N).
 edn_nr2(D,N) --> digit(D2), {Acc is D*10+D2}, edn_nr2(Acc,N).
@@ -78,19 +79,15 @@ digit(D) --> [X],{X>=48, X=<57, D is X-48}.
 any_chars_but_quotation([C|T]) --> [C], {C \= 34}, any_chars_but_quotation(T).
 any_chars_but_quotation([]) --> "".
 
-% whitespace and optional comma
-ws_and_opt_comma --> " ", !, ws_and_opt_comma.
-ws_and_opt_comma --> newline, !, ws_and_opt_comma.
-ws_and_opt_comma --> ",", ws.
-ws_and_opt_comma --> "".
-
 % whitespaces
 ws --> " ", !, ws.
 ws --> newline, !, ws.
+ws --> ",", ws. % EDN allows commas everywhere as whitespace
 ws --> "".
 
 % non-optional whitespace:
 real_ws --> " ", !, ws.
+real_ws --> ",", !, ws.
 real_ws --> newline, !, ws.
 real_ws --> print_error('Expecting whitespace').
 
@@ -117,13 +114,5 @@ print_msg(Msg) :-
 print_error(Error,L,_) :-
     (L = [LH|_] -> Next = [LH] ; Next= "EOF"),
     line_counter(LineNr),
-    current_output(X),
-    set_output(user_error),
-    nl,
-    write('! Line: '),write_term(LineNr,[]),nl,
-    format('! Line: ~w, char: ~s~n',[LineNr,Next]),
-    (var(Error)  -> print_message(error,'_')
-    ;  write('! '),write_term(Error,[max_depth(20),numbervars(true)]),nl),
-    %% flush_output(user_error), %%
-    set_output(X),
+    format(user_error,'~n! Line: ~w, char: ~s~n! ~w~n',[LineNr,Next,Error]),
     fail.
