@@ -22,6 +22,7 @@ The exact format is work-in-progress.
 The idea is that a small amount of data should be mandatory,
 and that it must be extensible with optional data
 that may be specific to a technique regarding model checking, predicate solving, etc.
+The scripts folder contains a few utilities to read and process the meta-information.
 
 ## Contributions
 
@@ -38,6 +39,10 @@ Once submitted, specifications shall not be deleted or modified.
 Updated versions can be submitted and stored in new files / directories.
 Comments in the meta-information can explain differences and relationships
 between several versions.
+
+## Article
+
+The shared repository is described in this (https://rdcu.be/b4rpD)[ABZ'2020 article].
 
 ## Acknowledgements
 
