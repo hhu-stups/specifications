@@ -41,11 +41,11 @@
 
   String
   (to-prolog [this]
-    (str \'
+    #_(str \'
          this
          \'
          )
-    ;(to-prolog (map int this))
+    (to-prolog (map int this))
     )
   
   nil
@@ -87,9 +87,15 @@
 (def database
   (map read-meta-file meta-files))
 
-(defn database-entry-to-prolog [entry]
+(defn database-entry-to-prolog [index entry]
   (let [file (:file entry)
         ks (remove #{:comment :runs :file} (keys entry))]
-    (map (fn [k] (generate-fact (to-prolog k) (to-prolog file) (to-prolog (get entry k)))) ks)))
+    (cons
+      (generate-fact (to-prolog :file)
+                     (to-prolog index)
+                     (to-prolog file))
+      (map (fn [k] (generate-fact (to-prolog k)
+                                  (to-prolog index) #_(to-prolog file) 
+                                  (to-prolog (get entry k)))) ks))))
 
-(spit "database.pl" (clojure.string/join "" (sort (mapcat database-entry-to-prolog database))))
+(spit "database.pl" (clojure.string/join "" (sort (apply concat (map-indexed database-entry-to-prolog database)))))
