@@ -4,6 +4,7 @@
 
 :- include(database).
 
+:- use_module(library(lists)).
 
 /*
 load_files(database,[compilation_mode(assert_all)]).
@@ -35,11 +36,19 @@ codes_list_attr(sha256).
 
 last_attr(variables).
 
+:- use_module(library(between),[between/3]).
+% generate spec IDs in ascending order
+gen_spec_id(Id) :- get_maximum_spec_id(Max),
+   between(0,Max,Id). 
+
+get_maximum_spec_id(MaxID) :- findall(ID,file(ID,_),Ids), max_member(MaxID,Ids).
+
 print_csv :- print_csv_stream(user_output).
 print_csv(File) :- open(File,write,S), print_csv_stream(S), close(S).
 
 print_csv_stream(S) :- format(S,'Nr,Name,',[]), attribute(Attr), pr_attr(S,Attr),fail.
-print_csv_stream(S) :- file(Nr,Path),
+print_csv_stream(S) :- gen_spec_id(Nr),
+     file(Nr,Path),
      pr_attr(S,id,Nr), get_tail_filename(Path,Name),
      pr_attr(S,name,Name),
      attribute(Attr),
@@ -47,6 +56,7 @@ print_csv_stream(S) :- file(Nr,Path),
      fail.
 print_csv_stream(S) :- nl(S).
 
+% attribute CSV printing
 pr_attr(S,Attr) :- format(S,'"~w"',[Attr]),pr_comma(S,Attr).
 pr_attr(S,Attr,Val) :- codes_list_attr(Attr),!, format(S,'"~s"',[Val]),pr_comma(S,Attr).
 pr_attr(S,Attr,boolean(Val)) :- !, format(S,'~w',[Val]),pr_comma(S,Attr).
@@ -55,7 +65,9 @@ pr_attr(S,Attr,Val) :- format(S,'~w',[Val]),pr_comma(S,Attr).
 pr_comma(S,Attr) :- last_attr(Attr),!,nl(S).
 pr_comma(S,_Attr) :- write(S,',').
 
-:- use_module(library(lists)).
+
+
+% utility to extract root filename
 get_tail_filename(Path,Tail) :- 
    (split_last_lst(Path, "/\\",  T) -> Tail=T ; Tail=Path).
 split_last_lst(ListAscii, Seps, TailA) :-
