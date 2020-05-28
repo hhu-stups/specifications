@@ -89,13 +89,9 @@
 
 (defn database-entry-to-prolog [index entry]
   (let [file (:file entry)
-        ks (remove #{:comment :runs :file} (keys entry))]
-    (cons
-      (generate-fact (to-prolog :file)
-                     (to-prolog index)
-                     (to-prolog file))
-      (map (fn [k] (generate-fact (to-prolog k)
-                                  (to-prolog index) #_(to-prolog file) 
-                                  (to-prolog (get entry k)))) ks))))
+        ks (remove #{:comment :runs} (keys entry))]
+    (map (fn [k] (generate-fact (to-prolog k)
+                                (to-prolog index) #_(to-prolog file) 
+                                (to-prolog (get entry k)))) ks)))
 
 (spit "database.pl" (clojure.string/join "" (sort (apply concat (map-indexed database-entry-to-prolog database)))))
