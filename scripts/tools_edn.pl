@@ -71,9 +71,31 @@ edn_number(N) --> digit(D),!, edn_nr2(D,N).
 edn_nr2(D,N) --> digit(D2), {Acc is D*10+D2}, edn_nr2(Acc,N).
 edn_nr2(A,A) --> "".
 
+% a few utilities:
 alpha(X) --> [X],{X>=97, X=<122}.
 alphadigit(X) --> [X], ({X>=97,X=<122} ; {X>=65, X=<90} ; {X=45} ; {X=95} ; {X>=48, X=<57}).
 digit(D) --> [X],{X>=48, X=<57, D is X-48}.
+
+%:- assert_must_succeed(is_octal_digit(0'7,7)).
+is_octal_digit(X,Nr) :- X>=48, X=<55, Nr is X-48.
+
+%:- assert_must_succeed(is_hex_digit(0'f,15)).
+%:- assert_must_succeed(is_hex_digit(0'F,15)).
+%:- assert_must_succeed(is_hex_digit(0'9,9)).
+is_hex_digit(X,Nr) :- X>=48, X=<57, Nr is X-48.
+is_hex_digit(X,Nr) :- X>=65, X=<70, Nr is X-55. % upper-case A-F
+is_hex_digit(X,Nr) :- X>=97, X=<102, Nr is X-87. % lower-case a-f
+
+is_lowcase(X) :- X>=97, X=<122.
+
+% \X  -->  new char
+escape_conversion(39,39). % single quote '
+escape_conversion(34,34). % double quote "
+escape_conversion(92,92).
+escape_conversion(0'n,10).
+escape_conversion(0't,9).
+escape_conversion(0'b,8).
+escape_conversion(0'r,13).
 
 % possible chars in strings; TO DO: deal with escaping
 any_chars_but_quotation([C|T]) --> [C], {C \= 34}, any_chars_but_quotation(T).
