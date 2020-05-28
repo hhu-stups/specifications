@@ -44,7 +44,12 @@ gen_spec_id(Id) :- get_maximum_spec_id(Max),
 get_maximum_spec_id(MaxID) :- findall(ID,file(ID,_),Ids), max_member(MaxID,Ids).
 
 print_csv :- print_csv_stream(user_output).
-print_csv(File) :- open(File,write,S), print_csv_stream(S), close(S).
+print_csv(File) :-
+    open(File,write,S), statistics(walltime,[T1,_]),
+    print_csv_stream(S),
+    close(S),
+    statistics(walltime,[T2,_]), Time is T2-T1,
+    format('Wrote specification database to CSV file ~w in ~w ms~n',[File,Time]).
 
 print_csv_stream(S) :- format(S,'Nr,Name,',[]), attribute(Attr), pr_attr(S,Attr),fail.
 print_csv_stream(S) :- gen_spec_id(Nr),
