@@ -1,0 +1,2 @@
+{:deps
+ {digest/digest {:mvn/version "1.4.9"}}}
