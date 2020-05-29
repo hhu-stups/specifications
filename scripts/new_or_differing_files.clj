@@ -6,14 +6,18 @@
 
 (def RECOGNIZED-FILES #{".mch" ".eventb"})
 
+(def REMOTE-ROOT "../../prob_examples/public_examples/")
 
-(def current-files (filter (fn [file]
-                               (some (fn [file-extension] (.endsWith (.getName file) file-extension)) RECOGNIZED-FILES))
-                           (file-seq (java.io.File. EXAMPLE-DIR))))
+(defn get-files-in-dir [dir]
+  (filter (fn [file]
+            (some (fn [file-extension] (.endsWith (.getName file) file-extension)) RECOGNIZED-FILES))
+          (file-seq (java.io.File. dir))))
+
+(def current-files (get-files-in-dir REMOTE-ROOT))
 
 (defn corresponding-edn-file [file]
-  (let [relative-path (subs (.getPath file) (count ROOT-DIR))
-        edn-path (str META-INF-DIR relative-path ".edn")
+  (let [relative-path (subs (.getPath file) (count REMOTE-ROOT))
+        edn-path (str META-INF-DIR "prob-examples/" relative-path ".edn")
         edn-file (java.io.File. edn-path)]
     edn-file))
 
