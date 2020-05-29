@@ -9,7 +9,7 @@
   (read-string (slurp f)))
 
 (spit
-  "parseable-eventb-machines"
+  "parseable-eventb-machines.txt"
   (clojure.string/join \newline
                        (->> meta-files
                             (map read-meta-file)
@@ -20,7 +20,7 @@
                             (map :file))))
 
 (spit
-  "parseable-b-machines"
+  "parseable-b-machines.txt"
   (clojure.string/join \newline
                        (->> meta-files
                             (map read-meta-file)
