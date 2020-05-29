@@ -89,7 +89,7 @@
 
 (defn database-entry-to-prolog [index entry]
   (let [file (:file entry)
-        ks (remove #{:comment :runs} (keys entry))]
+        ks (remove #{:comment} (keys entry))]
     (map (fn [k] (generate-fact (to-prolog k)
                                 (to-prolog index) #_(to-prolog file) 
                                 (to-prolog (get entry k)))) ks)))
