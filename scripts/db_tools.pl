@@ -1,4 +1,4 @@
-:- module(db_tools,[print_csv/0, print_csv/1]).
+:- module(db_tools,[print_csv/0, print_csv/1, get_git_sha/2]).
 
 % database should be created with lein repl and then (load-file "generate-prolog-facts.clj")
 
@@ -46,10 +46,13 @@ get_maximum_spec_id(MaxID) :- findall(ID,file(ID,_),Ids), max_member(MaxID,Ids).
 print_csv :- print_csv_stream(user_output).
 print_csv(File) :-
     open(File,write,S), statistics(walltime,[T1,_]),
+    print_sha_csv(S),
     print_csv_stream(S),
     close(S),
     statistics(walltime,[T2,_]), Time is T2-T1,
     format('Wrote specification database to CSV file ~w in ~w ms~n',[File,Time]).
+
+% git rev-parse HEAD
 
 print_csv_stream(S) :- format(S,'Nr,Name,',[]), attribute(Attr), pr_attr(S,Attr),fail.
 print_csv_stream(S) :- gen_spec_id(Nr),
@@ -87,3 +90,32 @@ split_last2_lst([Sep|Tail],Seps,CurSplit,Head,ResH,ResT) :- member(Sep,Seps), % 
    split_last2_lst(Tail,Seps,[],NewHead,ResH,ResT).
 split_last2_lst([H|Tail],Seps,CurSplit,Head,ResH,ResT) :-
    split_last2_lst(Tail,Seps,[H|CurSplit],Head,ResH,ResT).
+
+% git utility:
+
+:- use_module(library(process)).
+print_sha_csv(S) :-
+    on_exception(_,get_git_sha(SHA,_),fail),
+    format(S,'\"Git revsion of specification repo:\",\"~s\"~n',[SHA]),fail.
+print_sha_csv(_).
+
+get_git_sha(SHATextAsCodeList,ExitCode) :-
+    Command = '/usr/local/bin/git', Options = ['rev-parse','HEAD'],
+    process_create(Command, Options,
+		       [process(Process),
+		        stdout(pipe(JStdout,[encoding(utf8)]))]),
+	read_all(JStdout,Lines),
+	append(Lines,Codes),
+	(append(SHATextAsCodeList,"\n",Codes) -> true
+	  ; SHATextAsCodeList = Codes),
+	process_wait(Process,ExitCode).
+		        
+
+read_all(S,Text) :-
+	read_line(S,Line),
+	( Line==end_of_file ->
+	    Text=[""],close(S)
+	; otherwise ->
+	    Text = [Line, "\n" | Rest],
+	    read_all(S,Rest)).
+
