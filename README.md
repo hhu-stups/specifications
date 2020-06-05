@@ -17,12 +17,13 @@ will improve several shortcomings currently present in academia:
 
 ## Meta-Information
 
-Meta-information is stored separately from the specification.
+[Meta-information](meta-information/) is stored separately from the specification.
 The exact format is work-in-progress.
 The idea is that a small amount of data should be mandatory,
 and that it must be extensible with optional data
 that may be specific to a technique regarding model checking, predicate solving, etc.
-The scripts folder contains a few utilities to read and process the meta-information.
+The [scripts folder](scripts/) contains a few utilities to read and process the meta-information.
+The scripts folder also contains a [CSV overview file](scripts/database_csv.csv) of the current models.
 
 ## Contributions
 
