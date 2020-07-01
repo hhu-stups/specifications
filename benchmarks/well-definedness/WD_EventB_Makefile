@@ -767,4 +767,6 @@ wd:
 	$(PROBCLI) $(FILES) -wd-check -silent -timeout 9000 -machine_stats -bench_csv $(CSV_FILE) -version
 	@echo "GIT SHA of specification repository:" >> $(CSV_FILE)
 	@git rev-parse HEAD >> $(CSV_FILE)
-	@echo "CSV output in $(CSV_FILE)"
+	@echo "System information:" >> $(CSV_FILE)
+	@uname -v >> $(CSV_FILE)
+	@echo "CSV output of WD Event-B Benchmark in $(CSV_FILE)"
