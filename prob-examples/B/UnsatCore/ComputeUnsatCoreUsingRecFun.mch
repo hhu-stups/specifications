@@ -1,4 +1,4 @@
-MACHINE ComputeUnsatCoreUsingRecFun.mch
+MACHINE ComputeUnsatCoreUsingRecFun
 /* Computing the Unsat Core of a set predicate using a recursive function */
 DEFINITIONS
  TS == POW(INTEGER); /* Type */

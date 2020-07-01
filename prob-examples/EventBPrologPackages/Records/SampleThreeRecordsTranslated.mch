@@ -1,5 +1,5 @@
 
-MACHINE SampleThreeRecordMachineTranslated
+MACHINE SampleThreeRecordsMachineTranslated
 /* Sample Record Context + Machine from Rodin Record Plugin
    Translated by pretty printing inside ProB and correcting */
 DEFINITIONS

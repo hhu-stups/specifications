@@ -3,7 +3,7 @@
  Date        : 2012-12-20 15:20:57.637180
 ******************************************************************************/
 MACHINE
-maMachine.mch
+maMachine2
 DEFINITIONS
 SET_PREF_MININT == -2147483647;
 SET_PREF_MAXINT == 2147483647

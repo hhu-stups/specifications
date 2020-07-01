@@ -1,5 +1,6 @@
 
-MACHINE sort_m2_data400_mch_eventb
+MACHINE sort_m2_data400
+        /* sort_m2_data400_mch_eventb */
 DEFINITIONS GOAL == k = n
 CONCRETE_CONSTANTS
   f,
