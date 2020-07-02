@@ -1,0 +1,26 @@
+# a few utilities for Benchmarking Makefiles
+
+TARGET_SYSTEM := $(shell uname -s)
+
+# some abbreviations:
+ifeq ($(TARGET_SYSTEM),Linux)
+  ISLINUX=1
+  LSCPU=lscpu
+  shext=so
+  BINEXT=
+else
+  ifeq ($(TARGET_SYSTEM),Darwin)
+    ISDARWIN=1
+    LSCPU=sysctl -n machdep.cpu.brand_string
+    shext=bundle
+    BINEXT=
+  else
+    # Is it sensible to assume windows?
+    ISWINDOWS=1
+    LSCPU=echo "Windows: unknown CPU"
+    shext=dll
+    BINEXT=.exe
+  endif
+endif
+
+
