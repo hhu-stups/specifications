@@ -2,6 +2,7 @@
 
 This suite accompanies the paper ``Fast and Effective Well-Definedness Checking``.
 
+Some saved results can be found in the [results folder](results/) folder.
 
 ### Running the Benchmarks
 
