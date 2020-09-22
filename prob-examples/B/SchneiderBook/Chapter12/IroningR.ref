@@ -2,7 +2,7 @@ REFINEMENT        IroningR
 
 REFINES           Ironing
 
-SEES              Bool_TYPE
+//SEES              Bool_TYPE // not necessary in Atelier-B
 
 VARIABLES         pilearr, counter
 

@@ -22,7 +22,8 @@ INVARIANT
  (xx={} or CHOOSE(xx) : xx) /* this is undefined for xx={}; now raises real WD error; maybe we should still add source location info */
 INITIALISATION xx:=ID
 OPERATIONS
-  Delete(yy) = PRE /* xx /= {} & */ yy=CHOOSE(xx) THEN xx := xx - {yy} END;
+  Delete(yy) = PRE /* xx /= {} & */ yy=CHOOSE(xx) THEN 
+     xx := xx - {yy} END;
   Add(yy) = PRE yy /: xx THEN xx := xx \/ {yy} END
 END
 

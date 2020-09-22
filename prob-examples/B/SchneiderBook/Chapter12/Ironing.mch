@@ -1,8 +1,9 @@
-MACHINE           Ironing(limit)
+MACHINE           Ironing //(limit)
 
-SEES              Bool_TYPE
-
-CONSTRAINTS       limit : NAT1
+//SEES              Bool_TYPE
+//CONSTRAINTS       limit : NAT1 // moved limit to CONSTANTS for visibility in Atelier-B
+CONSTANTS limit
+PROPERTIES limit : NAT1
 
 SETS              ITEM
 
