@@ -1,3 +1,4 @@
+#!/usr/bin/env clojure
 (require 'digest)
 
 (def ROOT-DIR "../")
@@ -35,5 +36,5 @@
                        (not (sha-matches? file))))
                  current-files))
 
-(println (clojure.string/join \newline (map (fn [file] (.getCanonicalPath file)) filesies)))
-
+(doseq [file-name (map #(.getCanonicalPath %) filesies)]
+  (println file-name))
