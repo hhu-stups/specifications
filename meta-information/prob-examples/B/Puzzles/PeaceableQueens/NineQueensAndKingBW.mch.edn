@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Puzzles/PeaceableQueens/NineQueensAndKingBW.mch"],
+ :sha512
+ "523323c8f92e23b9b154b695e492152fc0a85ddc3684e03fc4c9e8a84af06dc1263db2a52cf3f727b55d1e4d63dd10db06ce62da3e0bbea76d6f11c4cfe1d34e",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 6,

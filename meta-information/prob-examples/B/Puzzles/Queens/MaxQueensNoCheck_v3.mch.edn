@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Puzzles/Queens/MaxQueensNoCheck_v3.mch"],
+ :sha512
+ "d642e9655605d8ee13dadefaf7a51d1c7140df94b1015384ae2511d7e3dbcff8639e6d69da76c0d9837965202319d864997d6ba4714f68a92debb30688c7f140",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

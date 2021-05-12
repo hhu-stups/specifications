@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Ivo/BenchmarksPOR/BPEL2B/Model_Machine_4_NoDeadlock_v3.eventb"],
+ :sha512
+ "dc2eeb4dad7069edbd5afe7679ca7920820151eb7dd20e0e5ca2f3bc3687ded350040eca0aed38aa25f69cb3066a3768401643bff0ea0da1e08ce1fab0677334",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 15,

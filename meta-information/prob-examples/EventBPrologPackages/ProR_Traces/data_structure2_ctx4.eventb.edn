@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/EventBPrologPackages/ProR_Traces/data_structure2_ctx4.eventb"],
+ :sha512
+ "765ba92b2e91c6344b89bc75c4e8da200968818c3e92f0ebc9b0e710eb65536455a28b12755a425344839e29a1ae6b4dd0af2f77aa5a359fb62af1aeaec22726",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 22,

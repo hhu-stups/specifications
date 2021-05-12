@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Puzzles/FibonacciMorphism.mch"],
+ :sha512
+ "bac24e55f9065dfd9d067ffbb344d29229e9643250b23ffadb798632eeba6f99ecc651d28dfc7e0939d74919636483c289d4a85c7926d6496899762a5aca2dab",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

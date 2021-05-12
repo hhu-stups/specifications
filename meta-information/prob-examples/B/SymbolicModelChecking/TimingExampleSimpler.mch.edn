@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/SymbolicModelChecking/TimingExampleSimpler.mch"],
+ :sha512
+ "ccc27eec41dc3e6ba6d72832c96b2ac6cd3ebff76a6dca5f4eec82d3c3a421902da2b41f5305ef1c7d1f0027995aa90469212a5a3c2cc8b832d363adb6ebaf58",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,58 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 42163,
+   :transitions 154809,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 142,
+   :memory-usage 246278032,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "89152de98536a1edf5789b088f7069b6ea032e16",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 19833,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 42163,
+   :transitions 154809,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 238043360,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "89152de98536a1edf5789b088f7069b6ea032e16",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 18617,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

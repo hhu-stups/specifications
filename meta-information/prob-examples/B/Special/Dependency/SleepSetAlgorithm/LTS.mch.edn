@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Special/Dependency/SleepSetAlgorithm/LTS.mch"],
+ :sha512
+ "28f2e68fd4f1e4982c4bf9e8bc18866cbc2d61a04f28b197cb706260961084f69a83ee2467a3dbb4d8020e4dc5dd54fee55e8b33049f729d23fc755e48beebc3",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Ivo/BenchmarksPOR/other/TokenRing.mch"],
+ :sha512
+ "0f8c3e167339f4f12968fec0c5175ae9b81035d216d98122d3e862cd105b382e3b0e9a9acc81b64caa78a9dbe32c3c8ef4adc2b0a12dd0b279bc4035e0652350",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

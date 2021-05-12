@@ -20,13 +20,12 @@ OPERATIONS
       wc := wc + card(split(cl," "))
   END;
   finished = SELECT EOF(file) THEN
-      PRINTF("~nNumber of Lines = ~w~n",lc) ||
-      PRINTF("Number of Words = ~w~n~n",wc) ||
+      PRINTF("~nNumber of Lines = ~w~n",[lc]) ||
+      PRINTF("Number of Words = ~w~n~n",[wc]) ||
       IF ARGC > 1 THEN
          ASSERT (wc = STRING_TO_INT(ARGV(2))) THEN
-            PRINTF("Assertion (wc=~w) ok~n",wc)
+            PRINTF("Assertion (wc=~w) ok~n",[wc])
          END
       END
   END
 END
-  

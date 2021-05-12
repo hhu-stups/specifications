@@ -1,0 +1,118 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Tester/WD_Tests/AssignToFunctions.mch",
+ :enumerated_sets 0,
+ :variables 5,
+ :sha512
+ "756363b4de151c620e12dbedb36e431a26b80fa0e2913a090b13c559050b48beb25437e6cad1cfd5ff9a7d621a8c28df04fc18d4a17e3d50dc7d8eca8ba82114",
+ :static_assertions 0,
+ :operations 11,
+ :sha256
+ "d79b08ae8c22cbd3cbf7c091106d24b8457c59b5a5b37ba03f9a3c82dde2a09a",
+ :invariants 5,
+ :runs
+ [{:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 838,
+   :memory-usage 163477088,
+   :result
+   "state_error(abort_error(well_definedness_error,Assignment left-hand-side (or part thereof) could not be evaluated: ,f2(b),span_context(span_predicate(b(function(b(identifier(f2),set(couple(integer,set(couple(integer,integer)))),[nodeid(pos(143,1,14,34,14,36)),loc(local,AssignToFunctions,abstract_variables)]),b(identifier(b),integer,[nodeid(pos(144,1,14,37,14,38)),readonly,introduced_by(operation)])),set(couple(integer,integer)),[contains_wd_condition,nodeid(pos(142,1,14,34,14,38))]),[bind(b,int(1))],[bind(f1,[]),bind(f2,[]),bind(f3,[]),bind(f4,[]),bind(f5,avl_set(node((int(5),[]),true,0,node((int(2),[]),true,1,node((int(1),[]),true,0,empty,empty),node((int(3),[]),true,1,empty,node((int(4),[]),true,0,empty,empty))),node((int(8),[]),true,0,node((int(6),[]),true,1,empty,node((int(7),[]),true,0,empty,empty)),node((int(9),[]),true,1,empty,node((int(10),[]),true,0,empty,empty))))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7ed1723dbda4de53be13f5a73db4a0949e3c181e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 78,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 131,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 905,
+   :memory-usage 163783904,
+   :result
+   "state_error(abort_error(well_definedness_error,Assignment left-hand-side (or part thereof) could not be evaluated: ,f2(b),span_context(span_predicate(b(function(b(identifier(f2),set(couple(integer,set(couple(integer,integer)))),[nodeid(pos(143,1,14,34,14,36)),loc(local,AssignToFunctions,abstract_variables)]),b(identifier(b),integer,[nodeid(pos(144,1,14,37,14,38)),readonly,introduced_by(operation)])),set(couple(integer,integer)),[contains_wd_condition,nodeid(pos(142,1,14,34,14,38))]),[bind(b,int(1))],[bind(f1,[]),bind(f2,[]),bind(f3,[]),bind(f4,[]),bind(f5,avl_set(node((int(5),[]),true,0,node((int(2),[]),true,1,node((int(1),[]),true,0,empty,empty),node((int(3),[]),true,1,empty,node((int(4),[]),true,0,empty,empty))),node((int(8),[]),true,0,node((int(6),[]),true,1,empty,node((int(7),[]),true,0,empty,empty)),node((int(9),[]),true,1,empty,node((int(10),[]),true,0,empty,empty))))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7ed1723dbda4de53be13f5a73db4a0949e3c181e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 72,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 131,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162790608,
+   :result
+   "state_error(abort_error(well_definedness_error,Assignment left-hand-side (or part thereof) could not be evaluated: ,f2(b),span_context(span_predicate(b(function(b(identifier(f2),set(couple(integer,set(couple(integer,integer)))),[nodeid(pos(143,1,14,34,14,36)),loc(local,AssignToFunctions,abstract_variables)]),b(identifier(b),integer,[nodeid(pos(144,1,14,37,14,38)),readonly,introduced_by(operation)])),set(couple(integer,integer)),[contains_wd_condition,nodeid(pos(142,1,14,34,14,38))]),[bind(b,int(1))],[bind(f1,[]),bind(f2,[]),bind(f3,[]),bind(f4,[]),bind(f5,avl_set(node((int(5),[]),true,0,node((int(2),[]),true,1,node((int(1),[]),true,0,empty,empty),node((int(3),[]),true,1,empty,node((int(4),[]),true,0,empty,empty))),node((int(8),[]),true,0,node((int(6),[]),true,1,empty,node((int(7),[]),true,0,empty,empty)),node((int(9),[]),true,1,empty,node((int(10),[]),true,0,empty,empty))))))]),operation(SetF2_ko,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7ed1723dbda4de53be13f5a73db4a0949e3c181e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 92,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 131,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162903456,
+   :result
+   "state_error(abort_error(well_definedness_error,Assignment left-hand-side (or part thereof) could not be evaluated: ,f2(b),span_context(span_predicate(b(function(b(identifier(f2),set(couple(integer,set(couple(integer,integer)))),[nodeid(pos(143,1,14,34,14,36)),loc(local,AssignToFunctions,abstract_variables)]),b(identifier(b),integer,[nodeid(pos(144,1,14,37,14,38)),readonly,introduced_by(operation)])),set(couple(integer,integer)),[contains_wd_condition,nodeid(pos(142,1,14,34,14,38))]),[bind(b,int(1))],[bind(f1,[]),bind(f2,[]),bind(f3,[]),bind(f4,[]),bind(f5,avl_set(node((int(5),[]),true,0,node((int(2),[]),true,1,node((int(1),[]),true,0,empty,empty),node((int(3),[]),true,1,empty,node((int(4),[]),true,0,empty,empty))),node((int(8),[]),true,0,node((int(6),[]),true,1,empty,node((int(7),[]),true,0,empty,empty)),node((int(9),[]),true,1,empty,node((int(10),[]),true,0,empty,empty))))))]),operation(SetF2_ko,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7ed1723dbda4de53be13f5a73db4a0949e3c181e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 105,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 131,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162800624,
+   :result
+   "state_error(abort_error(well_definedness_error,Assignment left-hand-side (or part thereof) could not be evaluated: ,f2(b),span_context(span_predicate(b(function(b(identifier(f2),set(couple(integer,set(couple(integer,integer)))),[nodeid(pos(143,1,14,34,14,36)),loc(local,AssignToFunctions,abstract_variables)]),b(identifier(b),integer,[nodeid(pos(144,1,14,37,14,38)),readonly,introduced_by(operation)])),set(couple(integer,integer)),[contains_wd_condition,nodeid(pos(142,1,14,34,14,38))]),[bind(b,int(1))],[bind(f1,[]),bind(f2,[]),bind(f3,[]),bind(f4,[]),bind(f5,avl_set(node((int(5),[]),true,0,node((int(2),[]),true,1,node((int(1),[]),true,0,empty,empty),node((int(3),[]),true,1,empty,node((int(4),[]),true,0,empty,empty))),node((int(8),[]),true,0,node((int(6),[]),true,1,empty,node((int(7),[]),true,0,empty,empty)),node((int(9),[]),true,1,empty,node((int(10),[]),true,0,empty,empty))))))]),operation(SetF2_ko,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7ed1723dbda4de53be13f5a73db4a0949e3c181e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 89,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}

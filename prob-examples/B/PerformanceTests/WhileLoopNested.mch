@@ -24,7 +24,7 @@ OPERATIONS
                  INVARIANT j <= i
                  VARIANT i-j
               END
-            INVARIANT i<=count
+            INVARIANT i<=count  // for WD we need: i:NATURAL
             VARIANT count-i
             END;
             count := count*2;

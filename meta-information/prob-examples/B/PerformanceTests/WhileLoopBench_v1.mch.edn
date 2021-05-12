@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/PerformanceTests/WhileLoopBench_v1.mch"],
+ :sha512
+ "c34a4f985e89eb56a34d01c2896d16f5510b13b0ce999b5ce20ec3a8fc4c199ab51cd49b0023b7347f4841031645c50636a9e40df6dcb4e3e87d278a70157156",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

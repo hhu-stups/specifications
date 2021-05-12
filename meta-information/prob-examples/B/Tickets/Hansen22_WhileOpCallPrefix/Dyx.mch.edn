@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/Hansen22_WhileOpCallPrefix/Dyx.mch"
   "./prob-examples/B/Tickets/Hansen22_WhileOpCallPrefix/C.mch"],
+ :sha512
+ "5047a9d7f6a29bd92f2ef28d69ffc740e60c6e1ca5d3bb8fcd60b5905d5d870e1c07e042a08dbfee04c44134e3b42bd11543a72c383ea353a5298a3ab437b486",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,6 +31,103 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161651680,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f5abba6738bbd1bda7cf815ec7eb0cb7c5ff31f4",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161748016,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f5abba6738bbd1bda7cf815ec7eb0cb7c5ff31f4",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 63,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161662320,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f5abba6738bbd1bda7cf815ec7eb0cb7c5ff31f4",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 58,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161864048,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f5abba6738bbd1bda7cf815ec7eb0cb7c5ff31f4",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 96,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 3,
+   :memory-usage 161954528,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f5abba6738bbd1bda7cf815ec7eb0cb7c5ff31f4",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 104,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

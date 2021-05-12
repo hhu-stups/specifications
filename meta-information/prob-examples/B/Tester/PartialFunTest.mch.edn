@@ -8,6 +8,8 @@
  :variables 1,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Tester/PartialFunTest.mch"],
+ :sha512
+ "4a26f4c96c4bb998959b5b174432eaf9d72b14eb93763fd1dc9f96ef6832dd01dd0c2d616aeb21f338023f857db9a8b57666331a1f601350e83681d2b1a78f89",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 3,

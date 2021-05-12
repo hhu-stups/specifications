@@ -17,6 +17,8 @@
   "./prob-examples/B/Tickets/Valerio9/Michael_12/UCHAR_DEFINITION.mch"
   "./prob-examples/B/Tickets/Valerio9/Michael_12/USHORT_DEFINITION.mch"
   "./prob-examples/B/Tickets/Valerio9/Michael_12/BV16_DEFINITION.mch"],
+ :sha512
+ "8d8e3a97b1076740c5564e7dde5e443fd9765e9460445f2d84ccbb4fc0f7be81dbf1f67d281ab52aeae023d333ce429e74dc915d2353f756139ffdaf2c500ee6",
  :comment "",
  :files 8,
  :static_assertions 54,
@@ -36,7 +38,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 43,

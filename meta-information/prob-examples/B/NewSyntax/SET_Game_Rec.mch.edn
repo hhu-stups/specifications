@@ -1,34 +1,27 @@
-{:properties 2,
- :definitions 9,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "0c014445ed386b97507d85a223dc913aad4e3790e1b88ab40207097ec587b0ec",
+ :sha512
+ "9ed21015d24b5791ef24bb95be9e097f02dfa8fdcee64a8f968d8dc381bc04f6c06a2f24f68e91d65f8dd13f1a06f98eba44b853f27b6dd682704c007f629ae8",
  :file "./prob-examples/B/NewSyntax/SET_Game_Rec.mch",
- :enumerated_sets 3,
- :variables 1,
- :number-of-states :unknown,
- :included-machines ["./prob-examples/B/NewSyntax/SET_Game_Rec.mch"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 9,
- :sha256
- "6978af83bff928d43113c0a1e44b6c1c0d56d96029b584df05ff0396e8f7e356",
- :invariants 1,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 1,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

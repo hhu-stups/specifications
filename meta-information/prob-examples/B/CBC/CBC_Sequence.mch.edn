@@ -8,6 +8,8 @@
  :variables 4,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/CBC/CBC_Sequence.mch"],
+ :sha512
+ "32b65be9fa705794c483f3dbe378848b8648d4df1025759a5c149930e24d5a39787e56a03147898afa7037a686c841df4d8657ba23d02473ae603dc02d8637a1",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 0,

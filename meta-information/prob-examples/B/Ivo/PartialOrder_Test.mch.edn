@@ -8,6 +8,8 @@
  :variables 4,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Ivo/PartialOrder_Test.mch"],
+ :sha512
+ "a1ddcfeabb78dd72ab19a45b7cdf5d01df23b807705be53a2397a65a82a5554ccc08b7e38ef23202574465396908bbc0d5ca48d81fe9800adf3d84acb3125680",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,6 +29,58 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 7,
+   :transitions 33,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161856416,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a9283c4aef489ff5fdab823d3f3ea159b592ccf",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 86,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors nil,
+   :states 28,
+   :transitions 47,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 32,
+   :memory-usage 161875104,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a9283c4aef489ff5fdab823d3f3ea159b592ccf",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 58,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

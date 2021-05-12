@@ -3,6 +3,8 @@
  :file "./prob-examples/B/SymmetryReduction/Fraikin/Library4.mch",
  :number-of-states :unknown,
  :included-machines [],
+ :sha512
+ "a1ea4cc1bb1a8448f76bb37cdbe7db00cc97ef1b86dcb698917e127dfdd9ee6c55fff478766cfdc0152a27dc4077f3cdee6a727e0aca1b94c3a6b180f57e6253",
  :comment "",
  :sha256
  "9899eef3e1454ab9c4b32ea6d51853da414cded59a11ef380add7b48effd737b",
@@ -18,6 +20,26 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :invariant-violated :unknown,
  :formalism :b}

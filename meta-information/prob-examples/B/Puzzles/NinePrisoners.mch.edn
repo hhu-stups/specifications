@@ -1,34 +1,27 @@
-{:properties 5,
- :definitions 17,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "ae8118b74d26d99950d5e12ab87041c3067315b4b18cb11e705c3ce9ccb21e35",
+ :sha512
+ "4af064f9915f5482621d6b3497f11862c9ae750a5ec21e4b35a75db6ebeaf484271419d532eec400a8aa497c217c646dc520751908cf8da304e8336fa96e3de5",
  :file "./prob-examples/B/Puzzles/NinePrisoners.mch",
- :enumerated_sets 0,
- :variables 0,
- :number-of-states :unknown,
- :included-machines ["./prob-examples/B/Puzzles/NinePrisoners.mch"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 1,
- :sha256
- "3878bc8e1694dc4459cc2f7a44f4343adbd3be6722f3301008d14bff7c0ee91d",
- :invariants 0,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 1,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

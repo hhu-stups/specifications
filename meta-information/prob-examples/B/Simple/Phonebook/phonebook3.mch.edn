@@ -9,6 +9,8 @@
  :number-of-states 10,
  :included-machines
  ["./prob-examples/B/Simple/Phonebook/phonebook3.mch"],
+ :sha512
+ "d2bb6c743b9eeee130e6c314e7cd84fabb204768cfb67d4f49b8de809de304d06f87ee517d2a60db5c697f3bc8e4ad1435a2fcf563ccb594d177a3eeb4ce8b8b",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,105 @@
    :timeout 1800000,
    :model-checking-time 230,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 1,
+   :transitions 10,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 769,
+   :memory-usage 162862656,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "93a7f68e68eb39a080f0e0acbebf4fa8531bdaf9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 56,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 1,
+   :transitions 83,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 486,
+   :memory-usage 163228896,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "93a7f68e68eb39a080f0e0acbebf4fa8531bdaf9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 81,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 19,
+   :transitions 846,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163289632,
+   :result
+   "state_error(abort_error(well_definedness_error,function application used for relation: ,@rel(fd(1,Name),fd(4,Code),fd(5,Code)),span_context(span_predicate(b(function(b(identifier(db),set(couple(global(Name),global(Code))),[nodeid(pos(117,1,66,7,66,9)),loc(local,phonebook3,abstract_variables)]),b(identifier(nn),global(Name),[nodeid(pos(118,1,66,10,66,12)),readonly,introduced_by(operation)])),global(Code),[contains_wd_condition,nodeid(pos(116,1,66,7,66,13))]),[bind(nn,fd(1,Name))],[bind(cc,term(undefined)),bind(db,avl_set(node((fd(1,Name),fd(4,Code)),true,1,empty,node((fd(1,Name),fd(5,Code)),true,0,empty,empty)))),bind(nm,[]),bind(codes,[])]),operation(lookup,19))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "93a7f68e68eb39a080f0e0acbebf4fa8531bdaf9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 278,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 1,
+   :transitions 83,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162720128,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "93a7f68e68eb39a080f0e0acbebf4fa8531bdaf9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 195,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 19,
+   :transitions 846,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163279600,
+   :result
+   "state_error(abort_error(well_definedness_error,function application used for relation: ,@rel(fd(1,Name),fd(4,Code),fd(5,Code)),span_context(span_predicate(b(function(b(identifier(db),set(couple(global(Name),global(Code))),[nodeid(pos(117,1,66,7,66,9)),loc(local,phonebook3,abstract_variables)]),b(identifier(nn),global(Name),[nodeid(pos(118,1,66,10,66,12)),readonly,introduced_by(operation)])),global(Code),[contains_wd_condition,nodeid(pos(116,1,66,7,66,13))]),[bind(nn,fd(1,Name))],[bind(cc,term(undefined)),bind(db,avl_set(node((fd(1,Name),fd(4,Code)),true,1,empty,node((fd(1,Name),fd(5,Code)),true,0,empty,empty)))),bind(nm,[]),bind(codes,[])]),operation(lookup,19))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "93a7f68e68eb39a080f0e0acbebf4fa8531bdaf9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 280,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

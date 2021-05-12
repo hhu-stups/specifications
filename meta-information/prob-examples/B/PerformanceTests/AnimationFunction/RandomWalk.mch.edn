@@ -1,0 +1,27 @@
+{:sha256
+ "7363877d8937efd41b5012cc152442433b1b43502f82ebd3dd20e8ebca10b38f",
+ :sha512
+ "a0fdc3d3e796dae89a5dcfb52432e5bd53de88a969611cd2362bd83c186770305ecb929ed7aa1639aecf683ba12c61aef0204bf80a1a0a2866458c571083c84e",
+ :file
+ "./prob-examples/B/PerformanceTests/AnimationFunction/RandomWalk.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

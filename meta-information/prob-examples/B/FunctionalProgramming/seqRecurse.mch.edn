@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/FunctionalProgramming/seqRecurse.mch"],
+ :sha512
+ "4d6eb4510d5755e5e9b2295e70979385eb08acede0d6b0362ee563696a139aa89db345e54563a0016099f5c20e5c652bc21ac1072bdb06dddd584f3da1b79048",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("pref_definitions"
+    "internal_error(exception(enumeration_warning(enumerating(b(identifier(x),integer,[nodeid(pos(26,1,11,17,15,67)),contains_wd_condition])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("pref_definitions"
+    "internal_error(exception(enumeration_warning(enumerating(b(identifier(x),integer,[nodeid(pos(26,1,11,17,15,67)),contains_wd_condition])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("pref_definitions"
+    "internal_error(exception(enumeration_warning(enumerating(b(identifier(x),integer,[nodeid(pos(26,1,11,17,15,67)),contains_wd_condition])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("pref_definitions"
+    "internal_error(exception(enumeration_warning(enumerating(b(identifier(x),integer,[nodeid(pos(26,1,11,17,15,67)),contains_wd_condition])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("pref_definitions"
+    "internal_error(exception(enumeration_warning(enumerating(b(identifier(x),integer,[nodeid(pos(26,1,11,17,15,67)),contains_wd_condition])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,

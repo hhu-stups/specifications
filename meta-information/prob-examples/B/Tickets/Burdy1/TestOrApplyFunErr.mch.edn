@@ -9,6 +9,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/B/Tickets/Burdy1/TestOrApplyFunErr.mch"],
+ :sha512
+ "aab40109d69212f49c24c1b71d523b77cf37caadef9748ce6655a2f14f89dc32a7e0020a1c7f9c302f223e3d826f90f046e286fb1ad5eebdb3fe725ce3909b57",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 150,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 12,
+   :memory-usage 162995024,
+   :result
+   "state_error(abort_error(well_definedness_error,mod by zero:,10 mod 0,span_context([contains_wd_condition,nodeid(pos(140,1,17,32,17,45))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "834427455685662759fa0831e2d7f9f0942d91b7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 125,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 2,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 12,
+   :memory-usage 162984720,
+   :result
+   "state_error(abort_error(well_definedness_error,mod by zero:,10 mod 0,span_context([contains_wd_condition,nodeid(pos(140,1,17,32,17,45))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "834427455685662759fa0831e2d7f9f0942d91b7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 131,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162877504,
+   :result
+   "state_error(abort_error(well_definedness_error,mod by zero:,10 mod 0,span_context([contains_wd_condition,nodeid(pos(140,1,17,32,17,45))],operation(GetMod0510,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "834427455685662759fa0831e2d7f9f0942d91b7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 120,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162885200,
+   :result
+   "state_error(abort_error(well_definedness_error,mod by zero:,10 mod 0,span_context([contains_wd_condition,nodeid(pos(140,1,17,32,17,45))],operation(GetMod0510,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "834427455685662759fa0831e2d7f9f0942d91b7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 129,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162887248,
+   :result
+   "state_error(abort_error(well_definedness_error,mod by zero:,10 mod 0,span_context([contains_wd_condition,nodeid(pos(140,1,17,32,17,45))],operation(GetMod0510,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "834427455685662759fa0831e2d7f9f0942d91b7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 127,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

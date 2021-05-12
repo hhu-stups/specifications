@@ -1,0 +1,11 @@
+MACHINE DuplicateDefs1
+DEFINITIONS
+  one == 1;
+  two == 2;
+  one == 3 // DUPLICATE
+VARIABLES xx
+INVARIANT
+ xx:NATURAL
+INITIALISATION xx:=1
+END
+

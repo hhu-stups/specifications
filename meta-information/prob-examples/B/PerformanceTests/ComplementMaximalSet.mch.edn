@@ -9,6 +9,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/PerformanceTests/ComplementMaximalSet.mch"],
+ :sha512
+ "19f530a62106155896a6927597dde447ed088084501bdb70a522478f1737ebd547aed60e3fb2e245d3a3f22fd4c5cb6e26ddf294f3965600cb4542bc0a0909f1",
  :comment "",
  :files 1,
  :static_assertions 6,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 200,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162470624,
+   :result
+   "state_error(abort_error(well_definedness_error,card applied to very large set, cardinality not representable in ProB: ,global_set(INTEGER),span_context(unknown,operation(GetCard,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "847f173931c3cc4d6c78c6cfaf86780063eec8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 168,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162477072,
+   :result
+   "state_error(abort_error(well_definedness_error,card applied to very large set, cardinality not representable in ProB: ,global_set(INTEGER),span_context(unknown,operation(GetCard,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "847f173931c3cc4d6c78c6cfaf86780063eec8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 167,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 834,
+   :memory-usage 163207664,
+   :result
+   "state_error(abort_error(well_definedness_error,card applied to very large set, cardinality not representable in ProB: ,global_set(INTEGER),span_context(unknown,???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "847f173931c3cc4d6c78c6cfaf86780063eec8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 91,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162460240,
+   :result
+   "state_error(abort_error(well_definedness_error,card applied to very large set, cardinality not representable in ProB: ,global_set(INTEGER),span_context(unknown,operation(GetCard,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "847f173931c3cc4d6c78c6cfaf86780063eec8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 166,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 11,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4549,
+   :memory-usage 179984368,
+   :result
+   "state_error(abort_error(well_definedness_error,card applied to very large set, cardinality not representable in ProB: ,global_set(INTEGER),span_context(unknown,???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "847f173931c3cc4d6c78c6cfaf86780063eec8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 93,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

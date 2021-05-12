@@ -5,7 +5,7 @@ MACHINE Pong
  VARIABLES v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99
  INVARIANT v0 : POW(S14) & v1 : S37 & v2 <: S35 & v3 : POW1(S5) & v4 : S15 & v5 : POW1(S26) & v6 <: S8 & v7 : POW(NATURAL) & v8 : S38 & v9 : S43 & v10 <: S8 & v11 <: S47 & v12 : S29 & v13 <: S41 & v14 <: S30 & v15 <: S38 & v16 : POW1(BOOL) & v17 <: NAT1 & v18 : S9 & v19 : POW(NATURAL1) & v20 <: S7 & v21 <: S42 & v22 : S43 & v23 : S10 & v24 : S27 & v25 <: S8 & v26 : POW1(S43) & v27 <: S22 & v28 : POW(S31) & v29 : S14 & v30 <: S13 & v31 <: S46 & v32 : POW1(S19) & v33 : S39 & v34 : POW1(S31) & v35 <: S46 & v36 : S33 & v37 : S14 & v38 : S21 & v39 : POW(S30) & v40 : INTEGER & v41 : S3 & v42 : S49 & v43 : POW(S14) & v44 : POW(S29) & v45 : POW1(S42) & v46 : S43 & v47 : S32 & v48 <: S47 & v49 <: S16 & v50 : S3 & v51 <: S27 & v52 : S36 & v53 : S18 & v54 <: S44 & v55 : POW1(S9) & v56 <: S38 & v57 : S28 & v58 <: S5 & v59 <: S28 & v60 : INTEGER & v61 : POW1(S30) & v62 : S33 & v63 : POW(NAT) & v64 : S7 & v65 : POW1(S17) & v66 <: S32 & v67 : POW(S18) & v68 <: S18 & v69 : S44 & v70 : S47 & v71 : POW1(S46) & v72 : S44 & v73 : S35 & v74 <: S9 & v75 : S37 & v76 : S2 & v77 : S8 & v78 : S3 & v79 : NAT & v80 : S10 & v81 : POW(S9) & v82 : NAT & v83 <: S22 & v84 <: S25 & v85 <: S0 & v86 : S19 & v87 : S9 & v88 : S36 & v89 : S25 & v90 : S12 & v91 : S37 & v92 : S36 & v93 : S46 & v94 : S1 & v95 : S25 & v96 <: S24 & v97 <: S4 & v98 : INT & v99 : S32
  INITIALISATION v0::POW(S14) || v1::S37 || v2::POW(S35) || v3::POW1(S5) || v4::S15 || v5::POW1(S26) || v6::POW1(S8) || v7::POW(NATURAL) || v8::S38 || v9::S43 || v10::POW1(S8) || v11::POW(S47) || v12::S29 || v13::POW(S41) || v14::POW1(S30) || v15::POW1(S38) || v16::POW1(BOOL) || v17::POW1(NAT1) || v18::S9 || v19::POW(NATURAL1) || v20::POW1(S7) || v21::POW1(S42) || v22::S43 || v23::S10 || v24::S27 || v25::POW1(S8) || v26::POW1(S43) || v27::POW(S22) || v28::POW(S31) || v29::S14 || v30::POW1(S13) || v31::POW(S46) || v32::POW1(S19) || v33::S39 || v34::POW1(S31) || v35::POW1(S46) || v36::S33 || v37::S14 || v38::S21 || v39::POW(S30) || v40::INTEGER || v41::S3 || v42::S49 || v43::POW(S14) || v44::POW(S29) || v45::POW1(S42) || v46::S43 || v47::S32 || v48::POW(S47) || v49::POW1(S16) || v50::S3 || v51::POW(S27) || v52::S36 || v53::S18 || v54::POW(S44) || v55::POW1(S9) || v56::POW(S38) || v57::S28 || v58::POW1(S5) || v59::POW(S28) || v60::INTEGER || v61::POW1(S30) || v62::S33 || v63::POW(NAT) || v64::S7 || v65::POW1(S17) || v66::POW(S32) || v67::POW(S18) || v68::POW1(S18) || v69::S44 || v70::S47 || v71::POW1(S46) || v72::S44 || v73::S35 || v74::POW1(S9) || v75::S37 || v76::S2 || v77::S8 || v78::S3 || v79::NAT || v80::S10 || v81::POW(S9) || v82::NAT || v83::POW(S22) || v84::POW1(S25) || v85::POW1(S0) || v86::S19 || v87::S9 || v88::S36 || v89::S25 || v90::S12 || v91::S37 || v92::S36 || v93::S46 || v94::S1 || v95::S25 || v96::POW(S24) || v97::POW1(S4) || v98::INT || v99::S32
- OPERATIONS 
+ OPERATIONS
    op0 = BEGIN v57 :: S28 || v99 :: S32 END;
    op1 = BEGIN v62 :: S33 END;
    op2 = BEGIN v18 :: S9 || v8 :: S38 END;
@@ -28,7 +28,7 @@ MACHINE Pong
    op19 = BEGIN v38 :: S21 || v91 :: S37 || v67 :: POW(S18) END;
    op20 = BEGIN v14 :: POW1(S30) || v55 :: POW1(S9) || v42 :: S49 END;
    op21 = BEGIN v51 :: POW(S27) || v33 :: S39 END;
-   op22 = BEGIN v9 :: S43 || v75 :: S37 || v75 :: S37 || v48 :: POW(S47) || v43 :: POW(S14) || v34 :: POW1(S31) || v37 :: S14 || v2 :: POW(S35) END;
+   op22 = BEGIN v9 :: S43 || v75 :: S37 || v48 :: POW(S47) || v43 :: POW(S14) || v34 :: POW1(S31) || v37 :: S14 || v2 :: POW(S35) END;
    op23 = BEGIN v53 :: S18 || v8 :: S38 END;
    op24 = BEGIN v91 :: S37 || v76 :: S2 END;
    op25 = BEGIN v97 :: POW1(S4) || v35 :: POW1(S46) END;
@@ -150,11 +150,11 @@ MACHINE Pong
    op141 = BEGIN v53 :: S18 END;
    op142 = BEGIN v92 :: S36 || v85 :: POW1(S0) END;
    op143 = BEGIN v10 :: POW1(S8) END;
-   op144 = BEGIN v52 :: S36 || v52 :: S36 || v95 :: S25 || v54 :: POW(S44) END;
+   op144 = BEGIN v52 :: S36 ||  v95 :: S25 || v54 :: POW(S44) END;
    op145 = BEGIN v37 :: S14 || v40 :: INTEGER END;
    op146 = BEGIN v61 :: POW1(S30) END;
    op147 = BEGIN v23 :: S10 || v18 :: S9 || v72 :: S44 END;
-   op148 = BEGIN v92 :: S36 || v1 :: S37 || v79 :: NAT || v17 :: POW1(NAT1) || v17 :: POW1(NAT1) || v72 :: S44 || v85 :: POW1(S0) || v15 :: POW1(S38) END;
+   op148 = BEGIN v92 :: S36 || v1 :: S37 || v79 :: NAT || v17 :: POW1(NAT1) || v72 :: S44 || v85 :: POW1(S0) || v15 :: POW1(S38) END;
    op149 = BEGIN v95 :: S25 || v30 :: POW1(S13) || v22 :: S43 || v77 :: S8 || v4 :: S15 END;
    op150 = BEGIN v62 :: S33 END;
    op151 = BEGIN v14 :: POW1(S30) END;
@@ -190,7 +190,7 @@ MACHINE Pong
    op181 = BEGIN v16 :: POW1(BOOL) || v72 :: S44 || v59 :: POW(S28) END;
    op182 = BEGIN v43 :: POW(S14) || v95 :: S25 || v13 :: POW(S41) || v0 :: POW(S14) || v65 :: POW1(S17) END;
    op183 = BEGIN v29 :: S14 END;
-   op184 = BEGIN v34 :: POW1(S31) || v42 :: S49 || v42 :: S49 END;
+   op184 = BEGIN v34 :: POW1(S31) || v42 :: S49  END;
    op185 = BEGIN v0 :: POW(S14) END;
    op186 = BEGIN v77 :: S8 END;
    op187 = BEGIN v88 :: S36 END;
@@ -228,7 +228,7 @@ MACHINE Pong
    op219 = BEGIN v30 :: POW1(S13) END;
    op220 = BEGIN v41 :: S3 END;
    op221 = BEGIN v47 :: S32 END;
-   op222 = BEGIN v1 :: S37 || v1 :: S37 END;
+   op222 = BEGIN v1 :: S37  END;
    op223 = BEGIN v33 :: S39 END;
    op224 = BEGIN v27 :: POW(S22) END;
    op225 = BEGIN v99 :: S32 END;
@@ -291,7 +291,7 @@ MACHINE Pong
    op282 = BEGIN v0 :: POW(S14) END;
    op283 = BEGIN v85 :: POW1(S0) END;
    op284 = BEGIN v21 :: POW1(S42) END;
-   op285 = BEGIN v74 :: POW1(S9) || v85 :: POW1(S0) || v74 :: POW1(S9) || v16 :: POW1(BOOL) || v59 :: POW(S28) || v96 :: POW(S24) END;
+   op285 = BEGIN v74 :: POW1(S9) || v85 :: POW1(S0) || v16 :: POW1(BOOL) || v59 :: POW(S28) || v96 :: POW(S24) END;
    op286 = BEGIN v8 :: S38 END;
    op287 = BEGIN v88 :: S36 END;
    op288 = BEGIN v46 :: S43 END;
@@ -303,7 +303,7 @@ MACHINE Pong
    op294 = BEGIN v54 :: POW(S44) || v14 :: POW1(S30) END;
    op295 = BEGIN v89 :: S25 END;
    op296 = BEGIN v31 :: POW(S46) || v98 :: INT || v39 :: POW(S30) || v7 :: POW(NATURAL) || v4 :: S15 || v9 :: S43 END;
-   op297 = BEGIN v73 :: S35 || v73 :: S35 || v32 :: POW1(S19) || v29 :: S14 || v77 :: S8 || v21 :: POW1(S42) END;
+   op297 = BEGIN v73 :: S35 ||  v32 :: POW1(S19) || v29 :: S14 || v77 :: S8 || v21 :: POW1(S42) END;
    op298 = BEGIN v90 :: S12 || v30 :: POW1(S13) || v88 :: S36 END;
    op299 = BEGIN v97 :: POW1(S4) END;
    op300 = BEGIN v13 :: POW(S41) END;
@@ -416,7 +416,7 @@ MACHINE Pong
    op407 = BEGIN v10 :: POW1(S8) END;
    op408 = BEGIN v82 :: NAT || v37 :: S14 END;
    op409 = BEGIN v40 :: INTEGER || v37 :: S14 || v88 :: S36 || v50 :: S3 || v94 :: S1 || v27 :: POW(S22) END;
-   op410 = BEGIN v22 :: S43 || v22 :: S43 || v33 :: S39 END;
+   op410 = BEGIN v22 :: S43 ||  v33 :: S39 END;
    op411 = BEGIN v20 :: POW1(S7) END;
    op412 = BEGIN v26 :: POW1(S43) END;
    op413 = BEGIN v61 :: POW1(S30) || v86 :: S19 END;
@@ -444,7 +444,7 @@ MACHINE Pong
    op435 = BEGIN v85 :: POW1(S0) END;
    op436 = BEGIN v98 :: INT END;
    op437 = BEGIN v46 :: S43 END;
-   op438 = BEGIN v0 :: POW(S14) || v0 :: POW(S14) END;
+   op438 = BEGIN v0 :: POW(S14) END;
    op439 = BEGIN v48 :: POW(S47) END;
    op440 = BEGIN v16 :: POW1(BOOL) END;
    op441 = BEGIN v15 :: POW1(S38) END;

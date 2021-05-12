@@ -1,6 +1,6 @@
 MACHINE DefCapture
 DEFINITIONS
-  Double(y) == #x.(x+x=y);
+  Double(y) == #x.(x:INTEGER & x+x=y);
   NotDouble(y) == not(Double(y))
 ASSERTIONS
   Double(2);

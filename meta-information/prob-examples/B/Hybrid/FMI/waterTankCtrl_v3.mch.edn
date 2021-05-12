@@ -1,0 +1,52 @@
+{:properties 5,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Hybrid/FMI/waterTankCtrl_v3.mch",
+ :enumerated_sets 0,
+ :variables 8,
+ :sha512
+ "74a5bd56dfc93536283db46c619a40bf398f9dff91d0cc5768fbb154841f31251e9f2d693a70c72d9172f295ecf6d0724fe8d84aae93ee4bd72d0aeccb998016",
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "5c580910088009fd50337ebb40a803ffda7518a315f550be2385d6ebb5f653bf",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 14,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162271696,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "716182507ceaf97268c8affee2d48fe22011d434",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 121,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 5}

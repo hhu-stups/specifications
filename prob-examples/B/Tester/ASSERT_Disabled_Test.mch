@@ -1,0 +1,16 @@
+MACHINE ASSERT_Disabled_Test
+DEFINITIONS
+  SET_PREF_ASSERT_CHECKING == FALSE // ignore ASSERT predicates
+VARIABLES xx
+INVARIANT
+ xx:NATURAL1
+INITIALISATION xx:=1
+OPERATIONS
+  Inc = PRE xx<6 THEN
+     ASSERT xx mod 2 = 1 THEN
+        xx := xx+1
+     END
+   END;
+  Reset = PRE xx=6 THEN xx := 1 END
+END
+

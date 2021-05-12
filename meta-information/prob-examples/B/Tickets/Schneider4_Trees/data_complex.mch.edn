@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/Schneider4_Trees/data_complex.mch"
   "./lib/LibraryIO.def"],
+ :sha512
+ "8a00060384c86988271584a949db26735e191e4be5e2e1723c596944063af3225d9490e6f8b8a3fc14b7b4a9f24d3ae2633eb3d29b145649ad22a56e9bea24fe",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 13,

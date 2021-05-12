@@ -1,7 +1,7 @@
 MACHINE CardTrick
 /* Translation by Michael Leuschel  of Example in
  "Unraveling a Card Trick" by Tony Hoare and Natarajan Shankar
-  in LNCS 6200, pp. 195-201, 2010. 
+  in LNCS 6200, pp. 195-201, 2010.
   DOI: 10.1007/978-3-642-13754-9_10
   http://www.springerlink.com/content/gn18673357154448/
   */
@@ -20,8 +20,9 @@ DEFINITIONS
   all == [spade,club,heart,diamond]; /* an arbitrary permutation of the suits */
 
   /* check that in dst we can partition the deck into quartets where every suit occurs once: */
-  ok(dst) == #(a,b,c,d).(dst = a^b^c^d & size(a)=4 & size(b)=4 & size(c)=4 & size(d)=4 &
-              a : perm(SUIT) & b:perm(SUIT) & c:perm(SUIT) & d:perm(SUIT));
+  ok(dst) == #(a,b,c,d).(a : perm(SUIT) & b:perm(SUIT) & c:perm(SUIT) & d:perm(SUIT) &
+                  dst = a^b^c^d & size(a)=4 & size(b)=4 & size(c)=4 & size(d)=4
+              );
       ANIMATION_FUNCTION_DEFAULT == {(1,0,"x"),(2,0,"y"),(3,0,"dest")};
       ANIMATION_FUNCTION == (  {r,c,i| r=1 & c|->i:x} \/ {r,c,i| r=2 & c|->i:y} \/ {r,c,i| r=3 & c|->i:dest} );
       ANIMATION_IMG1 == "images/French_suits_Spade.gif";
@@ -48,4 +49,3 @@ OPERATIONS
   Shuffle1 = PRE x/=<> & reversed=TRUE THEN dest := dest<-last(x) || x:= front(x) END;
   Shuffle2 = PRE y/=<> & reversed=TRUE THEN dest := dest<-last(y) || y:= front(y) END
 END
-

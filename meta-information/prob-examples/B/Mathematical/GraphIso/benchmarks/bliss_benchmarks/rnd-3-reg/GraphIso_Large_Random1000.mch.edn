@@ -12,6 +12,8 @@
  ["./prob-examples/B/Mathematical/GraphIso/benchmarks/bliss_benchmarks/rnd-3-reg/GraphIso_Large_Random1000.mch"
   "./prob-examples/B/Mathematical/GraphIso/benchmarks/bliss_benchmarks/rnd-3-reg/rnd-3-reg-1000-1.def"
   "./prob-examples/B/Mathematical/GraphIso/benchmarks/bliss_benchmarks/rnd-3-reg/rnd-3-reg-1000-2.def"],
+ :sha512
+ "8c8300f64f3addb8cf60b36d52e9009386addfd50c3bc5ec5b286f5dbd635104d3395a0bef845b94c496d3a9c818b19eef6b7b86a57dc75ea2cc3bd47c12c37b",
  :comment "",
  :files 3,
  :static_assertions 0,
@@ -31,7 +33,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

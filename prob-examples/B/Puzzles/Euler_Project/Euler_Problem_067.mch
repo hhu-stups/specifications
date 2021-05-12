@@ -25,18 +25,20 @@ DEFINITIONS
  "triangle_Euler67.def";
  SET_PREF_TIME_OUT == 7000
 CONSTANTS  n, Sol, OptimalSolution, TriangleC
-PROPERTIES TriangleC = Triangle &
-n = size (TriangleC) &
+PROPERTIES
+ TriangleC = Triangle &
+ n = size (TriangleC) &
 
-Sol : 1..n --> seq(INTEGER) &
-Sol(n) = TriangleC(n) /* Initialisation */
-&
-! i. (i:1..(n-1) =>
+ Sol : 1..n --> seq(INTEGER) &
+ Sol(n) = TriangleC(n) /* Initialisation */
+ &
+ !i. (i:1..(n-1) =>
   (size(Sol(i)) = size(TriangleC(i))
    & !j.(j: 1..size(TriangleC(i)) => Sol(i)(j) = TriangleC(i)(j)+max({Sol(i+1)(j),Sol(i+1)(j+1)}))
   )
   )
- & OptimalSolution = Sol(1)(1)
+ &
+ OptimalSolution = Sol(1)(1)
 ASSERTIONS
  OptimalSolution = 7273;
  n = 100

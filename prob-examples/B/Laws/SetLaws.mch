@@ -10,7 +10,7 @@ DEFINITIONS
  GOAL == (FIN1(SS)) = (FIN(SS)-{{}});
  law1 ==  (SS \/ SS = SS  &  SS = SS \/ {}  &  SS = SS /\ SS  &  SS = SS \ {});
  law2 == (SS /\ {} = {} & {} = SS \ SS &  ({} \ SS = {}));
- law3 == (SS \/ TT = TT \/ SS   &  SS /\ TT = TT /\ SS); 
+ law3 == (SS \/ TT = TT \/ SS   &  SS /\ TT = TT /\ SS);
  law4 == (( SS \/ (TT \/ VV) = (SS \/TT) \/ VV) & ( SS /\ (TT /\ VV) = (SS /\ TT) /\ VV));
  law5 == ( SS \/ (TT /\ VV) = (SS \/ TT) /\ (SS \/ VV));
  law6 == ( SS /\ (TT \/ VV) = (SS /\ TT) \/ (SS /\ VV));
@@ -66,7 +66,13 @@ DEFINITIONS
 
  difflaw1 == (SS /\ VV = {}  <=> SS <: setX - VV);
  difflaw2 == (SS \ VV = SS-VV);
- difflaw3 == (VV-SS = VV\SS)
+ difflaw3 == (VV-SS = VV\SS);
+
+ partition_law1 == ((SS \/ TT = VV & SS /\ TT = {}) => SS \/ TT <: VV);
+ partition_law2 == ((SS \/ TT = VV & SS /\ TT = {}) => VV <: SS \/ TT);
+ partition_law3 == ((SS \/ TT = VV & SS /\ TT = {}) => SS /\ TT <: {});
+ partition_law4 == ((SS \/ TT \/ VV = setX & SS /\ TT = {} & SS /\ VV = {} & TT /\ VV = {}) => ((setX \ SS) \ TT) \ VV = {} );
+ partition_laws == (partition_law1 & partition_law2 & partition_law3 & partition_law4)
 
 INVARIANT
   SS : POW(setX) & TT : POW(setX) & VV : POW(setX) &
@@ -76,7 +82,7 @@ INVARIANT
    setcomprlaw1  & setcomprlaw2 & setcomprlaw3 & setcomprlaw4 &
    foralllaw1 & foralllaw2 & existslaw1 & existslaw2 &
 
-   orderlaw5 & orderlaw6 & orderlaw7 & 
+   orderlaw5 & orderlaw6 & orderlaw7 &
    orderlaw8 & orderlaw9 &
    otherlaw1 & otherlaw1b & otherlaw2 & otherlaw3 & otherlaw4 & otherlaw5 & otherlaw6 &
 
@@ -98,7 +104,7 @@ INVARIANT
    card(POW1(SS)) = card(POW(SS)) - 1 &
    card(POW(SS)-{{}}) = card(POW(SS)) - 1 &
    ((FIN1(SS)) = (FIN(SS)-{{}})) &
-   {} : POW(SS) & 
+   {} : POW(SS) &
    {} : FIN(SS) &  /* this was false due to a bug in the Parser, which returned FIN1 for FIN */
    {} /: POW1(SS) & {} /: FIN1(SS) &
 
@@ -119,8 +125,8 @@ INVARIANT
     (setX \ (setX \ SS) = SS)
    &
    (SS /\ TT = {}  <=> not(#x.(x:SS & x:TT)) )   &
-   (SS /\ TT /\ VV = {}  <=> not(#x.(x:SS & x:TT & x:VV)) ) & 
-   (SS <: TT  <=>  not(#y.(y:SS & y/: TT))) 
+   (SS /\ TT /\ VV = {}  <=> not(#x.(x:SS & x:TT & x:VV)) ) &
+   (SS <: TT  <=>  not(#y.(y:SS & y/: TT)))
 
    &
    (SS/={} <=> #ee.(ee:SS) )
@@ -135,23 +141,25 @@ INVARIANT
    (SS*VV = TT*VV  <=>  (((SS={} or VV={}) & (TT={} or VV={})) or (SS=TT & VV=VV))) &
    (id(SS)=id(TT) <=> SS=TT) &
    (id(SS) <: id(TT) <=> SS <: TT) &
-   
+
    /* laws on page 124 of B-Book */
-   (inter({SS}) = {x| !y.(y:{SS} => x:y)}) & 
-   (inter({SS,TT}) = {x| !y.(y:{SS,TT} => x:y)}) & 
-   (inter({SS,TT,VV}) = {x| !y.(y:{SS,TT,VV} => x:y)}) & 
-   (union({}) = {x| x<:TT & #y.(y:{} & x:y)}) & 
-   (union({SS}) = {x| #y.(y:{SS} & x:y)}) & 
-   (union({SS,TT}) = {x| #y.(y:{SS,TT} & x:y)}) & 
+   (inter({SS}) = {x| !y.(y:{SS} => x:y)}) &
+   (inter({SS,TT}) = {x| !y.(y:{SS,TT} => x:y)}) &
+   (inter({SS,TT,VV}) = {x| !y.(y:{SS,TT,VV} => x:y)}) &
+   (union({}) = {x| x<:TT & #y.(y:{} & x:y)}) &
+   (union({SS}) = {x| #y.(y:{SS} & x:y)}) &
+   (union({SS,TT}) = {x| #y.(y:{SS,TT} & x:y)}) &
    (union({SS,TT,VV}) = {x| #y.(y:{SS,TT,VV} & x:y)})  &
 
   /* laws from page 127 of B-Book */
    (inter({SS}) = SS) &
    (union({SS}) = SS) &
    (inter({SS,TT}) = SS /\ TT) &
-   (union({SS,TT}) = SS \/ TT) 
+   (union({SS,TT}) = SS \/ TT)
+
+   & partition_laws
 ASSERTIONS
-   /* (UNION(ss).(ss<:SS | ss) = SS); 
+   /* (UNION(ss).(ss<:SS | ss) = SS);
    (POW1(SS) = POW(SS) - {{}}); */
    VV - SS = VV - SS
 INITIALISATION

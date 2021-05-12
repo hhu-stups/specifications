@@ -1,0 +1,27 @@
+{:sha256
+ "e34ce62ff630266e76d61524d9710c218e488ab98b9fa39dd1d147512387bcec",
+ :sha512
+ "c6d80d4e2f381c8d822ab8c9fbec036550f3791eb011394ec926b21010c700a6e98ce27230bbeca09dd90f38f1ecadc07acc6c22efc9179562c97e697baaf12a",
+ :file
+ "./prob-examples/B/Mathematical/DominatingSets/DominatingSet_BV_Middle.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

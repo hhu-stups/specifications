@@ -1,0 +1,5 @@
+MACHINE Enum
+SETS
+   ENUM = {e1,e2,e3};
+   DEFER
+END

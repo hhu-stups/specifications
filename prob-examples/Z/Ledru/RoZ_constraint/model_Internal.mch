@@ -1,5 +1,5 @@
 
-MACHINE model.zed
+MACHINE model_zed
 SETS /* deferred */
   NUMVOL;
   VILLE
@@ -52,7 +52,7 @@ ABSTRACT_VARIABLES
 INITIALISATION
     LET Vol',Ligne',volsDeLigne',ligneDeVol' BE Vol' = {} & Ligne' = {} & volsDeLigne' = {} & ligneDeVol' = union({cmpset__1142|#x.(cmpset__1142 = {cmpset__1141|#y.(cmpset__1141 = y |-> x & y : volsDeLigne'(x))} & x : dom(volsDeLigne'))})
     IN
-      SELECT 
+      SELECT
           Vol' : FIN({rec__889|rec__889'hdep : 0 .. 1439 & rec__889'har : 0 .. 1439 & rec__889'hdep <= rec__889'har})
         & Ligne' : FIN({rec__890|rec__890'dist : 0 .. 2000 & rec__890'vdep /= rec__890'var})
         & volsDeLigne' : {rec__891|rec__891'dist : 0 .. 2000 & rec__891'vdep /= rec__891'var} +-> FIN({rec__892|rec__892'hdep : 0 .. 1439 & rec__892'har : 0 .. 1439 & rec__892'hdep <= rec__892'har})
@@ -61,14 +61,14 @@ INITIALISATION
         & union(ran(volsDeLigne')) = Vol'
         & volsDeLigne' = {cmpset__1140|#x.(cmpset__1140 = x |-> {y|y : dom(ligneDeVol') & x = ligneDeVol'(y)} & x : ran(ligneDeVol'))}
         & ligneDeVol' = {}
-      THEN 
+      THEN
         Ligne,Vol,ligneDeVol,volsDeLigne := Ligne',Vol',ligneDeVol',volsDeLigne'
       END
     END
 OPERATIONS
-  Vol_new(vol?) = 
+  Vol_new(vol?) =
     ANY Vol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__110|rec__110'hdep : 0 .. 1439 & rec__110'har : 0 .. 1439 & rec__110'hdep <= rec__110'har})
       & Vol' : FIN({rec__111|rec__111'hdep : 0 .. 1439 & rec__111'har : 0 .. 1439 & rec__111'hdep <= rec__111'har})
       & vol?'hdep : 0 .. 1439
@@ -78,10 +78,10 @@ OPERATIONS
     THEN
       Vol := Vol'
     END;
-  
-  Vol_newWithLinks(ligneDeVol?,vol?) = 
+
+  Vol_newWithLinks(ligneDeVol?,vol?) =
     ANY Vol',ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__127|rec__127'hdep : 0 .. 1439 & rec__127'har : 0 .. 1439 & rec__127'hdep <= rec__127'har})
       & Vol' : FIN({rec__128|rec__128'hdep : 0 .. 1439 & rec__128'har : 0 .. 1439 & rec__128'hdep <= rec__128'har})
       & Ligne : FIN({rec__129|rec__129'dist : 0 .. 2000 & rec__129'vdep /= rec__129'var})
@@ -109,10 +109,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne := Vol',ligneDeVol',volsDeLigne'
     END;
-  
-  Vol_delete(this?) = 
+
+  Vol_delete(this?) =
     ANY Vol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__144|rec__144'hdep : 0 .. 1439 & rec__144'har : 0 .. 1439 & rec__144'hdep <= rec__144'har})
       & Vol' : FIN({rec__145|rec__145'hdep : 0 .. 1439 & rec__145'har : 0 .. 1439 & rec__145'hdep <= rec__145'har})
       & this?'hdep : 0 .. 1439
@@ -122,10 +122,10 @@ OPERATIONS
     THEN
       Vol := Vol'
     END;
-  
-  Vol_delWithLinks(this?) = 
+
+  Vol_delWithLinks(this?) =
     ANY Vol',ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__160|rec__160'hdep : 0 .. 1439 & rec__160'har : 0 .. 1439 & rec__160'hdep <= rec__160'har})
       & Vol' : FIN({rec__161|rec__161'hdep : 0 .. 1439 & rec__161'har : 0 .. 1439 & rec__161'hdep <= rec__161'har})
       & Ligne : FIN({rec__162|rec__162'dist : 0 .. 2000 & rec__162'vdep /= rec__162'var})
@@ -150,10 +150,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne := Vol',ligneDeVol',volsDeLigne'
     END;
-  
-  Vol_setNumvol_EXT(numvol?,this?) = 
+
+  Vol_setNumvol_EXT(numvol?,this?) =
     ANY Vol',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__176|rec__176'hdep : 0 .. 1439 & rec__176'har : 0 .. 1439 & rec__176'hdep <= rec__176'har})
       & Vol' : FIN({rec__177|rec__177'hdep : 0 .. 1439 & rec__177'har : 0 .. 1439 & rec__177'hdep <= rec__177'har})
       & hdep : 0 .. 1439
@@ -174,10 +174,10 @@ OPERATIONS
     THEN
       Vol := Vol'
     END;
-  
-  Vol_setNumvol(numvol?,this?) = 
+
+  Vol_setNumvol(numvol?,this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__192|rec__192'hdep : 0 .. 1439 & rec__192'har : 0 .. 1439 & rec__192'hdep <= rec__192'har})
       & Vol' : FIN({rec__193|rec__193'hdep : 0 .. 1439 & rec__193'har : 0 .. 1439 & rec__193'hdep <= rec__193'har})
       & hdep : 0 .. 1439
@@ -214,10 +214,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne := Vol',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Vol_getNumvol_EXT(this?) = 
+
+  result! <-- Vol_getNumvol_EXT(this?) =
     ANY Vol',result!1161,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__212|rec__212'hdep : 0 .. 1439 & rec__212'har : 0 .. 1439 & rec__212'hdep <= rec__212'har})
       & Vol' : FIN({rec__213|rec__213'hdep : 0 .. 1439 & rec__213'har : 0 .. 1439 & rec__213'hdep <= rec__213'har})
       & hdep : 0 .. 1439
@@ -239,10 +239,10 @@ OPERATIONS
     THEN
       Vol,result! := Vol',result!1161
     END;
-  
-  result! <-- Vol_getNumvol(this?) = 
+
+  result! <-- Vol_getNumvol(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1162,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__228|rec__228'hdep : 0 .. 1439 & rec__228'har : 0 .. 1439 & rec__228'hdep <= rec__228'har})
       & Vol' : FIN({rec__229|rec__229'hdep : 0 .. 1439 & rec__229'har : 0 .. 1439 & rec__229'hdep <= rec__229'har})
       & hdep : 0 .. 1439
@@ -280,10 +280,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne,result! := Vol',ligneDeVol',volsDeLigne',result!1162
     END;
-  
-  Vol_setHdep_EXT(hdep?,this?) = 
+
+  Vol_setHdep_EXT(hdep?,this?) =
     ANY Vol',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__248|rec__248'hdep : 0 .. 1439 & rec__248'har : 0 .. 1439 & rec__248'hdep <= rec__248'har})
       & Vol' : FIN({rec__249|rec__249'hdep : 0 .. 1439 & rec__249'har : 0 .. 1439 & rec__249'hdep <= rec__249'har})
       & hdep : 0 .. 1439
@@ -305,10 +305,10 @@ OPERATIONS
     THEN
       Vol := Vol'
     END;
-  
-  Vol_setHdep(hdep?,this?) = 
+
+  Vol_setHdep(hdep?,this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__264|rec__264'hdep : 0 .. 1439 & rec__264'har : 0 .. 1439 & rec__264'hdep <= rec__264'har})
       & Vol' : FIN({rec__265|rec__265'hdep : 0 .. 1439 & rec__265'har : 0 .. 1439 & rec__265'hdep <= rec__265'har})
       & hdep : 0 .. 1439
@@ -346,10 +346,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne := Vol',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Vol_getHdep_EXT(this?) = 
+
+  result! <-- Vol_getHdep_EXT(this?) =
     ANY Vol',result!1163,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__284|rec__284'hdep : 0 .. 1439 & rec__284'har : 0 .. 1439 & rec__284'hdep <= rec__284'har})
       & Vol' : FIN({rec__285|rec__285'hdep : 0 .. 1439 & rec__285'har : 0 .. 1439 & rec__285'hdep <= rec__285'har})
       & hdep : 0 .. 1439
@@ -372,10 +372,10 @@ OPERATIONS
     THEN
       Vol,result! := Vol',result!1163
     END;
-  
-  result! <-- Vol_getHdep(this?) = 
+
+  result! <-- Vol_getHdep(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1164,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__300|rec__300'hdep : 0 .. 1439 & rec__300'har : 0 .. 1439 & rec__300'hdep <= rec__300'har})
       & Vol' : FIN({rec__301|rec__301'hdep : 0 .. 1439 & rec__301'har : 0 .. 1439 & rec__301'hdep <= rec__301'har})
       & hdep : 0 .. 1439
@@ -414,10 +414,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne,result! := Vol',ligneDeVol',volsDeLigne',result!1164
     END;
-  
-  Vol_setHar_EXT(har?,this?) = 
+
+  Vol_setHar_EXT(har?,this?) =
     ANY Vol',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__320|rec__320'hdep : 0 .. 1439 & rec__320'har : 0 .. 1439 & rec__320'hdep <= rec__320'har})
       & Vol' : FIN({rec__321|rec__321'hdep : 0 .. 1439 & rec__321'har : 0 .. 1439 & rec__321'hdep <= rec__321'har})
       & hdep : 0 .. 1439
@@ -439,10 +439,10 @@ OPERATIONS
     THEN
       Vol := Vol'
     END;
-  
-  Vol_setHar(har?,this?) = 
+
+  Vol_setHar(har?,this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__336|rec__336'hdep : 0 .. 1439 & rec__336'har : 0 .. 1439 & rec__336'hdep <= rec__336'har})
       & Vol' : FIN({rec__337|rec__337'hdep : 0 .. 1439 & rec__337'har : 0 .. 1439 & rec__337'hdep <= rec__337'har})
       & hdep : 0 .. 1439
@@ -480,10 +480,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne := Vol',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Vol_getHar_EXT(this?) = 
+
+  result! <-- Vol_getHar_EXT(this?) =
     ANY Vol',result!1165,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__356|rec__356'hdep : 0 .. 1439 & rec__356'har : 0 .. 1439 & rec__356'hdep <= rec__356'har})
       & Vol' : FIN({rec__357|rec__357'hdep : 0 .. 1439 & rec__357'har : 0 .. 1439 & rec__357'hdep <= rec__357'har})
       & hdep : 0 .. 1439
@@ -506,10 +506,10 @@ OPERATIONS
     THEN
       Vol,result! := Vol',result!1165
     END;
-  
-  result! <-- Vol_getHar(this?) = 
+
+  result! <-- Vol_getHar(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1166,har,har',hdep,hdep',numvol,numvol'
-    WHERE 
+    WHERE
         Vol : FIN({rec__372|rec__372'hdep : 0 .. 1439 & rec__372'har : 0 .. 1439 & rec__372'hdep <= rec__372'har})
       & Vol' : FIN({rec__373|rec__373'hdep : 0 .. 1439 & rec__373'har : 0 .. 1439 & rec__373'hdep <= rec__373'har})
       & hdep : 0 .. 1439
@@ -548,10 +548,10 @@ OPERATIONS
     THEN
       Vol,ligneDeVol,volsDeLigne,result! := Vol',ligneDeVol',volsDeLigne',result!1166
     END;
-  
-  Vol_linkLigneDeVol(l?,this?) = 
+
+  Vol_linkLigneDeVol(l?,this?) =
     ANY ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__407|rec__407'hdep : 0 .. 1439 & rec__407'har : 0 .. 1439 & rec__407'hdep <= rec__407'har})
       & Ligne : FIN({rec__408|rec__408'dist : 0 .. 2000 & rec__408'vdep /= rec__408'var})
       & volsDeLigne : {rec__409|rec__409'dist : 0 .. 2000 & rec__409'vdep /= rec__409'var} +-> FIN({rec__410|rec__410'hdep : 0 .. 1439 & rec__410'har : 0 .. 1439 & rec__410'hdep <= rec__410'har})
@@ -579,10 +579,10 @@ OPERATIONS
     THEN
       ligneDeVol,volsDeLigne := ligneDeVol',volsDeLigne'
     END;
-  
-  Vol_unlinkLigneDeVol(l?,this?) = 
+
+  Vol_unlinkLigneDeVol(l?,this?) =
     ANY ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__435|rec__435'hdep : 0 .. 1439 & rec__435'har : 0 .. 1439 & rec__435'hdep <= rec__435'har})
       & Ligne : FIN({rec__436|rec__436'dist : 0 .. 2000 & rec__436'vdep /= rec__436'var})
       & volsDeLigne : {rec__437|rec__437'dist : 0 .. 2000 & rec__437'vdep /= rec__437'var} +-> FIN({rec__438|rec__438'hdep : 0 .. 1439 & rec__438'har : 0 .. 1439 & rec__438'hdep <= rec__438'har})
@@ -609,10 +609,10 @@ OPERATIONS
     THEN
       ligneDeVol,volsDeLigne := ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Vol_getLigneDeVol(this?) = 
+
+  result! <-- Vol_getLigneDeVol(this?) =
     ANY result!1167
-    WHERE 
+    WHERE
         Vol : FIN({rec__487|rec__487'hdep : 0 .. 1439 & rec__487'har : 0 .. 1439 & rec__487'hdep <= rec__487'har})
       & Ligne : FIN({rec__488|rec__488'dist : 0 .. 2000 & rec__488'vdep /= rec__488'var})
       & volsDeLigne : {rec__489|rec__489'dist : 0 .. 2000 & rec__489'vdep /= rec__489'var} +-> FIN({rec__490|rec__490'hdep : 0 .. 1439 & rec__490'har : 0 .. 1439 & rec__490'hdep <= rec__490'har})
@@ -638,10 +638,10 @@ OPERATIONS
     THEN
       result! := result!1167
     END;
-  
-  Ligne_new(ligne?) = 
+
+  Ligne_new(ligne?) =
     ANY Ligne'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__542|rec__542'dist : 0 .. 2000 & rec__542'vdep /= rec__542'var})
       & Ligne' : FIN({rec__543|rec__543'dist : 0 .. 2000 & rec__543'vdep /= rec__543'var})
       & ligne?'dist : 0 .. 2000
@@ -650,10 +650,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_newWithLinks(ligne?) = 
+
+  Ligne_newWithLinks(ligne?) =
     ANY Ligne'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__548|rec__548'dist : 0 .. 2000 & rec__548'vdep /= rec__548'var})
       & Ligne' : FIN({rec__549|rec__549'dist : 0 .. 2000 & rec__549'vdep /= rec__549'var})
       & ligne?'dist : 0 .. 2000
@@ -662,10 +662,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_delete(this?) = 
+
+  Ligne_delete(this?) =
     ANY Ligne'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__554|rec__554'dist : 0 .. 2000 & rec__554'vdep /= rec__554'var})
       & Ligne' : FIN({rec__555|rec__555'dist : 0 .. 2000 & rec__555'vdep /= rec__555'var})
       & this?'dist : 0 .. 2000
@@ -674,10 +674,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_delWithLinks(this?) = 
+
+  Ligne_delWithLinks(this?) =
     ANY Ligne',ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__570|rec__570'dist : 0 .. 2000 & rec__570'vdep /= rec__570'var})
       & Ligne' : FIN({rec__571|rec__571'dist : 0 .. 2000 & rec__571'vdep /= rec__571'var})
       & Vol : FIN({rec__572|rec__572'hdep : 0 .. 1439 & rec__572'har : 0 .. 1439 & rec__572'hdep <= rec__572'har})
@@ -701,10 +701,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne := Ligne',ligneDeVol',volsDeLigne'
     END;
-  
-  Ligne_setVdep_EXT(this?,vdep?) = 
+
+  Ligne_setVdep_EXT(this?,vdep?) =
     ANY Ligne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__586|rec__586'dist : 0 .. 2000 & rec__586'vdep /= rec__586'var})
       & Ligne' : FIN({rec__587|rec__587'dist : 0 .. 2000 & rec__587'vdep /= rec__587'var})
       & dist : 0 .. 2000
@@ -722,10 +722,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_setVdep(this?,vdep?) = 
+
+  Ligne_setVdep(this?,vdep?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__602|rec__602'dist : 0 .. 2000 & rec__602'vdep /= rec__602'var})
       & Ligne' : FIN({rec__603|rec__603'dist : 0 .. 2000 & rec__603'vdep /= rec__603'var})
       & dist : 0 .. 2000
@@ -759,10 +759,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne := Ligne',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Ligne_getVdep_EXT(this?) = 
+
+  result! <-- Ligne_getVdep_EXT(this?) =
     ANY Ligne',result!1168,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__622|rec__622'dist : 0 .. 2000 & rec__622'vdep /= rec__622'var})
       & Ligne' : FIN({rec__623|rec__623'dist : 0 .. 2000 & rec__623'vdep /= rec__623'var})
       & dist : 0 .. 2000
@@ -781,10 +781,10 @@ OPERATIONS
     THEN
       Ligne,result! := Ligne',result!1168
     END;
-  
-  result! <-- Ligne_getVdep(this?) = 
+
+  result! <-- Ligne_getVdep(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1169,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__638|rec__638'dist : 0 .. 2000 & rec__638'vdep /= rec__638'var})
       & Ligne' : FIN({rec__639|rec__639'dist : 0 .. 2000 & rec__639'vdep /= rec__639'var})
       & dist : 0 .. 2000
@@ -819,10 +819,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne,result! := Ligne',ligneDeVol',volsDeLigne',result!1169
     END;
-  
-  Ligne_setVar_EXT(this?,var?) = 
+
+  Ligne_setVar_EXT(this?,var?) =
     ANY Ligne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__658|rec__658'dist : 0 .. 2000 & rec__658'vdep /= rec__658'var})
       & Ligne' : FIN({rec__659|rec__659'dist : 0 .. 2000 & rec__659'vdep /= rec__659'var})
       & dist : 0 .. 2000
@@ -840,10 +840,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_setVar(this?,var?) = 
+
+  Ligne_setVar(this?,var?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__674|rec__674'dist : 0 .. 2000 & rec__674'vdep /= rec__674'var})
       & Ligne' : FIN({rec__675|rec__675'dist : 0 .. 2000 & rec__675'vdep /= rec__675'var})
       & dist : 0 .. 2000
@@ -877,10 +877,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne := Ligne',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Ligne_getVar_EXT(this?) = 
+
+  result! <-- Ligne_getVar_EXT(this?) =
     ANY Ligne',result!1170,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__694|rec__694'dist : 0 .. 2000 & rec__694'vdep /= rec__694'var})
       & Ligne' : FIN({rec__695|rec__695'dist : 0 .. 2000 & rec__695'vdep /= rec__695'var})
       & dist : 0 .. 2000
@@ -899,10 +899,10 @@ OPERATIONS
     THEN
       Ligne,result! := Ligne',result!1170
     END;
-  
-  result! <-- Ligne_getVar(this?) = 
+
+  result! <-- Ligne_getVar(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1171,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__710|rec__710'dist : 0 .. 2000 & rec__710'vdep /= rec__710'var})
       & Ligne' : FIN({rec__711|rec__711'dist : 0 .. 2000 & rec__711'vdep /= rec__711'var})
       & dist : 0 .. 2000
@@ -937,10 +937,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne,result! := Ligne',ligneDeVol',volsDeLigne',result!1171
     END;
-  
-  Ligne_setDist_EXT(dist?,this?) = 
+
+  Ligne_setDist_EXT(dist?,this?) =
     ANY Ligne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__730|rec__730'dist : 0 .. 2000 & rec__730'vdep /= rec__730'var})
       & Ligne' : FIN({rec__731|rec__731'dist : 0 .. 2000 & rec__731'vdep /= rec__731'var})
       & dist : 0 .. 2000
@@ -959,10 +959,10 @@ OPERATIONS
     THEN
       Ligne := Ligne'
     END;
-  
-  Ligne_setDist(dist?,this?) = 
+
+  Ligne_setDist(dist?,this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__746|rec__746'dist : 0 .. 2000 & rec__746'vdep /= rec__746'var})
       & Ligne' : FIN({rec__747|rec__747'dist : 0 .. 2000 & rec__747'vdep /= rec__747'var})
       & dist : 0 .. 2000
@@ -997,10 +997,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne := Ligne',ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Ligne_getDist_EXT(this?) = 
+
+  result! <-- Ligne_getDist_EXT(this?) =
     ANY Ligne',result!1172,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__766|rec__766'dist : 0 .. 2000 & rec__766'vdep /= rec__766'var})
       & Ligne' : FIN({rec__767|rec__767'dist : 0 .. 2000 & rec__767'vdep /= rec__767'var})
       & dist : 0 .. 2000
@@ -1020,10 +1020,10 @@ OPERATIONS
     THEN
       Ligne,result! := Ligne',result!1172
     END;
-  
-  result! <-- Ligne_getDist(this?) = 
+
+  result! <-- Ligne_getDist(this?) =
     ANY Ligne',Vol',ligneDeVol',volsDeLigne',result!1173,dist,dist',var,var',vdep,vdep'
-    WHERE 
+    WHERE
         Ligne : FIN({rec__782|rec__782'dist : 0 .. 2000 & rec__782'vdep /= rec__782'var})
       & Ligne' : FIN({rec__783|rec__783'dist : 0 .. 2000 & rec__783'vdep /= rec__783'var})
       & dist : 0 .. 2000
@@ -1059,10 +1059,10 @@ OPERATIONS
     THEN
       Ligne,ligneDeVol,volsDeLigne,result! := Ligne',ligneDeVol',volsDeLigne',result!1173
     END;
-  
-  Ligne_linkVolsDeLigne(this?,v?) = 
+
+  Ligne_linkVolsDeLigne(this?,v?) =
     ANY ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__813|rec__813'hdep : 0 .. 1439 & rec__813'har : 0 .. 1439 & rec__813'hdep <= rec__813'har})
       & Ligne : FIN({rec__814|rec__814'dist : 0 .. 2000 & rec__814'vdep /= rec__814'var})
       & volsDeLigne : {rec__815|rec__815'dist : 0 .. 2000 & rec__815'vdep /= rec__815'var} +-> FIN({rec__816|rec__816'hdep : 0 .. 1439 & rec__816'har : 0 .. 1439 & rec__816'hdep <= rec__816'har})
@@ -1090,10 +1090,10 @@ OPERATIONS
     THEN
       ligneDeVol,volsDeLigne := ligneDeVol',volsDeLigne'
     END;
-  
-  Ligne_unlinkVolsDeLigne(this?,v?) = 
+
+  Ligne_unlinkVolsDeLigne(this?,v?) =
     ANY ligneDeVol',volsDeLigne'
-    WHERE 
+    WHERE
         Vol : FIN({rec__841|rec__841'hdep : 0 .. 1439 & rec__841'har : 0 .. 1439 & rec__841'hdep <= rec__841'har})
       & Ligne : FIN({rec__842|rec__842'dist : 0 .. 2000 & rec__842'vdep /= rec__842'var})
       & volsDeLigne : {rec__843|rec__843'dist : 0 .. 2000 & rec__843'vdep /= rec__843'var} +-> FIN({rec__844|rec__844'hdep : 0 .. 1439 & rec__844'har : 0 .. 1439 & rec__844'hdep <= rec__844'har})
@@ -1120,10 +1120,10 @@ OPERATIONS
     THEN
       ligneDeVol,volsDeLigne := ligneDeVol',volsDeLigne'
     END;
-  
-  result! <-- Ligne_getVolsDeLigne(this?) = 
+
+  result! <-- Ligne_getVolsDeLigne(this?) =
     ANY result!1174
-    WHERE 
+    WHERE
         Vol : FIN({rec__869|rec__869'hdep : 0 .. 1439 & rec__869'har : 0 .. 1439 & rec__869'hdep <= rec__869'har})
       & Ligne : FIN({rec__870|rec__870'dist : 0 .. 2000 & rec__870'vdep /= rec__870'var})
       & volsDeLigne : {rec__871|rec__871'dist : 0 .. 2000 & rec__871'vdep /= rec__871'var} +-> FIN({rec__872|rec__872'hdep : 0 .. 1439 & rec__872'har : 0 .. 1439 & rec__872'hdep <= rec__872'har})
@@ -1147,9 +1147,9 @@ OPERATIONS
     THEN
       result! := result!1174
     END;
-  
-  CheckGlobalInvariant = 
-    SELECT 
+
+  CheckGlobalInvariant =
+    SELECT
         Vol : FIN({rec__931|rec__931'hdep : 0 .. 1439 & rec__931'har : 0 .. 1439 & rec__931'hdep <= rec__931'har})
       & Ligne : FIN({rec__932|rec__932'dist : 0 .. 2000 & rec__932'vdep /= rec__932'var})
       & volsDeLigne : {rec__933|rec__933'dist : 0 .. 2000 & rec__933'vdep /= rec__933'var} +-> FIN({rec__934|rec__934'hdep : 0 .. 1439 & rec__934'har : 0 .. 1439 & rec__934'hdep <= rec__934'har})
@@ -1166,12 +1166,12 @@ OPERATIONS
       & union(ran(volsDeLigne)) = Vol
       & volsDeLigne = {cmpset__1152|#x.(cmpset__1152 = x |-> {y|y : dom(ligneDeVol) & x = ligneDeVol(y)} & x : ran(ligneDeVol))}
       & ligneDeVol = union({cmpset__1154|#x.(cmpset__1154 = {cmpset__1153|#y.(cmpset__1153 = y |-> x & y : volsDeLigne(x))} & x : dom(volsDeLigne))})
-    THEN 
+    THEN
       skip
     END;
-  
-  zcoverage!,zcoverageMax!,znotCovered! <-- Coverage_model = 
-    SELECT 
+
+  zcoverage!,zcoverageMax!,znotCovered! <-- Coverage_model =
+    SELECT
         Vol : FIN({rec__955|rec__955'hdep : 0 .. 1439 & rec__955'har : 0 .. 1439 & rec__955'hdep <= rec__955'har})
       & Ligne : FIN({rec__956|rec__956'dist : 0 .. 2000 & rec__956'vdep /= rec__956'var})
       & volsDeLigne : {rec__957|rec__957'dist : 0 .. 2000 & rec__957'vdep /= rec__957'var} +-> FIN({rec__958|rec__958'hdep : 0 .. 1439 & rec__958'har : 0 .. 1439 & rec__958'hdep <= rec__958'har})
@@ -1188,7 +1188,7 @@ OPERATIONS
       & union(ran(volsDeLigne)) = Vol
       & volsDeLigne = {cmpset__1158|#x.(cmpset__1158 = x |-> {y|y : dom(ligneDeVol) & x = ligneDeVol(y)} & x : ran(ligneDeVol))}
       & ligneDeVol = union({cmpset__1160|#x.(cmpset__1160 = {cmpset__1159|#y.(cmpset__1159 = y |-> x & y : volsDeLigne(x))} & x : dom(volsDeLigne))})
-    THEN 
+    THEN
       LET zcoverage!1175,zcoverageMax!1176,znotCovered!1177 BE zcoverage!1175 = 0 + (IF Vol /= {} THEN 1 ELSE 0 END) + (IF Ligne /= {} THEN 1 ELSE 0 END) + (IF volsDeLigne /= {} THEN 1 ELSE 0 END) + (IF ligneDeVol /= {} THEN 1 ELSE 0 END) & zcoverageMax!1176 = 4 & znotCovered!1177 = zcoverageMax!1176 - zcoverage!1175
       IN
         zcoverage!,zcoverageMax!,znotCovered! := zcoverage!1175,zcoverageMax!1176,znotCovered!1177

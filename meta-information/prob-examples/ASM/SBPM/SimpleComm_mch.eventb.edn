@@ -8,6 +8,8 @@
  :variables 2,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/ASM/SBPM/SimpleComm_mch.eventb"],
+ :sha512
+ "68f0f7ab7a7c9c2369b008aa17172813cdd7577782bebe5183ab19785e2c83b49285c97a08190ad9f39b24dc66591a9383363353d3cc0114dd8ef8f9f5b9596b",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

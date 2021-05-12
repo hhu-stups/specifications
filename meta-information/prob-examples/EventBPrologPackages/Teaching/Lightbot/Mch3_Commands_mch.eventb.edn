@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Teaching/Lightbot/Mch3_Commands_mch.eventb"],
+ :sha512
+ "232f02a5739bfa5ceae70810d47b3a5038c3d463a602416f5d84c9c1b47c409bd0344a3064cb43c9c016d677119c2f02bf5bd759b49facbeb41bdf94fe2f849a",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -29,7 +31,58 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 149,
+   :transitions 1462,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4944,
+   :memory-usage 167754448,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "f8fded17a4b24d6299dea305a24ba28f459ae536",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 619,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 149,
+   :transitions 1462,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 166910368,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "f8fded17a4b24d6299dea305a24ba28f459ae536",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 505,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 19,

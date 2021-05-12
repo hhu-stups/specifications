@@ -8,6 +8,8 @@
  :variables 1,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/CSPB/Tickets/Bauer/machine.mch"],
+ :sha512
+ "564395c78ff0ffbbccb46ebd9dcec62d44776082c475034fe87b991253f47b0ffb4300d8f9b8a3cc01c8430cda0307526b47727a2c80f149753a06699739eafb",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

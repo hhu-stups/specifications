@@ -1,15 +1,15 @@
 MACHINE Lift
 
-VARIABLES  floor
+VARIABLES  lfloor
 
-INVARIANT  floor : 0..100
+INVARIANT  lfloor : 0..100
 
-INITIALISATION floor := 0
+INITIALISATION lfloor := 0
 
 OPERATIONS
 
-	inc = PRE floor<100 THEN floor := floor + 1 END ;
+	inc = PRE lfloor<100 THEN lfloor := lfloor + 1 END ;
 
-	dec = PRE floor>0 THEN floor := floor - 1 END
+	dec = PRE lfloor>0 THEN lfloor := lfloor - 1 END
 
 END

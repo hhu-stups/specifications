@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/Tickets/PROB-412/WhileVariantNotDecreased.mch"],
+ :sha512
+ "a34ab5213f4f51b41e599ef5de2a721e3b8455538ef9e90da86f331b8c1acb8e65cdbb73596dfb8d1ba83c15b39e94801168b01938feadee3e6750d35bfbbeef",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 100,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161537728,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 9, previous value = 9,span_context(span_predicate(b(value(int(9)),integer,[nodeid(pos(21,1,24,17,24,22))]),[],[bind(i,int(1))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4cc3e2791e468949d4318817dc374434ff110e8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 79,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161623456,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 9, previous value = 9,span_context(span_predicate(b(value(int(9)),integer,[nodeid(pos(21,1,24,17,24,22))]),[],[bind(i,int(1))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4cc3e2791e468949d4318817dc374434ff110e8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 80,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161609600,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4cc3e2791e468949d4318817dc374434ff110e8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 82,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161531264,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4cc3e2791e468949d4318817dc374434ff110e8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 79,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161529440,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 9, previous value = 9,span_context(span_predicate(b(value(int(9)),integer,[nodeid(pos(21,1,24,17,24,22))]),[],[bind(i,int(1))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4cc3e2791e468949d4318817dc374434ff110e8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 77,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

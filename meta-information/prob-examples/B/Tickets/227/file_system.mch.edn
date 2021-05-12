@@ -8,6 +8,8 @@
  :variables 6,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Tickets/227/file_system.mch"],
+ :sha512
+ "982ee3e4d424b51c83650adba8f030dfbdca53118f7984d9922c46a07e5d0f1cc1d975b7dffb38023c970b3eb4141f3b865879a933d1be48607cc5da7dc5c9d1",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

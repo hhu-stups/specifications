@@ -6,7 +6,7 @@ SETS
 CONSTANTS startrel
 PROPERTIES
  startrel = {aa|->kk,aa|->ll,bb|->mm}
-VARIABLES 
+VARIABLES
  phase,rr,ff,c
 INVARIANT
  phase : PHASE &
@@ -38,4 +38,3 @@ OPERATIONS
      rr := myrel(ff) || c:=c+1
    END
 END
-

@@ -1,0 +1,27 @@
+{:sha256
+ "7824f2bd7000ad8e05380f20e6ad20549e7befb74e3700b7ac5e909e5366b561",
+ :sha512
+ "9c1b37232bbcd0ba07600887f2831895a97ba051631ac41948f661c523eb1225ddac47b48b1c90494eddae528b4b3700b108ac3619632405a992800b9a1421fc",
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/TwoCounters.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

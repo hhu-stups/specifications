@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/CBC/Feasibility_baloadR07.mch"
   "./lib/LibraryIO.def"],
+ :sha512
+ "5ca280fd6a2c2f7402456cebde02495cf287dafb9a0179dd302c4526370f61489063053b7f1533346d12457cdca3ab589e27a51f46300a7cb7a9f1c54eff0f77",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 3,

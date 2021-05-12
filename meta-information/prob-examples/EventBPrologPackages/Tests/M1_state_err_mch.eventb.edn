@@ -10,6 +10,8 @@
  :number-of-states 5,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tests/M1_state_err_mch.eventb"],
+ :sha512
+ "a726e6058fdb396403e903629fe0b186d153ac44554faa54af5358581e6f3d590e55bb722c932e3f43d6db89d851652008777418abffbc5bd5ab9e02f974af64",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 5,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161555456,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "69c0986fc51a3d59ccb64eb5e5c9656f9697bdf7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:simulation_error"),
+   :states 5,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161511840,
+   :result
+   "state_error(eventerror(inc,simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))]),[event(inc,M1_err),true_guard([],[],b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(6),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M1_err,grd1,[]))])),action([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)])],[b(add(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])],[int(6)]),simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "69c0986fc51a3d59ccb64eb5e5c9656f9697bdf7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:simulation_error"),
+   :states 5,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161477872,
+   :result
+   "state_error(eventerror(inc,simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))]),[event(inc,M1_err),true_guard([],[],b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(6),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M1_err,grd1,[]))])),action([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)])],[b(add(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])],[int(6)]),simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "69c0986fc51a3d59ccb64eb5e5c9656f9697bdf7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 47,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:simulation_error"),
+   :states 5,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161603680,
+   :result
+   "state_error(eventerror(inc,simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))]),[event(inc,M1_err),true_guard([],[],b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(6),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M1_err,grd1,[]))])),action([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)])],[b(add(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1)),loc(M1_err,variables),section(M1_err),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])),integer,[nodeid(rodin_derived_context_pos(M1_err,event(inc,actions),act1))])],[int(6)]),simulation_error([event(inc,M0,b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1)),loc(M0,variables),section(M0),level(0)]),b(integer(5),integer,[nodeid(rodin_derived_context_pos(M0,event(inc,guard),grd1))])),pred,[nodeid(rodinpos(M0,grd1,[]))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "69c0986fc51a3d59ccb64eb5e5c9656f9697bdf7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 63,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 5,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161460560,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "69c0986fc51a3d59ccb64eb5e5c9656f9697bdf7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 48,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

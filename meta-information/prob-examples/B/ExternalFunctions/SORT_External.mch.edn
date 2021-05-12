@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/ExternalFunctions/SORT_External.mch"
   "./lib/SORT.def"],
+ :sha512
+ "90e2ce39b3c76f6e6695ca70fdee08ee6552fea7a26e6e806c519a6d159227328fbdd022681022dba7d9dd4224600d0b540a74a9fd4b4410f53468af5aa51da6",
  :comment "",
  :files 2,
  :static_assertions 4,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

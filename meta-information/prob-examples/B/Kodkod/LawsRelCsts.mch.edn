@@ -8,6 +8,8 @@
  :variables 0,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Kodkod/LawsRelCsts.mch"],
+ :sha512
+ "2fa6bb5cd1ee65738839ef9dba66c4a1054bb9536c1ca3bc5406d05c2755adeff0bcc341836c2dc0a600d5570a52ca4c515e8239af32e7e0e2fd2d19c512341b",
  :comment "",
  :files 1,
  :static_assertions 2,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 5,

@@ -1,0 +1,53 @@
+{:properties 32,
+ :definitions 0,
+ :deferred_sets 1,
+ :file
+ "./prob-examples/EventBPrologPackages/UML_HL3/VBD_M5_mch.eventb",
+ :enumerated_sets 2,
+ :variables 15,
+ :sha512
+ "ab92ac5c2d832d276bbcc0af60f746f86339276634a6cd968abc3001c7ccf50b1234c121e26e83423a66113207a3e67254ecdf5e8eac102fe52d4f4201f76e2f",
+ :static_assertions 0,
+ :operations 21,
+ :sha256
+ "6042063a158994d4aea64c2d2768379914d63cbca1bb87b110dc62ce950bfa23",
+ :invariants 25,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors nil,
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 167262304,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "0b96d750df6c990d05df73a33469e2c9a123bfe2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 1,
+ :constants 9}

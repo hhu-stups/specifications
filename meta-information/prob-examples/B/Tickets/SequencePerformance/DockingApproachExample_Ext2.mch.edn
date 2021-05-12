@@ -1,0 +1,27 @@
+{:sha256
+ "766b4679720124aae166f81e4d555a94998144e540066e368817cec5acbb3ba9",
+ :sha512
+ "1f1ce7bc754f3d9fa3cb59b3d32d363d697fd4cf1d41fc83956915df746cc908d7c7db1f238021d8fd19787c700aad8d8034d1228254cd28ebadd29f0d26702d",
+ :file
+ "./prob-examples/B/Tickets/SequencePerformance/DockingApproachExample_Ext2.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

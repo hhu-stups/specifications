@@ -8,6 +8,8 @@
  :variables 1,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/STUPS2_KURS/Hotel.mch"],
+ :sha512
+ "50d7080adfb9d03ea4ab54738718a2f9b45d00c0b77e36cc8c79cb8051c8c64c9df67491ce31aee82865646c3a4c9a5616d9a4ee8160920ca22960dd24a92f95",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

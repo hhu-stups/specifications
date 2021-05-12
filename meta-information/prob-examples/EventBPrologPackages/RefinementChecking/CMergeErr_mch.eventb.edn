@@ -10,6 +10,8 @@
  :number-of-states 1000,
  :included-machines
  ["./prob-examples/EventBPrologPackages/RefinementChecking/CMergeErr_mch.eventb"],
+ :sha512
+ "ed236aa6ee2a9080ccd84a2cc13854da7ab230f51e838a9fdff583a7cb044b257221841f4fc6fde8da8a93499b2f36a734740b682bd066af085e9805643335d7",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 170,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:simulation_error"),
+   :states 1000,
+   :transitions 1001,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162739824,
+   :result
+   "state_error(eventerror(Inc,simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))]),[event(Inc,CMergeErr),true_guard([],[],b(greater_equal(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd))])),pred,[nodeid(rodinpos(CMergeErr,ngrd,_2GsvlHqiEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])],[int(1001)]),simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "62e38ee42a201bcbbfbb62507661fc762414008e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 172,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:simulation_error"),
+   :states 1000,
+   :transitions 1001,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 163026816,
+   :result
+   "state_error(eventerror(Inc,simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))]),[event(Inc,CMergeErr),true_guard([],[],b(greater_equal(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd))])),pred,[nodeid(rodinpos(CMergeErr,ngrd,_2GsvlHqiEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])],[int(1001)]),simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "62e38ee42a201bcbbfbb62507661fc762414008e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 241,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1000,
+   :transitions 1001,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162906752,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "62e38ee42a201bcbbfbb62507661fc762414008e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 165,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:simulation_error"),
+   :states 1000,
+   :transitions 1001,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162924208,
+   :result
+   "state_error(eventerror(Inc,simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))]),[event(Inc,CMergeErr),true_guard([],[],b(greater_equal(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,guard),ngrd))])),pred,[nodeid(rodinpos(CMergeErr,ngrd,_2GsvlHqiEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2)),loc(CMergeErr,variables),section(CMergeErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CMergeErr,event(Inc,actions),act2))])],[int(1001)]),simulation_error([event(even,TwoEvents,b(conjunct(b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))]),b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(1000),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[nodeid(rodin_derived_context_pos(TwoEvents,event(even,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_UpFJQnqiEeK4Fp2vhFF57Q))])),event(odd,TwoEvents,b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1)),loc(TwoEvents,variables),section(TwoEvents),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TwoEvents,event(odd,guard),guard1))])),pred,[contains_wd_condition,nodeid(rodinpos(TwoEvents,guard1,_W4u3sXqiEeK4Fp2vhFF57Q))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "62e38ee42a201bcbbfbb62507661fc762414008e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 159,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1000,
+   :transitions 1001,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 163193744,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "62e38ee42a201bcbbfbb62507661fc762414008e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 215,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

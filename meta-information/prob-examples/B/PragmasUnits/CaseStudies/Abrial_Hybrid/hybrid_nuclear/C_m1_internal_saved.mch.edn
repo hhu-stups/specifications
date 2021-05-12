@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/PragmasUnits/CaseStudies/Abrial_Hybrid/hybrid_nuclear/C_m1_internal_saved.mch"],
+ :sha512
+ "ca651e3e504825509a9997cc76123235213b6ea7f6a01af5f57494585e81502d20213238ce8257480b30b92658be8cea6dd5f2b3a81e69db6f05a51194bb47af",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,114 @@
    :timeout 1800000,
    :model-checking-time 100,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock" "bmachine_static_checks" "initialisation_fails"),
+   :states 0,
+   :transitions 1026,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164904832,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3ac607b3b41d47a5b595ce2b02685b95b8f48421",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 92,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock" "bmachine_static_checks" "initialisation_fails"),
+   :states 0,
+   :transitions 1026,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 211,
+   :memory-usage 165559360,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3ac607b3b41d47a5b595ce2b02685b95b8f48421",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 28,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 1026,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164894880,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "3ac607b3b41d47a5b595ce2b02685b95b8f48421",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 93,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 1026,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164898624,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "3ac607b3b41d47a5b595ce2b02685b95b8f48421",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 93,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 1026,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 953,
+   :memory-usage 165525440,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "3ac607b3b41d47a5b595ce2b02685b95b8f48421",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 25,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 1,
  :invariant-violated false,

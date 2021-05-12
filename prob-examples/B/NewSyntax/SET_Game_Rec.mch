@@ -1,19 +1,6 @@
 MACHINE SET_Game_Rec
 CONSTANTS maxnrcards
 PROPERTIES maxnrcards:NATURAL1 & maxnrcards=5
-/*
-b_expand_closure(closure([c],[global('SHAPE')],
-        'And'('In'('ListExpression'(['Identifier'(c)]),value(global_set('SHAPE'))),'Exists'('Identifier'(x),'And'('And'(
-        'In'('ListExpression'(['Identifier'(x)]),
-          'SetOfRecords'(['Field'('Identifier'(col),value(global_set('COLOUR'))),
-                'Field'('Identifier'(fill),value(global_set('FILL'))),'Field'('Identifier'(shape),value(global_set('SHAPE')))])),
-		'In'('ListExpression'(['Identifier'(x)]),
-		value([rec([field(col,fd(1,'COLOUR')),field(fill,fd(1,'FILL')),field(shape,fd(1,'SHAPE'))]),
-		  
-		  rec([field(col,fd(3,'COLOUR')),field(fill,fd(1,'FILL')),field(shape,fd(3,'SHAPE'))])]))),
-		'EqualSet'('Identifier'(c),'AccessRecord'('Identifier'(x),'Identifier'(shape))))))),Res)
-		
-*/
 SETS
   COLOUR = {red,blue,green};
   SHAPE = {bean, oval, rectangle};
@@ -32,7 +19,7 @@ DEFINITIONS
 VARIABLES
   cards_on_table
 INVARIANT
-  cards_on_table : POW(SETCARD)
+  cards_on_table : FIN(SETCARD)
 INITIALISATION
  /* cards_on_table : (cards_on_table:POW(SETCARD)
             & card(cards_on_table)>3 & card(cards_on_table)<6) */
@@ -47,17 +34,17 @@ OPERATIONS
                 (card(colours(ss))=3 or card(colours(ss))=1) &
                 (card(shapes(ss))=3 or card(shapes(ss))=1) &
                 (card(fills(ss))=3 or card(fills(ss))=1) &
-                (card(cardis(ss))=3 or card(cardis(ss))=1) 
+                (card(cardis(ss))=3 or card(cardis(ss))=1)
             THEN
                  ASSERT card(ss) = 3 THEN
                    skip
                  END
-               END;   
+               END;
   cs <-- GetShape(c) = PRE c:cards_on_table THEN cs:= c'shape END;
   cs <-- GetShape2(c) = PRE c:SETCARD & c:cards_on_table THEN cs:= c'shape END;
   cc <-- GetShapes = BEGIN cc:= shapes(cards_on_table) END;
   cf <-- GetFill(c) = PRE c:cards_on_table THEN cf:= c'shape END;
   cc <-- GetColours = BEGIN cc:= colours(cards_on_table) END;
   cc <-- GetFills = BEGIN cc:= fills(cards_on_table) END;
-  cc <-- GetCardis = BEGIN cc:= cardis(cards_on_table) END 
+  cc <-- GetCardis = BEGIN cc:= cardis(cards_on_table) END
 END

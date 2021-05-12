@@ -1,0 +1,27 @@
+{:sha256
+ "aef2c92b9c758081fb2d9d5222384a2e4bc933f69c997956cf3697f4b6766488",
+ :sha512
+ "5d6f481f222e156c0f9ff49b811f57cecf9e13a0000a6e6e9cb6a29e13ebd47831e9de88eebccb7364a0cbba95ae4712dace759d8df1891722161b827361afae",
+ :file
+ "./prob-examples/B/Mathematical/DominatingSets/TestSolverStrength_DomBV.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

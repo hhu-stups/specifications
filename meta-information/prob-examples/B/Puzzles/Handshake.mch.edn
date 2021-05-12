@@ -8,6 +8,8 @@
  :variables 0,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Puzzles/Handshake.mch"],
+ :sha512
+ "9e0a4195412353cac1c2ffb11ea4c5068d9ae625e8a4735c063bad5a4abb0e9ad0c3238acf58280558aff195849d5b994cc937cc44031729c2ba5b9e347ff935",
  :comment "",
  :files 1,
  :static_assertions 2,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

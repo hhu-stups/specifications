@@ -8,6 +8,8 @@
  :variables 1,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/STUPS2_KURS/SudokuSETS.mch"],
+ :sha512
+ "e633a8f937fa5d87a938acf686b99ecc34fb836dd5a22245a028ac5d60ff81a2c6da28d80340d71f2b135f82ff7767b55247d5c7fddb4e3d5c9355fed5a60a20",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

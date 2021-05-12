@@ -10,6 +10,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/EventBPrologPackages/MultiLevel/CoffeR2_converr_mch.eventb"],
+ :sha512
+ "d85797d966cfa2d0e086d2ce8316ad430672adef988855fe9acf66b31e75ade66f1e6fcffdcca1b5d7469ba6f58ff9e58be93dc19babe649be7acbd7b7c44ec2",
  :comment "",
  :files 1,
  :static_assertions 14,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 40,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:insert_coin:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 145,
+   :memory-usage 163291600,
+   :result
+   "state_error(eventerror(insert_coin,invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4)),[event(insert_coin,CoffeR2_converr),true_guard([],[],b(less(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])),pred,[nodeid(rodinpos(gmc,_HZo2Uc1aEd6iFv-cAWf-Yg))])),variant_checked_pre(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4)),action([b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])],[b(add(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(integer(1),integer,[])),integer,[])],[int(1)]),invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "eb68f6c8e32ad2d4c6a093b6bfe6f815b19218e5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 36,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:insert_coin:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162653232,
+   :result
+   "state_error(eventerror(insert_coin,invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4)),[event(insert_coin,CoffeR2_converr),true_guard([],[],b(less(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])),pred,[nodeid(rodinpos(gmc,_HZo2Uc1aEd6iFv-cAWf-Yg))])),variant_checked_pre(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4)),action([b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])],[b(add(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(integer(1),integer,[])),integer,[])],[int(1)]),invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "eb68f6c8e32ad2d4c6a093b6bfe6f815b19218e5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 50,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:insert_coin:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 133,
+   :memory-usage 163216400,
+   :result
+   "state_error(eventerror(insert_coin,invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4)),[event(insert_coin,CoffeR2_converr),true_guard([],[],b(less(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])),pred,[nodeid(rodinpos(gmc,_HZo2Uc1aEd6iFv-cAWf-Yg))])),variant_checked_pre(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4)),action([b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])],[b(add(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(integer(1),integer,[])),integer,[])],[int(1)]),invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "eb68f6c8e32ad2d4c6a093b6bfe6f815b19218e5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 42,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:insert_coin:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162656384,
+   :result
+   "state_error(eventerror(insert_coin,invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4)),[event(insert_coin,CoffeR2_converr),true_guard([],[],b(less(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])),pred,[nodeid(rodinpos(gmc,_HZo2Uc1aEd6iFv-cAWf-Yg))])),variant_checked_pre(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4)),action([b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])],[b(add(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(integer(1),integer,[])),integer,[])],[int(1)]),invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "eb68f6c8e32ad2d4c6a093b6bfe6f815b19218e5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 54,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:insert_coin:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162712432,
+   :result
+   "state_error(eventerror(insert_coin,invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4)),[event(insert_coin,CoffeR2_converr),true_guard([],[],b(less(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])),pred,[nodeid(rodinpos(gmc,_HZo2Uc1aEd6iFv-cAWf-Yg))])),variant_checked_pre(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4)),action([b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])],[b(add(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(integer(1),integer,[])),integer,[])],[int(1)]),invalid_variant(convergent,b(minus(b(identifier(maxc),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)]),b(b(identifier(coins),integer,[loc(CoffeR2_converr,variables),section(CoffeR2_converr),level(2)])div b(integer(2),integer,[]),integer,[])),integer,[]),int(4),int(4))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "eb68f6c8e32ad2d4c6a093b6bfe6f815b19218e5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 65,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

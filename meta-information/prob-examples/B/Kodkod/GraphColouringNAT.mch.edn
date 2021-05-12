@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Kodkod/GraphColouringNAT.mch"
   "./prob-examples/B/Kodkod/Graph_small_40_200_0.def"],
+ :sha512
+ "89547cae553a6286dc915b42306a95a7260353c7e07233a82d9d63b3c36da01cc10847bcc77294d4864f238158a58ccb31a865b1703ccc554a2fabbdba13d273",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

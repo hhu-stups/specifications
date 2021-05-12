@@ -1,0 +1,118 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Tester/WD_Tests/OperationParameter.mch",
+ :enumerated_sets 0,
+ :variables 0,
+ :sha512
+ "def1dc163bbe6ee0452d4368aef4e863d05a6a3deebe4415429deeead194cc0b303fa6cf51074258be50dc7cd288b98762fb525c7a3ec6fff029d2617a85064c",
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "4083b4c281966be3452621059ec60c392f46cbf3e99d511754677aed5c3bc8e5",
+ :invariants 0,
+ :runs
+ [{:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 30,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161700816,
+   :result
+   "state_error(abort_error(well_definedness_error,max applied to empty set,,span_context([nodeid(pos(24,1,4,57,4,61))],operation(Test,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "71f34ec2c384913d49f9cf13cd5a6f6104111ff9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 115,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 30,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161792688,
+   :result
+   "state_error(abort_error(well_definedness_error,max applied to empty set,,span_context([nodeid(pos(24,1,4,57,4,61))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "71f34ec2c384913d49f9cf13cd5a6f6104111ff9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 121,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 30,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161711456,
+   :result
+   "state_error(abort_error(well_definedness_error,max applied to empty set,,span_context([nodeid(pos(24,1,4,57,4,61))],operation(Test,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "71f34ec2c384913d49f9cf13cd5a6f6104111ff9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 115,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 30,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161798640,
+   :result
+   "state_error(abort_error(well_definedness_error,max applied to empty set,,span_context([nodeid(pos(24,1,4,57,4,61))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "71f34ec2c384913d49f9cf13cd5a6f6104111ff9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 125,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 30,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161709312,
+   :result
+   "state_error(abort_error(well_definedness_error,max applied to empty set,,span_context([nodeid(pos(24,1,4,57,4,61))],operation(Test,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "71f34ec2c384913d49f9cf13cd5a6f6104111ff9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 117,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}

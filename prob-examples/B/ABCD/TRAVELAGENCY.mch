@@ -1,6 +1,6 @@
 MACHINE  TheSystem	/* U2B4 */
 
-INCLUDES TR.chan , RT.chan, TC.chan , CT.chan, Room.Shop, Car.Shop
+INCLUDES TR.Channels , RT.Channels, TC.Channels , CT.Channels, Room.Shop, Car.Shop
 
 SETS
 	TRAVELAGENCY_STATE = {s0,s1,s2,s3,s4,s5,s6}
@@ -8,10 +8,10 @@ VARIABLES
 	travelagency_state
 INVARIANT
 	travelagency_state : TRAVELAGENCY_STATE
-	
+
 INITIALISATION
 	travelagency_state :: TRAVELAGENCY_STATE
-	
+
 OPERATIONS
 
 /* Push travel agent into separate machine */
@@ -24,13 +24,13 @@ END
 ;
 
 
-RoomRecvReq = VAR mm IN 
+RoomRecvReq = VAR mm IN
 	mm <-- TR.Recv ;
 	Room.RecvReq(mm)
 	END ;
-	
+
 RoomSendResp =
-	VAR mm IN 
+	VAR mm IN
 	mm <-- Room.SendResp ;
 	RT.send(mm)
 	END ;
@@ -41,7 +41,7 @@ BookCar=
 BEGIN
 	SELECT	travelagency_state=s1
 	THEN	travelagency_state:=s4
-	END || 
+	END ||
 	IF cars > 0
 	THEN cars:= cars-1 ||  resp:=TRUE
 	 ELSE resp:=FALSE
@@ -52,7 +52,7 @@ CancelHotel=
 BEGIN
 	SELECT	travelagency_state=s1
 	THEN	travelagency_state:=s3
-	END || 
+	END ||
 	rooms:=rooms+1
 END
 ;
@@ -60,7 +60,7 @@ CancelCar=
 BEGIN
 	SELECT	travelagency_state=s1
 	THEN	travelagency_state:=s5
-	END || 
+	END ||
 	cars:=cars+1
 END
 ;
@@ -81,7 +81,7 @@ BEGIN
 	THEN	travelagency_state:=s6
 	WHEN	travelagency_state=s5
 	THEN	travelagency_state:=s6
-	END || 
+	END ||
 	CHOICE  rr <-- RT.Recv  OR rr <-- CT.Recv END
 END
 ;

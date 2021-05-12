@@ -1,0 +1,118 @@
+{:properties 3,
+ :definitions 6,
+ :deferred_sets 1,
+ :file "./prob-examples/B/Other/MobileComm/ImpAckProtocol.mch",
+ :enumerated_sets 0,
+ :variables 6,
+ :sha512
+ "03c6f8ce149d6082aadef9469711fa2aa94b8493606df889beb326359b60cca279c5391303db88059bbadcc90109e2a8ef42647d21d30ec8adfc9fad10363fb7",
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "27de0ccb62751e0347c0b6d042d242e791f38b3d5056c34b94ab3bd596ef7561",
+ :invariants 10,
+ :runs
+ [{:errors ("well_definedness_error"),
+   :states 16,
+   :transitions 29,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163856672,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Devices),[]),span_context(span_predicate(b(function(b(identifier(Buffer),set(couple(global(Devices),integer)),[nodeid(pos(467,1,81,40,81,46)),loc(local,ImpAckProtocol,abstract_variables)]),b(last(b(identifier(route),seq(global(Devices)),[nodeid(pos(43,1,25,23,25,28)),loc(local,ImpAckProtocol,abstract_variables)])),global(Devices),[contains_wd_condition,nodeid(pos_context(pos(42,1,25,18,25,29),definition_call(destination),pos(468,1,81,47,81,58))),nodeid(pos(468,1,81,47,81,58))])),integer,[contains_wd_condition,nodeid(pos(466,1,81,40,81,59))]),[bind(nr,int(0))],[bind(route,avl_set(node((int(2),fd(1,Devices)),true,0,node((int(1),fd(3,Devices)),true,0,empty,empty),node((int(3),fd(2,Devices)),true,0,empty,empty)))),bind(sent,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(imp_ack,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(Messages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(AckMessages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(Buffer,avl_set(node((fd(3,Devices),int(1)),true,0,empty,empty))),bind(connected,avl_set(node((fd(1,Devices),fd(3,Devices)),true,1,node((fd(1,Devices),fd(2,Devices)),true,0,empty,empty),node((fd(2,Devices),fd(1,Devices)),true,1,empty,node((fd(3,Devices),fd(1,Devices)),true,0,empty,empty)))))]),operation(arrive_packet,16))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "47b14bda82627e0b32268332a95086b09de2c1c6",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 230,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 16,
+   :transitions 29,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4208,
+   :memory-usage 164427024,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Devices),[]),span_context(span_predicate(b(function(b(identifier(Buffer),set(couple(global(Devices),integer)),[nodeid(pos(467,1,81,40,81,46)),loc(local,ImpAckProtocol,abstract_variables)]),b(last(b(identifier(route),seq(global(Devices)),[nodeid(pos(43,1,25,23,25,28)),loc(local,ImpAckProtocol,abstract_variables)])),global(Devices),[contains_wd_condition,nodeid(pos_context(pos(42,1,25,18,25,29),definition_call(destination),pos(468,1,81,47,81,58))),nodeid(pos(468,1,81,47,81,58))])),integer,[contains_wd_condition,nodeid(pos(466,1,81,40,81,59))]),[bind(nr,int(0))],[bind(route,avl_set(node((int(2),fd(1,Devices)),true,0,node((int(1),fd(3,Devices)),true,0,empty,empty),node((int(3),fd(2,Devices)),true,0,empty,empty)))),bind(sent,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(imp_ack,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(Messages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(AckMessages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(Buffer,avl_set(node((fd(3,Devices),int(1)),true,0,empty,empty))),bind(connected,avl_set(node((fd(1,Devices),fd(3,Devices)),true,1,node((fd(1,Devices),fd(2,Devices)),true,0,empty,empty),node((fd(2,Devices),fd(1,Devices)),true,1,empty,node((fd(3,Devices),fd(1,Devices)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "47b14bda82627e0b32268332a95086b09de2c1c6",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 126,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 16,
+   :transitions 29,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163866528,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Devices),[]),span_context(span_predicate(b(function(b(identifier(Buffer),set(couple(global(Devices),integer)),[nodeid(pos(467,1,81,40,81,46)),loc(local,ImpAckProtocol,abstract_variables)]),b(last(b(identifier(route),seq(global(Devices)),[nodeid(pos(43,1,25,23,25,28)),loc(local,ImpAckProtocol,abstract_variables)])),global(Devices),[contains_wd_condition,nodeid(pos_context(pos(42,1,25,18,25,29),definition_call(destination),pos(468,1,81,47,81,58))),nodeid(pos(468,1,81,47,81,58))])),integer,[contains_wd_condition,nodeid(pos(466,1,81,40,81,59))]),[bind(nr,int(0))],[bind(route,avl_set(node((int(2),fd(1,Devices)),true,0,node((int(1),fd(3,Devices)),true,0,empty,empty),node((int(3),fd(2,Devices)),true,0,empty,empty)))),bind(sent,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(imp_ack,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(Messages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(AckMessages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(Buffer,avl_set(node((fd(3,Devices),int(1)),true,0,empty,empty))),bind(connected,avl_set(node((fd(1,Devices),fd(3,Devices)),true,1,node((fd(1,Devices),fd(2,Devices)),true,0,empty,empty),node((fd(2,Devices),fd(1,Devices)),true,1,empty,node((fd(3,Devices),fd(1,Devices)),true,0,empty,empty)))))]),operation(arrive_packet,16))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "47b14bda82627e0b32268332a95086b09de2c1c6",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 235,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 16,
+   :transitions 29,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 3240,
+   :memory-usage 164617696,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Devices),[]),span_context(span_predicate(b(function(b(identifier(Buffer),set(couple(global(Devices),integer)),[nodeid(pos(467,1,81,40,81,46)),loc(local,ImpAckProtocol,abstract_variables)]),b(last(b(identifier(route),seq(global(Devices)),[nodeid(pos(43,1,25,23,25,28)),loc(local,ImpAckProtocol,abstract_variables)])),global(Devices),[contains_wd_condition,nodeid(pos_context(pos(42,1,25,18,25,29),definition_call(destination),pos(468,1,81,47,81,58))),nodeid(pos(468,1,81,47,81,58))])),integer,[contains_wd_condition,nodeid(pos(466,1,81,40,81,59))]),[bind(nr,int(0))],[bind(route,avl_set(node((int(2),fd(1,Devices)),true,0,node((int(1),fd(3,Devices)),true,0,empty,empty),node((int(3),fd(2,Devices)),true,0,empty,empty)))),bind(sent,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(imp_ack,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(Messages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(AckMessages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(Buffer,avl_set(node((fd(3,Devices),int(1)),true,0,empty,empty))),bind(connected,avl_set(node((fd(1,Devices),fd(3,Devices)),true,1,node((fd(1,Devices),fd(2,Devices)),true,0,empty,empty),node((fd(2,Devices),fd(1,Devices)),true,1,empty,node((fd(3,Devices),fd(1,Devices)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "47b14bda82627e0b32268332a95086b09de2c1c6",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 122,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 16,
+   :transitions 29,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163980752,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Devices),[]),span_context(span_predicate(b(function(b(identifier(Buffer),set(couple(global(Devices),integer)),[nodeid(pos(467,1,81,40,81,46)),loc(local,ImpAckProtocol,abstract_variables)]),b(last(b(identifier(route),seq(global(Devices)),[nodeid(pos(43,1,25,23,25,28)),loc(local,ImpAckProtocol,abstract_variables)])),global(Devices),[contains_wd_condition,nodeid(pos_context(pos(42,1,25,18,25,29),definition_call(destination),pos(468,1,81,47,81,58))),nodeid(pos(468,1,81,47,81,58))])),integer,[contains_wd_condition,nodeid(pos(466,1,81,40,81,59))]),[bind(nr,int(0))],[bind(route,avl_set(node((int(2),fd(1,Devices)),true,0,node((int(1),fd(3,Devices)),true,0,empty,empty),node((int(3),fd(2,Devices)),true,0,empty,empty)))),bind(sent,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(imp_ack,avl_set(node((fd(2,Devices),int(0)),true,0,node((fd(1,Devices),int(0)),true,0,empty,empty),node((fd(3,Devices),int(0)),true,0,empty,empty)))),bind(Messages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(AckMessages,avl_set(node((fd(2,Devices),[]),true,0,node((fd(1,Devices),[]),true,0,empty,empty),node((fd(3,Devices),[]),true,0,empty,empty)))),bind(Buffer,avl_set(node((fd(3,Devices),int(1)),true,0,empty,empty))),bind(connected,avl_set(node((fd(1,Devices),fd(3,Devices)),true,1,node((fd(1,Devices),fd(2,Devices)),true,0,empty,empty),node((fd(2,Devices),fd(1,Devices)),true,1,empty,node((fd(3,Devices),fd(1,Devices)),true,0,empty,empty)))))]),operation(arrive_packet,16))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "47b14bda82627e0b32268332a95086b09de2c1c6",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 272,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 1}

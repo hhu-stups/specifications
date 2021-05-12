@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/ABCD/CarlaTravelAgency_corrected2_small.mch"],
+ :sha512
+ "7a131f231da8bbf83209082050a10f9a63e601dc12e13a08ee7bbd462525d670c588d3dfb83b440d05202dfcb7d6d1aa1dab0e67d0a9720d444d2c8ebf57f5f8",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,43 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors nil,
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 164878976,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "89b347a48edd5f63d859a01fa038c3dc29269a14",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

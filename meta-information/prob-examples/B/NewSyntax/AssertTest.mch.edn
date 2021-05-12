@@ -8,6 +8,8 @@
  :variables 2,
  :number-of-states 2,
  :included-machines ["./prob-examples/B/NewSyntax/AssertTest.mch"],
+ :sha512
+ "10cdaa6cac624f1072e07c05606a3b819d989035e6c22d8ddea7ab5b494d2dc687082865c9300723d82407759864659285d636b9e632328cbeece329ec90722c",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,6 +29,108 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("assert_error" "bmachine_static_checks"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 12,
+   :memory-usage 162210912,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,yy = aa,span_context(span_predicate(b(equal(b(identifier(yy),global(ID),[nodeid(pos(42,1,13,22,13,24)),duplicate_id_hides([loc(local,AssertTest,abstract_variables),nodeid(pos(16,1,7,14,7,16))]),readonly,introduced_by(operation)]),b(identifier(aa),global(ID),[nodeid(pos(43,1,13,25,13,27)),loc(local,AssertTest,enumerated_elements),readonly,enumerated_set_element,def(enumerated_element,AssertTest)])),pred,[nodeid(pos(41,1,13,22,13,27))]),[bind(yy,fd(2,ID))],[bind(xx,fd(1,ID)),bind(yy,int(0)),bind(iv,fd(1,ID))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a2d357a0fc17804075795a86674748df4304924",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 132,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error" "bmachine_static_checks"),
+   :states 2,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 13,
+   :memory-usage 162199408,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,yy = aa,span_context(span_predicate(b(equal(b(identifier(yy),global(ID),[nodeid(pos(42,1,13,22,13,24)),duplicate_id_hides([loc(local,AssertTest,abstract_variables),nodeid(pos(16,1,7,14,7,16))]),readonly,introduced_by(operation)]),b(identifier(aa),global(ID),[nodeid(pos(43,1,13,25,13,27)),loc(local,AssertTest,enumerated_elements),readonly,enumerated_set_element,def(enumerated_element,AssertTest)])),pred,[nodeid(pos(41,1,13,22,13,27))]),[bind(yy,fd(2,ID))],[bind(xx,fd(1,ID)),bind(yy,int(0)),bind(iv,fd(1,ID))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a2d357a0fc17804075795a86674748df4304924",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 124,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error" "bmachine_static_checks"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162043040,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,yy = aa,span_context(span_predicate(b(equal(b(identifier(yy),global(ID),[nodeid(pos(42,1,13,22,13,24)),duplicate_id_hides([loc(local,AssertTest,abstract_variables),nodeid(pos(16,1,7,14,7,16))]),readonly,introduced_by(operation)]),b(identifier(aa),global(ID),[nodeid(pos(43,1,13,25,13,27)),loc(local,AssertTest,enumerated_elements),readonly,enumerated_set_element,def(enumerated_element,AssertTest)])),pred,[nodeid(pos(41,1,13,22,13,27))]),[bind(yy,fd(2,ID))],[bind(xx,fd(1,ID)),bind(yy,int(0)),bind(iv,fd(1,ID))]),operation(Set,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a2d357a0fc17804075795a86674748df4304924",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 115,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error" "bmachine_static_checks"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162052832,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,yy = aa,span_context(span_predicate(b(equal(b(identifier(yy),global(ID),[nodeid(pos(42,1,13,22,13,24)),duplicate_id_hides([loc(local,AssertTest,abstract_variables),nodeid(pos(16,1,7,14,7,16))]),readonly,introduced_by(operation)]),b(identifier(aa),global(ID),[nodeid(pos(43,1,13,25,13,27)),loc(local,AssertTest,enumerated_elements),readonly,enumerated_set_element,def(enumerated_element,AssertTest)])),pred,[nodeid(pos(41,1,13,22,13,27))]),[bind(yy,fd(2,ID))],[bind(xx,fd(1,ID)),bind(yy,int(0)),bind(iv,fd(1,ID))]),operation(Set,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a2d357a0fc17804075795a86674748df4304924",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 118,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error" "bmachine_static_checks"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162050800,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,yy = aa,span_context(span_predicate(b(equal(b(identifier(yy),global(ID),[nodeid(pos(42,1,13,22,13,24)),duplicate_id_hides([loc(local,AssertTest,abstract_variables),nodeid(pos(16,1,7,14,7,16))]),readonly,introduced_by(operation)]),b(identifier(aa),global(ID),[nodeid(pos(43,1,13,25,13,27)),loc(local,AssertTest,enumerated_elements),readonly,enumerated_set_element,def(enumerated_element,AssertTest)])),pred,[nodeid(pos(41,1,13,22,13,27))]),[bind(yy,fd(2,ID))],[bind(xx,fd(1,ID)),bind(yy,int(0)),bind(iv,fd(1,ID))]),operation(Set,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8a2d357a0fc17804075795a86674748df4304924",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 118,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

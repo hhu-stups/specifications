@@ -1,0 +1,27 @@
+{:sha256
+ "9b575ef33ce1401340174544f9bb16605b0969af243e1d81ee12f30e5b2b71fa",
+ :sha512
+ "6cd3ba8a966db1da51d404e683b5bbd8428ac904d60beb6e89dc61d1b63e8bba1db0955a2ff30d9e98122366d7c03a269477306242b1ea9bf0f8e8d34f0991f8",
+ :file
+ "./prob-examples/EventBPrologPackages/Tests/WD/WDFunPerfCheck_1000_ctx.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/PragmasUnits/CaseStudies/Abrial_Hybrid/hybrid_flight/f_m1.mch"],
+ :sha512
+ "3b711148ccb50ddeceb17344f9a5bc2207b2e1777b7d85b80168ca10f72b789d370dac4892b279019a99f5cc01651e3158868368099478cb0d6f3fbd5a682bb5",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,123 @@
    :timeout 1800000,
    :model-checking-time 810,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock"
+    "bmachine_static_checks"
+    "type_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 314928,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1024,
+   :memory-usage 1163963088,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "4c1cab976864f0a9205d2c0edd5c11bd282aa9b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 871,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock"
+    "bmachine_static_checks"
+    "type_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 314928,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 1163531424,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "4c1cab976864f0a9205d2c0edd5c11bd282aa9b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 1044,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "type_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 314928,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 235,
+   :memory-usage 1164108368,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4c1cab976864f0a9205d2c0edd5c11bd282aa9b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 652,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "type_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 314928,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 1163525440,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4c1cab976864f0a9205d2c0edd5c11bd282aa9b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 647,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "type_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 314928,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 1163521680,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4c1cab976864f0a9205d2c0edd5c11bd282aa9b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 591,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

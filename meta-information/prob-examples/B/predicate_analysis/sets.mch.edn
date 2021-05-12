@@ -8,6 +8,8 @@
  :variables 0,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/predicate_analysis/sets.mch"],
+ :sha512
+ "01c538d6d14a9fb586d2dc94384395470bf194bf4cc5de21892a0d586e33f066dbd91c7d52c0203f177a037064612825944af75ee704b1f6dd37ee8a6e0cca55",
  :comment "",
  :files 1,
  :static_assertions 13,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 19,

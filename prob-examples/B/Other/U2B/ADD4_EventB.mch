@@ -1,0 +1,52 @@
+SYSTEM ADD4_EventB
+/*" U2B3.6.6 generated this component from Class ADD4 "*/
+VARIABLES
+	inpA,
+	inpB,
+	inpc,
+	out,
+	outc,
+	valid
+INVARIANT
+	inpA : 0..15 &
+	inpB : 0..15 &
+	inpc : 0..1 &
+	out : 0..15 &
+	outc : 0..1 &
+	valid : BOOL &
+	(valid=TRUE => outc*16+out=inpA+inpB+inpc)
+INITIALISATION
+	inpA := 0 ||
+	inpB := 0 ||
+	inpc := 0 ||
+	out := 0 ||
+	outc := 0 ||
+	valid := TRUE
+
+EVENTS
+ calculate =
+BEGIN
+	SELECT
+		valid=FALSE
+	THEN
+		valid:=TRUE ||
+		out:=(inpA+inpB+inpc) mod 16 ||
+		outc:=(inpA+inpB+inpc) / 16
+	END
+END
+;
+ reset =
+ANY ia,ib,ic WHERE
+	ia:0..15 &
+	ib:0..15 &
+	ic:0..1
+THEN
+	SELECT
+		valid=TRUE
+	THEN
+		valid:=FALSE ||
+		inpA:=ia || inpB:=ib || inpc:=ic
+	END
+END
+END
+

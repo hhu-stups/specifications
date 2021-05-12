@@ -1,34 +1,27 @@
-{:properties 2,
- :definitions 43,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock true,
+{:sha256
+ "5308d18406acae2f451964fb7023ff4729c1ec09c70925269747d1edeaa5b3c4",
+ :sha512
+ "b417fb7355ad22534c52477abf1f20a2cf820a09f2e8fc9db347dd37f1e45714df9de5ba9fb476488b428cf8a2e249ee74e81e215eb33179472232a8d65bf231",
  :file "./prob-examples/B/NewSyntax/RecSetLaws.mch",
- :enumerated_sets 2,
- :variables 3,
- :number-of-states :unknown,
- :included-machines ["./prob-examples/B/NewSyntax/RecSetLaws.mch"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 3,
- :sha256
- "f5736679a6348bb6c02fdd7e72cc8ab5256a91a1877f63316c07a75586d300b9",
- :invariants 69,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 0,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

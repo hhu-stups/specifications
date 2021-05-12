@@ -49,7 +49,7 @@ OPERATIONS
     ||
 	IF mode(self) = INACTIVE THEN
 		IF notified(self)=TRUE THEN
-			notified(r(self)) := TRUE 
+			notified(r(self)) := TRUE
 		ELSE
 			/* PassMsgs */
 		        rightMsg(l(self)) := rightMsg(self) ||

@@ -1,0 +1,130 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Other/Corinna/Errors/Medium1.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :sha512
+ "fda613d8e97076c93605ffe01182eafed317e4ceae32fc9e3a22d5087ac03e8c92733c58b5923932ecc2e05cc585aea69dd41e161faee6f436f0361fb9894484",
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "c5a6ab52968524d8741805c6d5fc3c946ab0559f8c74cbcd36c39b904a616245",
+ :invariants 2,
+ :runs
+ [{:errors
+   ("deadlock"
+    "bmachine_static_checks"
+    "reading_undefined_variable"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 0,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time _,
+   :memory-usage 161745168,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "6d088a3650a4054516f614c171c6be76b54e6f97",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 10,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("bmachine_static_checks"
+    "reading_undefined_variable"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 0,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161734416,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "6d088a3650a4054516f614c171c6be76b54e6f97",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 10,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("bmachine_static_checks"
+    "reading_undefined_variable"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 0,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161733728,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "6d088a3650a4054516f614c171c6be76b54e6f97",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 8,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock"
+    "bmachine_static_checks"
+    "reading_undefined_variable"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 0,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time _,
+   :memory-usage 161789088,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "6d088a3650a4054516f614c171c6be76b54e6f97",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 11,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("bmachine_static_checks"
+    "reading_undefined_variable"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 0,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 71,
+   :memory-usage 162113024,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "6d088a3650a4054516f614c171c6be76b54e6f97",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 9,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}

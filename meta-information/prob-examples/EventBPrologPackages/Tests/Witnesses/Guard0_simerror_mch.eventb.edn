@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tests/Witnesses/Guard0_simerror_mch.eventb"],
+ :sha512
+ "90c9ffc5fdfa182f5978d81168e348af40faae64579883f5eed9ebfaa6f5206d7b05dd144304b6c89f641072b024a6095f7385a1402e9b795dccbdd3f8f2911c",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 434,
+   :memory-usage 162267072,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "bd32b6aadcf3ec97ff6aa54323f463d533655bd8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 23,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161627216,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "bd32b6aadcf3ec97ff6aa54323f463d533655bd8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 68,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:even_dec:simulation_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161653184,
+   :result
+   "state_error(eventerror(even_dec,simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))]),[event(even_dec,Guard0_simerror),true_guard([],[],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0_simerror,g,_x33MgOSREeaU86Rx_hNGRg))])),action([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)])],[b(minus(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])],[int(20)]),eval_witness(parameter,b(identifier(p),integer,[droppedby([even_dec]),nodeid(rodinpos(Guard0,[],_DgAH4OSSEeaU86Rx_hNGRg)),loc(Guard0,event(even_dec))]),int(21),b(equal(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p)),droppedby([even_dec]),loc(Guard0,event(even_dec))]),b(integer(21),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p))])),pred,[nodeid(rodinpos(Guard0_simerror,p,_UBMCQOSSEeaU86Rx_hNGRg))])),simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bd32b6aadcf3ec97ff6aa54323f463d533655bd8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 68,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:even_dec:simulation_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 370,
+   :memory-usage 162182400,
+   :result
+   "state_error(eventerror(even_dec,simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))]),[event(even_dec,Guard0_simerror),true_guard([],[],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0_simerror,g,_x33MgOSREeaU86Rx_hNGRg))])),action([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)])],[b(minus(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])],[int(20)]),eval_witness(parameter,b(identifier(p),integer,[droppedby([even_dec]),nodeid(rodinpos(Guard0,[],_DgAH4OSSEeaU86Rx_hNGRg)),loc(Guard0,event(even_dec))]),int(21),b(equal(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p)),droppedby([even_dec]),loc(Guard0,event(even_dec))]),b(integer(21),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p))])),pred,[nodeid(rodinpos(Guard0_simerror,p,_UBMCQOSSEeaU86Rx_hNGRg))])),simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bd32b6aadcf3ec97ff6aa54323f463d533655bd8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 22,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:even_dec:simulation_error"),
+   :states 0,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161645152,
+   :result
+   "state_error(eventerror(even_dec,simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))]),[event(even_dec,Guard0_simerror),true_guard([],[],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0_simerror,g,_x33MgOSREeaU86Rx_hNGRg))])),action([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)])],[b(minus(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec)),loc(Guard0_simerror,variables),section(Guard0_simerror),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,event(even_dec,actions),dec))])],[int(20)]),eval_witness(parameter,b(identifier(p),integer,[droppedby([even_dec]),nodeid(rodinpos(Guard0,[],_DgAH4OSSEeaU86Rx_hNGRg)),loc(Guard0,event(even_dec))]),int(21),b(equal(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p)),droppedby([even_dec]),loc(Guard0,event(even_dec))]),b(integer(21),integer,[nodeid(rodin_derived_context_pos(Guard0_simerror,witness,p))])),pred,[nodeid(rodinpos(Guard0_simerror,p,_UBMCQOSSEeaU86Rx_hNGRg))])),simulation_error([event(even_dec,Guard0,b(conjunct(b(conjunct(b(greater_equal(b(minus(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,variables),section(Guard0),level(0)]),b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))])),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))]),b(greater(b(identifier(p),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1)),loc(Guard0,event(even_dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g1))])),pred,[nodeid(rodinpos(Guard0,g1,_j0sMtOSREeaU86Rx_hNGRg))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(equal(b(modulo(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g)),loc(Guard0,variables),section(Guard0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),integer,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodin_derived_context_pos(Guard0,event(even_dec,guard),g))])),pred,[contains_wd_condition,nodeid(rodinpos(Guard0,g,_j0szweSREeaU86Rx_hNGRg))])),pred,[contains_wd_condition]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bd32b6aadcf3ec97ff6aa54323f463d533655bd8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 63,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Puzzles/Queens/MxQueensSimple.mch"
   "./lib/LibraryIO.def"],
+ :sha512
+ "3992a189841393007b0fe0d5be6d4a9dabb85bef81d2f0b5b68e49352fab370ac4a9331f50b39d13fc4d6c65ff1b943cb4942f5c2ea5d129b9a655cbe7f5c0f5",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

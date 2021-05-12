@@ -8,6 +8,8 @@
  :variables 4,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Demo/Bakery1err.mch"],
+ :sha512
+ "7f68f1e9a0e3a09fa8beb4440d7d4e56b29dd44cc94f3a61b7b8afa3afea2bc8436c9b5c701667a11f88a23b5e08113eaaf8273b5b5624adaa69d9be78c2b245",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,6 +29,58 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 53,
+   :transitions 83,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162024864,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "df4bf1856ed553b5f6153d5fd9539c95f384f499",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 91,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 54,
+   :transitions 85,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 194,
+   :memory-usage 162584592,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "df4bf1856ed553b5f6153d5fd9539c95f384f499",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 60,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

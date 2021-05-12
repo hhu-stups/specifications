@@ -8,6 +8,8 @@
  :variables 3,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Laws/SetLawsNatural.mch"],
+ :sha512
+ "a350704b2637a969f77ddf317e3771c2b56e0f7aa5e4ccf52d360d134bf2e367c6f278f7e771c190746a5138c4cdfd52e92c54d97bc56b6ec7c15d55de7800e2",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,43 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors nil,
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 167120256,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "0f334755408b85c668ff8790ba823efc7d145087",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

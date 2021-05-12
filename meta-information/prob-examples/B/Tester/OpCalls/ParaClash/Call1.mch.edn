@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tester/OpCalls/ParaClash/Call1.mch"
   "./prob-examples/B/Tester/OpCalls/ParaClash/Base.mch"],
+ :sha512
+ "02b747c1a1ecd1e23fa20576ba5d22c8a3cecdd44c28b9a6aa0c248e7376cfeb01383c7baa55d58d70c73c4ef35535c3b1d137904351d8f52ac5b2029edd305b",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

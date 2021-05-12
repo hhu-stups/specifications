@@ -1,0 +1,52 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Laws/RelLaws_internal_saved.mch",
+ :enumerated_sets 2,
+ :variables 5,
+ :sha512
+ "31a4193c75712d981284077592e7cbd5773389b719fe874327f891aa2f3300afe7feb54598b1f778e486e59df0284fd37189fe7251312b8d1a79cc79c776b2c9",
+ :static_assertions 0,
+ :operations 5,
+ :sha256
+ "5fc2740e2579ed5cf9dd4703c472c5e456f1fbe8ee7a51c52ebb71b321d05ae3",
+ :invariants 170,
+ :runs
+ [{:errors ("deadlock"),
+   :states 354906,
+   :transitions 664750,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 31,
+   :memory-usage 985483264,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "c0101d08e929e3bcb79859197b2bc726334cd04a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 478698,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 0}

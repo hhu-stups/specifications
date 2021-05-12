@@ -1,0 +1,68 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/TestCaseGeneration/NonDet_Simple3.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :sha512
+ "bb308675ba0893be1baa937a8c0dcbe886091ffbd96d12d7c3f65b60f8949ed6a2dfc1e18f96b32ccc0521e202bec91886c4fff05a184e2702f67cce370b8682",
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "3b54c4e8c40833d9ddbbf16e2efddb28fe6b8ee117bdc07a6002ad761bc27603",
+ :invariants 2,
+ :runs
+ [{:errors ("invariant_violation"),
+   :states 66,
+   :transitions 2843,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 351,
+   :memory-usage 164034304,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "593dd0c344851fdb2273de40139190886dab6e7b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 286,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 71,
+   :transitions 3073,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163563120,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "593dd0c344851fdb2273de40139190886dab6e7b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 442,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 0}

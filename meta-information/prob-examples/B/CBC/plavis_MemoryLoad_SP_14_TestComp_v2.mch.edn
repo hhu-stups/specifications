@@ -1,0 +1,26 @@
+{:sha256
+ "8f84d629efd818a29a9110796e64f27cc5609c75f8e1bfeff841b012abc9ea3f",
+ :sha512
+ "a152543024317e4ad3932d94a1fcb038d48337868a62633eefdd4038d336ab3fa9b5f2280dcf84800956555f77307836881d6c515839179ab99a4ddf7b634100",
+ :file "./prob-examples/B/CBC/plavis_MemoryLoad_SP_14_TestComp_v2.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

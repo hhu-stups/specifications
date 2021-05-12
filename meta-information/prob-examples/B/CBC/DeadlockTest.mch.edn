@@ -1,0 +1,26 @@
+{:sha256
+ "beb977ac19fca46ae817e1fb262cc2dd274bb702ab0fbd11f535731f561c8467",
+ :sha512
+ "61cb109b22a43d44c9995c5718db3738cbae526e832ce0e33ad55dd3761f45b1c56e0e5f2405b0e9844f4667ef396252a9a0fbf0c24523d53aeb35824125c541",
+ :file "./prob-examples/B/CBC/DeadlockTest.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

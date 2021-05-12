@@ -1,0 +1,68 @@
+{:properties 2,
+ :definitions 13,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/Mathematical/Info4/Kapitel3-CF/PDA/PDA_to_CFG.mch",
+ :enumerated_sets 2,
+ :variables 1,
+ :sha512
+ "fa13851ae2c97b2eee9b07d0eb3145e83552891d500a17d135f5adbafb1f59320c1086f692fa08697571895f1aa2c232d91a52f0499b2aac8cb1320e8b09897d",
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "52cd49e3188704e9e40649936499cc3bcc259bf9018973ef881ce7456cea97bc",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 10,
+   :transitions 23,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163766640,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "c0d6469ac92f4dd2e65c3d0e6a7a3f654a617062",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 97,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 10,
+   :transitions 23,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 163817744,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "c0d6469ac92f4dd2e65c3d0e6a7a3f654a617062",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 104,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 2}

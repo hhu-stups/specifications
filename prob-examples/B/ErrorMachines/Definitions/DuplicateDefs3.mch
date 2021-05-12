@@ -1,0 +1,11 @@
+MACHINE DuplicateDefs3
+DEFINITIONS
+  one == 1;
+  two == 2;
+  "myDEFS.def"
+VARIABLES xx
+INVARIANT
+ xx:NATURAL
+INITIALISATION xx:=one
+END
+

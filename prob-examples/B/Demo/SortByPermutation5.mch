@@ -17,4 +17,3 @@ OPERATIONS
          a := (p;a)
     END
 END
-

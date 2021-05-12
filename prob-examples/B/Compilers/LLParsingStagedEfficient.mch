@@ -7,14 +7,14 @@ PROPERTIES
   Rules: Symbols <-> seq(Symbols) &
   NonTerminals = dom(Rules) &
   Terminals = Symbols - NonTerminals &
- 
+
  /* Rules = { S |-> [a,S],  S |-> [N,c], S |-> [N], N |-> [b], N |-> [] } */
-  Rules = { S |-> [a,S,a], S |-> [b,T,b], 
+  Rules = { S |-> [a,S,a], S |-> [b,T,b],
             T |-> [V,R,T], T |-> [R],
             R |-> [x,R], R |-> [y,R], R |-> [],
             V |-> [z,R] }
 DEFINITIONS
-  inFirst(t,s,j) == (j<=size(s) & t:First(s(j)) &
+  inFirst(t,s,j) == (j>=1 & j<=size(s) & t:First(s(j)) &
                                 !k.(k:NATURAL1 & k<j => s(k):Nullable))
 VARIABLES
   Nullable, First, Follow,Stage
@@ -49,7 +49,7 @@ OPERATIONS
         Follow(N) := Follow(N) \/ {t}
   END;
   AddFollow2(N,X,s,i) = PRE Stage=3 & N:NonTerminals & X:NonTerminals & X/=N &
-                          Follow(X) /<: Follow(N) & 
+                          Follow(X) /<: Follow(N) &
                           s:seq(Symbols) & s/=[] & X|->s:Rules &
                           i>0 & i<=size(s) & N = s(i) &
                           !k.(k:NATURAL1 & k>i & k<=size(s) => s(k):Nullable) THEN

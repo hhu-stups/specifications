@@ -10,6 +10,8 @@
  :number-of-states 2,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Babin/Gen_01__fixed/C0_symbolic_instance_ctx.eventb"],
+ :sha512
+ "e1191da5f5b427142773246640bcd993ec8beb357b9e655de4735df0c4d9cda589ebcce7d26500ed18d1733cf209102134d5b6e736eb2e679769a96f8eb0fda0",
  :comment "",
  :files 1,
  :static_assertions 6,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time 40,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 11,

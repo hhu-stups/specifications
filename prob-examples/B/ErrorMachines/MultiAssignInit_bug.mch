@@ -8,20 +8,20 @@ PROPERTIES
  SENSORS = POW(FLOORS)
 
 VARIABLES
- door, floor, sensor
+ door, lfloor, sensor
 
-INVARIANT 
- door : DOOR & floor : FLOORS & sensor : SENSORS 
+INVARIANT
+ door : DOOR & lfloor : FLOORS & sensor : SENSORS
 
 INITIALISATION
- door := closed || door := opened ||  floor := E0 || sensor := {}
+ door := closed || door := opened ||  lfloor := E0 || sensor := {}
 
-OPERATIONS 
+OPERATIONS
  openDOOR = PRE door = closed THEN door := opened END;
  closeDOOR = PRE door = opened THEN door := closed END;
- 
 
- moveLift(p) = PRE p : FLOORS & door = closed THEN floor := p END /* ;
 
- reinit = BEGIN door := closed || door := opened ||  floor := E0 || sensor := {} END */
+ moveLift(p) = PRE p : FLOORS & door = closed THEN lfloor := p END /* ;
+
+ reinit = BEGIN door := closed || door := opened ||  lfloor := E0 || sensor := {} END */
 END

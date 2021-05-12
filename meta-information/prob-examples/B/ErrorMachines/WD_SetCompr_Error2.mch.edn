@@ -9,6 +9,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/B/ErrorMachines/WD_SetCompr_Error2.mch"],
+ :sha512
+ "7cd6278e6b49dfa10a585d577eae764ec6ed59d79abc4c680a906a03a18fb4af78ec3a6472fe2872408f305c422b9f6e4c643ac58ae2f609898092d74061868f",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time 70,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163087904,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(62,1,12,30,12,32))],operation(Test1,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "27bcd5095c0030ef91946c3510202ce9b88fbece",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 79,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation" "well_definedness_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163112016,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "27bcd5095c0030ef91946c3510202ce9b88fbece",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 84,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation" "well_definedness_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 12,
+   :memory-usage 163185744,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "27bcd5095c0030ef91946c3510202ce9b88fbece",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 87,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163098032,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(62,1,12,30,12,32))],operation(Test1,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "27bcd5095c0030ef91946c3510202ce9b88fbece",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 81,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 12,
+   :memory-usage 163142528,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(62,1,12,30,12,32))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "27bcd5095c0030ef91946c3510202ce9b88fbece",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 77,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

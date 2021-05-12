@@ -8,6 +8,8 @@
  :variables 1,
  :number-of-states 10,
  :included-machines ["./prob-examples/B/Tester/MinOfEmptySet.mch"],
+ :sha512
+ "287c7c52160183d229c395016021a6e0f7a843f56fa2bd73247c017cca749255384dab27dbb342777c86c1198c10ec7eb4164742895287c0e22f5d0a736d533a",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,6 +29,108 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "well_definedness_error"),
+   :states 5,
+   :transitions 36,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 282,
+   :memory-usage 162582880,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(34,1,7,31,7,33)),loc(local,MinOfEmptySet,abstract_variables)],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "630e995bf0540cf458341a0b47513e5aae0a9758",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 41,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 5,
+   :transitions 38,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 930,
+   :memory-usage 162890704,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(34,1,7,31,7,33)),loc(local,MinOfEmptySet,abstract_variables)],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "630e995bf0540cf458341a0b47513e5aae0a9758",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 47,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 5,
+   :transitions 38,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162081712,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(34,1,7,31,7,33)),loc(local,MinOfEmptySet,abstract_variables)],operation(Minxx,5))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "630e995bf0540cf458341a0b47513e5aae0a9758",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 142,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 5,
+   :transitions 38,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161974336,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(34,1,7,31,7,33)),loc(local,MinOfEmptySet,abstract_variables)],operation(Minxx,5))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "630e995bf0540cf458341a0b47513e5aae0a9758",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 118,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 5,
+   :transitions 38,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161984768,
+   :result
+   "state_error(abort_error(well_definedness_error,min applied to empty set,,span_context([nodeid(pos(34,1,7,31,7,33)),loc(local,MinOfEmptySet,abstract_variables)],operation(Minxx,5))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "630e995bf0540cf458341a0b47513e5aae0a9758",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 123,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

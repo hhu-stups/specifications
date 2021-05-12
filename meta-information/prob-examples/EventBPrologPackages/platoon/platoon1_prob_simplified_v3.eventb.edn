@@ -1,0 +1,53 @@
+{:properties 10,
+ :definitions 0,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/EventBPrologPackages/platoon/platoon1_prob_simplified_v3.eventb",
+ :enumerated_sets 1,
+ :variables 4,
+ :sha512
+ "ccd6a742e565e37f4af2f2975ea945fdb80c57008c14e1ddc88e5050e6090683dcfa578687b7a734424d4588d2c9bbae1765983a7082e08e8defd2d491e7b105",
+ :static_assertions 15,
+ :operations 3,
+ :sha256
+ "836a480fd7f06fc48440569295820415c1ad4eb572043a6a6a6d10148683946e",
+ :invariants 6,
+ :runs
+ [{:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 2,
+   :transitions 261,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 165231888,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "49a4f8b4eed2890e203c923e51d26d8b4be01e28",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 340,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 1,
+ :constants 8}

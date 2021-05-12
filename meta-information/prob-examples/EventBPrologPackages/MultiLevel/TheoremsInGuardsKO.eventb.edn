@@ -10,6 +10,8 @@
  :number-of-states 2,
  :included-machines
  ["./prob-examples/EventBPrologPackages/MultiLevel/TheoremsInGuardsKO.eventb"],
+ :sha512
+ "68978bcb4715ca8311651f869b0d2721c7514d94cb51a64a99eeca51e5fca860ecbc85c5f667f4bd10c631f6f978fae9349be097e504146aa5cec25180663452",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 50,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:invalid_theorem_in_guard"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161495120,
+   :result
+   "state_error(eventerror(inc,invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))])),[event(inc,TheoremsInGuards),true_guard([],[],b(less(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(3),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "9437a5f992fca99dc2eebd2b2af799d25020e036",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:invalid_theorem_in_guard"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161460336,
+   :result
+   "state_error(eventerror(inc,invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))])),[event(inc,TheoremsInGuards),true_guard([],[],b(less(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(3),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "9437a5f992fca99dc2eebd2b2af799d25020e036",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 49,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:invalid_theorem_in_guard"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161586352,
+   :result
+   "state_error(eventerror(inc,invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))])),[event(inc,TheoremsInGuards),true_guard([],[],b(less(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(3),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "9437a5f992fca99dc2eebd2b2af799d25020e036",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 62,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:invalid_theorem_in_guard"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 3,
+   :memory-usage 161558256,
+   :result
+   "state_error(eventerror(inc,invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))])),[event(inc,TheoremsInGuards),true_guard([],[],b(less(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(3),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "9437a5f992fca99dc2eebd2b2af799d25020e036",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 58,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:inc:invalid_theorem_in_guard"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161463984,
+   :result
+   "state_error(eventerror(inc,invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))])),[event(inc,TheoremsInGuards),true_guard([],[],b(less(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(3),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),invalid_theorem_in_guard(b(less_equal(b(identifier(x),integer,[loc(TheoremsInGuards,variables),section(TheoremsInGuards),level(0)]),b(integer(1),integer,[])),pred,[nodeid(rodinpos(grd2,)))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "9437a5f992fca99dc2eebd2b2af799d25020e036",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 53,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/ProofObligations/Abrial_ABZ_Devel1/LPN62_mch.eventb"],
+ :sha512
+ "0deb33bfdaadb3e8fb6c52a1ee61779988135a50811cd63ae4a2dbda5060dd0c23b86687c525a8936c3e013df7b2a7561aebd98725ebcace89e33fd772088a84",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 4,
  :invariant-violated :unknown,
  :constants 2,

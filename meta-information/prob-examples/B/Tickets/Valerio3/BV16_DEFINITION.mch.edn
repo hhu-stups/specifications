@@ -14,6 +14,8 @@
   "./prob-examples/B/Tickets/Valerio3/BYTE_DEFINITION.mch"
   "./prob-examples/B/Tickets/Valerio3/POWER2.mch"
   "./prob-examples/B/Tickets/Valerio3/POWER.mch"],
+ :sha512
+ "8b5b7d98b5b14c432d9bd7bb5e926a856804f3efbf9d5938f9b3b95ef1d7fafe43e731bb9c3278261a80dadeb7f6ba55226da60022878fda1b056d25d7ce3216",
  :comment "",
  :files 6,
  :static_assertions 53,
@@ -33,7 +35,43 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors nil,
+   :states 2,
+   :transitions 16386,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 28,
+   :memory-usage 386078400,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "1f3282e13c5338121777426a63faf7a6b6c9f9e7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 166494,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 41,

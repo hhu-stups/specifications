@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Tickets/Hansen9/SimpleCSGGrammar2_SlowCLPFD.mch"],
+ :sha512
+ "67ffa72945157d85853e600f6deb732f3d4346ee398dcbccf347bd0a8d55104f6a83ccbb9ff0322969febee253facb6fdf6ea057f089dbd35816f95ad9efe18b",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,57 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 12,
+   :transitions 25,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163260944,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3a22cd76e3dd5dfe1c7130a6903fbb26c8350fd5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 243,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 12,
+   :transitions 25,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 163318992,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3a22cd76e3dd5dfe1c7130a6903fbb26c8350fd5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 240,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,

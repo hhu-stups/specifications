@@ -1,0 +1,27 @@
+{:sha256
+ "3ce31645fbc9a53ecccc91da42c07b9ca1b0de7b1e83dab8a66a5ea49a2e38da",
+ :sha512
+ "3c6396003f7be25f7333572ae624f98f152777486d5e864cbf7f0c46a1f142facb3d8c5ede53a8aaf2db31d115994d1da6d476ed5504d5b5d82fbc9fd7dfad9e",
+ :file
+ "./prob-examples/B/Other/SysML2B/BModules_081214/CoffeeMaker_1.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

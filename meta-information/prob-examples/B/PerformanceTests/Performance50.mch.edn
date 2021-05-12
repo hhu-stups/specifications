@@ -1,23 +1,27 @@
-{:number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "8b371b8fab128636bb487560f6733d4e0b5cfb37f573e69790910e53cda9f0af",
+ :sha512
+ "6de00446e2ffdaa2a25cecc164d1879fc0bc40bbb4fe4a9f25fa2e62b2f1b8d49f3b4d258cce20855f3e030c7298ff71df4a3dffbfd7d472c6cff3a793781f57",
  :file "./prob-examples/B/PerformanceTests/Performance50.mch",
- :number-of-states :unknown,
- :included-machines [],
- :comment "",
- :sha256
- "0dab96ba3b78d09fd6feb320822be7932056df0b6b8fc06570a8139daab6d35b",
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :invariant-violated :unknown,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

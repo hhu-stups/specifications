@@ -33,7 +33,7 @@ OPERATIONS
   GoTo(z,S,znew,NewSymbol,Dir) =
    PRE z=cur & S=CurSymbol &
        (z, S) |-> (znew,NewSymbol,Dir) : delta THEN
-     ANY tail_Right 
+     ANY tail_Right
       WHERE (Right=[] => tail_Right=[]) & (Right/=[] => tail_Right = tail(Right)) THEN
       cur := znew ||
       IF Dir = N THEN
@@ -48,4 +48,3 @@ OPERATIONS
      END
   END
 END
-

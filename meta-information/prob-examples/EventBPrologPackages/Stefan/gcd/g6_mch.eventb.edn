@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Stefan/gcd/g6_mch.eventb"],
+ :sha512
+ "0ae0af36a3cb409eecf0bb3211ea25c8a06c29defd4f20da2909d181c85bf0d26e52880710d8f5c37bf857bb2d819f77ba4e40792b5f831f82b6f1d3731b94e6",
  :comment "",
  :files 1,
  :static_assertions 11,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("model_check_incomplete"),
+   :states 1,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 148,
+   :memory-usage 164386208,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "97b60a89b15b11e517a08f77b279ce6923286e33",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 54,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(__domid__),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 163898464,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "97b60a89b15b11e517a08f77b279ce6923286e33",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(__domid__),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 163900176,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "97b60a89b15b11e517a08f77b279ce6923286e33",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("model_check_incomplete"),
+   :states 1,
+   :transitions 1,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 260,
+   :memory-usage 164633680,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "97b60a89b15b11e517a08f77b279ce6923286e33",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 37,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(__domid__),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 163896624,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "97b60a89b15b11e517a08f77b279ce6923286e33",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,

@@ -8,6 +8,8 @@
  :variables 3,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/BZTT/TestBZTT2.mch"],
+ :sha512
+ "e985144f25ac2306877381fad3b82599d157c3afc5ffaccdd350fc6165bedc0b12fa03d0e4f6cb511239a7d1aa6f28d1f20fd5ff1bcbfbf36ca09b3007d2b853",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

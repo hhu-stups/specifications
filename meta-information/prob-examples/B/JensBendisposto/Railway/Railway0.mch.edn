@@ -9,6 +9,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/B/JensBendisposto/Railway/Railway0.mch"],
+ :sha512
+ "ab5e1fd2ad6e08bcf592eeb6fe2260c7543441828316fc79c1886d3d1ba8bf2fbf8bd93f964af309296ca542d5512a6737de24efa5fcf0f6ff81f88e7dbc6335",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 110,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163980448,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(4,CDV),[]),span_context(span_predicate(b(function(b(identifier(occp),set(couple(global(CDV),global(TRAIN))),[nodeid(pos(475,1,225,3,225,7)),loc(local,Railway0,abstract_variables)]),b(function(b(identifier(next),set(couple(global(CDV),global(CDV))),[nodeid(pos(477,1,225,8,225,12)),loc(local,Railway0,abstract_variables)]),b(identifier(c1),global(CDV),[nodeid(pos(478,1,225,13,225,15)),readonly,introduced_by(operation)])),global(CDV),[contains_wd_condition,nodeid(pos(476,1,225,8,225,16))])),global(TRAIN),[contains_wd_condition,nodeid(pos(474,1,225,3,225,17))]),[bind(t1,fd(1,TRAIN)),bind(c1,fd(3,CDV))],[bind(next,avl_set(node((fd(3,CDV),fd(4,CDV)),true,1,node((fd(1,CDV),fd(5,CDV)),true,0,empty,empty),node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty))))),bind(trns,avl_set(node(fd(1,TRAIN),true,0,empty,empty))),bind(occp,avl_set(node((fd(3,CDV),fd(1,TRAIN)),true,0,empty,empty))),bind(occpA,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(occpZ,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(swStatus1,avl_set(node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))),bind(swStatus2,avl_set(node((fd(4,CDV),fd(3,CDV)),true,1,empty,node((fd(5,CDV),fd(1,CDV)),true,0,empty,empty)))),bind(aig_cdv,avl_set(node(fd(4,CDV),true,1,empty,node(fd(5,CDV),true,0,empty,empty)))),bind(net,avl_set(node((fd(3,CDV),fd(4,CDV)),true,0,node((fd(1,CDV),fd(5,CDV)),true,1,empty,node((fd(2,CDV),fd(5,CDV)),true,0,empty,empty)),node((fd(4,CDV),fd(2,CDV)),true,0,node((fd(4,CDV),fd(1,CDV)),true,0,empty,empty),node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))))]),operation(TrainLeaveCdvA,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "dffaec87a23b7169532b921cb9c0e046897a9555",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 119,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1585,
+   :memory-usage 164605872,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(4,CDV),[]),span_context(span_predicate(b(function(b(identifier(occp),set(couple(global(CDV),global(TRAIN))),[nodeid(pos(475,1,225,3,225,7)),loc(local,Railway0,abstract_variables)]),b(function(b(identifier(next),set(couple(global(CDV),global(CDV))),[nodeid(pos(477,1,225,8,225,12)),loc(local,Railway0,abstract_variables)]),b(identifier(c1),global(CDV),[nodeid(pos(478,1,225,13,225,15)),readonly,introduced_by(operation)])),global(CDV),[contains_wd_condition,nodeid(pos(476,1,225,8,225,16))])),global(TRAIN),[contains_wd_condition,nodeid(pos(474,1,225,3,225,17))]),[bind(t1,fd(1,TRAIN)),bind(c1,fd(3,CDV))],[bind(next,avl_set(node((fd(3,CDV),fd(4,CDV)),true,1,node((fd(1,CDV),fd(5,CDV)),true,0,empty,empty),node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty))))),bind(trns,avl_set(node(fd(1,TRAIN),true,0,empty,empty))),bind(occp,avl_set(node((fd(3,CDV),fd(1,TRAIN)),true,0,empty,empty))),bind(occpA,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(occpZ,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(swStatus1,avl_set(node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))),bind(swStatus2,avl_set(node((fd(4,CDV),fd(3,CDV)),true,1,empty,node((fd(5,CDV),fd(1,CDV)),true,0,empty,empty)))),bind(aig_cdv,avl_set(node(fd(4,CDV),true,1,empty,node(fd(5,CDV),true,0,empty,empty)))),bind(net,avl_set(node((fd(3,CDV),fd(4,CDV)),true,0,node((fd(1,CDV),fd(5,CDV)),true,1,empty,node((fd(2,CDV),fd(5,CDV)),true,0,empty,empty)),node((fd(4,CDV),fd(2,CDV)),true,0,node((fd(4,CDV),fd(1,CDV)),true,0,empty,empty),node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "dffaec87a23b7169532b921cb9c0e046897a9555",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 74,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163970464,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(4,CDV),[]),span_context(span_predicate(b(function(b(identifier(occp),set(couple(global(CDV),global(TRAIN))),[nodeid(pos(475,1,225,3,225,7)),loc(local,Railway0,abstract_variables)]),b(function(b(identifier(next),set(couple(global(CDV),global(CDV))),[nodeid(pos(477,1,225,8,225,12)),loc(local,Railway0,abstract_variables)]),b(identifier(c1),global(CDV),[nodeid(pos(478,1,225,13,225,15)),readonly,introduced_by(operation)])),global(CDV),[contains_wd_condition,nodeid(pos(476,1,225,8,225,16))])),global(TRAIN),[contains_wd_condition,nodeid(pos(474,1,225,3,225,17))]),[bind(t1,fd(1,TRAIN)),bind(c1,fd(3,CDV))],[bind(next,avl_set(node((fd(3,CDV),fd(4,CDV)),true,1,node((fd(1,CDV),fd(5,CDV)),true,0,empty,empty),node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty))))),bind(trns,avl_set(node(fd(1,TRAIN),true,0,empty,empty))),bind(occp,avl_set(node((fd(3,CDV),fd(1,TRAIN)),true,0,empty,empty))),bind(occpA,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(occpZ,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(swStatus1,avl_set(node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))),bind(swStatus2,avl_set(node((fd(4,CDV),fd(3,CDV)),true,1,empty,node((fd(5,CDV),fd(1,CDV)),true,0,empty,empty)))),bind(aig_cdv,avl_set(node(fd(4,CDV),true,1,empty,node(fd(5,CDV),true,0,empty,empty)))),bind(net,avl_set(node((fd(3,CDV),fd(4,CDV)),true,0,node((fd(1,CDV),fd(5,CDV)),true,1,empty,node((fd(2,CDV),fd(5,CDV)),true,0,empty,empty)),node((fd(4,CDV),fd(2,CDV)),true,0,node((fd(4,CDV),fd(1,CDV)),true,0,empty,empty),node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))))]),operation(TrainLeaveCdvA,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "dffaec87a23b7169532b921cb9c0e046897a9555",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 119,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164061248,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(4,CDV),[]),span_context(span_predicate(b(function(b(identifier(occp),set(couple(global(CDV),global(TRAIN))),[nodeid(pos(475,1,225,3,225,7)),loc(local,Railway0,abstract_variables)]),b(function(b(identifier(next),set(couple(global(CDV),global(CDV))),[nodeid(pos(477,1,225,8,225,12)),loc(local,Railway0,abstract_variables)]),b(identifier(c1),global(CDV),[nodeid(pos(478,1,225,13,225,15)),readonly,introduced_by(operation)])),global(CDV),[contains_wd_condition,nodeid(pos(476,1,225,8,225,16))])),global(TRAIN),[contains_wd_condition,nodeid(pos(474,1,225,3,225,17))]),[bind(t1,fd(1,TRAIN)),bind(c1,fd(3,CDV))],[bind(next,avl_set(node((fd(3,CDV),fd(4,CDV)),true,1,node((fd(1,CDV),fd(5,CDV)),true,0,empty,empty),node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty))))),bind(trns,avl_set(node(fd(1,TRAIN),true,0,empty,empty))),bind(occp,avl_set(node((fd(3,CDV),fd(1,TRAIN)),true,0,empty,empty))),bind(occpA,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(occpZ,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(swStatus1,avl_set(node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))),bind(swStatus2,avl_set(node((fd(4,CDV),fd(3,CDV)),true,1,empty,node((fd(5,CDV),fd(1,CDV)),true,0,empty,empty)))),bind(aig_cdv,avl_set(node(fd(4,CDV),true,1,empty,node(fd(5,CDV),true,0,empty,empty)))),bind(net,avl_set(node((fd(3,CDV),fd(4,CDV)),true,0,node((fd(1,CDV),fd(5,CDV)),true,1,empty,node((fd(2,CDV),fd(5,CDV)),true,0,empty,empty)),node((fd(4,CDV),fd(2,CDV)),true,0,node((fd(4,CDV),fd(1,CDV)),true,0,empty,empty),node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))))]),operation(TrainLeaveCdvA,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "dffaec87a23b7169532b921cb9c0e046897a9555",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 136,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4577,
+   :memory-usage 164482256,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(4,CDV),[]),span_context(span_predicate(b(function(b(identifier(occp),set(couple(global(CDV),global(TRAIN))),[nodeid(pos(475,1,225,3,225,7)),loc(local,Railway0,abstract_variables)]),b(function(b(identifier(next),set(couple(global(CDV),global(CDV))),[nodeid(pos(477,1,225,8,225,12)),loc(local,Railway0,abstract_variables)]),b(identifier(c1),global(CDV),[nodeid(pos(478,1,225,13,225,15)),readonly,introduced_by(operation)])),global(CDV),[contains_wd_condition,nodeid(pos(476,1,225,8,225,16))])),global(TRAIN),[contains_wd_condition,nodeid(pos(474,1,225,3,225,17))]),[bind(t1,fd(1,TRAIN)),bind(c1,fd(3,CDV))],[bind(next,avl_set(node((fd(3,CDV),fd(4,CDV)),true,1,node((fd(1,CDV),fd(5,CDV)),true,0,empty,empty),node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty))))),bind(trns,avl_set(node(fd(1,TRAIN),true,0,empty,empty))),bind(occp,avl_set(node((fd(3,CDV),fd(1,TRAIN)),true,0,empty,empty))),bind(occpA,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(occpZ,avl_set(node((fd(1,TRAIN),fd(3,CDV)),true,0,empty,empty))),bind(swStatus1,avl_set(node((fd(4,CDV),fd(1,CDV)),true,1,empty,node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))),bind(swStatus2,avl_set(node((fd(4,CDV),fd(3,CDV)),true,1,empty,node((fd(5,CDV),fd(1,CDV)),true,0,empty,empty)))),bind(aig_cdv,avl_set(node(fd(4,CDV),true,1,empty,node(fd(5,CDV),true,0,empty,empty)))),bind(net,avl_set(node((fd(3,CDV),fd(4,CDV)),true,0,node((fd(1,CDV),fd(5,CDV)),true,1,empty,node((fd(2,CDV),fd(5,CDV)),true,0,empty,empty)),node((fd(4,CDV),fd(2,CDV)),true,0,node((fd(4,CDV),fd(1,CDV)),true,0,empty,empty),node((fd(5,CDV),fd(3,CDV)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "dffaec87a23b7169532b921cb9c0e046897a9555",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 73,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

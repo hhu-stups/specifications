@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/FunctionalProgramming/SeqMap_NewSyntax.mch"],
+ :sha512
+ "1f3ce6928a0106f8313a81c32de5ba88d60c0acee934561206bafd01748817b0eec9c425382ae3255f4f520697f1df0010019dd34d62182ff58b8e7ce41d6aa6",
  :comment "",
  :files 1,
  :static_assertions 2,
@@ -28,7 +30,43 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 2,
+   :transitions 16,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162929376,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "796ed46d3356367bf7a386718e448a93ac9a96af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 149,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 2,

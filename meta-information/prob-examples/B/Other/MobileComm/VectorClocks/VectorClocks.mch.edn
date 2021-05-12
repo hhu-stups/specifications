@@ -1,0 +1,27 @@
+{:sha256
+ "038c2cbfca7df3723ce798df8d706ae5b1477661b4ed6bf34d830f9b6c9f2d17",
+ :sha512
+ "03d7dc9d6f984e26dbe70c5248121b22ac2fca6ab5d729fc3260e6c02b60e8f57606cf360a660877ec342f3014090763f3fd0d02e2a064d410eee3141ba51cc5",
+ :file
+ "./prob-examples/B/Other/MobileComm/VectorClocks/VectorClocks.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

@@ -1,0 +1,27 @@
+{:sha256
+ "7803a2d76ef6f51ab7dcfd3fe92957cfa2388ecb3d27d67d8d3332cf9cc13fe3",
+ :sha512
+ "05b7bde4de1ebbeff839393f7bd575b0acde9f292ca3b7937e33eed69eecf9c19aca610ef31745e3e7507c700cd54a5008d2e6bf86aa3a52aebe08e5dc7c0aa4",
+ :file
+ "./prob-examples/B/Other/LustreTranslations/DockingApproachExample_Ext.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

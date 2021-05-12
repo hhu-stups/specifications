@@ -1,0 +1,68 @@
+{:properties 4,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Hybrid/FMI/waterTankCtrl_v1.mch",
+ :enumerated_sets 1,
+ :variables 5,
+ :sha512
+ "fb4ba083083bc65f37de2d721e57413e314988ea53b139a25f5e1d1d035ea050dbbaee2b2e968d5f5ff4acec8f4d29bb72a0c06d99e148a6e101c22114a97811",
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "ed87dc8cb4839be952976b93006bf2bd4ff5797a36bf8eb3a0bd12712cd3ffdb",
+ :invariants 3,
+ :runs
+ [{:errors ("invariant_violation"),
+   :states 3196,
+   :transitions 15985,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 156,
+   :memory-usage 171904016,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "efc90f6635ac0a4e9579fbedd476870f6a732a9d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 1719,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 10,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162219184,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "efc90f6635ac0a4e9579fbedd476870f6a732a9d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 112,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 4}

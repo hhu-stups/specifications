@@ -1,6 +1,6 @@
-REFINEMENT MachineWithParametersErr1(a)
+REFINEMENT MachineWithParametersErr1(a) // parameter B missing
 REFINES MachineWithParameters
-CONSTRAINTS a:NAT
+//CONSTRAINTS a:NAT  // paser now complains about this
 VARIABLES x
 INITIALISATION x:=0
 OPERATIONS

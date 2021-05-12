@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Abrial_Modes/mode_m6_mch.eventb"],
+ :sha512
+ "3b54bede9fffe2b11798190324d2a57c1b91a1b602fd333bfab3128dbf47bdd1e27d0793b6b17046fc34b251a5719219dadc178cb2a9ec1c13937719a12daaef",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,42 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 547597,
+   :transitions 2869524,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 2022802416,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "fb14ce56350a94ed698a7070c013b030e977395d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 638223,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 1,
  :invariant-violated :unknown,
  :constants 0,

@@ -1,0 +1,14 @@
+REFINEMENT Main1_ref // test that invariant violation found for time becoming negative
+REFINES Main
+VARIABLES speed, loc, time
+INITIALISATION speed,loc,time := 0,0,0
+OPERATIONS
+ Move1 ref Move = SELECT time<10 THEN time,loc := time-1,loc+speed END;
+ IncreaseSpeed ref ChangeSpeed = SELECT speed < 3 THEN
+    speed := speed+1
+ END;
+ DecreaseSpeed ref ChangeSpeed = SELECT speed > 0 THEN
+    speed := speed-1
+ END
+END
+

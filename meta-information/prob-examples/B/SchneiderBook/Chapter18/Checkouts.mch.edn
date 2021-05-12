@@ -9,6 +9,8 @@
  :number-of-states 22,
  :included-machines
  ["./prob-examples/B/SchneiderBook/Chapter18/Checkouts.mch"],
+ :sha512
+ "d8094df7166d034b445de9134e708cb362999469da8762433bf79b7b74232ce7f3666b7c1dd814930edc330a9f804bdc4aefee4bcbbcc6ae3f4b7c701d2591fa",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,105 @@
    :timeout 1800000,
    :model-checking-time 290,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2195,
+   :memory-usage 163893488,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(2,COUNTER),[]),span_context(span_predicate(b(function(b(value(avl_set(node((fd(1,COUNTER),avl_set(node((int(1),fd(1,CUSTOMER)),true,0,empty,empty))),true,0,empty,empty))),set(couple(global(COUNTER),seq(global(CUSTOMER)))),[was_identifier(queues),nodeid(pos(45,1,9,101,9,107)),loc(local,Checkouts,abstract_variables)]),b(identifier(dd),global(COUNTER),[nodeid(pos(46,1,9,108,9,110)),introduced_by(forall)])),set(couple(integer,global(CUSTOMER))),[contains_wd_condition,nodeid(pos(44,1,9,101,9,111))]),[bind(cc,fd(1,COUNTER)),bind(dd,fd(2,COUNTER))],[]),checking_invariant)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "92cf3b32074e160e9ca04fbd69367311677457a5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 84,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 22,
+   :transitions 153,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5887,
+   :memory-usage 163706368,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "92cf3b32074e160e9ca04fbd69367311677457a5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 90,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 4,
+   :transitions 27,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163187536,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(2,COUNTER),[]),span_context(span_predicate(b(function(b(value(avl_set(node((fd(1,COUNTER),avl_set(node((int(1),fd(1,CUSTOMER)),true,0,empty,empty))),true,0,empty,empty))),set(couple(global(COUNTER),seq(global(CUSTOMER)))),[was_identifier(queues),nodeid(pos(45,1,9,101,9,107)),loc(local,Checkouts,abstract_variables)]),b(identifier(dd),global(COUNTER),[nodeid(pos(46,1,9,108,9,110)),introduced_by(forall)])),set(couple(integer,global(CUSTOMER))),[contains_wd_condition,nodeid(pos(44,1,9,101,9,111))]),[bind(cc,fd(1,COUNTER)),bind(dd,fd(2,COUNTER))],[]),checking_invariant)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "92cf3b32074e160e9ca04fbd69367311677457a5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 303,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 22,
+   :transitions 153,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162990592,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "92cf3b32074e160e9ca04fbd69367311677457a5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 288,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors nil,
+   :states 22,
+   :transitions 153,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162980320,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "92cf3b32074e160e9ca04fbd69367311677457a5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 285,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

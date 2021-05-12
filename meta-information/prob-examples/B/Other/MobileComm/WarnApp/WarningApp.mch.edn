@@ -1,0 +1,26 @@
+{:sha256
+ "f32e89afcf25580409981cf13d0c6c7d5ead080e99639ec8e1edc416b4f31a80",
+ :sha512
+ "723e70271abb03f31204203f1507e8a7016eee8a8bffd0fb1a832e80eed51b4cd0fa5a73f928d868befed76313f54a9085ec8dd5a5803d0fdf3569d48247cb22",
+ :file "./prob-examples/B/Other/MobileComm/WarnApp/WarningApp.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/Hansen21_Sees/RulesTable.mch"
   "./prob-examples/B/Tickets/Hansen21_Sees/RuleContext.mch"],
+ :sha512
+ "7b7064165470e0035775e6ef23e5ef526bfb913afccc7251870449d604418ed0b4589e3c25cea6f9294852777a9fa23ef437c503cb13e9a2bc92ad49bef3449b",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,6 +31,107 @@
    :timeout 1800000,
    :model-checking-time 200,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 27,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1169,
+   :memory-usage 163206784,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(string(),[]),span_context(span_predicate(b(function(b(identifier(rules),set(couple(string,global(RULE_STATE))),[nodeid(pos(121,1,19,9,19,14)),loc(local,RulesTable,abstract_variables)]),b(identifier(ruleName),string,[nodeid(pos(122,1,19,15,19,23)),readonly,introduced_by(operation)])),global(RULE_STATE),[contains_wd_condition,nodeid(pos(120,1,19,9,19,24))]),[bind(ruleName,string())],[bind(rules,avl_set(node((string(STRING1),fd(1,RULE_STATE)),true,0,empty,empty))),bind(state,fd(2,STATE)),bind(selected_rule,string()),bind(satisfied_rules,[])]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8819dfffbefd4703f6a5b50b41d2f30c99b7c75d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 59,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 27,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1212,
+   :memory-usage 163410464,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(string(),[]),span_context(span_predicate(b(function(b(identifier(rules),set(couple(string,global(RULE_STATE))),[nodeid(pos(121,1,19,9,19,14)),loc(local,RulesTable,abstract_variables)]),b(identifier(ruleName),string,[nodeid(pos(122,1,19,15,19,23)),readonly,introduced_by(operation)])),global(RULE_STATE),[contains_wd_condition,nodeid(pos(120,1,19,9,19,24))]),[bind(ruleName,string())],[bind(rules,avl_set(node((string(STRING1),fd(1,RULE_STATE)),true,0,empty,empty))),bind(state,fd(2,STATE)),bind(selected_rule,string()),bind(satisfied_rules,[])]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8819dfffbefd4703f6a5b50b41d2f30c99b7c75d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 68,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 22,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162462880,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "8819dfffbefd4703f6a5b50b41d2f30c99b7c75d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 165,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 27,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162568992,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(string(),[]),span_context(span_predicate(b(function(b(identifier(rules),set(couple(string,global(RULE_STATE))),[nodeid(pos(121,1,19,9,19,14)),loc(local,RulesTable,abstract_variables)]),b(identifier(ruleName),string,[nodeid(pos(122,1,19,15,19,23)),readonly,introduced_by(operation)])),global(RULE_STATE),[contains_wd_condition,nodeid(pos(120,1,19,9,19,24))]),[bind(ruleName,string())],[bind(rules,avl_set(node((string(STRING1),fd(1,RULE_STATE)),true,0,empty,empty))),bind(state,fd(2,STATE)),bind(selected_rule,string()),bind(satisfied_rules,[])]),operation(Success,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8819dfffbefd4703f6a5b50b41d2f30c99b7c75d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 196,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 27,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162558768,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(string(),[]),span_context(span_predicate(b(function(b(identifier(rules),set(couple(string,global(RULE_STATE))),[nodeid(pos(121,1,19,9,19,14)),loc(local,RulesTable,abstract_variables)]),b(identifier(ruleName),string,[nodeid(pos(122,1,19,15,19,23)),readonly,introduced_by(operation)])),global(RULE_STATE),[contains_wd_condition,nodeid(pos(120,1,19,9,19,24))]),[bind(ruleName,string())],[bind(rules,avl_set(node((string(STRING1),fd(1,RULE_STATE)),true,0,empty,empty))),bind(state,fd(2,STATE)),bind(selected_rule,string()),bind(satisfied_rules,[])]),operation(Success,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "8819dfffbefd4703f6a5b50b41d2f30c99b7c75d",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 195,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

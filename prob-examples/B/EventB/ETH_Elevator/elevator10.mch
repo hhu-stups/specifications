@@ -7,7 +7,7 @@ INVARIANT (phyElevatorFloor : (0 .. N)) & (phyElevatorBetweenFloors : BOOL) & (p
 ASSERTIONS (bool2Num2((FALSE |-> FALSE)) = 1) & (bool2Num2((FALSE |-> TRUE)) = 1)
 
 DEFINITIONS
-SET_PREF_SHOW_EVENTB_ANY_VALUES==TRUE 
+SET_PREF_SHOW_EVENTB_ANY_VALUES==TRUE
 INITIALISATION phyElevatorFloor := 0 || phyElevatorBetweenFloors := FALSE || phyCableEngineStatus := CABLE_STOP || phyDoorPosition := DOOR_CLOSED || phyDoorEngineStatus := DOOR_STOP || cableEngineStatus := CABLE_STOP || cableEngineCommand := CABLE_STOP || doorPosition := DOOR_CLOSED || doorEngineStatus := DOOR_STOP || doorEngineCommand := DOOR_CLOSE || currentFloor := 0 || phyUpButtonPressed := ((0 .. (N - 1)) * {FALSE}) || phyUpButtonLit := ((0 .. (N - 1)) * {FALSE}) || phyDownButtonPressed := ((1 .. N) * {FALSE}) || phyDownButtonLit := ((1 .. N) * {FALSE}) || phyFloorButtonPressed := ((0 .. N) * {FALSE}) || phyFloorButtonLit := ((0 .. N) * {FALSE}) || upButtonPressed := ((0 .. (N - 1)) * {FALSE}) || downButtonPressed := ((1 .. N) * {FALSE}) || floorButtonPressed := ((0 .. N) * {FALSE}) || upButtonOn := ((0 .. (N - 1)) * {FALSE}) || downButtonOn := ((1 .. N) * {FALSE}) || floorButtonOn := ((0 .. N) * {FALSE})
 OPERATIONS
  elevatorReachesFloorUp = SELECT (phyCableEngineStatus = CABLE_WINDING) & (phyElevatorBetweenFloors = TRUE) THEN phyElevatorFloor := (1 + phyElevatorFloor) || phyElevatorBetweenFloors := FALSE || currentFloor := (1 + phyElevatorFloor) END ;
@@ -20,28 +20,28 @@ OPERATIONS
  doorClosesWhenOpened = SELECT (phyDoorEngineStatus = DOOR_STOP) & (phyDoorPosition = DOOR_OPENED) & (phyCableEngineStatus = CABLE_STOP) & (doorEngineCommand = DOOR_OPEN) THEN phyDoorPosition := DOOR_HALF || phyDoorEngineStatus := DOOR_CLOSE || doorPosition := DOOR_HALF || doorEngineStatus := DOOR_CLOSE END ;
  doorClosesWhenHalf = SELECT (phyDoorEngineStatus = DOOR_CLOSE) & (phyDoorPosition = DOOR_HALF) THEN phyDoorPosition := DOOR_CLOSED || doorPosition := DOOR_CLOSED END ;
  stopDoorEngine = SELECT (phyDoorEngineStatus /= DOOR_STOP) & (phyCableEngineStatus = CABLE_STOP) & (phyDoorPosition /= DOOR_HALF) & (cableEngineCommand = CABLE_STOP) THEN phyDoorEngineStatus := DOOR_STOP || doorEngineStatus := DOOR_STOP END ;
- userPressesUpButton = ANY floor WHERE (floor : (0 .. (N - 1))) & (phyUpButtonPressed(floor) = FALSE) THEN phyUpButtonPressed := ({(floor |-> TRUE)} <+ phyUpButtonPressed) || upButtonPressed := ({(floor |-> TRUE)} <+ upButtonPressed) END ;
- userReleasesUpButton = ANY floor WHERE (floor : (0 .. (N - 1))) & (phyUpButtonPressed(floor) = TRUE) THEN phyUpButtonPressed := ({(floor |-> FALSE)} <+ phyUpButtonPressed) || upButtonPressed := ({(floor |-> FALSE)} <+ upButtonPressed) END ;
- userPressesDownButton = ANY floor WHERE (floor : (1 .. N)) & (phyDownButtonPressed(floor) = FALSE) THEN phyDownButtonPressed := ({(floor |-> TRUE)} <+ phyDownButtonPressed) || downButtonPressed := ({(floor |-> TRUE)} <+ downButtonPressed) END ;
- userReleaseDownButton = ANY floor WHERE (floor : (1 .. N)) & (phyDownButtonPressed(floor) = TRUE) THEN phyDownButtonPressed := ({(floor |-> FALSE)} <+ phyDownButtonPressed) || downButtonPressed := ({(floor |-> FALSE)} <+ downButtonPressed) END ;
- userPressedFloorButton = ANY floor WHERE (floor : (0 .. N)) & (phyFloorButtonPressed(floor) = FALSE) THEN phyFloorButtonPressed := ({(floor |-> TRUE)} <+ phyFloorButtonPressed) || floorButtonPressed := ({(floor |-> TRUE)} <+ floorButtonPressed) END ;
- userReleasesFloorButton = ANY floor WHERE (floor : (0 .. N)) & (phyFloorButtonPressed(floor) = TRUE) THEN phyFloorButtonPressed := ({(floor |-> FALSE)} <+ phyFloorButtonPressed) || floorButtonPressed := ({(floor |-> FALSE)} <+ floorButtonPressed) END ;
- upButtonLitOn = ANY floor WHERE (floor : (0 .. (N - 1))) & (phyUpButtonLit(floor) = FALSE) & (upButtonOn(floor) = TRUE) THEN phyUpButtonLit := ({(floor |-> TRUE)} <+ phyUpButtonLit) END ;
- upButtonLitOff = ANY floor WHERE (floor : (0 .. (N - 1))) & (phyUpButtonLit(floor) = TRUE) & (upButtonOn(floor) = FALSE) THEN phyUpButtonLit := ({(floor |-> FALSE)} <+ phyUpButtonLit) END ;
- downButtonLitOn = ANY floor WHERE (floor : (1 .. N)) & (phyDownButtonLit(floor) = FALSE) & (downButtonOn(floor) = TRUE) THEN phyDownButtonLit := ({(floor |-> TRUE)} <+ phyDownButtonLit) END ;
- downButtonLitOff = ANY floor WHERE (floor : (1 .. N)) & (phyDownButtonLit(floor) = TRUE) & (downButtonOn(floor) = FALSE) THEN phyDownButtonLit := ({(floor |-> FALSE)} <+ phyDownButtonLit) END ;
- floorButtonLitOn = ANY floor WHERE (floor : (0 .. N)) & (phyFloorButtonLit(floor) = FALSE) & (floorButtonOn(floor) = TRUE) THEN phyFloorButtonLit := ({(floor |-> TRUE)} <+ phyFloorButtonLit) END ;
- floorButtonLitOff = ANY floor WHERE (floor : (0 .. N)) & (phyFloorButtonLit(floor) = TRUE) & (floorButtonOn(floor) = FALSE) THEN phyFloorButtonLit := ({(floor |-> FALSE)} <+ phyFloorButtonLit) END ;
+ userPressesUpButton = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (phyUpButtonPressed(pfloor) = FALSE) THEN phyUpButtonPressed := ({(pfloor |-> TRUE)} <+ phyUpButtonPressed) || upButtonPressed := ({(pfloor |-> TRUE)} <+ upButtonPressed) END ;
+ userReleasesUpButton = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (phyUpButtonPressed(pfloor) = TRUE) THEN phyUpButtonPressed := ({(pfloor |-> FALSE)} <+ phyUpButtonPressed) || upButtonPressed := ({(pfloor |-> FALSE)} <+ upButtonPressed) END ;
+ userPressesDownButton = ANY pfloor WHERE (pfloor : (1 .. N)) & (phyDownButtonPressed(pfloor) = FALSE) THEN phyDownButtonPressed := ({(pfloor |-> TRUE)} <+ phyDownButtonPressed) || downButtonPressed := ({(pfloor |-> TRUE)} <+ downButtonPressed) END ;
+ userReleaseDownButton = ANY pfloor WHERE (pfloor : (1 .. N)) & (phyDownButtonPressed(pfloor) = TRUE) THEN phyDownButtonPressed := ({(pfloor |-> FALSE)} <+ phyDownButtonPressed) || downButtonPressed := ({(pfloor |-> FALSE)} <+ downButtonPressed) END ;
+ userPressedFloorButton = ANY pfloor WHERE (pfloor : (0 .. N)) & (phyFloorButtonPressed(pfloor) = FALSE) THEN phyFloorButtonPressed := ({(pfloor |-> TRUE)} <+ phyFloorButtonPressed) || floorButtonPressed := ({(pfloor |-> TRUE)} <+ floorButtonPressed) END ;
+ userReleasesFloorButton = ANY pfloor WHERE (pfloor : (0 .. N)) & (phyFloorButtonPressed(pfloor) = TRUE) THEN phyFloorButtonPressed := ({(pfloor |-> FALSE)} <+ phyFloorButtonPressed) || floorButtonPressed := ({(pfloor |-> FALSE)} <+ floorButtonPressed) END ;
+ upButtonLitOn = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (phyUpButtonLit(pfloor) = FALSE) & (upButtonOn(pfloor) = TRUE) THEN phyUpButtonLit := ({(pfloor |-> TRUE)} <+ phyUpButtonLit) END ;
+ upButtonLitOff = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (phyUpButtonLit(pfloor) = TRUE) & (upButtonOn(pfloor) = FALSE) THEN phyUpButtonLit := ({(pfloor |-> FALSE)} <+ phyUpButtonLit) END ;
+ downButtonLitOn = ANY pfloor WHERE (pfloor : (1 .. N)) & (phyDownButtonLit(pfloor) = FALSE) & (downButtonOn(pfloor) = TRUE) THEN phyDownButtonLit := ({(pfloor |-> TRUE)} <+ phyDownButtonLit) END ;
+ downButtonLitOff = ANY pfloor WHERE (pfloor : (1 .. N)) & (phyDownButtonLit(pfloor) = TRUE) & (downButtonOn(pfloor) = FALSE) THEN phyDownButtonLit := ({(pfloor |-> FALSE)} <+ phyDownButtonLit) END ;
+ floorButtonLitOn = ANY pfloor WHERE (pfloor : (0 .. N)) & (phyFloorButtonLit(pfloor) = FALSE) & (floorButtonOn(pfloor) = TRUE) THEN phyFloorButtonLit := ({(pfloor |-> TRUE)} <+ phyFloorButtonLit) END ;
+ floorButtonLitOff = ANY pfloor WHERE (pfloor : (0 .. N)) & (phyFloorButtonLit(pfloor) = TRUE) & (floorButtonOn(pfloor) = FALSE) THEN phyFloorButtonLit := ({(pfloor |-> FALSE)} <+ phyFloorButtonLit) END ;
  ctrl_startWindingCableEngine = SELECT (cableEngineCommand = CABLE_STOP) & (doorPosition = DOOR_CLOSED) & (doorEngineStatus = DOOR_CLOSE) & (doorEngineCommand = DOOR_CLOSE) THEN cableEngineCommand := CABLE_WINDING END ;
  ctrl_startUnwindingCableEngine = SELECT (cableEngineCommand = CABLE_STOP) & (doorPosition = DOOR_CLOSED) & (doorEngineStatus = DOOR_CLOSE) & (doorEngineCommand = DOOR_CLOSE) THEN cableEngineCommand := CABLE_UNWINDING END ;
  ctrl_stopCableEngine = SELECT (cableEngineCommand /= CABLE_STOP) & (currentFloor /= -1) THEN cableEngineCommand := CABLE_STOP END ;
  ctrl_startOpeningDoorEngine = SELECT (doorEngineCommand = DOOR_STOP) & (cableEngineCommand = CABLE_STOP) THEN doorEngineCommand := DOOR_OPEN END ;
  ctrl_startClosingDoorEngine = SELECT (doorEngineCommand = DOOR_STOP) THEN doorEngineCommand := DOOR_CLOSE END ;
  ctrl_stopDoorEngine = SELECT (doorEngineCommand /= DOOR_STOP) & (doorPosition /= DOOR_HALF) & (cableEngineCommand = CABLE_STOP) & (cableEngineStatus = CABLE_STOP) THEN doorEngineCommand := DOOR_STOP END ;
- ctrl_upButtonLitOn = ANY floor WHERE (floor : (0 .. (N - 1))) & (upButtonOn(floor) = FALSE) & (upButtonPressed(floor) = TRUE) THEN upButtonOn := ({(floor |-> TRUE)} <+ upButtonOn) END ;
- ctrl_upButtonLitOff = ANY floor WHERE (floor : (0 .. (N - 1))) & (upButtonOn(floor) = TRUE) THEN upButtonOn := ({(floor |-> FALSE)} <+ upButtonOn) END ;
- ctrl_downButtonLitOn = ANY floor WHERE (floor : (1 .. N)) & (downButtonOn(floor) = FALSE) & (downButtonPressed(floor) = TRUE) THEN downButtonOn := ({(floor |-> TRUE)} <+ downButtonOn) END ;
- ctrl_downButtonLitOff = ANY floor WHERE (floor : (1 .. N)) & (downButtonOn(floor) = TRUE) THEN downButtonOn := ({(floor |-> FALSE)} <+ downButtonOn) END ;
- ctrl_floorButtonLitOn = ANY floor WHERE (floor : (0 .. N)) & (floorButtonOn(floor) = FALSE) & (floorButtonPressed(floor) = TRUE) THEN floorButtonOn := ({(floor |-> TRUE)} <+ floorButtonOn) END ;
- ctrl_floorButtonLitOff = ANY floor WHERE (floor : (0 .. N)) & (floorButtonOn(floor) = TRUE) THEN floorButtonOn := ({(floor |-> FALSE)} <+ floorButtonOn) END 
+ ctrl_upButtonLitOn = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (upButtonOn(pfloor) = FALSE) & (upButtonPressed(pfloor) = TRUE) THEN upButtonOn := ({(pfloor |-> TRUE)} <+ upButtonOn) END ;
+ ctrl_upButtonLitOff = ANY pfloor WHERE (pfloor : (0 .. (N - 1))) & (upButtonOn(pfloor) = TRUE) THEN upButtonOn := ({(pfloor |-> FALSE)} <+ upButtonOn) END ;
+ ctrl_downButtonLitOn = ANY pfloor WHERE (pfloor : (1 .. N)) & (downButtonOn(pfloor) = FALSE) & (downButtonPressed(pfloor) = TRUE) THEN downButtonOn := ({(pfloor |-> TRUE)} <+ downButtonOn) END ;
+ ctrl_downButtonLitOff = ANY pfloor WHERE (pfloor : (1 .. N)) & (downButtonOn(pfloor) = TRUE) THEN downButtonOn := ({(pfloor |-> FALSE)} <+ downButtonOn) END ;
+ ctrl_floorButtonLitOn = ANY pfloor WHERE (pfloor : (0 .. N)) & (floorButtonOn(pfloor) = FALSE) & (floorButtonPressed(pfloor) = TRUE) THEN floorButtonOn := ({(pfloor |-> TRUE)} <+ floorButtonOn) END ;
+ ctrl_floorButtonLitOff = ANY pfloor WHERE (pfloor : (0 .. N)) & (floorButtonOn(pfloor) = TRUE) THEN floorButtonOn := ({(pfloor |-> FALSE)} <+ floorButtonOn) END
 END

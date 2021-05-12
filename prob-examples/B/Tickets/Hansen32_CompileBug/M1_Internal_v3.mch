@@ -30,7 +30,8 @@ OPERATIONS
                 ;
                   RSET := RSET - {min(RSET)}
               END
-            INVARIANT card(RSET) : NATURAL
+            INVARIANT  //  RSET <: 1..100 & // required for WD 
+                      card(RSET) : NATURAL
             VARIANT card(RSET)
             END
         END

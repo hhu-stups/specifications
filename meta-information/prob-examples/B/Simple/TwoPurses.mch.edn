@@ -8,6 +8,8 @@
  :variables 2,
  :number-of-states 116,
  :included-machines ["./prob-examples/B/Simple/TwoPurses.mch"],
+ :sha512
+ "a72c7b148562bae7d00a2cda40f6b355d902533a8639989ab94f15d202f7b1e7320e8bb534e7d2cceecb40d02f30093e332390462afd500174d939e69fdd5e05",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,6 +29,106 @@
    :timeout 1800000,
    :model-checking-time 5110,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 127,
+   :transitions 1911,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2264,
+   :memory-usage 165598704,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "ddb25f345da3f9ecc6e50263233a32c0b3b1ce6b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 5219,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 127,
+   :transitions 1911,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 165190464,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "ddb25f345da3f9ecc6e50263233a32c0b3b1ce6b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 5557,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 127,
+   :transitions 1911,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 165166528,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(int(1),[]),span_context(span_predicate(b(function(b(value(avl_set(node((int(2),int(0)),true,0,empty,empty))),set(couple(integer,integer)),[was_identifier(other),nodeid(pos(242,1,39,21,39,26)),loc(local,TwoPurses,abstract_variables)]),b(identifier(cc),integer,[nodeid(pos(99,1,13,50,13,52)),introduced_by(forall)])),integer,[contains_wd_condition,nodeid(pos(97,1,13,47,13,53))]),[bind(cc,int(1))],[]),operation(Transfer,127))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ddb25f345da3f9ecc6e50263233a32c0b3b1ce6b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 5453,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 127,
+   :transitions 1911,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 165176304,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(int(1),[]),span_context(span_predicate(b(function(b(value(avl_set(node((int(2),int(0)),true,0,empty,empty))),set(couple(integer,integer)),[was_identifier(other),nodeid(pos(242,1,39,21,39,26)),loc(local,TwoPurses,abstract_variables)]),b(identifier(cc),integer,[nodeid(pos(99,1,13,50,13,52)),introduced_by(forall)])),integer,[contains_wd_condition,nodeid(pos(97,1,13,47,13,53))]),[bind(cc,int(1))],[]),operation(Transfer,127))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ddb25f345da3f9ecc6e50263233a32c0b3b1ce6b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 5283,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 127,
+   :transitions 1911,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 7335,
+   :memory-usage 165634480,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(int(1),[]),span_context(span_predicate(b(function(b(value(avl_set(node((int(2),int(0)),true,0,empty,empty))),set(couple(integer,integer)),[was_identifier(other),nodeid(pos(242,1,39,21,39,26)),loc(local,TwoPurses,abstract_variables)]),b(identifier(cc),integer,[nodeid(pos(99,1,13,50,13,52)),introduced_by(forall)])),integer,[contains_wd_condition,nodeid(pos(97,1,13,47,13,53))]),[bind(cc,int(1))],[]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ddb25f345da3f9ecc6e50263233a32c0b3b1ce6b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 5377,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

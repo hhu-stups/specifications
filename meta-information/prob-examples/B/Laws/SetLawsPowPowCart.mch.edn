@@ -8,6 +8,8 @@
  :variables 3,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/Laws/SetLawsPowPowCart.mch"],
+ :sha512
+ "6c1500a3f86a78ccef2503d4f257aa3ef25e867e6fdfdcbabb01e37862ce52b18fdcf001d888dc5e60cb8abdc9afdfdf9da78fe99e2677357b403cfb894192ed",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

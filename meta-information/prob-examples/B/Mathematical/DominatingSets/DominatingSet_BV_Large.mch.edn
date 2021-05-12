@@ -1,0 +1,27 @@
+{:sha256
+ "6f47e5fa9d25801223995382300986337354dc4f171f4f807b4d3d4809687a7d",
+ :sha512
+ "401e2ad16780edf5655808ddf8cf8219b04f7fe6c9d5038ffedf7538123a15f047780c188d351d9410cea47bc3c8a96d86e81896e15e6fc20d4a19cce31ee24b",
+ :file
+ "./prob-examples/B/Mathematical/DominatingSets/DominatingSet_BV_Large.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

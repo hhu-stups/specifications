@@ -1,0 +1,14 @@
+REFINEMENT Main1_v2
+REFINES Main
+VARIABLES speed, loc // removed time
+INITIALISATION speed,loc := 0,0
+OPERATIONS
+ Move1 ref Move = SELECT loc<100 THEN loc := loc+speed END;
+ IncreaseSpeed ref ChangeSpeed = SELECT speed < 3 THEN
+    speed := speed+1
+ END;
+ DecreaseSpeed ref ChangeSpeed = SELECT speed > 0 THEN
+    speed := speed-1
+ END
+END
+

@@ -3,19 +3,19 @@ MACHINE Ship
 SETS
   Direction = {n,e,s,w}
 VARIABLES
-  x,y,d
+  x,y,d, onship, tx, ty, td
 INVARIANT
   x: INT & y: INT & d: Direction &
-  
+
   tx: INT & ty: INT & td: Direction &
-  
+
   onship: BOOL &
-  
+
   not((x=0) & (y=0))
-  
+
 INITIALISATION
   x,y,d,tx,ty,td,onship := 2,2,n,2,2,n,FALSE
-  
+
 OPERATIONS
  MoveForward = BEGIN
           IF d = n THEN
@@ -26,9 +26,9 @@ OPERATIONS
             y := y-1
           ELSE
             y := y+1
-          END 
+          END
         END;
-        
+
  TurnClockWise = BEGIN
           IF d = n THEN
             d := e
@@ -40,5 +40,5 @@ OPERATIONS
             d := n
           END
         END
-          
+
 END

@@ -11,4 +11,3 @@ INITIALISATION xx:=first(iv)
 OPERATIONS
   Set(yy) = PRE yy:ID THEN xx:= yy END
 END
-

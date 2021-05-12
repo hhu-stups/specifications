@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Implementations/Values/ArrayValuationA.mch"
   "./prob-examples/B/Implementations/Values/ArrayValuationB.mch"],
+ :sha512
+ "1cf372e143af97df7b400e28f4d24649a741722c392188788aa56d53f970bb0ffd1731d05de18eb5729c108361558663da800d5e6a6c1b4b8dc6c6e6e2d2d53d",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

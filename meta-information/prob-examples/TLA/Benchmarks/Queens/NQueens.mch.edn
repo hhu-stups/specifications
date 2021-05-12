@@ -1,0 +1,26 @@
+{:sha256
+ "952fff4eb674f50061467caea51cdaca546237ab1671c0c947957096be3c8e3f",
+ :sha512
+ "de7e7f83ee3f1eb69849a9a18b96c2cb81b4144c6cbab48e4c413df05668843ba334769f6a041d806b0259fb6d2ba39845f9525c8441e53ca2d12d07089b3b44",
+ :file "./prob-examples/TLA/Benchmarks/Queens/NQueens.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

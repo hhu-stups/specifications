@@ -1,11 +1,21 @@
-{:number-of-transitions :unknown,
+{:properties 52,
+ :definitions 107,
+ :deferred_sets 0,
+ :number-of-transitions :unknown,
  :deadlock :unknown,
  :file "./prob-examples/B/Tickets/SLOT-WD-ISSUE/Solver.mch",
+ :enumerated_sets 9,
+ :variables 1,
  :number-of-states :unknown,
  :included-machines [],
+ :sha512
+ "627b25dffb13f1d41aa1f50b0fb4c32c6ce0a2b654646e489ab9511718e6d81297c2007f7214744340e1bc87b328503ad8eb265fb2dfb6071f83e706ae395d37",
  :comment "",
+ :static_assertions 10,
+ :operations 7,
  :sha256
  "b771376c58aa5d2c3d8d88261d5476bbca38a722910a3f845632d52577ed378b",
+ :invariants 1,
  :runs
  [{:tool :prob,
    :hardware
@@ -18,6 +28,44 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("definition_variable_capture"),
+   :states 2,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 6046,
+   :memory-usage 177945648,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "89021e86df97ae6eba263e09eda5169f8a5fc3e3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 28398,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
+ :dynamic_assertions 1,
  :invariant-violated :unknown,
+ :constants 42,
  :formalism :b}

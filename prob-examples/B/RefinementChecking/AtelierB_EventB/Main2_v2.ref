@@ -1,0 +1,8 @@
+REFINEMENT Main2_v2
+REFINES Main1_v2
+VARIABLES speed, loc,time // re-added time; but with different type
+INVARIANT time:struct(sec:NATURAL)
+INITIALISATION speed,loc,time := 0,0,rec(sec:0)
+OPERATIONS
+ Move2 ref Move1 = SELECT loc<100 & time'sec<10 THEN time,loc := rec(sec:time'sec+1),loc+speed END
+END

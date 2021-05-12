@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Compilers/BTA/BTA_Propagation.mch"],
+ :sha512
+ "0f6b6deeb85ba800133de37de264b5e191e659dbe6b22423f1f078ddfcce384fd435ae8292354486b782e955c6252295c961251b74681508f2cd38f436ea36dd",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,46 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "internal_error(error_manager)"),
+   :states 2,
+   :transitions 71,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163514848,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "3a09e052f7e7559c58b4c100a14314e44f1138e2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 291,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 3,

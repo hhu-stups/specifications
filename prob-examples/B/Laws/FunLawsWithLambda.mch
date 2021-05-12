@@ -15,7 +15,7 @@ DEFINITIONS
  law6 ==  (dom((ff ; (gg~))) <: dom(ff));
  law7 ==  (!(xx,yy).(xx:setX & yy:setY & xx|->yy : ff  =>  yy: ran(gg))
              =>  (dom((ff ; (gg~))) = dom(ff)));
- law8 ==  (ff : setX --> setY  <=>  (ff: setX +-> setY & dom(ff) = setX)); 
+ law8 ==  (ff : setX --> setY  <=>  (ff: setX +-> setY & dom(ff) = setX));
  ff_is_pf == (!(xx,yy,zz).((xx:setX & yy:setY & zz:setY &
                    xx|->yy:ff & xx|->zz:ff) => (yy=zz)));
  law9 ==  (ff : setX +-> setY  <=> ff_is_pf);
@@ -40,8 +40,8 @@ INVARIANT
  ff /\ ff = ff &
  ff /\ {} = {} &
 
- law1 & law2 & law3 & law4 & law5 & 
- law6 & law7 & law8 & 
+ law1 & law2 & law3 & law4 & law5 &
+ law6 & law7 & law8 &
 
  law9 & law10 & law11 & law12 &
 
@@ -96,9 +96,9 @@ INVARIANT
    ( ff /<: gg  <=>  #ee.(ee:ff & ee/:gg))
    &
    ( ff<<:gg <=>  (ff<:gg & #ee.(ee:gg & ee/:ff)))
-   
+
    &
-   
+
 
     /* cardinality propagation laws */
    (card(ff)>-1 & card(ff) >= 0) &
@@ -121,14 +121,14 @@ INVARIANT
    ( card(sx <| ff) <= card(ff) & card(sx <<| ff) <= card(ff)) &
    ( ff: setX +-> setY =>  card(sx <<| ff) >= card(ff)-card(sx)) &
    /* TO DO: more rules about |> , |>>, <|, <<| */
-   
+
 
    /* functionality propagation laws */
    ( ff: sx >+> sy => ff~: sy +-> sx) &
-   ( ff: setX +-> setY => sx <| ff: sx +-> setY) & 
-   ( ff: setX +-> setY => sx <<| ff: (setX-sx) +-> setY) & 
-   ( ff: setX +-> setY =>  ff |> sy : setX +-> sy) & 
-   ( ff: setX +-> setY =>  ff |>> sy : setX +-> (setY-sy)) & 
+   ( ff: setX +-> setY => sx <| ff: sx +-> setY) &
+   ( ff: setX +-> setY => sx <<| ff: (setX-sx) +-> setY) &
+   ( ff: setX +-> setY =>  ff |> sy : setX +-> sy) &
+   ( ff: setX +-> setY =>  ff |>> sy : setX +-> (setY-sy)) &
    ( ff: setX +-> setY & gg: setX +-> setY => ff <+ gg : setX +-> setY) &
 
    /* TO DO: injectivitiy propagation laws */
@@ -138,7 +138,7 @@ INVARIANT
    !x.(x:ff => x : (ff\/gg) ) &
    !x.(x:(ff/\gg) => (x:ff & x:gg)) &
    /* TO DO: add more */
-   
+
    /* ran, dom propagation laws */
    /* some laws already above, law1 .. la26: dom(ff \/ gg) = dom(ff) \/ dom(gg) etc */
    dom(sx <| ff) = dom(ff) /\ sx &
@@ -151,8 +151,8 @@ INVARIANT
    dom(ff |>> sy) <: dom(ff) &
    dom(ff<+gg) = dom(ff) \/ dom(gg) &
    ran(gg) <: ran(ff<+gg) &
-   
-   
+
+
    /* some new laws */
    (ff |> sy = ff |>> (setY - sy)) &
    (ff |>> sy = ff |> (setY - sy)) &
@@ -179,7 +179,7 @@ INVARIANT
    gg |> ran(ff) = {a,b| (a,b):gg & b:ran(ff)} &
    dom(ff) <<| gg = {a,b| (a,b):gg & a/:dom(ff)} &
    gg |>> ran(ff) = {a,b| (a,b):gg & b/:ran(ff)} &
-   
+
    /* Definitions from page 80 of B-Book */
    ff[dom(gg)] = ran(dom(gg) <| ff) & /* p[w] = ran(w <| p) with w=dom(gg) */
    gg <+ ff = (dom(ff) <<| gg) \/ ff & /* q<+ r = ... in book, error in book p should be r */
@@ -187,13 +187,13 @@ INVARIANT
    prj1(setX,setY) = (id(setX) >< (setX * setY))~ &
    prj2(setX,setY) = ((setY*setX) >< id(setY))~ &
    (ff||gg) = (prj1(setX,setX);ff) >< (prj2(setX,setX);gg) &
-   
+
    ff[dom(gg)] = {b| #a.(a:dom(gg) & (a,b):ff)} & /* again error in B-Book (a,b) instead of (x,y) */
    gg <+ ff = {a,b | ( (a,b):gg & a/:dom(ff) ) or (a,b):ff} &
    prj1(setX,setY) = {a,b,c| (a,b,c) : setX*setY*setX & c=a} &
    prj2(setX,setY) = {a,b,c| (a,b,c) : setX*setY*setY & c=b} &
    (ff||gg) = {ab,cd | #(a,b,c,d).(ab=(a,b) & cd = (c,d) & (a,c):ff & (b,d):gg)} &
-   
+
    /* Inclusion Properties from page 98 of B-Book (not complete) */
    id(dom(ff)) <: (ff; ff~) &
    id(ran(ff)) <: (ff~;ff) &
@@ -205,7 +205,7 @@ INVARIANT
    ran(ff) - ran(gg) <: ran(ff-gg) &
    (ff /\ gg)[setX] <: ff[setX] /\ gg[setX] &
    ff[setX] - gg[setX] <: (ff-gg) [setX] &
-   
+
    /* Inverse Properties from page 100 of B-Book */
    (ff~)~ = ff &
    (ff ; (gg~))~ = ((gg~)~ ; ff~) &
@@ -222,7 +222,7 @@ INVARIANT
    {1|->2}~ = {2|->1} &
    (ff={} => ff~={}) &
    (setX * setY)~ = setY*setX &
-   
+
    /* Domain Properties from pages 100-101 of B-Book */
    (ff: setX --> setY => (dom(ff) = setX)) &
    dom(ff~) = ran(ff) &
@@ -237,7 +237,7 @@ INVARIANT
    dom(ff><gg) = dom(ff) /\ dom(gg) &
    dom(ff||gg) = dom(ff) * dom(gg) &
    dom(ff \/ gg) = dom(ff) \/ dom(gg) &
-   (ff:setX +-> setY & gg:setX +-> setY & 
+   (ff:setX +-> setY & gg:setX +-> setY &
      dom(ff) <| gg = dom(gg) <| ff
     => (dom(ff /\ gg) = dom(ff) /\ dom(gg) &
        dom(ff - gg) = dom(ff) - dom(gg))
@@ -245,7 +245,7 @@ INVARIANT
    dom({ 1|-> 2}) = {1} &
    (ff={} => dom(ff) = {}) &
    (setY /= {} => dom(setX*setY) = setX) &
-   
+
    /* Range Properties from pages 102-103 of B-Book */
    (ff: setX +->> setY => (ran(ff) = setY)) &
    ran(ff~) = dom(ff) &
@@ -260,7 +260,7 @@ INVARIANT
    ran(ff><gg) = (ff~ ; gg) &
    ran(ff||gg) = ran(ff)*ran(gg) &
    ran(ff \/ gg) = ran(ff) \/ ran(gg) &
-   (ff~:setY +-> setX & gg~:setY +-> setX & 
+   (ff~:setY +-> setX & gg~:setY +-> setX &
      ff |> ran(gg) = gg |> ran(ff)
     => (ran(ff /\ gg) = ran(ff) /\ ran(gg) &
         ran(ff - gg) = ran(ff) - ran(gg))) &
@@ -295,7 +295,3 @@ OPERATIONS
  trans_ff4 = BEGIN ff := ff /\ ff END */
 
 END
-
-
-
-

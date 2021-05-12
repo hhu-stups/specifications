@@ -3,6 +3,8 @@
  :file "./prob-examples/B/Tickets/SLOT-PERFORMANCE6/Solver_v2.mch",
  :number-of-states :unknown,
  :included-machines [],
+ :sha512
+ "65adc357b90789df409464072c10643d07c208edfea2916a10e8dff5bdc8695175d625f18b9afba5dcd60b854c70c57253707c82bc1af5cf8586ae0aa05e19c2",
  :comment "",
  :sha256
  "96730cb8c185a2a6a65094507a1341b6ae0536e792b10374d6412aa304aa1db3",
@@ -18,6 +20,26 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :invariant-violated :unknown,
  :formalism :b}

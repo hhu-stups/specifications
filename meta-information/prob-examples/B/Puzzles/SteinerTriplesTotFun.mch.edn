@@ -1,0 +1,26 @@
+{:sha256
+ "15824462f1416846ef27ed56ae69562d794a747eefedcfb7f9c7e0f8b10c9587",
+ :sha512
+ "e1438b022009713b685c0523a4fd7b19b672aecbe850ee7a13212a239fc622fdb26446e7f37ab24f72ab8a6f9aef0dbd809e061d7aff0dae7c5adc52702c96a2",
+ :file "./prob-examples/B/Puzzles/SteinerTriplesTotFun.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

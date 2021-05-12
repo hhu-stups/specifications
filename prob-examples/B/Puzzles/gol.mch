@@ -5,9 +5,9 @@ ABSTRACT_CONSTANTS nc
 PROPERTIES
   /* neighbour count function: */
   nc = %(a,b,alive).(a:INTEGER&b:INTEGER & alive <: INTEGER*INTEGER
-                      | card({(xn,yn)| (xn,yn) : alive & neighbour(xn,yn,a,b)}))
+                      | card({xn,yn| (xn,yn) : alive & neighbour(xn,yn,a,b)}))
 VARIABLES alive
-DEFINITIONS 
+DEFINITIONS
       /* two alternate definitions of neighbour relationship; both work */
       neighbour1(x,y,a,b) == (max({x-a,a-x}) : {0,1} & max({y-b,b-y}) : {0,1} & (x,y)/=(a,b));
       neighbour(x,y,a,b) == ((x-a)**2 <= 1 & (y-b)**2 <=1 & (x,y)/=(a,b));
@@ -23,11 +23,11 @@ DEFINITIONS
       ANIMATION_IMG1 == "images/sm_gray_box.gif"
 INVARIANT
  alive <: INTEGER * INTEGER & alive /= {}
-INITIALISATION 
+INITIALISATION
 	alive := glider
-OPERATIONS 
- step  =  alive := {(u1,v1) | (u1,v1):alive & nc(u1,v1,alive) : {2,3} } \/
-                   {(u2,v2) |  #(a2,b2).((a2,b2):alive & neighbour(u2,v2,a2,b2)) & /* restrict enumeration to neighbours of alive */
+OPERATIONS
+ step  =  alive := {u1,v1 | (u1,v1):alive & nc(u1,v1,alive) : {2,3} } \/
+                   {u2,v2 |  #(a2,b2).((a2,b2):alive & neighbour(u2,v2,a2,b2)) & /* restrict enumeration to neighbours of alive */
                               (u2,v2)/:alive & nc(u2,v2,alive)=3 }
 END
 

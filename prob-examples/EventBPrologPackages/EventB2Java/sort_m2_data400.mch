@@ -1,6 +1,5 @@
 
-MACHINE sort_m2_data400
-        /* sort_m2_data400_mch_eventb */
+MACHINE sort_m2_data400 /* sort_m2_data400_mch.eventb */
 DEFINITIONS GOAL == k = n
 CONCRETE_CONSTANTS
   f,
@@ -49,11 +48,11 @@ INITIALISATION
          j := 1
     END
 OPERATIONS
-  progress = 
-    SELECT 
+  progress =
+    SELECT
         /* @sort_m2_data400:grd1  */ k /= n
       & /* @sort_m2_data400:grd2  */ j = n
-    THEN 
+    THEN
          g := g <+ ({k |-> g(l)} <+ {l |-> g(k)})
       ||
          k := k + 1
@@ -62,33 +61,33 @@ OPERATIONS
       ||
          l := k + 1
     END;
-  
-  prog1 = 
-    SELECT 
+
+  prog1 =
+    SELECT
         /* @sort_m2_data400:grd1  */ k /= n
       & /* @sort_m2_data400:grd2  */ j /= n
       & /* @sort_m2_data400:grd3  */ g(l) <= g(j + 1)
-    THEN 
+    THEN
          l := l
       ||
          j := j + 1
     END;
-  
-  prog2 = 
-    SELECT 
+
+  prog2 =
+    SELECT
         /* @sort_m2_data400:grd1  */ k /= n
       & /* @sort_m2_data400:grd2  */ j /= n
       & /* @sort_m2_data400:grd3  */ g(l) > g(j + 1)
-    THEN 
+    THEN
          j := j + 1
       ||
          l := j + 1
     END;
-  
-  final_evt = 
-    SELECT 
+
+  final_evt =
+    SELECT
         /* @sort_m2_data400:grd1  */ k = n
-    THEN 
+    THEN
       skip
     END
 END

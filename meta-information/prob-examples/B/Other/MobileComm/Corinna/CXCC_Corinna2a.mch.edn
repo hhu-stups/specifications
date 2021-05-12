@@ -1,0 +1,127 @@
+{:properties 2,
+ :definitions 0,
+ :deferred_sets 2,
+ :file "./prob-examples/B/Other/MobileComm/Corinna/CXCC_Corinna2a.mch",
+ :enumerated_sets 1,
+ :variables 6,
+ :sha512
+ "e4d25b5f86d59934584baa30f540cbc3f8c4f766ac8dc578b93eb00ac9a62f5575487202dbd912fc74f5597c36914a4a800bb5dd69b64ca6cb5cfdff8f3bb114",
+ :static_assertions 0,
+ :operations 3,
+ :sha256
+ "e2594d91489bd7ee309b0e00c022c1588134b56bc2d15793827ffb2a46929262",
+ :invariants 1,
+ :runs
+ [{:errors
+   ("well_definedness_error"
+    "well_definedness_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163138784,
+   :result
+   "state_error(abort_error(well_definedness_error,first applied to empty sequence!,[],span_context([contains_wd_condition,nodeid(pos(94,1,20,71,20,79))],operation($initialise_machine,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "2bab685cb0c1d1753ffb1d2e6a7108af48f9ed00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 131,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("well_definedness_error"
+    "well_definedness_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1137,
+   :memory-usage 163837808,
+   :result
+   "state_error(abort_error(well_definedness_error,first applied to empty sequence!,[],span_context([contains_wd_condition,nodeid(pos(94,1,20,71,20,79))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "2bab685cb0c1d1753ffb1d2e6a7108af48f9ed00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 78,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock" "well_definedness_error" "initialisation_fails"),
+   :states 0,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163141024,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "2bab685cb0c1d1753ffb1d2e6a7108af48f9ed00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 138,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("deadlock" "well_definedness_error" "initialisation_fails"),
+   :states 0,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 807,
+   :memory-usage 163777632,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "2bab685cb0c1d1753ffb1d2e6a7108af48f9ed00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 83,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("well_definedness_error"
+    "well_definedness_error"
+    "initialisation_fails"),
+   :states 0,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163134976,
+   :result
+   "state_error(abort_error(well_definedness_error,first applied to empty sequence!,[],span_context([contains_wd_condition,nodeid(pos(94,1,20,71,20,79))],operation($initialise_machine,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "2bab685cb0c1d1753ffb1d2e6a7108af48f9ed00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 136,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 1}

@@ -3,6 +3,8 @@
  :file "./prob-examples/B/Tickets/Lecomte1/CTX.mch",
  :number-of-states :unknown,
  :included-machines [],
+ :sha512
+ "f6be88c95cebca1df7b849ebb0a9bae561fecad3ddd1006ffebec549f16166ad923aae402df391dc3a94852151f5afc47e7ca96598f178a5d819903a8a9d61ab",
  :comment "",
  :sha256
  "16f07d34d611ae75a087de07018fb34ffe23bb2b49df301b3e7d47311a73194f",
@@ -18,6 +20,26 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :invariant-violated :unknown,
  :formalism :b}

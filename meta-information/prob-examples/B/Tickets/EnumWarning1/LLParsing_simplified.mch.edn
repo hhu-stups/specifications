@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/EnumWarning1/LLParsing_simplified.mch"
   "./prob-examples/B/Tickets/EnumWarning1/LibraryIO.def"],
+ :sha512
+ "ae3b5ffc58ccc625a42e68bdd322e6bdeb5038244fdb4b7d6ab0e60155ac24698c30e6730118ad563fe180d25e423a92c7934ae9f98f70cafc86f39f3cbc4f45",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,6 +32,108 @@
    :timeout 1800000,
    :model-checking-time 190,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred" "external_functions" "kernel_strings"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 163524272,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "69f620207b6214f65abe1b732bc04baaa3175ca0",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 204,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred" "external_functions" "kernel_strings"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163510016,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "69f620207b6214f65abe1b732bc04baaa3175ca0",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 211,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred" "external_functions" "kernel_strings"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 163492608,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "69f620207b6214f65abe1b732bc04baaa3175ca0",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 204,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred" "external_functions" "kernel_strings"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163474032,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "69f620207b6214f65abe1b732bc04baaa3175ca0",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 202,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred" "external_functions" "kernel_strings"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163484416,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "69f620207b6214f65abe1b732bc04baaa3175ca0",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 199,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

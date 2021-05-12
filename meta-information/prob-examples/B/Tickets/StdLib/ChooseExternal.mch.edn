@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/StdLib/ChooseExternal.mch"
   "./lib/CHOOSE.def"],
+ :sha512
+ "b23dcbc192264719679df65e3b11c2172365a32052cedcd58878b03b26f68e759b9d57a452d2348c986c08ca48f606a5b0fb81c67c64333c4147b3e012d14222",
  :comment "",
  :files 2,
  :static_assertions 9,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 140,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162395120,
+   :result
+   "state_error(abort_error(well_definedness_error,CHOOSE applied to empty set: ,[],span_context([contains_wd_condition,nodeid(pos_context(pos(132,2,12,2,12,34),definition_call(CHOOSE),pos(112,1,25,40,25,50))),nodeid(pos(112,1,25,40,25,50))],operation(Delete,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d93fd12793e4ba2714f9ec79cf6611dc2fab8c56",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 139,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162384544,
+   :result
+   "state_error(abort_error(well_definedness_error,CHOOSE applied to empty set: ,[],span_context([contains_wd_condition,nodeid(pos_context(pos(132,2,12,2,12,34),definition_call(CHOOSE),pos(112,1,25,40,25,50))),nodeid(pos(112,1,25,40,25,50))],operation(Delete,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d93fd12793e4ba2714f9ec79cf6611dc2fab8c56",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 137,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 217,
+   :memory-usage 163049584,
+   :result
+   "state_error(abort_error(well_definedness_error,CHOOSE applied to empty set: ,[],span_context([contains_wd_condition,nodeid(pos_context(pos(132,2,12,2,12,34),definition_call(CHOOSE),pos(112,1,25,40,25,50))),nodeid(pos(112,1,25,40,25,50))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d93fd12793e4ba2714f9ec79cf6611dc2fab8c56",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 59,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162460432,
+   :result
+   "state_error(abort_error(well_definedness_error,CHOOSE applied to empty set: ,[],span_context([contains_wd_condition,nodeid(pos_context(pos(132,2,12,2,12,34),definition_call(CHOOSE),pos(112,1,25,40,25,50))),nodeid(pos(112,1,25,40,25,50))],operation(Delete,2))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d93fd12793e4ba2714f9ec79cf6611dc2fab8c56",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 158,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 2,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 160,
+   :memory-usage 162809552,
+   :result
+   "state_error(abort_error(well_definedness_error,CHOOSE applied to empty set: ,[],span_context([contains_wd_condition,nodeid(pos_context(pos(132,2,12,2,12,34),definition_call(CHOOSE),pos(112,1,25,40,25,50))),nodeid(pos(112,1,25,40,25,50))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d93fd12793e4ba2714f9ec79cf6611dc2fab8c56",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 64,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

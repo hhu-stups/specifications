@@ -3,13 +3,13 @@ MACHINE Relations
 SETS
 	Name; Code
 
-VARIABLES 
-	ab, bb, ba, bb, dd, db, bd, bb, f, f1, int, integer, 
-        bl, nat, nat1, natural, naturla1, pow, pow1, rl, 
+CONSTANTS
+	ab, ba, bb, dd, db, bd, f, f1, int, integer,
+        bl, nat, nat1, natural, naturla1, pow, pow1, rl,
 	prod, sq, sq1, isq, prm, cmpl
 
-INVARIANT
-	
+PROPERTIES
+
 	ab : Name +-> Code & /*Partial Function*/
 	bb : Name +->> Code & /*Partial Surjection*/
 	ba : Name --> Code & /*Total Function*/
@@ -40,5 +40,5 @@ INVARIANT
 	isq : iseq(Name) & /*set of injective sequences over Name*/
 	prm : perm(Name) & /*set of bijective sequences over Name*/
 	cmpl : Name +-> Name +->> Code
-		
+
 END

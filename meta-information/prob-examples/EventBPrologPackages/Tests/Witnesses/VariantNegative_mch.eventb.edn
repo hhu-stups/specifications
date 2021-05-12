@@ -10,6 +10,8 @@
  :number-of-states 2,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tests/Witnesses/VariantNegative_mch.eventb"],
+ :sha512
+ "03fa683c46457bc87334d8abfe9bb9f8d31f66b4dafa160dc712bd183c50f73cbf22a565ce6711e536af73e48f0935880043a4c8b2d925ac907a26c5e0e60d5a",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 140,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161812672,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "09fe2ab929c113ed52e6483febed91fe03f65b57",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 121,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:variant_negative"),
+   :states 2,
+   :transitions 22,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161834416,
+   :result
+   "state_error(eventerror(dec,variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1)),[event(dec,VariantNegative),true_guard([],[],b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g)),loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g))])),pred,[nodeid(rodinpos(VariantNegative,g,_y1QNkOSsEeaU86Rx_hNGRg))])),variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "09fe2ab929c113ed52e6483febed91fe03f65b57",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 120,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161906336,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "09fe2ab929c113ed52e6483febed91fe03f65b57",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 125,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:variant_negative"),
+   :states 2,
+   :transitions 22,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161869120,
+   :result
+   "state_error(eventerror(dec,variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1)),[event(dec,VariantNegative),true_guard([],[],b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g)),loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g))])),pred,[nodeid(rodinpos(VariantNegative,g,_y1QNkOSsEeaU86Rx_hNGRg))])),variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "09fe2ab929c113ed52e6483febed91fe03f65b57",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 122,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:variant_negative"),
+   :states 2,
+   :transitions 22,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161960528,
+   :result
+   "state_error(eventerror(dec,variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1)),[event(dec,VariantNegative),true_guard([],[],b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g)),loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantNegative,event(dec,guard),g))])),pred,[nodeid(rodinpos(VariantNegative,g,_y1QNkOSsEeaU86Rx_hNGRg))])),variant_negative(convergent,b(minus(b(identifier(x),integer,[loc(VariantNegative,variables),section(VariantNegative),level(0)]),b(integer(2),integer,[])),integer,[]),int(-1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "09fe2ab929c113ed52e6483febed91fe03f65b57",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 128,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

@@ -15,6 +15,8 @@
   "./prob-examples/B/Tickets/Schneider5_Trees/helper.def"
   "./prob-examples/B/Tickets/Schneider5_Trees/external_functions.def"
   "./prob-examples/B/Tickets/Schneider5_Trees/data.mch"],
+ :sha512
+ "25c818f0128b1e1419ae5f2c51d4c926fdf4085fc281cd06b22534c6a174b5d0c2efc7b128b64284f47f2dfcba7a921e2e65eee9c3a89055207e3c1a386efa6a",
  :comment "",
  :files 7,
  :static_assertions 0,
@@ -34,7 +36,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 32,

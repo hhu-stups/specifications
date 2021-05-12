@@ -10,6 +10,8 @@
  :number-of-states 2,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tests/Witnesses/VariantError_mch.eventb"],
+ :sha512
+ "a1f25e70f5a313be72551c4654c86a8efae757674aa9b595fc88969135fc6131dfdfff4e670a0a244cf7dd4837702a6971768e23d0ec9d298c18ac7669c85746",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:invalid_variant"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161819600,
+   :result
+   "state_error(eventerror(dec,invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1)),[event(dec,VariantError),true_guard([],[],b(truth,pred,[])),variant_checked_pre(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1)),action_set([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])],b(union(b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(less(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(equal(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[prob_annotation(DO_NOT_ENUMERATE(y)),removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),avl_set(node(int(1),true,0,empty,empty)),[int(1)]),invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "517c65f5bfda2f494f3d09e00cdcddcaee844dda",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 109,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:invalid_variant"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 162019552,
+   :result
+   "state_error(eventerror(dec,invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1)),[event(dec,VariantError),true_guard([],[],b(truth,pred,[])),variant_checked_pre(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1)),action_set([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])],b(union(b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(less(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(equal(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[prob_annotation(DO_NOT_ENUMERATE(y)),removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),avl_set(node(int(1),true,0,empty,empty)),[int(1)]),invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "517c65f5bfda2f494f3d09e00cdcddcaee844dda",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 138,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:invalid_variant"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161914912,
+   :result
+   "state_error(eventerror(dec,invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1)),[event(dec,VariantError),true_guard([],[],b(truth,pred,[])),variant_checked_pre(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1)),action_set([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])],b(union(b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(less(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(equal(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[prob_annotation(DO_NOT_ENUMERATE(y)),removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),avl_set(node(int(1),true,0,empty,empty)),[int(1)]),invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "517c65f5bfda2f494f3d09e00cdcddcaee844dda",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 114,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:invalid_variant"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161824400,
+   :result
+   "state_error(eventerror(dec,invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1)),[event(dec,VariantError),true_guard([],[],b(truth,pred,[])),variant_checked_pre(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1)),action_set([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])],b(union(b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(less(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(equal(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[prob_annotation(DO_NOT_ENUMERATE(y)),removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),avl_set(node(int(1),true,0,empty,empty)),[int(1)]),invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "517c65f5bfda2f494f3d09e00cdcddcaee844dda",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 112,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:invalid_variant"),
+   :states 1,
+   :transitions 21,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161931168,
+   :result
+   "state_error(eventerror(dec,invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1)),[event(dec,VariantError),true_guard([],[],b(truth,pred,[])),variant_checked_pre(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1)),action_set([b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])],b(union(b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(greater(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(less(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(comprehension_set([b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])],b(conjunct(b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),b(equal(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec)),loc(VariantError,variables),section(VariantError),level(0)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),pred,[prob_annotation(DO_NOT_ENUMERATE(y)),removed_typing,nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[was(event_b_comprehension_set),nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))])),set(integer),[nodeid(rodin_derived_context_pos(VariantError,event(dec,actions),dec))]),avl_set(node(int(1),true,0,empty,empty)),[int(1)]),invalid_variant(convergent,b(identifier(x),integer,[loc(VariantError,variables),section(VariantError),level(0)]),int(1),int(1))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "517c65f5bfda2f494f3d09e00cdcddcaee844dda",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 132,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

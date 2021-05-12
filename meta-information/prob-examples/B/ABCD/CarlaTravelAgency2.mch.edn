@@ -8,6 +8,8 @@
  :variables 11,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/ABCD/CarlaTravelAgency2.mch"],
+ :sha512
+ "c0287e253a0b1c1290529878fa16c23e279aa506cada7dd1eaacc1ceaa1b8c45d06afbcd96a29940ff744f7253002b9cb029b3f89e0c84e1e77e3e1436e55251",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

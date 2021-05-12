@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/PROB-378/OpCallSelect.mch"
   "./prob-examples/B/Tickets/PROB-378/OpCallSelect1.mch"],
+ :sha512
+ "bbb6c7827735d9f2d5bf3d4e473fffd2a7d2682ed3df4351e3fc99e8ed6d0f11d4b578ec285ae4152718ea16fa24b9e8482180dc8832b36e38f3542eb635d1ac",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,59 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 10,
+   :transitions 34,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 151,
+   :memory-usage 162411712,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "1af14b84761aa24484f2391f0a2092d5f6f712e7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 45,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 10,
+   :transitions 34,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161863520,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "1af14b84761aa24484f2391f0a2092d5f6f712e7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 74,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated true,
  :constants 0,

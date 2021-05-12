@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Mathematical/SimpsonParadox_v3.mch"
   "./lib/LibraryIO.def"],
+ :sha512
+ "f43be6948bf7937c41adcba2d741bf61efc6f3d4142b2b30eb790db62d90e67f100b3c8d8a778f73906ce4ab05945d15cf00b83b5f7dcb89d216a0c2d90fdfcf",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

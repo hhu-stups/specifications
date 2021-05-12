@@ -9,6 +9,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/EventBPrologPackages/CoffeR1_mch.eventb"],
+ :sha512
+ "0e897ab1800d4217c1bca1244ee2e076ff72b7cbcce8282ae26c3c11788d2ddc143e2094d9fac24674cae42c82a4a43f54befd55500f86b92b99354644267d9c",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:fill_mug:simulation_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 142,
+   :memory-usage 162152112,
+   :result
+   "state_error(eventerror(fill_mug,simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))]),[event(fill_mug,CoffeR1),true_guard([],[],b(conjunct(b(greater(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(gc,_at-EQZu2Ed6lOongzYfRfw))]),b(equal(b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(ml,_at-EQpu2Ed6lOongzYfRfw))])),pred,[])),action([b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(minus(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(1),integer,[])),integer,[])],[int(0)]),action([b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(integer(11),integer,[])],[int(11)]),eval_witness(parameter,b(identifier(x),integer,[droppedby([fill_mug]),nodeid(rodinpos([],_Gg1SAZu1Ed6lOongzYfRfw)),loc(CoffeeM,event(fill_mug))]),int(-1),b(equal(b(identifier(x),integer,[droppedby([fill_mug]),loc(CoffeeM,event(fill_mug))]),b(integer(-1),integer,[])),pred,[nodeid(rodinpos(x,_at-EQ5u2Ed6lOongzYfRfw))])),simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "918d080b23ac0b798093e397a7b7db72e39796c9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 29,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:fill_mug:simulation_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161563072,
+   :result
+   "state_error(eventerror(fill_mug,simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))]),[event(fill_mug,CoffeR1),true_guard([],[],b(conjunct(b(greater(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(gc,_at-EQZu2Ed6lOongzYfRfw))]),b(equal(b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(ml,_at-EQpu2Ed6lOongzYfRfw))])),pred,[])),action([b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(minus(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(1),integer,[])),integer,[])],[int(0)]),action([b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(integer(11),integer,[])],[int(11)]),eval_witness(parameter,b(identifier(x),integer,[droppedby([fill_mug]),nodeid(rodinpos([],_Gg1SAZu1Ed6lOongzYfRfw)),loc(CoffeeM,event(fill_mug))]),int(-1),b(equal(b(identifier(x),integer,[droppedby([fill_mug]),loc(CoffeeM,event(fill_mug))]),b(integer(-1),integer,[])),pred,[nodeid(rodinpos(x,_at-EQ5u2Ed6lOongzYfRfw))])),simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "918d080b23ac0b798093e397a7b7db72e39796c9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:fill_mug:simulation_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161579952,
+   :result
+   "state_error(eventerror(fill_mug,simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))]),[event(fill_mug,CoffeR1),true_guard([],[],b(conjunct(b(greater(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(gc,_at-EQZu2Ed6lOongzYfRfw))]),b(equal(b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(ml,_at-EQpu2Ed6lOongzYfRfw))])),pred,[])),action([b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(minus(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(1),integer,[])),integer,[])],[int(0)]),action([b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(integer(11),integer,[])],[int(11)]),eval_witness(parameter,b(identifier(x),integer,[droppedby([fill_mug]),nodeid(rodinpos([],_Gg1SAZu1Ed6lOongzYfRfw)),loc(CoffeeM,event(fill_mug))]),int(-1),b(equal(b(identifier(x),integer,[droppedby([fill_mug]),loc(CoffeeM,event(fill_mug))]),b(integer(-1),integer,[])),pred,[nodeid(rodinpos(x,_at-EQ5u2Ed6lOongzYfRfw))])),simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "918d080b23ac0b798093e397a7b7db72e39796c9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 64,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:fill_mug:simulation_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 140,
+   :memory-usage 162135968,
+   :result
+   "state_error(eventerror(fill_mug,simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))]),[event(fill_mug,CoffeR1),true_guard([],[],b(conjunct(b(greater(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(gc,_at-EQZu2Ed6lOongzYfRfw))]),b(equal(b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(ml,_at-EQpu2Ed6lOongzYfRfw))])),pred,[])),action([b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(minus(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(1),integer,[])),integer,[])],[int(0)]),action([b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(integer(11),integer,[])],[int(11)]),eval_witness(parameter,b(identifier(x),integer,[droppedby([fill_mug]),nodeid(rodinpos([],_Gg1SAZu1Ed6lOongzYfRfw)),loc(CoffeeM,event(fill_mug))]),int(-1),b(equal(b(identifier(x),integer,[droppedby([fill_mug]),loc(CoffeeM,event(fill_mug))]),b(integer(-1),integer,[])),pred,[nodeid(rodinpos(x,_at-EQ5u2Ed6lOongzYfRfw))])),simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "918d080b23ac0b798093e397a7b7db72e39796c9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 32,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:fill_mug:simulation_error"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161559760,
+   :result
+   "state_error(eventerror(fill_mug,simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))]),[event(fill_mug,CoffeR1),true_guard([],[],b(conjunct(b(greater(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(gc,_at-EQZu2Ed6lOongzYfRfw))]),b(equal(b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(ml,_at-EQpu2Ed6lOongzYfRfw))])),pred,[])),action([b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(minus(b(identifier(coins),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)]),b(integer(1),integer,[])),integer,[])],[int(0)]),action([b(identifier(mug_level),integer,[loc(CoffeR1,variables),section(CoffeR1),level(1)])],[b(integer(11),integer,[])],[int(11)]),eval_witness(parameter,b(identifier(x),integer,[droppedby([fill_mug]),nodeid(rodinpos([],_Gg1SAZu1Ed6lOongzYfRfw)),loc(CoffeeM,event(fill_mug))]),int(-1),b(equal(b(identifier(x),integer,[droppedby([fill_mug]),loc(CoffeeM,event(fill_mug))]),b(integer(-1),integer,[])),pred,[nodeid(rodinpos(x,_at-EQ5u2Ed6lOongzYfRfw))])),simulation_error([event(fill_mug,CoffeeM,b(member(b(identifier(x),integer,[loc(CoffeeM,event(fill_mug))]),b(integer_set(NATURAL1),set(integer),[])),pred,[nodeid(rodinpos(gx,_Gg1SApu1Ed6lOongzYfRfw))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "918d080b23ac0b798093e397a7b7db72e39796c9",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 58,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

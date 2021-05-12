@@ -10,6 +10,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Convergence/convergent_var_error.eventb"],
+ :sha512
+ "d53002b9f7b0a0ac26aae2b04d6945c370365c8ff8e35af06bf4fd16904d4ac8ebfc6a37c22b8c5a30fb2e454c95a9f12c133d94ade80d4b1611ed6b978f4a8a",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:decr:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161554864,
+   :result
+   "state_error(eventerror(decr,invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0)),[event(decr,convergent_var_error),true_guard([],[],b(greater_equal(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,_sJ4I0M6rEd6HFvT36_JXsw))])),variant_checked_pre(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0)),action([b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])],[b(minus(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(1),integer,[])),integer,[])],[int(0)]),invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d30462964048092b8a1dbc0d734d819d55b953d5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 58,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:decr:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161457040,
+   :result
+   "state_error(eventerror(decr,invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0)),[event(decr,convergent_var_error),true_guard([],[],b(greater_equal(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,_sJ4I0M6rEd6HFvT36_JXsw))])),variant_checked_pre(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0)),action([b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])],[b(minus(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(1),integer,[])),integer,[])],[int(0)]),invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d30462964048092b8a1dbc0d734d819d55b953d5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 54,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:decr:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161465328,
+   :result
+   "state_error(eventerror(decr,invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0)),[event(decr,convergent_var_error),true_guard([],[],b(greater_equal(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,_sJ4I0M6rEd6HFvT36_JXsw))])),variant_checked_pre(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0)),action([b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])],[b(minus(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(1),integer,[])),integer,[])],[int(0)]),invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d30462964048092b8a1dbc0d734d819d55b953d5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 56,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:decr:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161559600,
+   :result
+   "state_error(eventerror(decr,invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0)),[event(decr,convergent_var_error),true_guard([],[],b(greater_equal(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,_sJ4I0M6rEd6HFvT36_JXsw))])),variant_checked_pre(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0)),action([b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])],[b(minus(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(1),integer,[])),integer,[])],[int(0)]),invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d30462964048092b8a1dbc0d734d819d55b953d5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 59,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:decr:invalid_variant"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161460784,
+   :result
+   "state_error(eventerror(decr,invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0)),[event(decr,convergent_var_error),true_guard([],[],b(greater_equal(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,_sJ4I0M6rEd6HFvT36_JXsw))])),variant_checked_pre(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0)),action([b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])],[b(minus(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)]),b(integer(1),integer,[])),integer,[])],[int(0)]),invalid_variant(convergent,b(b(identifier(n),integer,[loc(convergent_var_error,variables),section(convergent_var_error),level(0)])div b(integer(2),integer,[]),integer,[]),int(0),int(0))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d30462964048092b8a1dbc0d734d819d55b953d5",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 54,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

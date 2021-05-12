@@ -9,6 +9,8 @@
  :number-of-states 222,
  :included-machines
  ["./prob-examples/B/ABCD/Broker/TransactionsSimple.mch"],
+ :sha512
+ "30cd92fb228160b50fc091570a098740fb37181c04d915e82ffdb6a0baba16c38c5e9c0ed8641c41df3f309ad2e10df336b0f3536ea183cb5efc1c0de5113dec",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time 360,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3711,
+   :transitions 15606,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5524,
+   :memory-usage 176773520,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,SERVICE_PROVIDER),[]),span_context(span_predicate(b(function(b(identifier(msg_T2SP),set(couple(global(SERVICE_PROVIDER),global(REQUEST))),[nodeid(pos(346,1,133,38,133,46)),loc(local,TransactionsSimple,abstract_variables)]),b(identifier(ss),global(SERVICE_PROVIDER),[nodeid(pos(347,1,133,47,133,49)),readonly,introduced_by(operation)])),global(REQUEST),[contains_wd_condition,nodeid(pos(345,1,133,38,133,50))]),[bind(ss,fd(1,SERVICE_PROVIDER))],[bind(user,fd(1,USER)),bind(state,fd(6,STATE)),bind(offers,avl_set(node(fd(2,SERVICE_PROVIDER),true,0,empty,empty))),bind(commited_offer,avl_set(node(fd(2,SERVICE_PROVIDER),true,0,empty,empty))),bind(msg_T2SP,avl_set(node((fd(2,SERVICE_PROVIDER),fd(2,REQUEST)),true,0,empty,empty))),bind(msg_SP2T,[]),bind(stateSP,avl_set(node((fd(2,SERVICE_PROVIDER),fd(3,STATE_SP)),true,0,node((fd(1,SERVICE_PROVIDER),fd(1,STATE_SP)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(2,STATE_SP)),true,0,empty,empty)))),bind(service,avl_set(node((fd(2,SERVICE_PROVIDER),fd(2,STATUS)),true,0,node((fd(1,SERVICE_PROVIDER),fd(1,STATUS)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(1,STATUS)),true,0,empty,empty))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3bfe2e827e528b4b7cffaed82ec807c10129b15e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 6044,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1439,
+   :transitions 6946,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 168425648,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3bfe2e827e528b4b7cffaed82ec807c10129b15e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 1905,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3998,
+   :transitions 16566,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 174614528,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,SERVICE_PROVIDER),[]),span_context(span_predicate(b(function(b(identifier(msg_T2SP),set(couple(global(SERVICE_PROVIDER),global(REQUEST))),[nodeid(pos(346,1,133,38,133,46)),loc(local,TransactionsSimple,abstract_variables)]),b(identifier(ss),global(SERVICE_PROVIDER),[nodeid(pos(347,1,133,47,133,49)),readonly,introduced_by(operation)])),global(REQUEST),[contains_wd_condition,nodeid(pos(345,1,133,38,133,50))]),[bind(ss,fd(3,SERVICE_PROVIDER))],[bind(user,fd(1,USER)),bind(state,fd(6,STATE)),bind(offers,avl_set(node(fd(1,SERVICE_PROVIDER),true,0,empty,empty))),bind(commited_offer,avl_set(node(fd(1,SERVICE_PROVIDER),true,0,empty,empty))),bind(msg_T2SP,avl_set(node((fd(1,SERVICE_PROVIDER),fd(2,REQUEST)),true,0,empty,empty))),bind(msg_SP2T,[]),bind(stateSP,avl_set(node((fd(2,SERVICE_PROVIDER),fd(2,STATE_SP)),true,0,node((fd(1,SERVICE_PROVIDER),fd(3,STATE_SP)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(1,STATE_SP)),true,0,empty,empty)))),bind(service,avl_set(node((fd(2,SERVICE_PROVIDER),fd(1,STATUS)),true,0,node((fd(1,SERVICE_PROVIDER),fd(2,STATUS)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(1,STATUS)),true,0,empty,empty))))]),operation(recv_request,3998))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3bfe2e827e528b4b7cffaed82ec807c10129b15e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 4421,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1402,
+   :transitions 5236,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2269,
+   :memory-usage 168868208,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3bfe2e827e528b4b7cffaed82ec807c10129b15e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 2258,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3998,
+   :transitions 16566,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 174503664,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,SERVICE_PROVIDER),[]),span_context(span_predicate(b(function(b(identifier(msg_T2SP),set(couple(global(SERVICE_PROVIDER),global(REQUEST))),[nodeid(pos(346,1,133,38,133,46)),loc(local,TransactionsSimple,abstract_variables)]),b(identifier(ss),global(SERVICE_PROVIDER),[nodeid(pos(347,1,133,47,133,49)),readonly,introduced_by(operation)])),global(REQUEST),[contains_wd_condition,nodeid(pos(345,1,133,38,133,50))]),[bind(ss,fd(3,SERVICE_PROVIDER))],[bind(user,fd(1,USER)),bind(state,fd(6,STATE)),bind(offers,avl_set(node(fd(1,SERVICE_PROVIDER),true,0,empty,empty))),bind(commited_offer,avl_set(node(fd(1,SERVICE_PROVIDER),true,0,empty,empty))),bind(msg_T2SP,avl_set(node((fd(1,SERVICE_PROVIDER),fd(2,REQUEST)),true,0,empty,empty))),bind(msg_SP2T,[]),bind(stateSP,avl_set(node((fd(2,SERVICE_PROVIDER),fd(2,STATE_SP)),true,0,node((fd(1,SERVICE_PROVIDER),fd(3,STATE_SP)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(1,STATE_SP)),true,0,empty,empty)))),bind(service,avl_set(node((fd(2,SERVICE_PROVIDER),fd(1,STATUS)),true,0,node((fd(1,SERVICE_PROVIDER),fd(2,STATUS)),true,0,empty,empty),node((fd(3,SERVICE_PROVIDER),fd(1,STATUS)),true,0,empty,empty))))]),operation(recv_request,3998))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3bfe2e827e528b4b7cffaed82ec807c10129b15e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 4820,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

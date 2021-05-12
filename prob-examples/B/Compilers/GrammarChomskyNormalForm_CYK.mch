@@ -20,7 +20,7 @@ PROPERTIES
 target : seq(Alphabet) & n = size(target) & target = [b,a,a,b,a]
 VARIABLES T, i,j
 INVARIANT T : ((1..n)*(0..n)) +-> POW(NonTerminals) & j:1..n & i:1..n-1
-INITIALISATION 
+INITIALISATION
   T := %(i,j).(i:1..n & j=0 | {A| A:NonTerminals & [A] |-> [target(i)] : Productions}) ||
   j := 1 || i := 1
 OPERATIONS
@@ -37,4 +37,3 @@ OPERATIONS
   END;
   r <-- Accept = PRE j=n THEN r := bool(S: T(1,n-1)) END
 END
-

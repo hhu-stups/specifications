@@ -1,16 +1,16 @@
 MACHINE Lift_inf
 
-ABSTRACT_VARIABLES  floor
+ABSTRACT_VARIABLES  curfloor
 
-INVARIANT  floor : 0..99 
+INVARIANT  curfloor : 0..99
 
-INITIALISATION floor := 4
+INITIALISATION curfloor := 4
 
 OPERATIONS
 
-	inc = PRE floor<99 THEN floor := floor + 1 END ;
-	
-	dec = PRE floor /= 1 THEN floor := floor - 1 END 
-	
+	inc = PRE curfloor<99 THEN curfloor := curfloor + 1 END ;
+
+	dec = PRE curfloor /= 1 THEN curfloor := curfloor - 1 END
+
 END
 

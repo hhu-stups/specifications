@@ -1,0 +1,59 @@
+REFINEMENT
+   SingleFlowR1
+
+REFINES SingleFlowSpec
+/* In this refinement we add:
+   -  a route between source and dest given by Route
+   -  every device has a local_queue
+   -  packets are no longer consumed directly, they are transmitted from source to destination
+      via the route given by Routes
+*/
+DEFINITIONS scope_RPACKETS==1..3;
+   packets(d) ==  local_queue[{d}];
+   packetnrs(d) == dom(packets(d))
+CONSTANTS next,after  /* next gives the next element in the route */
+PROPERTIES
+   next: DEVICES >+> DEVICES &  next /\ id(DEVICES) = {} &
+   source:dom(next) & source /: ran(next) &
+   dest:ran(next) & dest /: dom(next) &
+   after: DEVICES <-> DEVICES &
+   after = closure1(next) &
+   source |-> dest:after
+VARIABLES local_queue, sent
+INVARIANT
+  local_queue: (DEVICES <-> (NATURAL1 * RPACKETS)) &
+
+ /* the one queue between source and destination is now split up into multiple queues along the Route between
+    source and destination */
+  messages = local_queue[ {dest}\/after[{dest}] ]
+ &
+  /* there is still something missing that the minimum is contained in the
+     last set of the route */
+  !(d1,d2).(d1:DEVICES & d2:DEVICES & d1|->d2:after & packets(d1)/={} & packets(d2)/={}
+             => max(packetnrs(d2)) < min(packetnrs(d1)))
+INITIALISATION
+  local_queue :=  {} || sent := 0
+OPERATIONS
+  generate_packet(p) = PRE p:RPACKETS & sent<nrpackets
+     THEN
+      local_queue :=  local_queue \/ {source |-> (sent+1 |-> p)} ||
+      sent := sent + 1
+    END;
+     transmit_packet(p,nr,from,to) =
+      PRE p:RPACKETS & from:DEVICES & to:DEVICES & from /= to & nr:NATURAL1 & p:RPACKETS THEN
+       SELECT from:dom(next) & to = next(from) & from |-> (nr |-> p) : local_queue &
+              packetnrs(from) /= {} & /* not really required; but avoids min applied to empty msgs in ProB */
+              nr = min(packetnrs(from)) THEN
+          local_queue := local_queue - {from |-> (nr|->p)} \/ {to |-> (nr|->p)} 
+       END
+    END;
+  r <-- consume_packet =
+      SELECT packets(dest) /= {} THEN
+        ANY nr,p WHERE nr:NATURAL1 & p:RPACKETS & dest|->(nr|->p):local_queue &
+                       packetnrs(dest)/= {} & /* not really required; see above */
+                       nr = min(packetnrs(dest)) THEN
+         r:=  p ||
+         local_queue :=  local_queue - {dest|->(nr|->p)}
+        END
+      END
+END

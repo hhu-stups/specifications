@@ -1,0 +1,27 @@
+{:sha256
+ "cb67a43bd6ebd71ab6d5f9f9995c29677657495648b20b3eb10912d444028dc1",
+ :sha512
+ "c07a62b01df1eb2289d0726fe1b73110df7d9b233c29197d7ea558a311c91fd28c3de7a26232808659c0d505bf5369c1f43f54baad4e6539c8c6e0ef423eefd8",
+ :file
+ "./prob-examples/B/ExternalFunctions/TestLibraryRandomAverage.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

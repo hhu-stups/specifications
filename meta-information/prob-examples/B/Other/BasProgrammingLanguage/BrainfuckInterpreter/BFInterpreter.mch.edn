@@ -1,0 +1,53 @@
+{:properties 2,
+ :definitions 13,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/Other/BasProgrammingLanguage/BrainfuckInterpreter/BFInterpreter.mch",
+ :enumerated_sets 1,
+ :variables 7,
+ :sha512
+ "f79293578f2e5aeb501114001128eaa535ba720932a4f89eb139813c72a9559585ca2560d620dc767c4c5fe2985f910c5fc60ad8480dfd13178ee166ba62b002",
+ :static_assertions 0,
+ :operations 8,
+ :sha256
+ "67293954fac381913c64b39cb173dbe146826f14024ed04747cfed7d3287be63",
+ :invariants 4,
+ :runs
+ [{:errors ("deadlock" "external_functions"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 120,
+   :memory-usage 162950992,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "0292f5ce9431d3e234ff658e40dd0ccc4313b8d2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 30,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 2}

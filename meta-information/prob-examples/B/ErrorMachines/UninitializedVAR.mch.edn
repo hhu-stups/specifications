@@ -1,0 +1,133 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/ErrorMachines/UninitializedVAR.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :sha512
+ "5b0a7e857ab98fc78aa0c364347c393cdd42011e2e3f4ad4bfc4b52e5691302f5c82c2bc089b42322b028d4ad2ea69563ef920ed0bd341dd9ffb08735f782fb0",
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "8466f6447a3db5b589e55b77d99e75efb6fca5b86ed9ae5718faa01d990322e6",
+ :invariants 0,
+ :runs
+ [{:errors
+   ("general_error_occurred"
+    "reading_undefined_variable"
+    "membership_test_wf"
+    "check_element_of2"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162041248,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4bb66784b549d2cb98d0b3d458dffed3089053f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 133,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "reading_undefined_variable"
+    "membership_test_wf"
+    "check_element_of2"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162039280,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4bb66784b549d2cb98d0b3d458dffed3089053f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 139,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "reading_undefined_variable"
+    "membership_test_wf"
+    "check_element_of2"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 37,
+   :memory-usage 162226192,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4bb66784b549d2cb98d0b3d458dffed3089053f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 129,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "reading_undefined_variable"
+    "membership_test_wf"
+    "check_element_of2"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162030816,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4bb66784b549d2cb98d0b3d458dffed3089053f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 139,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "reading_undefined_variable"
+    "membership_test_wf"
+    "check_element_of2"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 37,
+   :memory-usage 162213808,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "4bb66784b549d2cb98d0b3d458dffed3089053f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 133,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}

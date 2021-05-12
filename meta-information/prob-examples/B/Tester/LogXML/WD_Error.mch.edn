@@ -1,0 +1,116 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Tester/LogXML/WD_Error.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :sha512
+ "0a2c3cce1cfe19d5bf55b0418411fed1e7acfc1db20fb87f3f1f9720a8f78465c6742bdbb71d9709e003a186401a6d483804f01beb226ce2d61ab2d2b19bb0e8",
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "7d57ba0a80a63bd7e60552769ff43fbf7d2900ec988bbe06df6331a9ba2a5515",
+ :invariants 1,
+ :runs
+ [{:errors ("deadlock"),
+   :states 100,
+   :transitions 101,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 162019936,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3c07e2cc976e2862f7a920cb368c387a8e7e0deb",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 119,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 100,
+   :transitions 101,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 162047904,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,100/0,span_context([contains_wd_condition,nodeid(pos(22,1,6,24,6,35))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3c07e2cc976e2862f7a920cb368c387a8e7e0deb",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 127,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 100,
+   :transitions 101,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161937696,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,100/0,span_context([contains_wd_condition,nodeid(pos(22,1,6,24,6,35))],operation(Inc,100))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3c07e2cc976e2862f7a920cb368c387a8e7e0deb",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 125,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 100,
+   :transitions 101,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161906208,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,100/0,span_context([contains_wd_condition,nodeid(pos(22,1,6,24,6,35))],operation(Inc,100))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "3c07e2cc976e2862f7a920cb368c387a8e7e0deb",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 110,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 100,
+   :transitions 101,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161913472,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "3c07e2cc976e2862f7a920cb368c387a8e7e0deb",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 115,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}

@@ -9,6 +9,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/ErrorMachines/WhileLoopVariantError.mch"],
+ :sha512
+ "fbfedb6821fe99e8ecd0a6318c0f4e291e6864247fe398a13d08541b1fe06caad82ffc4c853bc9f4d6da3255edf96f2897c8049ee2d5e9cdbc2b269ce01c4539",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 170,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162156032,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 2, previous value = 1,span_context(span_predicate(b(identifier(xx),integer,[nodeid(pos(43,1,13,7,13,9)),loc(local,WhileLoopVariantError,abstract_variables)]),[bind(c,int(3))],[bind(xx,int(2))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "af79678e07b07b90e1401606f4e3c582425b09d3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 171,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 122,
+   :memory-usage 162466832,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 2, previous value = 1,span_context(span_predicate(b(identifier(xx),integer,[nodeid(pos(43,1,13,7,13,9)),loc(local,WhileLoopVariantError,abstract_variables)]),[bind(c,int(3))],[bind(xx,int(2))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "af79678e07b07b90e1401606f4e3c582425b09d3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 113,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162139040,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 2, previous value = 1,span_context(span_predicate(b(identifier(xx),integer,[nodeid(pos(43,1,13,7,13,9)),loc(local,WhileLoopVariantError,abstract_variables)]),[bind(c,int(3))],[bind(xx,int(2))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "af79678e07b07b90e1401606f4e3c582425b09d3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 170,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 134,
+   :memory-usage 162516528,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 2, previous value = 1,span_context(span_predicate(b(identifier(xx),integer,[nodeid(pos(43,1,13,7,13,9)),loc(local,WhileLoopVariantError,abstract_variables)]),[bind(c,int(3))],[bind(xx,int(2))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "af79678e07b07b90e1401606f4e3c582425b09d3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 117,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162128672,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not decreasing:,VARIANT = 2, previous value = 1,span_context(span_predicate(b(identifier(xx),integer,[nodeid(pos(43,1,13,7,13,9)),loc(local,WhileLoopVariantError,abstract_variables)]),[bind(c,int(3))],[bind(xx,int(2))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "af79678e07b07b90e1401606f4e3c582425b09d3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 166,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/Puzzles/Queens/QueensRooksBishops/QueensRooksBishopsKnights_Figures.mch"
   "./lib/LibraryIO.def"],
+ :sha512
+ "0250851c695080a13e5d126fb6ebc2fe30bc4406ad624080a3e46f241afe735eed05fdb60fe3b876788610828e773f9ae2ae4653b359bb2a6fdf2cb882b0e57e",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,7 +32,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 7,

@@ -1,0 +1,46 @@
+REFINEMENT
+   ProtocolRoute
+REFINES ProtocolSpec
+CONSTANTS
+   route
+PROPERTIES 
+   route: iseq1(Devices) &
+   first(route) = orig & last(route) = dest
+DEFINITIONS
+  AllMsgs == union(ran(Messages))
+VARIABLES sent_orig, received_dest, Messages, Buf
+INVARIANT  /* sent_orig:NATURAL & received_dest:NATURAL &
+   received_dest <= sent_orig & */
+   Messages: Devices --> POW(NATURAL*Devices) &
+   dom(Messages(orig)) = Ether &
+   !d3.(d3:Devices => dom(Messages(d3))<:Ether) &
+   Buf: Devices --> POW(NATURAL)
+ASSERTIONS
+    dom(AllMsgs) = Ether 
+INITIALISATION
+   sent_orig:= 0 || received_dest := 0 ||
+   Messages := %dd.(dd:Devices|{}) ||
+   Buf := %d2.(d2:Devices|{})
+OPERATIONS
+  add_packet(nr) = PRE nr = sent_orig+1 & nr <= msg_size THEN
+    Buf(orig) := Buf(orig) \/ {nr} ||
+    sent_orig := nr
+  END;
+  arrive_packet(nr) = SELECT nr|->dest : AllMsgs & nr = received_dest+1 THEN
+   /* a packet has arrived at the destination; send ack to predecessor */
+    received_dest := nr
+  END;
+  send_packet(nr,from,to,i) = PRE from:Devices & to:Devices & from/= to &
+     nr:NATURAL & i:NATURAL1 THEN
+    SELECT route(i) = from & nr:Buf(from) THEN
+     Messages(from) := Messages(from)\/ {nr|->to} ||
+     Buf(from) := Buf(from) - {nr}
+    END
+  END;
+  receive_packet(nr,from,to) = PRE to:Devices & nr: NATURAL & 
+      from: Devices & to: Devices THEN
+     SELECT nr|->to:Messages(from) & nr/: Buf(to) THEN
+         Buf(to) := Buf(to) \/ {nr}
+     END
+  END
+END

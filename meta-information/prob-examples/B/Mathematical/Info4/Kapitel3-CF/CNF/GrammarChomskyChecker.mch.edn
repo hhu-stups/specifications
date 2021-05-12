@@ -1,0 +1,68 @@
+{:properties 4,
+ :definitions 2,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/Mathematical/Info4/Kapitel3-CF/CNF/GrammarChomskyChecker.mch",
+ :enumerated_sets 1,
+ :variables 3,
+ :sha512
+ "77d7c14eba0b2b8f216846e7f9cb0afc076a5eccba8b3118df2851b750772663eed43d481e451984e2faa657fa8a4bb4c71fa3eec2d478b94e665399f8b92430",
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "c79b759074d354c6a7bb6e91d0f246345d1984c9e1e74dacff0d4e3497d2d396",
+ :invariants 2,
+ :runs
+ [{:errors ("deadlock"),
+   :states 14,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 946,
+   :memory-usage 163931664,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "56e79184922258efb114ddb37baf00fd61be0768",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 344,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 14,
+   :transitions 31,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163498496,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "56e79184922258efb114ddb37baf00fd61be0768",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 451,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 3}

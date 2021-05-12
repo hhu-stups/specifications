@@ -8,6 +8,8 @@
  :variables 5,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/EventB/CDIS/ABS_DISPLAY.mch"],
+ :sha512
+ "e1f844af6b71a939cb5c7fd2957fcd01e8887d95643bfaee79cd5f8b11adab8dcce775824cb4aa39f2c5dde45cbd58a5b5373302999b203d13f65c81dc1de3f7",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -27,7 +29,43 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:errors nil,
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 248482672,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "4f9ec49d1c1a155f300a64c81d3e10cd9d8ac91b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 8,

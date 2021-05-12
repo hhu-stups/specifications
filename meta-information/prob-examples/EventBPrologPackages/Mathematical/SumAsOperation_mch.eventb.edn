@@ -1,0 +1,27 @@
+{:sha256
+ "a7780f028a616ff7ace2e517ff499ab3f8291542ea26819c273e6ae4f3cfb775",
+ :sha512
+ "f81bd1532089f9328e602dd6b47dbf72cccc071d9e56d0d774cfbd9e67a253e66b02c631de66a1815bb7757bcf5e53f58179a6e3f25bd767ba90a94d515fefb5",
+ :file
+ "./prob-examples/EventBPrologPackages/Mathematical/SumAsOperation_mch.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

@@ -9,6 +9,8 @@
  :number-of-states 2,
  :included-machines
  ["./prob-examples/B/Tickets/Butler1/M2_mch.eventb"],
+ :sha512
+ "2e729c00194de5b5ac92f04490c3540880410733d6b691d874539d4acc448e1f90e964b0ed3ad6a680481d1756b211335289cdb5d5399064f735ddf3e1dfa1db",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 36,
+   :transitions 162,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163021328,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(Room),[nodeid(rodinpos([],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(Token),[nodeid(rodinpos([],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(User),[nodeid(rodinpos([],internal_var1)),loc(M2,event(Enter))])],[fd(1,Room),fd(1,Token),fd(1,User)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(set_subtraction(b(identifier(User),set(global(User)),[section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])),set(global(User)),[])),set(global(User)),[])),pred,[nodeid(rodinpos(grd1,internal_grd1))]),b(member(b(identifier(t),global(Token),[loc(M2,event(Enter))]),b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(Room),[loc(M2,event(Enter))]),b(function(b(identifier(rtok),set(couple(global(Token),global(Room))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(Room),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(function(b(identifier(utok),set(couple(global(Token),global(User))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(User),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(identifier(r),global(Room),[loc(M2,event(Enter))])),couple(global(User),global(Room)),[])]),set(couple(global(User),global(Room))),[])),set(couple(global(User),global(Room))),[add_element_to_set])],[avl_set(node((fd(1,User),fd(1,Room)),true,0,empty,empty))]),action([b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(Token),[loc(M2,event(Enter))])]),set(global(Token)),[])),set(global(Token)),[])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "63e248ff23d89341932ce6f09fcfd7d557372580",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 179,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 36,
+   :transitions 162,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2654,
+   :memory-usage 163778944,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(Room),[nodeid(rodinpos([],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(Token),[nodeid(rodinpos([],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(User),[nodeid(rodinpos([],internal_var1)),loc(M2,event(Enter))])],[fd(1,Room),fd(1,Token),fd(1,User)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(set_subtraction(b(identifier(User),set(global(User)),[section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])),set(global(User)),[])),set(global(User)),[])),pred,[nodeid(rodinpos(grd1,internal_grd1))]),b(member(b(identifier(t),global(Token),[loc(M2,event(Enter))]),b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(Room),[loc(M2,event(Enter))]),b(function(b(identifier(rtok),set(couple(global(Token),global(Room))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(Room),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(function(b(identifier(utok),set(couple(global(Token),global(User))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(User),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(identifier(r),global(Room),[loc(M2,event(Enter))])),couple(global(User),global(Room)),[])]),set(couple(global(User),global(Room))),[])),set(couple(global(User),global(Room))),[add_element_to_set])],[avl_set(node((fd(1,User),fd(1,Room)),true,0,empty,empty))]),action([b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(Token),[loc(M2,event(Enter))])]),set(global(Token)),[])),set(global(Token)),[])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "63e248ff23d89341932ce6f09fcfd7d557372580",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 114,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 36,
+   :transitions 162,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163341008,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "63e248ff23d89341932ce6f09fcfd7d557372580",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 189,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 36,
+   :transitions 162,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2557,
+   :memory-usage 163770944,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "63e248ff23d89341932ce6f09fcfd7d557372580",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 110,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 36,
+   :transitions 162,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163018608,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(Room),[nodeid(rodinpos([],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(Token),[nodeid(rodinpos([],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(User),[nodeid(rodinpos([],internal_var1)),loc(M2,event(Enter))])],[fd(1,Room),fd(1,Token),fd(1,User)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(set_subtraction(b(identifier(User),set(global(User)),[section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])),set(global(User)),[])),set(global(User)),[])),pred,[nodeid(rodinpos(grd1,internal_grd1))]),b(member(b(identifier(t),global(Token),[loc(M2,event(Enter))]),b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(Room),[loc(M2,event(Enter))]),b(function(b(identifier(rtok),set(couple(global(Token),global(Room))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(Room),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(function(b(identifier(utok),set(couple(global(Token),global(User))),[loc(C2,constants),section(C2)]),b(identifier(t),global(Token),[loc(M2,event(Enter))])),global(User),[contains_wd_condition])),pred,[contains_wd_condition,nodeid(rodinpos(grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(User),global(Room))),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(User),[loc(M2,event(Enter))]),b(identifier(r),global(Room),[loc(M2,event(Enter))])),couple(global(User),global(Room)),[])]),set(couple(global(User),global(Room))),[])),set(couple(global(User),global(Room))),[add_element_to_set])],[avl_set(node((fd(1,User),fd(1,Room)),true,0,empty,empty))]),action([b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(validToks),set(global(Token)),[loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(Token),[loc(M2,event(Enter))])]),set(global(Token)),[])),set(global(Token)),[])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(Room),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(r),global(Room),[loc(M1,event(Enter))])]),set(global(Room)),[])),set(global(Activity)),[]),b(image(b(identifier(authorised),set(couple(global(User),global(Activity))),[loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(User),[loc(M1,event(Enter))])]),set(global(User)),[])),set(global(Activity)),[])),pred,[nodeid(rodinpos(grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "63e248ff23d89341932ce6f09fcfd7d557372580",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 178,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

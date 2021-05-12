@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/PerformanceTests/ModelChecking/BooleanFunctions2Runner2.mch"
   "./prob-examples/B/PerformanceTests/ModelChecking/BooleanFunctions2.mch"],
+ :sha512
+ "f6a649ca6e95b6f493671e1dac584fdb3e275e8b1a9db97ad456633efcba16e24b5e1dca93570c957dec2fd91709ea9b7e5a2af3c3321e3eee4a72ed45d0b2b3",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,7 +32,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 1,

@@ -1,0 +1,27 @@
+{:sha256
+ "1920a1ddfde71bc58d5886a2490f45a699d0ed9e7d38a4591f330e1d26779e00",
+ :sha512
+ "d1809923a68111b28a6038a14333e55dd303d0c666e053d64456257230008d340cc90802204a8cc6ba3d0e55b2ef50c940abea5b5278293f31423e01cd2d141b",
+ :file
+ "./prob-examples/EventBPrologPackages/Tests/WD/TestWD_Prover_PO_axm9.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

@@ -1,0 +1,8 @@
+MACHINE WrongNameM0 // wrong should be WrongNameM1
+VARIABLES xx
+INVARIANT xx:NATURAL
+INITIALISATION xx:=1
+OPERATIONS
+  DecXX = SELECT xx>0 THEN xx:= xx-1 END
+END
+

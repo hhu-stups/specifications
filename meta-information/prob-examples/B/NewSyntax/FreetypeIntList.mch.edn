@@ -1,35 +1,53 @@
 {:properties 3,
  :definitions 0,
  :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
  :file "./prob-examples/B/NewSyntax/FreetypeIntList.mch",
  :enumerated_sets 0,
  :variables 1,
- :number-of-states :unknown,
- :included-machines
- ["./prob-examples/B/NewSyntax/FreetypeIntList.mch"],
- :comment "",
- :files 1,
+ :sha512
+ "839e0912726191c3f770dc329f45aa246f64b40bf20b96809083ad49e33cf723ab80d62db94375f42f78ae0e77fa3464e7224b28c7c1ba1b46ceef9302e993aa",
+ :comment "SHA changed",
  :static_assertions 0,
  :operations 2,
  :sha256
- "8cfbb8e238434e056d01b8e1a39fc240e18c6c8018d650df288584fd0a45a9e8",
+ "63cc6eb43c6d3ffeed9466a9002202a6f4391200e52e3f036a350fc22c6009d0",
  :invariants 1,
  :runs
- [{:tool :prob,
+ [{:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 2,
+   :transitions 13,
+   :tool :prob,
    :hardware
    {:name :hilbert-ivybridge,
     :memory "2 GB",
     :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
+   :static-analysis-time 1,
+   :memory-usage 162741072,
+   :result "general_error_occurred",
    :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :machine-hash "759212bd01c14c3cfc5c45e66d4075e82f8a5a00",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 151,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
- :invariant-violated false,
- :constants 3,
- :formalism :b}
+ :constants 3}

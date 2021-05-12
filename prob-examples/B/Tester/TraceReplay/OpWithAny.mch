@@ -1,0 +1,15 @@
+MACHINE OpWithAny
+DEFINITIONS SHOW_EVENTB_VALUES == TRUE
+VARIABLES xx
+INVARIANT
+ xx:NATURAL & xx<4
+INITIALISATION xx:=0
+OPERATIONS
+  incr = ANY yy WHERE yy:NATURAL & yy<3 THEN
+    xx := xx+yy
+  END;
+  incr2(yy) = SELECT yy:NATURAL & yy<3 THEN
+    xx := xx+yy
+  END
+END
+

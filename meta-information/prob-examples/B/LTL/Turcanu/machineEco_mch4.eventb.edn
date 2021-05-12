@@ -1,35 +1,27 @@
-{:properties 1,
- :definitions 0,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "0ae1dba2b2fcf48b1ba48af06026cd526066e7d868c6676742510cb7b2075ec4",
+ :sha512
+ "c9d43c0d288ce210ecbe8f272ee7207b4db508e1ae2ea7315f971e176caefb0df30bb0f2c7533d18c84a2cdb701c19f10e4868a93497e6c80337a58241bb1199",
  :file "./prob-examples/B/LTL/Turcanu/machineEco_mch4.eventb",
- :enumerated_sets 2,
- :variables 60,
- :number-of-states :unknown,
- :included-machines
- ["./prob-examples/B/LTL/Turcanu/machineEco_mch4.eventb"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 19,
- :sha256
- "bf9b6bea0292a95da5cc221a73921424b2960fcccf08ea6836d5915ed87d752a",
- :invariants 56,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 1,
- :formalism :eventb}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

@@ -1,0 +1,27 @@
+{:sha256
+ "0ee203bb90ae6b98669a4965f9523045e9099dfb63967e9d464c6064f065e979",
+ :sha512
+ "151cafbfc16c520d50fbf3d4c6066c01c20b30a54092d7a22053c70ae33ba5ea781de68ad1519c4151aea7e616e6f0110419a28d2814dc45d5cdec231f6c330e",
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/ExtCounter.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

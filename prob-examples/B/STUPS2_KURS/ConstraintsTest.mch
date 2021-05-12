@@ -1,8 +1,8 @@
-MACHINE Untitled
+MACHINE ConstraintsTest
 SETS
  ID={aa,bb}
 CONSTRAINTS
-  card(ID)=3
+  card(ID)=3 // access to ID not allowed
 CONSTANTS iv
 PROPERTIES
  iv:ID

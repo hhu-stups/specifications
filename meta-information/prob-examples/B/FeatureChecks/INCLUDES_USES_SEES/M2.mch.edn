@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/FeatureChecks/INCLUDES_USES_SEES/M2.mch"
   "./prob-examples/B/FeatureChecks/INCLUDES_USES_SEES/M10.mch"],
+ :sha512
+ "9e151135b756f284670790b8c9f56928dbe8dc8741e64491f96addd8af033884fecaa50ba30a810477602b0c012b6b90f49066634eb40a6ade57f85bd0c1872e",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 9,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162054064,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,x < 9,span_context(span_predicate(b(less(b(identifier(x),integer,[nodeid(pos(68,2,7,12,7,13)),loc(local,M10,abstract_variables)]),b(integer(9),integer,[nodeid(pos(69,2,7,14,7,15))])),pred,[nodeid(pos(67,2,7,12,7,15))]),[],[bind(y,int(10)),bind(x,int(9))]),operation(incboth_err,9))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e1361c17d34ab36ace573dd19da41fcc40a0da76",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 137,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 9,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 93,
+   :memory-usage 162423696,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,x < 9,span_context(span_predicate(b(less(b(identifier(x),integer,[nodeid(pos(68,2,7,12,7,13)),loc(local,M10,abstract_variables)]),b(integer(9),integer,[nodeid(pos(69,2,7,14,7,15))])),pred,[nodeid(pos(67,2,7,12,7,15))]),[],[bind(y,int(10)),bind(x,int(9))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e1361c17d34ab36ace573dd19da41fcc40a0da76",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 111,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 9,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162001040,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "e1361c17d34ab36ace573dd19da41fcc40a0da76",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 120,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 9,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 87,
+   :memory-usage 162363328,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "e1361c17d34ab36ace573dd19da41fcc40a0da76",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 99,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 9,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161992736,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,x < 9,span_context(span_predicate(b(less(b(identifier(x),integer,[nodeid(pos(68,2,7,12,7,13)),loc(local,M10,abstract_variables)]),b(integer(9),integer,[nodeid(pos(69,2,7,14,7,15))])),pred,[nodeid(pos(67,2,7,12,7,15))]),[],[bind(y,int(10)),bind(x,int(9))]),operation(incboth_err,9))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e1361c17d34ab36ace573dd19da41fcc40a0da76",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 116,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

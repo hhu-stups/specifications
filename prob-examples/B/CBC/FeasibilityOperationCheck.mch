@@ -15,7 +15,7 @@ OPERATIONS
    x_gt_mx = PRE xx>mx THEN skip END;
    x_gt_mxn = PRE xx>mxn THEN skip END;
    x_lt_0 = PRE xx<0 THEN skip END;
-   impossible1(vv,ww) = PRE vv<ww & ww<vv THEN skip END;
+   impossible1(vv,ww) = PRE vv:INTEGER & vv<ww & ww<vv THEN skip END;
    y_gt_x_geq_mx = PRE yy>xx & xx>= mx THEN skip END;
    x_gt_y_geq_mx = PRE xx>yy & yy>= mx THEN skip END;
    complicated1 = PRE (xx+yy+2) mod (2**mx+1) = mxn THEN skip END;

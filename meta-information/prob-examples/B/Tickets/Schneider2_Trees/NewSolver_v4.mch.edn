@@ -11,6 +11,8 @@
  ["./prob-examples/B/Tickets/Schneider2_Trees/NewSolver_v4.mch"
   "./prob-examples/B/Tickets/Schneider2_Trees/LibraryIO.def"
   "./prob-examples/B/Tickets/Schneider2_Trees/data.mch"],
+ :sha512
+ "98bf1a935098a1a958897f4b176015f3f4b0e846afcdbf33bfd97f4972ad71384ede4eadc37e402ff4b321d43770e3670e39c118c5700799569a65047f75f7f2",
  :comment "",
  :files 3,
  :static_assertions 0,
@@ -30,7 +32,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 8,

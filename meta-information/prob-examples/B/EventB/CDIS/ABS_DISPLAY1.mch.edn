@@ -8,6 +8,8 @@
  :variables 6,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/EventB/CDIS/ABS_DISPLAY1.mch"],
+ :sha512
+ "b38be46592e9302165afa68613713a22d823ecf08b019cd7ba6179a9703dcec53717d09fbe510daa8af0c567fe3ed95fc88899e69fbb8ec018cf6542cb9e69aa",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 8,

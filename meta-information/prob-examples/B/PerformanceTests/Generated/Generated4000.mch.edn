@@ -1,0 +1,27 @@
+{:sha256
+ "5557b39623ad888e671c4191a9a436a2a11482f606150740720f9d342f54f261",
+ :sha512
+ "91412d9223ad4a509fd4edc4b1d2b8f8e2b1a2bf04b88d72d688b69f93d65a893797ae7c57c688c27e95c1a432f881e9d22b28e08d9ae385434b0a0df22bfbcd",
+ :file
+ "./prob-examples/B/PerformanceTests/Generated/Generated4000.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

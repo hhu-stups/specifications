@@ -28,14 +28,14 @@ MACHINE posix
 /* the x bit of permission for dirs denotes search permissions */
 /* non determinism beetween ENOENT and ENODIR (c.f. truncate,...)*/
 
-SETS 
+SETS
 	NAMES = {n_root, n_null, n_01, n_02, n_03, n_04};
 	MODE_FLAG = {r,w,rw};
 /*AccCtrl 	UID = {uid0,uid1,uid2};*/
 /*AccCtrl 	GID = {gid0,gid1,gid2};*/
 	BOOLEAN = {true,false};
 	IDS = {id0,id1,id2,id3,id4,id5,id6};
-	
+
 	SW = {ok,ko};
 	ERRNO = {
 		OK,
@@ -52,7 +52,7 @@ SETS
 		EBUSY,
 		EPERM
 		}
-		
+
 
 DEFINITIONS
 	/*MAX_IDS == 512;*/
@@ -72,9 +72,9 @@ CONSTANTS
 	ROOT_NAME,
 /*AccCtrl 	ROOT_UID,*/
 /*AccCtrl 	ROOT_GID,*/
-	
+
 	EMPTY_NAME
-	
+
 PROPERTIES
 	ROOT_ID : IDS
 &	ROOT_ID = id0 /*0*/
@@ -100,9 +100,9 @@ VARIABLES
 	ids2name,
 	ids2parent,
 	ids2parentClosure,
-	
+
 	current_dir,
-	
+
 	/***********************/
 	/* contenu des fichier */
 	/***********************/
@@ -129,12 +129,12 @@ VARIABLES
 /*AccCtrl 	file2grights,*/
 /*AccCtrl 	file2arights,*/
 /*AccCtrl 	current_user,*/
-	
+
 	/***********************/
 	/* gestion des erreurs */
 	/***********************/
 	errno,
-	
+
 	/*********************************/
 	/* variables utiles pour le test */
 	/*********************************/
@@ -142,7 +142,7 @@ VARIABLES
 	last_IN_path,
 	last_IN_pathRoot,
 	last_IN_name
-	
+
 INVARIANT
 	/*****************************/
 	/* arborescence des fichiers */
@@ -203,7 +203,7 @@ INVARIANT
 &	last_IN_path : IDS
 &	last_IN_pathRoot : IDS
 &	last_IN_name : NAMES
-	
+
 INITIALISATION
 	/*****************************/
 	/* arborescence des fichiers */
@@ -253,11 +253,11 @@ INITIALISATION
 ||	last_IN_pathRoot := ROOT_ID
 ||	last_IN_name := n_root
 OPERATIONS
-	null = 
+	null =
 	BEGIN
 		skip
 	END;
-	
+
 	/****************************************************************/
 	/* open 							*/
 	/* open a file or a directory 					*/
@@ -292,36 +292,36 @@ OPERATIONS
 	/* NOTES :							*/
 	/*	- On create a new file, group permission assignation is	*/
 	/*	implementation dependant (c.f. Set-GID bit)		*/
-	/*	- the result of O-trunc and RdONLY is undefined		*/ 
+	/*	- the result of O-trunc and RdONLY is undefined		*/
 	/*	- TODO take account of search permission		*/
 	/*	- TODO how the rights are set ?	(ok)			*/
 	/*	- TODO rights mofication if the file exist ? (no)	*/
-	/****************************************************************/		
+	/****************************************************************/
 	OUT_sw,
-	OUT_fd 
+	OUT_fd
 	/*AccCtrl  <-- open(IN_pathRoot, IN_path, IN_name, IN_mode, IN_o_creat, IN_o_excl, IN_o_trunc, IN_urights, IN_grights, IN_arights) =*/
 	<-- open(IN_pathRoot, IN_path, IN_name, IN_mode, IN_o_creat, IN_o_excl, IN_o_trunc) =
 	PRE
 		IN_pathRoot : IDS
 	&	IN_pathRoot : {current_dir, ROOT_ID}
-	
+
 	&	IN_path : IDS
 	&	IN_name : NAMES
-	
+
 	&	IN_mode : MODE_FLAG
-	
+
 	&	IN_o_creat : BOOLEAN
 	&	IN_o_excl : BOOLEAN
 	&	IN_o_trunc : BOOLEAN
-	
+
 	/*AccCtrl  &	IN_urights : RIGHTS*/
 	/*AccCtrl  &	IN_grights : RIGHTS*/
 	/*AccCtrl  &	IN_arights : RIGHTS*/
-	
+
 	/* restrictions */
 	/* we do not deal with multiple access over the same file */
 	/*&	(ids2name~[{IN_name}] /\ ids2parent~[{IN_path}]) /\ fd = {}*/
-	
+
 	THEN
 		last_IN_path := IN_path
 		|| last_IN_pathRoot := IN_pathRoot
@@ -456,7 +456,7 @@ OPERATIONS
 			/*AccCtrl  END*/
 		END
 	END;
-	
+
 	/****************************************************************/
 	/* creat							*/
 	/* equivalent to open(path, O_WRONLY | O_CREAT | O_TRUNC, mode)	*/
@@ -470,7 +470,7 @@ OPERATIONS
 	/*	IN_grights,						*/
 	/*	IN_arights						*/
 	/****************************************************************/
-	
+
 	/****************************************************************/
 	/* read								*/
 	/* read a file							*/
@@ -518,7 +518,7 @@ OPERATIONS
 			END
 		END
 	END;
-	
+
 	/****************************************************************/
 	/* write 							*/
 	/* write in an opened file 					*/
@@ -552,7 +552,7 @@ OPERATIONS
 	&	IN_modify : BOOLEAN
 	&	IN_append : BOOLEAN
 	&	IN_newSize : NAT
-	&	((IN_fd : fd & fd2ids(IN_fd) : existing_files) => IN_newSize >= file2size(fd2ids(IN_fd) |-> max(file2content[{fd2ids(IN_fd)}]))) 
+	&	((IN_fd : fd & fd2ids(IN_fd) : existing_files) => IN_newSize >= file2size(fd2ids(IN_fd) |-> max(file2content[{fd2ids(IN_fd)}])))
 	THEN
 		last_IN_fd := IN_fd
 		|| IF IN_fd /: fd or fd2mode(IN_fd) /: {r,rw} or fd2ids(IN_fd) /: existing_files THEN
@@ -589,7 +589,7 @@ OPERATIONS
 			END
 		END
 	END;
-	
+
 	/********************************************************/
 	/* close						*/
 	/* close an open file or directory			*/
@@ -625,7 +625,7 @@ OPERATIONS
 			|| OUT_sw := ok
 		END
 	END;
-	
+
 	/********************************************************/
 	/* ftruncate						*/
 	/* increase, decrease an opened file			*/
@@ -675,7 +675,7 @@ OPERATIONS
 			END
 		END
 	END;
-	
+
 	/********************************************************/
 	/* truncate						*/
 	/* increase, decrease a file				*/
@@ -707,7 +707,7 @@ OPERATIONS
 	&	IN_path : IDS
 	&	IN_name : NAMES
 	&	IN_newSize : NAT
-	
+
 	/* restrictions */
 	/* we don't deal with opened file */
 	&	(ids2name~[{IN_name}] /\ ids2parent~[{IN_path}]) /\ fd2ids[fd] = {}
@@ -772,7 +772,7 @@ OPERATIONS
 												|| file2size := file2size \/ {(LOC_id |-> max(file2content[{LOC_id}])+1) |-> IN_newSize}
 											END
 											|| errno := OK
-											|| OUT_sw := ok	
+											|| OUT_sw := ok
 										END
 									END
 								/*AccCtrl  END*/
@@ -783,7 +783,7 @@ OPERATIONS
 			END
 		END
 	END;
-	
+
 	/****************************************************************/
 	/* closedir							*/
 	/*								*/
@@ -815,7 +815,7 @@ OPERATIONS
                IN_dir:OPENED_FD
        THEN
        		last_IN_fd := IN_dir
-		|| IF( IN_dir  /: fd) THEN 
+		|| IF( IN_dir  /: fd) THEN
 			/*Dir is not a open directory*/
 			errno := EBADF
 			|| OUT_sw := ko
@@ -827,7 +827,7 @@ OPERATIONS
 			|| OUT_sw := ok
 		END
        END;
-       
+
 	/****************************************************************/
 	/* rename							*/
 	/* 								*/
@@ -863,7 +863,7 @@ OPERATIONS
 	/*	- mistake beetwen ENOTEMPTY and EEXIST			*/
 	/*								*/
 	/* TODO :							*/
-	/*	- si old et new sont des repertoire, alors les droits	*/ 
+	/*	- si old et new sont des repertoire, alors les droits	*/
 	/*	en ecriture doivent être acquis [FAIT]			*/
 	/*	- si old est un dir : new ne doit pas être un de 	*/
 	/*	ses fils 						*/
@@ -884,7 +884,7 @@ OPERATIONS
        &	IN_oldName : NAMES
        &	IN_newPath : IDS
        &	IN_newName : NAMES
-       
+
        /*restrictions */
        /* we don't deal with opened files */
        &	(ids2parent~[{IN_oldPath}] /\ ids2name~[{IN_oldName}]) /\ fd2ids[fd] = {}
@@ -899,7 +899,7 @@ OPERATIONS
 		|| IF ids2parent~[{IN_oldPath}] /\ ids2name~[{IN_oldName}] = {}
 			or IN_newPath /: existing_dirs /*TODO a verifier*/
 			or IN_oldName = EMPTY_NAME
-			or IN_newName = EMPTY_NAME 
+			or IN_newName = EMPTY_NAME
 		THEN
 			/* the old file does'nt exist */
 			/* or the old name points to an empty string */
@@ -958,7 +958,7 @@ OPERATIONS
 										/*AccCtrl  errno := EACCES*/
 										/*AccCtrl  || OUT_sw := ko*/
 									/*AccCtrl  ELSE*/
-										ANY LOC_oldId WHERE 
+										ANY LOC_oldId WHERE
 											LOC_oldId : ids2parent~[{IN_oldPath}] /\ ids2name~[{IN_oldName}]
 										THEN
 											IF LOC_oldId = current_dir THEN
@@ -973,7 +973,7 @@ OPERATIONS
 												ELSE
 													IF ids2parent~[{IN_newPath}] /\ ids2name~[{IN_newName}] /= {} THEN
 														/* the new file already exists */
-														ANY LOC_newId WHERE 
+														ANY LOC_newId WHERE
 															LOC_newId : ids2parent~[{IN_newPath}] /\ ids2name~[{IN_newName}]
 														THEN
 															IF LOC_newId = current_dir THEN
@@ -1015,10 +1015,10 @@ OPERATIONS
 																				errno := ENOTEMPTY
 																				||OUT_sw := ko
 																			ELSE
-																				IF LOC_oldId = current_dir 
-																					or LOC_oldId : fd2ids[fd] 
-																					or LOC_newId = current_dir 
-																					or LOC_newId : fd2ids[fd] 
+																				IF LOC_oldId = current_dir
+																					or LOC_oldId : fd2ids[fd]
+																					or LOC_newId = current_dir
+																					or LOC_newId : fd2ids[fd]
 																				THEN
 																					/*the current dir cannot be renamed*/
 																					/* and opened file cannot be rename*/
@@ -1072,7 +1072,7 @@ OPERATIONS
 			END
 		END
 	END;
-       
+
 	/****************************************************************/
 	/* stat								*/
 	/* 								*/
@@ -1112,7 +1112,7 @@ OPERATIONS
 			errno := ENOTDIR
 			|| OUT_sw := ko
 		ELSE
-			IF IN_name = n_null 
+			IF IN_name = n_null
 				or ((ids2parent~[{IN_path}]  /\ ids2name~[{IN_name}])  /\ existing_ids = {})
 			THEN
 				/* the file does'nt exist */
@@ -1134,10 +1134,10 @@ OPERATIONS
 						/*AccCtrl  || OUT_sw := ko*/
 					/*AccCtrl  ELSE*/
 						/* search permission ok*/
-						ANY LOC_fd WHERE 
+						ANY LOC_fd WHERE
 							LOC_fd : (ids2parent~[{IN_path}]  /\ ids2name~[{IN_name}])
 						THEN
-							OUT_sw := ok  
+							OUT_sw := ok
 							|| errno := OK
 							/*AccCtrl  || OUT_owner := file2user(LOC_fd)*/
 							/*AccCtrl  || OUT_group := file2group(LOC_fd)*/
@@ -1203,7 +1203,7 @@ OPERATIONS
 		   END
 		END
 	END;
-      
+
 	/****************************************************************/
 	/* mkdir							*/
 	/*								*/
@@ -1241,12 +1241,12 @@ OPERATIONS
 	/*AccCtrl  &	IN_arights : RIGHTS*/
 	/*AccCtrl  &	IN_grights : RIGHTS*/
 	/*AccCtrl  &	IN_urights : RIGHTS*/
-	
+
 	THEN
 		last_IN_path := IN_path
 		|| last_IN_pathRoot := IN_pathRoot
 		|| last_IN_name := IN_name
-		|| IF IN_name = EMPTY_NAME 
+		|| IF IN_name = EMPTY_NAME
 			or IN_path /: existing_ids
 		THEN
 			/* the path does'nt exist*/
@@ -1288,7 +1288,7 @@ OPERATIONS
 								/*AccCtrl  || OUT_sw := ko*/
 							/*AccCtrl  ELSE*/
 								/* un fichier qui n'existe pas */
-								ANY LOC_id WHERE 
+								ANY LOC_id WHERE
 									LOC_id : IDS & LOC_id /: existing_ids
 								THEN
 									OUT_sw := ok
@@ -1312,7 +1312,7 @@ OPERATIONS
 			END
 		END
 	END;
-      
+
 	/****************************************************************/
 	/* rmdir							*/
 	/*								*/
@@ -1359,12 +1359,12 @@ OPERATIONS
 			/* a component of path does'nt name an existing dir or point to an empty string */
 			errno := ENOENT
 			|| OUT_sw := ko
-		ELSE      
+		ELSE
 			IF (ids2parent~[{IN_path}]  /\ ids2name~[{IN_name}]) /\ existing_files /= {} THEN
 				/* a component of path is not a dir */
 				errno := ENOTDIR
 				|| OUT_sw := ko
-			ELSE	
+			ELSE
 				IF (ids2parent~[ids2parent~[{IN_path}] /\ ids2name~[{IN_name}]] /= {}  ) THEN
 					/* the dir is not empty */
 					errno := ENOTEMPTY
@@ -1373,11 +1373,11 @@ OPERATIONS
 					ANY LOC_id WHERE
 						LOC_id : ids2parent~[{IN_path}]  /\ ids2name~[{IN_name}]
 					THEN
-						IF LOC_id : fd2ids[fd] 
+						IF LOC_id : fd2ids[fd]
 							or LOC_id = current_dir
 						THEN
 							/* can't remove a working dir */
-							errno := EBUSY 
+							errno := EBUSY
 							|| OUT_sw := ko
 						ELSE
 							/*AccCtrl  LET LOC_dirs BE*/
@@ -1404,7 +1404,7 @@ OPERATIONS
 										/*AccCtrl  errno := EACCES*/
 										/*AccCtrl  || OUT_sw := ko*/
 									/*AccCtrl  ELSE*/
-										
+
 										OUT_sw := ok
 										|| errno := OK
 										|| existing_dirs := existing_dirs  - {LOC_id}
@@ -1498,7 +1498,7 @@ OPERATIONS
 			END
 		END
 	END;
-	
+
 	/****************************************************************/
 	/* unlink							*/
 	/* 								*/
@@ -1536,8 +1536,8 @@ OPERATIONS
 			errno := ENOTDIR
 			|| OUT_sw := ko
 		ELSE
-			IF ids2parent~[{IN_path}] /\ ids2name~[{IN_name}] = {} 
-				or IN_name = EMPTY_NAME 
+			IF ids2parent~[{IN_path}] /\ ids2name~[{IN_name}] = {}
+				or IN_name = EMPTY_NAME
 			THEN
 				/* a component of the path does not name an existing file or path is an empty string */
 				errno := ENOENT

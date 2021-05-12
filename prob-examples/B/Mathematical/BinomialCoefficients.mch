@@ -14,7 +14,7 @@ PROPERTIES
  !j.(j:1..k => binom(0,j) = 0) &
  !(i,j).(i:1..n & j:1..k => binom(i,j) = binom(i-1,j-1) + binom(i-1,j))
 OPERATIONS
-  res <-- GetBinom(ii,jj) = PRE ii:0..n & jj:0..n THEN res:= binom(ii,jj) END;
+  res <-- GetBinom(ii,jj) = PRE ii:0..n & jj:0..k THEN res:= binom(ii,jj) END;
   res <-- BinomNK = BEGIN res := binom(n,k) END
 END
 
@@ -27,10 +27,10 @@ public class SlowBinomial {
       if (n == 0) return 0;
       return binomial(n-1, k-1) + binomial(n-1, k);
    }
-   
+
    public static void main(String[] args) {
       int N = Integer.parseInt(args[0]);
-      int K = Integer.parseInt(args[1]);	
+      int K = Integer.parseInt(args[1]);
       Stopwatch s = new Stopwatch();
       StdOut.println(binomial(N, K));
       StdOut.println(s.elapsedTime() + " ms");

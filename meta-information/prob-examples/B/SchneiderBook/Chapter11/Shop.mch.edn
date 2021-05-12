@@ -11,6 +11,8 @@
  ["./prob-examples/B/SchneiderBook/Chapter11/Shop.mch"
   "./prob-examples/B/SchneiderBook/Chapter11/Price.mch"
   "./prob-examples/B/SchneiderBook/Chapter11/Goods.mch"],
+ :sha512
+ "ceaea800fdb748ba7122654e8456d5e7cf195c48bf771778290eaeffb56731b4b49912a9c6153cdbbafd33b9d0bcb033ad8567632eabab66e80534643b2dd257",
  :comment "",
  :files 3,
  :static_assertions 0,
@@ -30,7 +32,59 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 26,
+   :transitions 306,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 43,
+   :memory-usage 162759824,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4171bc0786161c051c8265f766b151b2dd0669a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 125,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 25,
+   :transitions 295,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162565872,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "a4171bc0786161c051c8265f766b151b2dd0669a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 110,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated true,
  :constants 0,

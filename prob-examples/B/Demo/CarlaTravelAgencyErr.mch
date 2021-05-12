@@ -57,13 +57,13 @@ INVARIANT
     dom(user_hotel_bookings)=dom(user_rental_bookings) &
 
     ran(session) <: dom(user_hotel_bookings)
-    
+
     &
 
-         
+
          ( sess1:dom(session) & session_card(sess1) /= valid =>
             session_response(sess1) = undef )
-    
+
 
 
 INITIALISATION
@@ -173,7 +173,7 @@ OPERATIONS
           END
         END;
 
-            
+
     response(sid)=
         PRE sid : SESSION
         THEN
@@ -224,7 +224,7 @@ OPERATIONS
 
           WHEN session_request(sid) = bc & user_rental_bookings(session(sid)) /= noCarRent
           THEN
-            IF (dom(global_car_bookings) /\ cars_rental~[{user_rental_bookings(session(sid))}]) 
+            IF (dom(global_car_bookings) /\ cars_rental~[{user_rental_bookings(session(sid))}])
               /= cars_rental~[{user_rental_bookings(session(sid))}]
             THEN
               ANY cc WHERE cc:CAR-dom(global_car_bookings) & cars_rental(cc) = user_rental_bookings(session(sid))
@@ -294,4 +294,3 @@ OPERATIONS
         END
 
 END
-

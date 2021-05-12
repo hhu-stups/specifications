@@ -1,0 +1,20 @@
+﻿/* SeqComp1
+ * Author: Michael Leuschel
+ * Creation date: 11/04/2020
+ */
+
+REFINEMENT SeqComp1
+REFINES SeqCompositionWD
+
+ABSTRACT_VARIABLES
+      xx
+
+INITIALISATION xx := 0
+
+OPERATIONS
+     Add3 = PRE xx < 100 THEN xx := xx + 1 ; xx := xx + 1 ; xx := xx + 1 END ;
+     Del3 = PRE xx > 2 THEN xx := xx - 1 ; xx := xx - 1 ;
+                              IF 10 / ( xx - 0 ) = 10 THEN xx := 0
+                              ELSE xx := xx - 1 END
+                 END
+ END

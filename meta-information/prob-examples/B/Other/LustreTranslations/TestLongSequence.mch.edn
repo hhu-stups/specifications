@@ -1,0 +1,27 @@
+{:sha256
+ "65cab5046aa5db24fb9825ecfe928e1c246b2e531fc399233013abf3e852efa1",
+ :sha512
+ "1ef3800cf46e4df5e35f28a29ad240b2ae795d61e8e5f9783a56013a328ac39841da3fdf176d12b2cd7fc04cab0688db9b25ccb10023e16813fa3b2192e71783",
+ :file
+ "./prob-examples/B/Other/LustreTranslations/TestLongSequence.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

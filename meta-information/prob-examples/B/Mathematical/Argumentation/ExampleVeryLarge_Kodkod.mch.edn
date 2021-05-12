@@ -10,6 +10,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/Mathematical/Argumentation/ExampleVeryLarge_Kodkod.mch"],
+ :sha512
+ "5f51895fe5b3eecebe1b9d33a9d80f6d319ba01dbfef210f80667c78dcaf56217c1ba4c3edabfb17052cb1e523f96292bd5c64e2f47c62ea2388332dab27d311",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,7 +31,42 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(kodkod_error,0,,,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage nil,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash nil,
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

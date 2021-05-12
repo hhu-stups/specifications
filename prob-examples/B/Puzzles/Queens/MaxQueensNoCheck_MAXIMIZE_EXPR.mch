@@ -2,7 +2,6 @@ MACHINE MaxQueensNoCheck_MAXIMIZE_EXPR
 /* A puzzle trying to place many queens on the board without attacking the black king */
 // this version uses a boolean matrix for the queens
 // here ProB tries to find the optimal solution using the new MAXIMIZE_EXPR external function
-// does not work yet
 DEFINITIONS
       BWOFFSET(x,y) == (x+y) mod 2;
       ANIMATION_FUNCTION_DEFAULT == ( {r,c,i|r:1..n & c:1..n & i=(r+c) mod 2 }  );
@@ -23,15 +22,13 @@ DEFINITIONS
   ycoord_black_king == n;
   SET_PREF_SMT_SUPPORTED_INTERPRETER == FALSE;
   SET_PREF_KODKOD == FALSE;
-  EXTERNAL_FUNCTION_MAXIMIZE(T) == POW(T) --> T;
-  MAXIMIZE(x)==1;
-  EXTERNAL_FUNCTION_MAXIMIZE_EXPR == INTEGER --> INTEGER;
-  MAXIMIZE_EXPR(x)==x;
+  EXTERNAL_PREDICATE_MAXIMIZE_EXPR == INTEGER;
+  MAXIMIZE_EXPR(x)==(1=1);
   SOLUTION(nqn,hasqn) == (
       hasqn : (1..n)*(1..n) --> BOOL & // Kodkod does not support this as a function
  !i.(i:1..n => hasqn((i,8))=FALSE & hasqn((8,i))=FALSE) &
  hasqn((1,1)) = FALSE &
- 
+
  !(i,j).(i:1..n & j:1..n
     =>
     ( hasqn((i,j))=TRUE
@@ -46,8 +43,8 @@ CONSTANTS n, nqueens, hasqueen
 PROPERTIES
    n=8 &
    SOLUTION(nqueens,hasqueen) &
-   nqueens = MAXIMIZE_EXPR(nqueens) &
-   nqueens: 0..64
+   MAXIMIZE_EXPR(nqueens) &
+   nqueens: 1..64
 ASSERTIONS
   nqueens = 42
 END

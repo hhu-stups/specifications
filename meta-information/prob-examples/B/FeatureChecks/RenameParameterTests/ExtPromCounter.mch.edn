@@ -1,0 +1,27 @@
+{:sha256
+ "ac3056e1c308fe68589d3fe0e7097a4bbb42da3ddf359d6acdee6c7013f08e59",
+ :sha512
+ "188cd263073cde0c9bea057067d742fa603ec248df599d1e177bc4b899d4302df9f95b2400828cb936ec4eb27bd1ea64f20376c8ecaae7fb5a40a60c8766b5f1",
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/ExtPromCounter.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

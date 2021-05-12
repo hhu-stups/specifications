@@ -1,0 +1,26 @@
+{:sha256
+ "58e4eaf1e1dd12f2e9331027176461415f8151b11472b6ae4b1e517b6b7d3223",
+ :sha512
+ "a631bf1066d1af884a7d5e779520a17d8a790595e33b97cb2b2ad58297fa85d1d02028025534fdfd64640a309abfdb5b74f4660b64fa732cdeb5895428266839",
+ :file "./prob-examples/B/IPD/EuropeColouring.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

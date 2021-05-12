@@ -1,0 +1,26 @@
+{:sha256
+ "b8555bde7f7806aa9bc6254ad97673e4d1bd31a152c821b1744c8b8cdf0a6034",
+ :sha512
+ "c478ccb03b0715739c160c7151938143239100a7a32e4b72301ecacedc48004abe5aa08a891486ef600649e0d86131867700b4e1db2e6ad5e9d63fc7ed86186c",
+ :file "./prob-examples/B/Mathematical/WolframGraphRewriting.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

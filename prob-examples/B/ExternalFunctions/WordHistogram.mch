@@ -3,7 +3,7 @@ MACHINE WordHistogram
 SEES LibraryStrings
 DEFINITIONS "LibraryIO.def"
 VARIABLES file, wcount, lines
-INVARIANT file : STRING & 
+INVARIANT file : STRING &
           wcount : STRING +-> NATURAL1 &
           lines : NATURAL
 INITIALISATION
@@ -18,6 +18,6 @@ OPERATIONS
        lines := lines+1
    END;
    done = SELECT EOF(file) THEN
-      PRINTF("Histogram:~n ~w~n",wcount)
+      PRINTF("Histogram:~n ~w~n",[wcount])
     END
 END

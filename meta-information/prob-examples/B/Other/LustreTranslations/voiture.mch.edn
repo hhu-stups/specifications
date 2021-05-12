@@ -1,0 +1,26 @@
+{:sha256
+ "f25785fe8c174c022683818ce596866c04d3e6d711969bb46ece5ae733045b86",
+ :sha512
+ "f1ef146274a2fc6b7f791e4de05bdb3c19790addba2c87c8d512a022a650b3ffd3dbb92c8de78564518c0ac707c4a96a934a6ec8d107ecd65e2370a21092f36a",
+ :file "./prob-examples/B/Other/LustreTranslations/voiture.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

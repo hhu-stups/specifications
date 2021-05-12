@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/PerformanceTests/CommonSubexpressions/WhileLoop_CSE_Test6.mch"
   "./prob-examples/B/PerformanceTests/CommonSubexpressions/Increment.mch"],
+ :sha512
+ "3dd39274e734157bb5ea782fd7cafccf95ceb933cef545931af74ded03f9d8aad054152e6df558c1008130388653760c39a08f7cdcd41016f43ac8a53517b1b0",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,7 +32,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

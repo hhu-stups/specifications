@@ -1,0 +1,68 @@
+{:properties 5,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Hybrid/FMI/waterTankCtrl.mch",
+ :enumerated_sets 2,
+ :variables 7,
+ :sha512
+ "c4ff9ca21899603a4787996e32ac1eec9d418a57b2c14fb28f2c11fa619960860e53a1163f950afcbbe601f0354dd82237ef68868ed6f2f26d4125ea2a6573e0",
+ :static_assertions 0,
+ :operations 7,
+ :sha256
+ "e0c5aadc572e7eaede0ba9d78fcca476ede9dfbafc82d018f292ed104dd76600",
+ :invariants 3,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 2753,
+   :transitions 3806,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 176,
+   :memory-usage 167036848,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "7021ccc34572ae3480b0dc5c78333070df05d086",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 1230,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 13,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162354240,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "7021ccc34572ae3480b0dc5c78333070df05d086",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 123,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 5}

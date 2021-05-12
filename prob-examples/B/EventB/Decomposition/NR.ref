@@ -1,0 +1,26 @@
+REFINEMENT NR
+REFINES N
+SEES SharedVariables
+VARIABLES a,m, d
+INVARIANT
+  a:NATURAL & m:BOOL &
+  d:NATURAL &
+  /*@label "NR_1" */ d <= a &
+  /*@label "NR_2" */ m=FALSE => d=0
+INITIALISATION
+  a:=0 || m := FALSE || d := 0
+OPERATIONS
+ in_a(aval) = SELECT aval:NATURAL & m=FALSE THEN
+   a := aval || m := TRUE
+ END;
+ inc_d = SELECT m=TRUE & d/= a THEN
+   d:= d+1
+ END;
+ nb,nr <-- a2b = SELECT m=TRUE & r=s & d=a THEN
+   nb := d ||
+   m := FALSE ||
+   nr := 1-r ||
+   d := 0
+ END
+END
+

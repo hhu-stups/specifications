@@ -1,0 +1,117 @@
+{:properties 1,
+ :definitions 0,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/Decomposition/COUNTER.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :sha512
+ "fae55f4fca90246c3d36be77662f332135ea276a94465c9421be7ece8571efac75f044a3da3c612f64925d691274dc2737fd1b2f8c741aff51160efc18df923a",
+ :static_assertions 0,
+ :operations 2,
+ :sha256
+ "f803a1e9a0d5a4fba0c459d1f40a14abe481a4346dd3d242f961667ae1e20986",
+ :invariants 1,
+ :runs
+ [{:errors ("well_definedness_error"),
+   :states 11,
+   :transitions 51,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 77,
+   :memory-usage 162369392,
+   :result
+   "state_error(abort_error(well_definedness_error,mod not defined for negative numbers in B:,-1 mod 2,span_context([contains_wd_condition,nodeid(pos(30,1,8,16,8,23))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0facc72e7871ed430f91e9a6998b7ec6180e94a3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 60,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 11,
+   :transitions 51,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161964032,
+   :result
+   "state_error(abort_error(well_definedness_error,mod not defined for negative numbers in B:,-1 mod 2,span_context([contains_wd_condition,nodeid(pos(30,1,8,16,8,23))],operation(even,11))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0facc72e7871ed430f91e9a6998b7ec6180e94a3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 66,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 5,
+   :transitions 19,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161993728,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "0facc72e7871ed430f91e9a6998b7ec6180e94a3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 74,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 11,
+   :transitions 51,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 69,
+   :memory-usage 162322416,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "0facc72e7871ed430f91e9a6998b7ec6180e94a3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 63,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 11,
+   :transitions 51,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161973824,
+   :result
+   "state_error(abort_error(well_definedness_error,mod not defined for negative numbers in B:,-1 mod 2,span_context([contains_wd_condition,nodeid(pos(30,1,8,16,8,23))],operation(even,11))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0facc72e7871ed430f91e9a6998b7ec6180e94a3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 67,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 1}

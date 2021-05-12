@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Convergence/anticipated_svar_error.eventb"],
+ :sha512
+ "cb638fbdc6163f26424d0a4361055e4dc55a4510b045c56378fa9c420b691e2a3731971b094d1b7a0fd71d4319d26feea37414345a40b18f2ef62b479b4dab59",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 50,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:add:invalid_variant"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161458480,
+   :result
+   "state_error(eventerror(add,invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))),[event(add,anticipated_svar_error),true_guard([],[],b(truth,pred,[])),action([b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)])],[b(union(b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),b(set_extension([b(integer(4),integer,[])]),set(integer),[])),set(integer),[add_element_to_set])],[avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))]),invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty)))))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ab8f43a3c8a2ed0e06d6ed2beacd40ebbe8ca0ef",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 41,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:add:invalid_variant"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161463168,
+   :result
+   "state_error(eventerror(add,invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))),[event(add,anticipated_svar_error),true_guard([],[],b(truth,pred,[])),action([b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)])],[b(union(b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),b(set_extension([b(integer(4),integer,[])]),set(integer),[])),set(integer),[add_element_to_set])],[avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))]),invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty)))))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ab8f43a3c8a2ed0e06d6ed2beacd40ebbe8ca0ef",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 44,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:add:invalid_variant"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161557200,
+   :result
+   "state_error(eventerror(add,invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))),[event(add,anticipated_svar_error),true_guard([],[],b(truth,pred,[])),action([b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)])],[b(union(b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),b(set_extension([b(integer(4),integer,[])]),set(integer),[])),set(integer),[add_element_to_set])],[avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))]),invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty)))))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ab8f43a3c8a2ed0e06d6ed2beacd40ebbe8ca0ef",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 50,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:add:invalid_variant"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161552320,
+   :result
+   "state_error(eventerror(add,invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))),[event(add,anticipated_svar_error),true_guard([],[],b(truth,pred,[])),action([b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)])],[b(union(b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),b(set_extension([b(integer(4),integer,[])]),set(integer),[])),set(integer),[add_element_to_set])],[avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))]),invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty)))))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ab8f43a3c8a2ed0e06d6ed2beacd40ebbe8ca0ef",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 45,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:add:invalid_variant"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161454800,
+   :result
+   "state_error(eventerror(add,invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))),[event(add,anticipated_svar_error),true_guard([],[],b(truth,pred,[])),action([b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)])],[b(union(b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),b(set_extension([b(integer(4),integer,[])]),set(integer),[])),set(integer),[add_element_to_set])],[avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty))))]),invalid_variant(anticipated,b(identifier(s),set(integer),[loc(anticipated_svar_error,variables),section(anticipated_svar_error),level(0)]),avl_set(node(int(2),true,0,node(int(1),true,0,empty,empty),node(int(3),true,0,empty,empty))),avl_set(node(int(2),true,1,node(int(1),true,0,empty,empty),node(int(3),true,1,empty,node(int(4),true,0,empty,empty)))))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ab8f43a3c8a2ed0e06d6ed2beacd40ebbe8ca0ef",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 40,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

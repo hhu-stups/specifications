@@ -1,5 +1,5 @@
 MACHINE M1
-SEES M2
+SEES M2 // contains SETS  ID={aa,bb}; OTHER={a}
 DEFINITIONS myTRUE == (aa/=bb)
 ASSERTIONS
  !(a).(a:ID => card(ID-{a}) = 1);
@@ -28,7 +28,7 @@ b(exists([b(identifier(a),integer,[nodeid(pos(nan,1,1,2,1,2)),introduced_by(exis
 
 >>> #b.(b:NAT)
 Existentially Quantified Predicate over b is TRUE
-Solution: 
+Solution:
        b = 0
 
 >>> $$

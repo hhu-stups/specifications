@@ -10,6 +10,8 @@
  :number-of-states 45,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tickets/InitialisationByPredicate/TestBecomeSuch_mch.eventb"],
+ :sha512
+ "b7072652921cf8f22e27e12f1ed3beade3b480e73bd20a631fc92441a4dc27f90f391c15eb509e323848e3a3146aa66a148eb09bb03cb9868ab6da0cc134c370",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 40,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 76,
+   :transitions 229,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161752432,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "1ba2f24d13fa269516f9440f7a96d5594546db19",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 42,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:action_not_executable"),
+   :states 76,
+   :transitions 229,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161914288,
+   :result
+   "state_error(eventerror(dec,action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error),[event(dec,TestBecomeSuch),true_guard([],[],b(truth,pred,[])),action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error)]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1ba2f24d13fa269516f9440f7a96d5594546db19",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:action_not_executable"),
+   :states 76,
+   :transitions 229,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161808272,
+   :result
+   "state_error(eventerror(dec,action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error),[event(dec,TestBecomeSuch),true_guard([],[],b(truth,pred,[])),action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error)]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1ba2f24d13fa269516f9440f7a96d5594546db19",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 49,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 76,
+   :transitions 229,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161861200,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "1ba2f24d13fa269516f9440f7a96d5594546db19",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 55,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:dec:action_not_executable"),
+   :states 76,
+   :transitions 229,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161787584,
+   :result
+   "state_error(eventerror(dec,action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error),[event(dec,TestBecomeSuch),true_guard([],[],b(truth,pred,[])),action_not_executable(b(becomes_such([b(identifier(x),integer,[before_substitution(x,x$0),nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])],b(conjunct(b(less(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(conjunct(b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))]),b(greater(b(identifier(x),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(minus(b(identifier(x$0),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec)),loc(TestBecomeSuch,variables),section(TestBecomeSuch),level(0)]),b(integer(4),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),integer,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),pred,[nodeid(rodin_derived_context_pos(TestBecomeSuch,event(dec,actions),dec))])),subst,[assigned_after([x']),modifies([x]),nodeid(rodinpos(TestBecomeSuch,dec,_gAaE0eO3EeaU86Rx_hNGRg))]),no_wd_error)]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1ba2f24d13fa269516f9440f7a96d5594546db19",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 40,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

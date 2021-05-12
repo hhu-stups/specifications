@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/FunctionalProgramming/Factorial_Mutual.mch"],
+ :sha512
+ "63169ccde58f76b347423bb8c8cebeb4038af56eead21e6c46ea92f67e1788f60bd194417645ef43e43f251f967f5e6e5de18a8aa44865605d3e8488ee08ae4b",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163112368,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(int(5),[]),span_context(span_predicate(b(function(b(identifier(fact2),set(couple(integer,integer)),[nodeid(pos(124,1,20,37,20,42)),loc(local,Factorial,abstract_constants),readonly]),b(integer(5),integer,[nodeid(pos(125,1,20,43,20,44))])),integer,[contains_wd_condition,nodeid(pos(123,1,20,37,20,45))]),[],[bind(rr,term(undefined)),bind(fact1,closure([x,y],[integer,integer],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(x),integer,[nodeid(pos(20,1,8,16,8,17))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(19,1,8,16,8,21))]),b(member(b(identifier(y),integer,[nodeid(pos(23,1,8,24,8,25))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(22,1,8,24,8,29))])),pred,[nodeid(pos(18,1,8,16,8,29))]),b(implication(b(equal(b(identifier(x),integer,[nodeid(pos(27,1,9,3,9,4))]),b(value(int(0)),integer,[nodeid(pos(28,1,9,5,9,6))])),pred,[nodeid(pos(26,1,9,3,9,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(30,1,9,10,9,11))]),b(value(int(1)),integer,[nodeid(pos(31,1,9,12,9,13))])),pred,[nodeid(pos(29,1,9,10,9,13))])),pred,[nodeid(pos(25,1,9,3,9,13))])),pred,[nodeid(pos(17,1,8,16,9,13))]),b(implication(b(greater(b(identifier(x),integer,[nodeid(pos(34,1,10,3,10,4))]),b(value(int(0)),integer,[nodeid(pos(35,1,10,5,10,6))])),pred,[nodeid(pos(33,1,10,3,10,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(37,1,10,11,10,12))]),b(multiplication(b(identifier(x),integer,[nodeid(pos(39,1,10,13,10,14))]),b(function(b(value(avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty)))),set(couple(integer,integer)),[nodeid(pos(41,1,10,15,10,20))]),b(minus(b(identifier(x),integer,[nodeid(pos(43,1,10,21,10,22))]),b(value(int(1)),integer,[nodeid(pos(44,1,10,23,10,24))])),integer,[nodeid(pos(42,1,10,21,10,24))])),integer,[contains_wd_condition,nodeid(pos(40,1,10,15,10,25))])),integer,[contains_wd_condition,nodeid(pos(38,1,10,13,10,25))])),pred,[contains_wd_condition,nodeid(pos(36,1,10,11,10,25))])),pred,[contains_wd_condition,nodeid(pos(32,1,10,3,10,25))])),pred,[prob_annotation(SYMBOLIC),nodeid(pos(16,1,8,16,10,25)),contains_wd_condition]))),bind(fact2,avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty))))]),operation(apply_fact_5,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0a423c2897dc5c02b84b50fbd74722b4f6f2a2f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 67,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163104272,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(int(5),[]),span_context(span_predicate(b(function(b(identifier(fact2),set(couple(integer,integer)),[nodeid(pos(124,1,20,37,20,42)),loc(local,Factorial,abstract_constants),readonly]),b(integer(5),integer,[nodeid(pos(125,1,20,43,20,44))])),integer,[contains_wd_condition,nodeid(pos(123,1,20,37,20,45))]),[],[bind(rr,term(undefined)),bind(fact1,closure([x,y],[integer,integer],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(x),integer,[nodeid(pos(20,1,8,16,8,17))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(19,1,8,16,8,21))]),b(member(b(identifier(y),integer,[nodeid(pos(23,1,8,24,8,25))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(22,1,8,24,8,29))])),pred,[nodeid(pos(18,1,8,16,8,29))]),b(implication(b(equal(b(identifier(x),integer,[nodeid(pos(27,1,9,3,9,4))]),b(value(int(0)),integer,[nodeid(pos(28,1,9,5,9,6))])),pred,[nodeid(pos(26,1,9,3,9,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(30,1,9,10,9,11))]),b(value(int(1)),integer,[nodeid(pos(31,1,9,12,9,13))])),pred,[nodeid(pos(29,1,9,10,9,13))])),pred,[nodeid(pos(25,1,9,3,9,13))])),pred,[nodeid(pos(17,1,8,16,9,13))]),b(implication(b(greater(b(identifier(x),integer,[nodeid(pos(34,1,10,3,10,4))]),b(value(int(0)),integer,[nodeid(pos(35,1,10,5,10,6))])),pred,[nodeid(pos(33,1,10,3,10,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(37,1,10,11,10,12))]),b(multiplication(b(identifier(x),integer,[nodeid(pos(39,1,10,13,10,14))]),b(function(b(value(avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty)))),set(couple(integer,integer)),[nodeid(pos(41,1,10,15,10,20))]),b(minus(b(identifier(x),integer,[nodeid(pos(43,1,10,21,10,22))]),b(value(int(1)),integer,[nodeid(pos(44,1,10,23,10,24))])),integer,[nodeid(pos(42,1,10,21,10,24))])),integer,[contains_wd_condition,nodeid(pos(40,1,10,15,10,25))])),integer,[contains_wd_condition,nodeid(pos(38,1,10,13,10,25))])),pred,[contains_wd_condition,nodeid(pos(36,1,10,11,10,25))])),pred,[contains_wd_condition,nodeid(pos(32,1,10,3,10,25))])),pred,[prob_annotation(SYMBOLIC),nodeid(pos(16,1,8,16,10,25)),contains_wd_condition]))),bind(fact2,avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty))))]),operation(apply_fact_5,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0a423c2897dc5c02b84b50fbd74722b4f6f2a2f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 66,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163114608,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(int(5),[]),span_context(span_predicate(b(function(b(identifier(fact2),set(couple(integer,integer)),[nodeid(pos(124,1,20,37,20,42)),loc(local,Factorial,abstract_constants),readonly]),b(integer(5),integer,[nodeid(pos(125,1,20,43,20,44))])),integer,[contains_wd_condition,nodeid(pos(123,1,20,37,20,45))]),[],[bind(rr,term(undefined)),bind(fact1,closure([x,y],[integer,integer],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(x),integer,[nodeid(pos(20,1,8,16,8,17))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(19,1,8,16,8,21))]),b(member(b(identifier(y),integer,[nodeid(pos(23,1,8,24,8,25))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(22,1,8,24,8,29))])),pred,[nodeid(pos(18,1,8,16,8,29))]),b(implication(b(equal(b(identifier(x),integer,[nodeid(pos(27,1,9,3,9,4))]),b(value(int(0)),integer,[nodeid(pos(28,1,9,5,9,6))])),pred,[nodeid(pos(26,1,9,3,9,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(30,1,9,10,9,11))]),b(value(int(1)),integer,[nodeid(pos(31,1,9,12,9,13))])),pred,[nodeid(pos(29,1,9,10,9,13))])),pred,[nodeid(pos(25,1,9,3,9,13))])),pred,[nodeid(pos(17,1,8,16,9,13))]),b(implication(b(greater(b(identifier(x),integer,[nodeid(pos(34,1,10,3,10,4))]),b(value(int(0)),integer,[nodeid(pos(35,1,10,5,10,6))])),pred,[nodeid(pos(33,1,10,3,10,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(37,1,10,11,10,12))]),b(multiplication(b(identifier(x),integer,[nodeid(pos(39,1,10,13,10,14))]),b(function(b(value(avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty)))),set(couple(integer,integer)),[nodeid(pos(41,1,10,15,10,20))]),b(minus(b(identifier(x),integer,[nodeid(pos(43,1,10,21,10,22))]),b(value(int(1)),integer,[nodeid(pos(44,1,10,23,10,24))])),integer,[nodeid(pos(42,1,10,21,10,24))])),integer,[contains_wd_condition,nodeid(pos(40,1,10,15,10,25))])),integer,[contains_wd_condition,nodeid(pos(38,1,10,13,10,25))])),pred,[contains_wd_condition,nodeid(pos(36,1,10,11,10,25))])),pred,[contains_wd_condition,nodeid(pos(32,1,10,3,10,25))])),pred,[prob_annotation(SYMBOLIC),nodeid(pos(16,1,8,16,10,25)),contains_wd_condition]))),bind(fact2,avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty))))]),operation(apply_fact_5,1))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0a423c2897dc5c02b84b50fbd74722b4f6f2a2f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 66,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 33,
+   :memory-usage 163331120,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(int(5),[]),span_context(span_predicate(b(function(b(identifier(fact2),set(couple(integer,integer)),[nodeid(pos(124,1,20,37,20,42)),loc(local,Factorial,abstract_constants),readonly]),b(integer(5),integer,[nodeid(pos(125,1,20,43,20,44))])),integer,[contains_wd_condition,nodeid(pos(123,1,20,37,20,45))]),[],[bind(rr,term(undefined)),bind(fact1,closure([x,y],[integer,integer],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(x),integer,[nodeid(pos(20,1,8,16,8,17))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(19,1,8,16,8,21))]),b(member(b(identifier(y),integer,[nodeid(pos(23,1,8,24,8,25))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(22,1,8,24,8,29))])),pred,[nodeid(pos(18,1,8,16,8,29))]),b(implication(b(equal(b(identifier(x),integer,[nodeid(pos(27,1,9,3,9,4))]),b(value(int(0)),integer,[nodeid(pos(28,1,9,5,9,6))])),pred,[nodeid(pos(26,1,9,3,9,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(30,1,9,10,9,11))]),b(value(int(1)),integer,[nodeid(pos(31,1,9,12,9,13))])),pred,[nodeid(pos(29,1,9,10,9,13))])),pred,[nodeid(pos(25,1,9,3,9,13))])),pred,[nodeid(pos(17,1,8,16,9,13))]),b(implication(b(greater(b(identifier(x),integer,[nodeid(pos(34,1,10,3,10,4))]),b(value(int(0)),integer,[nodeid(pos(35,1,10,5,10,6))])),pred,[nodeid(pos(33,1,10,3,10,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(37,1,10,11,10,12))]),b(multiplication(b(identifier(x),integer,[nodeid(pos(39,1,10,13,10,14))]),b(function(b(value(avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty)))),set(couple(integer,integer)),[nodeid(pos(41,1,10,15,10,20))]),b(minus(b(identifier(x),integer,[nodeid(pos(43,1,10,21,10,22))]),b(value(int(1)),integer,[nodeid(pos(44,1,10,23,10,24))])),integer,[nodeid(pos(42,1,10,21,10,24))])),integer,[contains_wd_condition,nodeid(pos(40,1,10,15,10,25))])),integer,[contains_wd_condition,nodeid(pos(38,1,10,13,10,25))])),pred,[contains_wd_condition,nodeid(pos(36,1,10,11,10,25))])),pred,[contains_wd_condition,nodeid(pos(32,1,10,3,10,25))])),pred,[prob_annotation(SYMBOLIC),nodeid(pos(16,1,8,16,10,25)),contains_wd_condition]))),bind(fact2,avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0a423c2897dc5c02b84b50fbd74722b4f6f2a2f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 77,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 1,
+   :transitions 5,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 33,
+   :memory-usage 163341328,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(int(5),[]),span_context(span_predicate(b(function(b(identifier(fact2),set(couple(integer,integer)),[nodeid(pos(124,1,20,37,20,42)),loc(local,Factorial,abstract_constants),readonly]),b(integer(5),integer,[nodeid(pos(125,1,20,43,20,44))])),integer,[contains_wd_condition,nodeid(pos(123,1,20,37,20,45))]),[],[bind(rr,term(undefined)),bind(fact1,closure([x,y],[integer,integer],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(x),integer,[nodeid(pos(20,1,8,16,8,17))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(19,1,8,16,8,21))]),b(member(b(identifier(y),integer,[nodeid(pos(23,1,8,24,8,25))]),b(value(avl_set(node(int(1),true,1,node(int(0),true,0,empty,empty),node(int(2),true,1,empty,node(int(3),true,0,empty,empty))))),set(integer),[])),pred,[nodeid(pos(22,1,8,24,8,29))])),pred,[nodeid(pos(18,1,8,16,8,29))]),b(implication(b(equal(b(identifier(x),integer,[nodeid(pos(27,1,9,3,9,4))]),b(value(int(0)),integer,[nodeid(pos(28,1,9,5,9,6))])),pred,[nodeid(pos(26,1,9,3,9,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(30,1,9,10,9,11))]),b(value(int(1)),integer,[nodeid(pos(31,1,9,12,9,13))])),pred,[nodeid(pos(29,1,9,10,9,13))])),pred,[nodeid(pos(25,1,9,3,9,13))])),pred,[nodeid(pos(17,1,8,16,9,13))]),b(implication(b(greater(b(identifier(x),integer,[nodeid(pos(34,1,10,3,10,4))]),b(value(int(0)),integer,[nodeid(pos(35,1,10,5,10,6))])),pred,[nodeid(pos(33,1,10,3,10,6))]),b(equal(b(identifier(y),integer,[nodeid(pos(37,1,10,11,10,12))]),b(multiplication(b(identifier(x),integer,[nodeid(pos(39,1,10,13,10,14))]),b(function(b(value(avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty)))),set(couple(integer,integer)),[nodeid(pos(41,1,10,15,10,20))]),b(minus(b(identifier(x),integer,[nodeid(pos(43,1,10,21,10,22))]),b(value(int(1)),integer,[nodeid(pos(44,1,10,23,10,24))])),integer,[nodeid(pos(42,1,10,21,10,24))])),integer,[contains_wd_condition,nodeid(pos(40,1,10,15,10,25))])),integer,[contains_wd_condition,nodeid(pos(38,1,10,13,10,25))])),pred,[contains_wd_condition,nodeid(pos(36,1,10,11,10,25))])),pred,[contains_wd_condition,nodeid(pos(32,1,10,3,10,25))])),pred,[prob_annotation(SYMBOLIC),nodeid(pos(16,1,8,16,10,25)),contains_wd_condition]))),bind(fact2,avl_set(node((int(1),int(1)),true,0,node((int(0),int(1)),true,0,empty,empty),node((int(2),int(2)),true,0,empty,empty))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "0a423c2897dc5c02b84b50fbd74722b4f6f2a2f7",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 80,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,

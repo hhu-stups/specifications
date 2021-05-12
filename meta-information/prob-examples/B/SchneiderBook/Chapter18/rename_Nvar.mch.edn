@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/SchneiderBook/Chapter18/rename_Nvar.mch"
   "./prob-examples/B/SchneiderBook/Chapter18/Bool_TYPE.mch"],
+ :sha512
+ "aff26f2fce9bdc344e7f8b2a7eb8c0a16f0c0f51320854ddfc0c56cabc585139810f0acf04dc6d47e17cf108b15c50a0f9ec6d2ff93e2555ca25f5178187670e",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

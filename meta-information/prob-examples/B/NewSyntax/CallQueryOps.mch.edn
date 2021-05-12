@@ -1,0 +1,68 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/NewSyntax/CallQueryOps.mch",
+ :enumerated_sets 0,
+ :variables 1,
+ :sha512
+ "f6f20097639ebc0557c9c47026b77696b3e543525bb852aa9af5d75d9427c9dc9130a94489d8db0a32b7827f06fa4c76a39409f9e7e18c7f87c83cacb6f9c835",
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "4ebe52a4650ff58459ec21639701acc37da81254848f1b3d0caf39543fdc029a",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 23,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161972992,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "f0d6c03ee8e8592068e3f4f24b01ffdb0b6ef328",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 131,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("model_check_incomplete"),
+   :states 1,
+   :transitions 6,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 56,
+   :memory-usage 162096576,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "f0d6c03ee8e8592068e3f4f24b01ffdb0b6ef328",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 101,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 0}

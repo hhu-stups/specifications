@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/STUPS2_KURS/uebung5/ArrayImp.mch"
   "./prob-examples/B/STUPS2_KURS/uebung5/ArrayElem.mch"],
+ :sha512
+ "a051d1d1a29f48c6f31aaf30412386dc55e7b8e08a92f02847768eec065df50fe2336f8a4e93f31f3760a899f328f52ab26430b4a27291edba5707ffbcc8f8aa",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,6 +31,103 @@
    :timeout 1800000,
    :model-checking-time 80,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("setup_constants_inconsistent"),
+   :states 33,
+   :transitions 161,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 162849840,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "563cb0f7c0648c7fca12d7fe2b81dd4c3322f383",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 194,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("setup_constants_inconsistent"),
+   :states 33,
+   :transitions 161,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162765184,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "563cb0f7c0648c7fca12d7fe2b81dd4c3322f383",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 192,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("setup_constants_inconsistent"),
+   :states 33,
+   :transitions 161,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 162838624,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "563cb0f7c0648c7fca12d7fe2b81dd4c3322f383",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 200,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("setup_constants_inconsistent"),
+   :states 33,
+   :transitions 161,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162758864,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "563cb0f7c0648c7fca12d7fe2b81dd4c3322f383",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 198,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("setup_constants_inconsistent"),
+   :states 33,
+   :transitions 161,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162730816,
+   :result "all",
+   :model-checking-time-unit :msec,
+   :machine-hash "563cb0f7c0648c7fca12d7fe2b81dd4c3322f383",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 189,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

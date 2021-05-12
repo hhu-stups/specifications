@@ -1,0 +1,26 @@
+{:sha256
+ "29598dced1617098e4f89eb47b1461fa966f442ea3812609ee45fa0d6c4ddb26",
+ :sha512
+ "3c3940fcb7a42e040478a9370c98c0fb9ec1c444a4fae80c6f112c2bc4d0be24650e67e5cab038c0a6b5298a71a4ba291f04c8c831e38d93a73806063d611ccd",
+ :file "./prob-examples/B/Puzzles/QueensWithEvents.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

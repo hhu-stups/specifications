@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/Tickets/RecordPartiallyTyped/Knowledge_loop.mch"
   "./prob-examples/B/Tickets/RecordPartiallyTyped/Dataset.mch"],
+ :sha512
+ "46e95e8b0c2d10bb0a0fa884f77fbc19b4136a47b3f053f8cea93a477d0c1d32638cc7bc4765216188d737f114e8320d4fffa887984a7707589036f5ec209a4f",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,7 +32,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 2,

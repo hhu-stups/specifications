@@ -1,36 +1,28 @@
-{:properties 22,
- :definitions 0,
- :deferred_sets 13,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "4ef20dfcca5ff655d6acfa0b16286076c0c3f8bf0194a9be1f7d7c3ed5bff588",
+ :sha512
+ "22e71d228c22177da6b8035a1609b0c44efab6429423d205c70da0f31c3f15faa81ca4e294a2dd6914d5edd6ce6432b419458af03d0bb7de789695a031fb0ac9",
  :file
  "./prob-examples/EventBPrologPackages/BPEL2B_PurchaseOrder/Model_Machine_4_NoDeadlock_v4.eventb",
- :enumerated_sets 0,
- :variables 14,
- :number-of-states :unknown,
- :included-machines
- ["./prob-examples/EventBPrologPackages/BPEL2B_PurchaseOrder/Model_Machine_4_NoDeadlock_v4.eventb"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 15,
- :sha256
- "5c2f304261f31212df15b95172cbf26f9b73de24d4e2db6a7caff98fff701717",
- :invariants 31,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 15,
- :formalism :eventb}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

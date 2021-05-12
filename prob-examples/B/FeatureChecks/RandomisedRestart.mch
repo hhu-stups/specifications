@@ -1,0 +1,16 @@
+MACHINE RandomisedRestart
+DEFINITIONS
+     SET_PREF_MAX_OPERATIONS == 10
+   ; MAX_OPERATIONS_Update1 == 5
+   ; MAX_OPERATIONS_Update2 == -5 // requires ProB 1.9.0-beta8
+   ; SET_PREF_RANDOMISE_ENUMERATION_ORDER == TRUE
+   ; SET_PREF_RANDOMISED_RESTART_INIT == TRUE
+VARIABLES xx,yy
+INVARIANT
+ xx:0..1000 & yy:0..1000
+INITIALISATION xx :: 0..1000 || yy :: 0..1000
+OPERATIONS
+  Update1 = BEGIN xx :: 0..1000 || yy :: 0..1000 END;
+  Update2 = BEGIN xx :: 0..1000 || yy :: 0..1000 END
+END
+

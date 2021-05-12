@@ -1,23 +1,69 @@
-{:number-of-transitions :unknown,
- :deadlock :unknown,
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
  :file "./prob-examples/B/Demo/Ship.mch",
- :number-of-states :unknown,
- :included-machines [],
- :comment "",
+ :enumerated_sets 1,
+ :variables 7,
+ :sha512
+ "e2905dd9db922324ee701b489f5c7ebde30a8fd2b5a9ce39e4feff4c81b2cd0c76a8d0002ea0e22b2d13bac1bbaf309b923bf8171d8140bc81ea85fde84a5043",
+ :comment "SHA changed",
+ :static_assertions 0,
+ :operations 2,
  :sha256
- "3b9f9f0ded3b8cd9729984c2681e6b54eb288b63e42865df55e1e08b5e40d8de",
+ "36833f76a40c7245299f84882f8c3f40433389bdc5224025670ec80f464a3d09",
+ :invariants 5,
  :runs
- [{:tool :prob,
+ [{:errors ("invariant_violation"),
+   :states 3,
+   :transitions 9,
+   :tool :prob,
    :hardware
    {:name :hilbert-ivybridge,
     :memory "2 GB",
     :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
+   :static-analysis-time 123,
+   :memory-usage 162430944,
+   :result "invariant_violation",
    :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
+   :machine-hash "2939b50e5d1e408c76c6a2d26b7d65906eef67f8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 59,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :invariant-violated :unknown,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("invariant_violation"),
+   :states 3,
+   :transitions 9,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161960320,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "2939b50e5d1e408c76c6a2d26b7d65906eef67f8",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 87,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 0}

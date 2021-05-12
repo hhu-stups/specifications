@@ -1,0 +1,26 @@
+{:sha256
+ "3f251075f084162f4f4767d3fdb51e15750598a1d27b8515e456c02f888b8132",
+ :sha512
+ "3252369f71abe4f9f00135181683f64f19f2fcebbb77c6e6a9391315f089f1b11ce0549fad3553a9b8124041c8244106ab254df6df112155d61f1e11d28d51e2",
+ :file "./prob-examples/B/FeatureChecks/RandomisedRestart.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

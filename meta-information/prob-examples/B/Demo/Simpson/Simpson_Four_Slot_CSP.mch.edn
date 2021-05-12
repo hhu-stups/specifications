@@ -9,6 +9,8 @@
  :number-of-states 56,
  :included-machines
  ["./prob-examples/B/Demo/Simpson/Simpson_Four_Slot_CSP.mch"],
+ :sha512
+ "41b6302fbe8cde516af6133eb10ecfdd2e23e94b12567f45c279dc6ad7fae8f67297dfe8a1477ee8d8883deaa31d4e74b2fba2aa18901cec765a71d405531009",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 200,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("assert_error"),
+   :states 68,
+   :transitions 613,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 199,
+   :memory-usage 164439296,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,read >= lastwriteatstart,span_context(span_predicate(b(greater_equal(b(identifier(read),integer,[nodeid(pos(267,1,80,14,80,18)),readonly,introduced_by(operation)]),b(identifier(lastwriteatstart),integer,[nodeid(pos(268,1,80,20,80,36)),loc(local,Simpson_Four_Slot_CSP,abstract_variables)])),pred,[nodeid(pos(266,1,80,14,80,36))]),[bind(read,int(0))],[bind(data,avl_set(node(((fd(1,INDEX),fd(4,INDEX)),int(1)),true,1,node(((fd(1,INDEX),fd(3,INDEX)),int(0)),true,0,empty,empty),node(((fd(2,INDEX),fd(3,INDEX)),int(0)),true,1,empty,node(((fd(2,INDEX),fd(4,INDEX)),int(0)),true,0,empty,empty))))),bind(slot,avl_set(node((fd(1,INDEX),fd(3,INDEX)),true,1,empty,node((fd(2,INDEX),fd(3,INDEX)),true,0,empty,empty)))),bind(latest,fd(1,INDEX)),bind(reading,fd(1,INDEX)),bind(writepair,fd(1,INDEX)),bind(writeindex,fd(3,INDEX)),bind(readpair,fd(1,INDEX)),bind(readindex,fd(3,INDEX)),bind(lastwrite,int(1)),bind(lastwriteatstart,int(1)),bind(neg,avl_set(node((fd(2,INDEX),fd(1,INDEX)),true,1,node((fd(1,INDEX),fd(2,INDEX)),true,0,empty,empty),node((fd(3,INDEX),fd(4,INDEX)),true,1,empty,node((fd(4,INDEX),fd(3,INDEX)),true,0,empty,empty))))),bind(pairIndex,avl_set(node(fd(1,INDEX),true,1,empty,node(fd(2,INDEX),true,0,empty,empty)))),bind(slotIndex,avl_set(node(fd(3,INDEX),true,1,empty,node(fd(4,INDEX),true,0,empty,empty))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bc8fe8f5a823da25a05f41392a9ff36281e6d233",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 202,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error"),
+   :states 65,
+   :transitions 586,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 139,
+   :memory-usage 164356256,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,read >= lastwriteatstart,span_context(span_predicate(b(greater_equal(b(identifier(read),integer,[nodeid(pos(267,1,80,14,80,18)),readonly,introduced_by(operation)]),b(identifier(lastwriteatstart),integer,[nodeid(pos(268,1,80,20,80,36)),loc(local,Simpson_Four_Slot_CSP,abstract_variables)])),pred,[nodeid(pos(266,1,80,14,80,36))]),[bind(read,int(0))],[bind(data,avl_set(node(((fd(1,INDEX),fd(4,INDEX)),int(1)),true,1,node(((fd(1,INDEX),fd(3,INDEX)),int(0)),true,0,empty,empty),node(((fd(2,INDEX),fd(3,INDEX)),int(0)),true,1,empty,node(((fd(2,INDEX),fd(4,INDEX)),int(0)),true,0,empty,empty))))),bind(slot,avl_set(node((fd(1,INDEX),fd(3,INDEX)),true,1,empty,node((fd(2,INDEX),fd(3,INDEX)),true,0,empty,empty)))),bind(latest,fd(1,INDEX)),bind(reading,fd(1,INDEX)),bind(writepair,fd(1,INDEX)),bind(writeindex,fd(3,INDEX)),bind(readpair,fd(1,INDEX)),bind(readindex,fd(3,INDEX)),bind(lastwrite,int(1)),bind(lastwriteatstart,int(1)),bind(neg,avl_set(node((fd(2,INDEX),fd(1,INDEX)),true,1,node((fd(1,INDEX),fd(2,INDEX)),true,0,empty,empty),node((fd(3,INDEX),fd(4,INDEX)),true,1,empty,node((fd(4,INDEX),fd(3,INDEX)),true,0,empty,empty))))),bind(pairIndex,avl_set(node(fd(1,INDEX),true,1,empty,node(fd(2,INDEX),true,0,empty,empty)))),bind(slotIndex,avl_set(node(fd(3,INDEX),true,1,empty,node(fd(4,INDEX),true,0,empty,empty))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bc8fe8f5a823da25a05f41392a9ff36281e6d233",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 229,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error"),
+   :states 69,
+   :transitions 622,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163878816,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,read >= lastwriteatstart,span_context(span_predicate(b(greater_equal(b(identifier(read),integer,[nodeid(pos(267,1,80,14,80,18)),readonly,introduced_by(operation)]),b(identifier(lastwriteatstart),integer,[nodeid(pos(268,1,80,20,80,36)),loc(local,Simpson_Four_Slot_CSP,abstract_variables)])),pred,[nodeid(pos(266,1,80,14,80,36))]),[bind(read,int(0))],[bind(data,avl_set(node(((fd(1,INDEX),fd(4,INDEX)),int(1)),true,1,node(((fd(1,INDEX),fd(3,INDEX)),int(0)),true,0,empty,empty),node(((fd(2,INDEX),fd(3,INDEX)),int(0)),true,1,empty,node(((fd(2,INDEX),fd(4,INDEX)),int(0)),true,0,empty,empty))))),bind(slot,avl_set(node((fd(1,INDEX),fd(3,INDEX)),true,1,empty,node((fd(2,INDEX),fd(3,INDEX)),true,0,empty,empty)))),bind(latest,fd(1,INDEX)),bind(reading,fd(1,INDEX)),bind(writepair,fd(1,INDEX)),bind(writeindex,fd(3,INDEX)),bind(readpair,fd(1,INDEX)),bind(readindex,fd(3,INDEX)),bind(lastwrite,int(1)),bind(lastwriteatstart,int(1)),bind(neg,avl_set(node((fd(2,INDEX),fd(1,INDEX)),true,1,node((fd(1,INDEX),fd(2,INDEX)),true,0,empty,empty),node((fd(3,INDEX),fd(4,INDEX)),true,1,empty,node((fd(4,INDEX),fd(3,INDEX)),true,0,empty,empty))))),bind(pairIndex,avl_set(node(fd(1,INDEX),true,1,empty,node(fd(2,INDEX),true,0,empty,empty)))),bind(slotIndex,avl_set(node(fd(3,INDEX),true,1,empty,node(fd(4,INDEX),true,0,empty,empty))))]),operation(r4_readerChoosesPair,69))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bc8fe8f5a823da25a05f41392a9ff36281e6d233",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 197,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error"),
+   :states 69,
+   :transitions 622,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163888240,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,read >= lastwriteatstart,span_context(span_predicate(b(greater_equal(b(identifier(read),integer,[nodeid(pos(267,1,80,14,80,18)),readonly,introduced_by(operation)]),b(identifier(lastwriteatstart),integer,[nodeid(pos(268,1,80,20,80,36)),loc(local,Simpson_Four_Slot_CSP,abstract_variables)])),pred,[nodeid(pos(266,1,80,14,80,36))]),[bind(read,int(0))],[bind(data,avl_set(node(((fd(1,INDEX),fd(4,INDEX)),int(1)),true,1,node(((fd(1,INDEX),fd(3,INDEX)),int(0)),true,0,empty,empty),node(((fd(2,INDEX),fd(3,INDEX)),int(0)),true,1,empty,node(((fd(2,INDEX),fd(4,INDEX)),int(0)),true,0,empty,empty))))),bind(slot,avl_set(node((fd(1,INDEX),fd(3,INDEX)),true,1,empty,node((fd(2,INDEX),fd(3,INDEX)),true,0,empty,empty)))),bind(latest,fd(1,INDEX)),bind(reading,fd(1,INDEX)),bind(writepair,fd(1,INDEX)),bind(writeindex,fd(3,INDEX)),bind(readpair,fd(1,INDEX)),bind(readindex,fd(3,INDEX)),bind(lastwrite,int(1)),bind(lastwriteatstart,int(1)),bind(neg,avl_set(node((fd(2,INDEX),fd(1,INDEX)),true,1,node((fd(1,INDEX),fd(2,INDEX)),true,0,empty,empty),node((fd(3,INDEX),fd(4,INDEX)),true,1,empty,node((fd(4,INDEX),fd(3,INDEX)),true,0,empty,empty))))),bind(pairIndex,avl_set(node(fd(1,INDEX),true,1,empty,node(fd(2,INDEX),true,0,empty,empty)))),bind(slotIndex,avl_set(node(fd(3,INDEX),true,1,empty,node(fd(4,INDEX),true,0,empty,empty))))]),operation(r4_readerChoosesPair,69))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bc8fe8f5a823da25a05f41392a9ff36281e6d233",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 199,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("assert_error"),
+   :states 69,
+   :transitions 622,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 163972352,
+   :result
+   "state_error(abort_error(assert_error,ASSERT violated: ,read >= lastwriteatstart,span_context(span_predicate(b(greater_equal(b(identifier(read),integer,[nodeid(pos(267,1,80,14,80,18)),readonly,introduced_by(operation)]),b(identifier(lastwriteatstart),integer,[nodeid(pos(268,1,80,20,80,36)),loc(local,Simpson_Four_Slot_CSP,abstract_variables)])),pred,[nodeid(pos(266,1,80,14,80,36))]),[bind(read,int(0))],[bind(data,avl_set(node(((fd(1,INDEX),fd(4,INDEX)),int(1)),true,1,node(((fd(1,INDEX),fd(3,INDEX)),int(0)),true,0,empty,empty),node(((fd(2,INDEX),fd(3,INDEX)),int(0)),true,1,empty,node(((fd(2,INDEX),fd(4,INDEX)),int(0)),true,0,empty,empty))))),bind(slot,avl_set(node((fd(1,INDEX),fd(3,INDEX)),true,1,empty,node((fd(2,INDEX),fd(3,INDEX)),true,0,empty,empty)))),bind(latest,fd(1,INDEX)),bind(reading,fd(1,INDEX)),bind(writepair,fd(1,INDEX)),bind(writeindex,fd(3,INDEX)),bind(readpair,fd(1,INDEX)),bind(readindex,fd(3,INDEX)),bind(lastwrite,int(1)),bind(lastwriteatstart,int(1)),bind(neg,avl_set(node((fd(2,INDEX),fd(1,INDEX)),true,1,node((fd(1,INDEX),fd(2,INDEX)),true,0,empty,empty),node((fd(3,INDEX),fd(4,INDEX)),true,1,empty,node((fd(4,INDEX),fd(3,INDEX)),true,0,empty,empty))))),bind(pairIndex,avl_set(node(fd(1,INDEX),true,1,empty,node(fd(2,INDEX),true,0,empty,empty)))),bind(slotIndex,avl_set(node(fd(3,INDEX),true,1,empty,node(fd(4,INDEX),true,0,empty,empty))))]),operation(r4_readerChoosesPair,69))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "bc8fe8f5a823da25a05f41392a9ff36281e6d233",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 214,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

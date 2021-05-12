@@ -12,6 +12,8 @@
   "./prob-examples/B/Tickets/Hansen21_Sees/RuleGroup1.mch"
   "./prob-examples/B/Tickets/Hansen21_Sees/RulesTable.mch"
   "./prob-examples/B/Tickets/Hansen21_Sees/RuleContext.mch"],
+ :sha512
+ "f59a372609829e815e8323838b7536019c645d16b7218e081ab696dd6eab59eac813f040fafaed443c9f86bfda78d1fa48c100987fc9767c2e09e309cb47211b",
  :comment "",
  :files 4,
  :static_assertions 0,
@@ -31,6 +33,103 @@
    :timeout 1800000,
    :model-checking-time 180,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "identifier_not_found"),
+   :states 1,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163143440,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "2b4b9cb6e8273d59dfd0618e54e0dbdf17c4b72b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 179,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "identifier_not_found"),
+   :states 1,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 362,
+   :memory-usage 164057296,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "2b4b9cb6e8273d59dfd0618e54e0dbdf17c4b72b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 42,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "identifier_not_found"),
+   :states 1,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163088576,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "2b4b9cb6e8273d59dfd0618e54e0dbdf17c4b72b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 173,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "identifier_not_found"),
+   :states 1,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 326,
+   :memory-usage 163933120,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "2b4b9cb6e8273d59dfd0618e54e0dbdf17c4b72b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 36,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("general_error_occurred" "identifier_not_found"),
+   :states 1,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163098720,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "2b4b9cb6e8273d59dfd0618e54e0dbdf17c4b72b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 170,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 1,
  :invariant-violated false,

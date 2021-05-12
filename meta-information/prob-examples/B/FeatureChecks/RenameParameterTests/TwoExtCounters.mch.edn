@@ -1,0 +1,27 @@
+{:sha256
+ "49cfaadef05843ac3dcb10bfd37bb950a5ca41ed1bf661c3efb8282e447d9a50",
+ :sha512
+ "ac9d01edbf35cad5c05a1f2cc51588c5bc53ce656773aec00d3145e78914c49a4afcda922d2ec1c14c7f2abc673cefab765591313e31780d9d7a9da5ceed4c64",
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/TwoExtCounters.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

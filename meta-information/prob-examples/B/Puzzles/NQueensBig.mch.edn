@@ -1,0 +1,26 @@
+{:sha256
+ "ed5e81efb518718603bc3478fd76661e250433fc49cd290b167ab93b76b81f07",
+ :sha512
+ "b65ba3c0c561e18ff65868e20a4f1c5ac93c6d4d54e65d1241c4cec444337aea2c5c54e6d8384e6638c56f667e78870b8d1529cf96f3cdcc23d8c0e4e4a7ffa7",
+ :file "./prob-examples/B/Puzzles/NQueensBig.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

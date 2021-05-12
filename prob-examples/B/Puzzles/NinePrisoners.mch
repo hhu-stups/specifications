@@ -1,5 +1,5 @@
 MACHINE NinePrisoners
-/* 
+/*
 From
  http://www.wired.com/2015/06/answer-150-year-old-math-conundrum-brings-mystery/ :
 "So in the spirit of Kirkman, we will leave the gentle reader with another brainteaser, a slight variation on the schoolgirl puzzle devised in 1917 by the British puzzle aficionado Henry Ernest Dudeney and later popularized by Martin Gardner: Nine prisoners are taken outdoors for exercise in rows of three, with each adjacent pair of prisoners linked by handcuffs, on each of the six weekdays (back in Dudeney’s less enlightened times, Saturday was still a weekday). Can the prisoners be arranged over the course of the six days so that each pair of prisoners shares handcuffs exactly once?"
@@ -7,7 +7,7 @@ From
 */
 DEFINITIONS
  Prisoners == 1..9;
- Days == 5; /* 4 Days: 80 ms ; 5 = 200 ms ; 6 = 82.3 seconds*/
+ Days == 6; /* 4 Days: 80 ms ; 5 = 200 ms ; 6 = 82.3 seconds*/
  Cuffs == {1,2,  4,5, 7,8 };
  share(day,cuff) == {arrange(day)(cuff),arrange(day)(cuff+1)};
  ANIMATION_FUNCTION ==
@@ -33,10 +33,10 @@ PROPERTIES
 
  /* symmetry breaking */
   arrange(1) = %i.(i:Prisoners|i) &
-  !d.(d:1..Days => 
+  !d.(d:1..Days =>
        !c.(c:Prisoners & c mod 3 = 1 => arrange(d)(c) < arrange(d)(c+2))) &
-  !d.(d:1..Days => 
-       !c.(c:{1,3} => arrange(d)(c) < arrange(d)(c+3))) 
+  !d.(d:1..Days =>
+       !c.(c:{1,3} => arrange(d)(c) < arrange(d)(c+3)))
  &
 
 /* the constraint proper */
@@ -46,7 +46,7 @@ PROPERTIES
       )
 OPERATIONS
   r <-- Neighbours(i) = PRE i:Prisoners THEN /* compute for every day the neighbours of i */
-     r := %d.(d:1..Days | 
+     r := %d.(d:1..Days |
                 UNION(x,c).( x:Prisoners & c:Cuffs & i: share(d,c)| share(d,c) \ {i})
               ) END
 END

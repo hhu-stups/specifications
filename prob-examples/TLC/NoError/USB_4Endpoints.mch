@@ -22,40 +22,44 @@ SETS
 	};
 
 	TRANSFERS /* Set of all possible transfers */
-	
+
 CONSTANTS
-	ENDPOINTS 
-	
+	ENDPOINTS
+
 PROPERTIES
 	ENDPOINTS = 0..4 /* & ENDPOINTS: POW(NAT) */
-	
+
 VARIABLES
 	transfers, /* list of all transfers initiated since last power on reset */
 	transfer_type, /* type of transfer between host and device */
 	transfer_endpoint, /* device endpoint used for the transfer between host and device */
 	transfer_completed /* indicates if a transfer has terminated or is pending */
-	
+
 INVARIANT
 	transfers <: TRANSFERS &
 	transfer_type : transfers +-> USB_TRANSFER_TYPE &
 	transfer_endpoint : transfers +-> ENDPOINTS &
 	transfer_completed : transfers +-> BOOL &
-	
+
 	/* Structural: a transfer has a type, an end point associated and a completion status */
-	!tr.(tr: transfers => 
-		tr: dom(transfer_type) & 
-		tr: dom(transfer_endpoint) & 
+	!tr.(tr: transfers =>
+		tr: dom(transfer_type) &
+		tr: dom(transfer_endpoint) &
 		tr: dom(transfer_completed)) &
+
+   transfers <: dom(transfer_type) &
+   transfers <: dom(transfer_endpoint) &
+   transfers <: dom(transfer_completed) &
 
 	/* Endpoint 0 is only used for control transfers */
 	transfer_type~[{CONTROL_TRANSFER}] = transfer_endpoint~[{0}]
-	
+
 INITIALISATION
 	transfers := {} ||
 	transfer_type := {} ||
 	transfer_endpoint := {} ||
 	transfer_completed := {}
-	
+
 OPERATIONS
 	initiate_control_transfer =
 	ANY tr WHERE
@@ -96,7 +100,7 @@ OPERATIONS
 		transfer_endpoint := transfer_endpoint <+ {tr |-> ep} ||
 		transfer_completed := transfer_completed <+ {tr |-> FALSE}
 	END;
-	
+
 	initiate_isochronous_transfer =
 	ANY tr, ep WHERE
 		tr : TRANSFERS - transfers &
@@ -131,7 +135,7 @@ OPERATIONS
 	THEN
 		transfer_completed(tr) := TRUE
 	END;
-	
+
 
 	terminate_interrupt_transfer =
 	ANY tr WHERE
@@ -142,7 +146,7 @@ OPERATIONS
 	THEN
 		transfer_completed(tr) := TRUE
 	END;
-	
+
 	terminate_isochronous_transfer =
 	ANY tr WHERE
 		tr: transfers &
@@ -156,7 +160,7 @@ OPERATIONS
 	configure_endpoint0 = skip; /* introduced in USB_1.ref */
 	configure_IBI_endpoint = skip; /* introduced in USB_1.ref */
 	deconfigure_IBI_endpoint = skip; /* introduced in USB_1.ref */
-	
+
 	initiate_setup_transaction = skip; /* event introduced in USB_2 */
 	end_setup_transaction = skip; /* event introduced in USB_2 */
 	initiate_data_transaction_control_transfer =  skip; /* event introduced in USB_2 */
@@ -188,9 +192,9 @@ OPERATIONS
 	issue_packet_out_bulk_transaction = skip; /* event introduced in USB_3 */
 	issue_packet_data_bulk_transaction = skip; /* event introduced in USB_3 */
 
-	
+
 	issue_packet_sof = skip; /* event introduced in USB_3 */
 	receive_transaction_packet = skip; /* introduced in USB_4 */
 	receive_sof_packet = skip /* introduced in USB_4 */
-	
+
 END

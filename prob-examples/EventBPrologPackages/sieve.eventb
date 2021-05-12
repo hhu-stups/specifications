@@ -157,4 +157,4 @@ package(load_event_b_project([event_b_model(none,
         []),
       sets(none,
         [])])],
-  Error)).
+  _Error)).

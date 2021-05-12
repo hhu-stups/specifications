@@ -1,0 +1,17 @@
+MACHINE RecordConstruction
+SETS
+ ID
+DEFINITIONS RT == INTEGER; DV == 1
+CONSTANTS mk_rec
+PROPERTIES
+ mk_rec: RT * RT >->> ID
+VARIABLES xx
+INVARIANT
+ xx:ID
+INITIALISATION xx:=mk_rec(DV,DV)
+OPERATIONS
+  Updt1(f1) = PRE f1:RT THEN
+     xx := mk_rec(f1,f1)
+  END
+END
+

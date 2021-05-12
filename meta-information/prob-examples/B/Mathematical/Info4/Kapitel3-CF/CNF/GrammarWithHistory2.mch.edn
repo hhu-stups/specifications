@@ -1,0 +1,68 @@
+{:properties 4,
+ :definitions 2,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/Mathematical/Info4/Kapitel3-CF/CNF/GrammarWithHistory2.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :sha512
+ "c3d9dd136d53171fcd9bb206935294b5fa88c9cc4656401d50b203e9f99c48554c14f8f6b2b0dc9fa7a2b3de933e8e14edd1b7e0a4299435a3fa3c11e2525553",
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "4f8c3ff9673e757daca93476511438224f7d81ab3bddbb26ca93345edaefbcb3",
+ :invariants 1,
+ :runs
+ [{:errors ("deadlock"),
+   :states 12,
+   :transitions 25,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162962208,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "04507459a18444a2ea63659512bc77520b078c2a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 408,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 12,
+   :transitions 25,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 163050816,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "04507459a18444a2ea63659512bc77520b078c2a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 393,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 3}

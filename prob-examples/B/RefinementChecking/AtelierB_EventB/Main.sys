@@ -1,0 +1,16 @@
+MACHINE Main
+VARIABLES speed, loc, time
+INVARIANT
+  speed:NATURAL & loc:NATURAL & time:NATURAL
+INITIALISATION speed,loc,time := 0,0,0
+OPERATIONS
+  Move = ANY newt,newloc WHERE
+     newt > time &
+     newloc = loc + (newt-time)*speed THEN
+    time,loc := newt,newloc
+ END;
+ ChangeSpeed = ANY news WHERE news : {speed+1,speed-1} THEN
+    speed := news
+ END
+END
+

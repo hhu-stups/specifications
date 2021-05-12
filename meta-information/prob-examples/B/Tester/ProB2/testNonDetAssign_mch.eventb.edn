@@ -1,0 +1,26 @@
+{:sha256
+ "b111004894e01c1016366ad7aa46d5b1a6db161638d8edb5cd457ac6a8ea1f03",
+ :sha512
+ "f0b05c901d815a0779a4f5c6bd595c4eaa52138393554fad34db4161f3522dbc1f1fd3c5557b6874ab4e708a705270307d330c5c48b0160e807d555070696eee",
+ :file "./prob-examples/B/Tester/ProB2/testNonDetAssign_mch.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

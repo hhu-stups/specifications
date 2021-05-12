@@ -1,0 +1,27 @@
+{:sha256
+ "28f9a6efd658c5e2424e598da6552abfa3e3e0d8cb58eb91948b24db29c7ba15",
+ :sha512
+ "bb3a9fe155c867aab823bbf1086f44d1f4c0dae761e8526cd884b53071186bc071c92bb3a9bd2ee90bddee8b86caf0f8843f86cfb3bf65cbdd115d9bdd8123f2",
+ :file
+ "./prob-examples/EventBPrologPackages/DESYNC/Desync_Modulo_mch.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

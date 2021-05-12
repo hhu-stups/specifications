@@ -12,6 +12,8 @@
  ["./prob-examples/B/Mathematical/GraphIso/GraphIso_Large_Random1000.mch"
   "./prob-examples/B/Mathematical/GraphIso/rnd-3-reg-1000-1.def"
   "./prob-examples/B/Mathematical/GraphIso/rnd-3-reg-1000-2.def"],
+ :sha512
+ "d00b3da94fe13a90875ca4dfe69f8374cd2d19c72c2e94c47e95b8a0d053b91bff5b4b9863de73068c93cef36357d672fd1439f8b41f3d840a6840b4904c5ac5",
  :comment "",
  :files 3,
  :static_assertions 0,
@@ -31,7 +33,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

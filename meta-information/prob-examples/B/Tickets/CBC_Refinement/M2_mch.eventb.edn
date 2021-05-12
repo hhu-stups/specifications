@@ -9,6 +9,8 @@
  :number-of-states 20,
  :included-machines
  ["./prob-examples/B/Tickets/CBC_Refinement/M2_mch.eventb"],
+ :sha512
+ "a4bb9abb1e0781bc483fd68f9f6ccc2b0841cc28e565f863c157bc4dcc15203c8c800fcdc5b298113a2d1c98f55abb3749bcb801fb243af82832185ad652a463",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,106 @@
    :timeout 1800000,
    :model-checking-time 140,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 295,
+   :transitions 1881,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164144448,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(ROOM),[nodeid(rodinpos(M2,[],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(TOKEN),[nodeid(rodinpos(M2,[],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(USER),[nodeid(rodinpos(M2,[],internal_var1)),loc(M2,event(Enter))])],[fd(1,ROOM),fd(1,TOKEN),fd(1,USER)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,event(Enter))]),b(set_subtraction(b(identifier(USER),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,variables),section(M2),level(1)])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),pred,[nodeid(rodinpos(M2,grd1,internal_grd1))]),b(member(b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,event(Enter))]),b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(M2,grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))]),b(function(b(identifier(room),set(couple(global(TOKEN),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))])),global(ROOM),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))]),b(function(b(identifier(holder),set(couple(global(TOKEN),global(USER))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))])),global(USER),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))]),b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))])),couple(global(USER),global(ROOM)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])]),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])),set(couple(global(USER),global(ROOM))),[add_element_to_set,nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])],[avl_set(node((fd(1,USER),fd(1,ROOM)),true,0,empty,empty))]),action([b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,event(Enter))])]),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "75bbe97a8a7baa0cb7f4efe2c1600bdb139e0944",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 457,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 295,
+   :transitions 1881,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2343,
+   :memory-usage 165061072,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(ROOM),[nodeid(rodinpos(M2,[],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(TOKEN),[nodeid(rodinpos(M2,[],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(USER),[nodeid(rodinpos(M2,[],internal_var1)),loc(M2,event(Enter))])],[fd(1,ROOM),fd(1,TOKEN),fd(1,USER)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,event(Enter))]),b(set_subtraction(b(identifier(USER),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,variables),section(M2),level(1)])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),pred,[nodeid(rodinpos(M2,grd1,internal_grd1))]),b(member(b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,event(Enter))]),b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(M2,grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))]),b(function(b(identifier(room),set(couple(global(TOKEN),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))])),global(ROOM),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))]),b(function(b(identifier(holder),set(couple(global(TOKEN),global(USER))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))])),global(USER),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))]),b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))])),couple(global(USER),global(ROOM)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])]),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])),set(couple(global(USER),global(ROOM))),[add_element_to_set,nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])],[avl_set(node((fd(1,USER),fd(1,ROOM)),true,0,empty,empty))]),action([b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,event(Enter))])]),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "75bbe97a8a7baa0cb7f4efe2c1600bdb139e0944",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 516,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 295,
+   :transitions 1881,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2493,
+   :memory-usage 165291824,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "75bbe97a8a7baa0cb7f4efe2c1600bdb139e0944",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 476,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 295,
+   :transitions 1881,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 164280912,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "75bbe97a8a7baa0cb7f4efe2c1600bdb139e0944",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 512,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Enter:simulation_error"),
+   :states 295,
+   :transitions 1881,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 164147504,
+   :result
+   "state_error(eventerror(Enter,simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))]),[event(Enter,M2),true_guard([b(identifier(r),global(ROOM),[nodeid(rodinpos(M2,[],internal_var2)),loc(M2,event(Enter))]),b(identifier(t),global(TOKEN),[nodeid(rodinpos(M2,[],internal_var3)),loc(M2,event(Enter))]),b(identifier(u),global(USER),[nodeid(rodinpos(M2,[],internal_var1)),loc(M2,event(Enter))])],[fd(1,ROOM),fd(1,TOKEN),fd(1,USER)],b(conjunct(b(conjunct(b(conjunct(b(member(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,event(Enter))]),b(set_subtraction(b(identifier(USER),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),section(C1),given_set]),b(domain(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1)),loc(M2,variables),section(M2),level(1)])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),set(global(USER)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd1))])),pred,[nodeid(rodinpos(M2,grd1,internal_grd1))]),b(member(b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,event(Enter))]),b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd2)),loc(M2,variables),section(M2),level(1)])),pred,[nodeid(rodinpos(M2,grd2,internal_element1))])),pred,[]),b(equal(b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))]),b(function(b(identifier(room),set(couple(global(TOKEN),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3)),loc(M2,event(Enter))])),global(ROOM),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd3))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd3,internal_grd3))])),pred,[contains_wd_condition]),b(equal(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))]),b(function(b(identifier(holder),set(couple(global(TOKEN),global(USER))),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(C2,constants),section(C2)]),b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4)),loc(M2,event(Enter))])),global(USER),[contains_wd_condition,nodeid(rodin_derived_context_pos(M2,event(Enter,guard),grd4))])),pred,[contains_wd_condition,nodeid(rodinpos(M2,grd4,internal_grd4))])),pred,[contains_wd_condition])),action([b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)])],[b(union(b(identifier(location),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(couple(b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))]),b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1)),loc(M2,event(Enter))])),couple(global(USER),global(ROOM)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])]),set(couple(global(USER),global(ROOM))),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])),set(couple(global(USER),global(ROOM))),[add_element_to_set,nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act1))])],[avl_set(node((fd(1,USER),fd(1,ROOM)),true,0,empty,empty))]),action([b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)])],[b(set_subtraction(b(identifier(valid),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,variables),section(M2),level(1)]),b(set_extension([b(identifier(t),global(TOKEN),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4)),loc(M2,event(Enter))])]),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])),set(global(TOKEN)),[nodeid(rodin_derived_context_pos(M2,event(Enter,actions),act4))])],[[]]),simulation_error([event(Enter,M1,b(subset(b(image(b(identifier(takeplace),set(couple(global(ROOM),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(C1,constants),section(C1)]),b(set_extension([b(identifier(r),global(ROOM),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(ROOM)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))]),b(image(b(identifier(authorised),set(couple(global(USER),global(ACTIVITY))),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,variables),section(M1),level(0)]),b(set_extension([b(identifier(u),global(USER),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3)),loc(M1,event(Enter))])]),set(global(USER)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),set(global(ACTIVITY)),[nodeid(rodin_derived_context_pos(M1,event(Enter,guard),grd3))])),pred,[nodeid(rodinpos(M1,grd3,internal_grd3))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "75bbe97a8a7baa0cb7f4efe2c1600bdb139e0944",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 486,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated true,

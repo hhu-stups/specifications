@@ -11,6 +11,8 @@
  :included-machines
  ["./prob-examples/B/ExternalFunctions/Sudoku/SolveSudokusFromFile.mch"
   "./prob-examples/B/ExternalFunctions/Sudoku/LibraryIO.def"],
+ :sha512
+ "9bb52e705b71450adc59a8f0f417fe4eb43f3f03641b4fb60c8f9ce9e40c0ea6a1d9c795bba129fff57493a1377420d0de5959ae9403892bf3aa0e2788627d32",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -30,7 +32,43 @@
    :timeout 1800000,
    :model-checking-time 150,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:errors ("deadlock" "external_functions"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1065,
+   :memory-usage 163846128,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "d7ab1d8444018e635e7a5c298c4da0d1dc2b8af2",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 40,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 1,

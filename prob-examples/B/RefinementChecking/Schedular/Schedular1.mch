@@ -2,7 +2,7 @@ IMPLEMENTATION Schedular1
 
 REFINES Schedular0
 
-VARIABLES
+CONCRETE_VARIABLES
  proc,idleset,readyq,activep,activef
 
 INVARIANT

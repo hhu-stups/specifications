@@ -24,7 +24,7 @@ ii <-- take =
   PRE pile /= <>
   THEN pile := front(pile) || ii := last(pile)
   END;
- 
+
 bb <-- query(ii) =
   PRE ii : ITEM
   THEN bb := bool(ii : ran(pile))

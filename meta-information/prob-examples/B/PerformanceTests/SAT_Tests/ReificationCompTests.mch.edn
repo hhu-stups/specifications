@@ -1,36 +1,28 @@
-{:properties 14,
- :definitions 3,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "c18d621deba20b905b581d151501a550442110bf7e843b72711569476810f830",
+ :sha512
+ "5514ef5ce943e7a4e741d4db53c6399a16c50557565c924ad4b1d34c40eecbebb8dd10d6dd39eba7154c2c39d4ce55e4d78b59ca926ef98d0d5d9ce952433216",
  :file
  "./prob-examples/B/PerformanceTests/SAT_Tests/ReificationCompTests.mch",
- :enumerated_sets 1,
- :variables 0,
- :number-of-states :unknown,
- :included-machines
- ["./prob-examples/B/PerformanceTests/SAT_Tests/ReificationCompTests.mch"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 2,
- :sha256
- "0316b1bc493c5f0704d6da1d29e8392d4a841821029a6e776350a564c17bad8d",
- :invariants 0,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 1,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

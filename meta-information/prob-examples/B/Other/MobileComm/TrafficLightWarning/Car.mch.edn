@@ -1,0 +1,27 @@
+{:sha256
+ "52a8c696ba8ef278dc4228c119a76285c02b944a0a83e626a526c9d01b37a30f",
+ :sha512
+ "9590bd9f9f44738ecec46028446c9a4b6503c828715496f3c583ed0885ae4321ee107511800d73f5de9a85d215e0dc8f75ebdf68477816f16a359a4b0208f4ea",
+ :file
+ "./prob-examples/B/Other/MobileComm/TrafficLightWarning/Car.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

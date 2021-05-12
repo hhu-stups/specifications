@@ -1,9 +1,9 @@
 MACHINE  TRAVELAGENCY0	/* U2B4 */
 
-	
+
 INITIALISATION
 	skip
-	
+
 OPERATIONS
 
 /* Push travel agent into separate machine */
@@ -14,7 +14,7 @@ skip
 
 
 RoomRecvReq = skip ;
-	
+
 RoomSendResp =
 	skip;
 

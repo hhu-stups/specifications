@@ -9,9 +9,9 @@ PROPERTIES
   Rules: Symbols <-> seq(Symbols) &
   NonTerminals = dom(Rules) &
   Terminals = Symbols - NonTerminals &
- 
+
  /* Rules = { S |-> [a,S],  S |-> [N,c], S |-> [N], N |-> [b], N |-> [] } */
-  Rules = { S |-> [a,S,a], S |-> [b,T,b], 
+  Rules = { S |-> [a,S,a], S |-> [b,T,b],
             T |-> [V,R,T], T |-> [R],
             R |-> [x,R], R |-> [y,R], R |-> [],
             V |-> [z,R] }
@@ -46,10 +46,10 @@ OPERATIONS
   FinishedFirst = PRE Stage=2 THEN Stage := 3 END;
   AddFollow(N,t) =  PRE Stage=3 & N:NonTerminals & t:Terminals & t/:Follow(N) &
                         #(s,st,i).(s:seq(Symbols) & s/=[] & s:ran(Rules) &
-                                i:NATURAL1 & i<size(s) & 
+                                i:NATURAL1 & i<size(s) &
                                 st:seq(Symbols)  & st = s \|/i &
                                 s(i) = N & inFirst(t, st)) THEN
         Follow(N) := Follow(N) \/ {t}
-  END 
+  END
   /* Still one inference rule missing: if Non-Terminal at end of rule*/
 END

@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/Tester/InitialisationChecks/IllegalOrderOfInits.mch"],
+ :sha512
+ "ae08d5ceeffb5efddbf13d31b223b105b69d4f25ceae7de648bae11d2205d3047954452fd521984abe7ac758f7850e030d6fde9fdaf6c992e4baea46002f3d72",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,118 @@
    :timeout 1800000,
    :model-checking-time 60,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "reading_undefined_variable"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2,
+   :memory-usage 161787120,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "ff7bd81506e3ca9ddc42ec9d164b5be750e1bee3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 38,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "reading_undefined_variable"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161757136,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "ff7bd81506e3ca9ddc42ec9d164b5be750e1bee3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 41,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "reading_undefined_variable"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2,
+   :memory-usage 161786400,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "ff7bd81506e3ca9ddc42ec9d164b5be750e1bee3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 38,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "reading_undefined_variable"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161750848,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "ff7bd81506e3ca9ddc42ec9d164b5be750e1bee3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 42,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("general_error_occurred"
+    "bmachine_static_checks"
+    "reading_undefined_variable"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161746752,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "ff7bd81506e3ca9ddc42ec9d164b5be750e1bee3",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 40,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

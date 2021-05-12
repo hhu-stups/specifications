@@ -9,6 +9,8 @@
  :number-of-states :unknown,
  :included-machines
  ["./prob-examples/B/PerformanceTests/LargeRelationSetTests.mch"],
+ :sha512
+ "899259f3eeacd9d32630cf0e389b71de3aa7893b88478bce7303c66dd28071171d67f6061b2a66c345eb0cc691c9a9ed571a3ab99b53a6bea737516c95fd0193",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,74 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(_zzzz_unary),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 171006816,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "12fc02970acc85ad1dddee2a0b837b661ecf4f46",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(_zzzz_unary),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 171011312,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "12fc02970acc85ad1dddee2a0b837b661ecf4f46",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors
+   ("internal_error(exception(enumeration_warning(enumerating(b(identifier(_zzzz_unary),integer,[prob_annotation(SYMBOLIC)])),INTEGER,1:sup,1:3,critical)))"),
+   :states nil,
+   :transitions nil,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time nil,
+   :memory-usage 171016592,
+   :result nil,
+   :model-checking-time-unit :msec,
+   :machine-hash "12fc02970acc85ad1dddee2a0b837b661ecf4f46",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time nil,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,

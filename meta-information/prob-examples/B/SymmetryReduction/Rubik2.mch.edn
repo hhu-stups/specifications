@@ -1,23 +1,27 @@
-{:number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "fc4b38b6856aeb89c29d536192b9f3654d14327c7c67c16a3ca0a3d7f1d1adc3",
+ :sha512
+ "c36e149ebbde2df29a17690bf1a7de77789286523cffae96e0b2014e019fdce41eb2d43be47ba9f2b3ed1f79a64c1eb97240db3a8feff6718dbe82da89b2d4d1",
  :file "./prob-examples/B/SymmetryReduction/Rubik2.mch",
- :number-of-states :unknown,
- :included-machines [],
- :comment "",
- :sha256
- "5ba2122e0861f2fd27af6ae441a8a45a9ad796253ee79455107dd5e4f553cd85",
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :invariant-violated :unknown,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

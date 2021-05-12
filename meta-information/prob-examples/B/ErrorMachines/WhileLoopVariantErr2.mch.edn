@@ -9,6 +9,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/ErrorMachines/WhileLoopVariantErr2.mch"],
+ :sha512
+ "c107168868c61ffd607dacaa82ea1af6a5f0799dca286d504566a7c0e9c69809a0343bee1763a8cc026cd432a696442ad1e037a0b6e11f10ea128c82e2d0f584",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,6 +30,108 @@
    :timeout 1800000,
    :model-checking-time 160,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 123,
+   :memory-usage 162416784,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not NATURAL:,-1,span_context(span_predicate(b(minus(b(minus(b(value(int(2)),integer,[was_identifier(c),nodeid(pos(45,1,13,8,13,9)),readonly,introduced_by(operation)]),b(identifier(xx),integer,[nodeid(pos(46,1,13,10,13,12)),loc(local,WhileLoopVariantErr2,abstract_variables)])),integer,[nodeid(pos(44,1,13,8,13,12))]),b(value(int(2)),integer,[nodeid(pos(47,1,13,14,13,15))])),integer,[nodeid(pos(43,1,13,8,13,15))]),[bind(c,int(2))],[bind(xx,int(1))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5575501ed04afb6ae9c0d491ebe75965cbcac7b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 106,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 127,
+   :memory-usage 162466928,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not NATURAL:,-1,span_context(span_predicate(b(minus(b(minus(b(value(int(2)),integer,[was_identifier(c),nodeid(pos(45,1,13,8,13,9)),readonly,introduced_by(operation)]),b(identifier(xx),integer,[nodeid(pos(46,1,13,10,13,12)),loc(local,WhileLoopVariantErr2,abstract_variables)])),integer,[nodeid(pos(44,1,13,8,13,12))]),b(value(int(2)),integer,[nodeid(pos(47,1,13,14,13,15))])),integer,[nodeid(pos(43,1,13,8,13,15))]),[bind(c,int(2))],[bind(xx,int(1))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5575501ed04afb6ae9c0d491ebe75965cbcac7b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 99,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162087472,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not NATURAL:,-1,span_context(span_predicate(b(minus(b(minus(b(value(int(2)),integer,[was_identifier(c),nodeid(pos(45,1,13,8,13,9)),readonly,introduced_by(operation)]),b(identifier(xx),integer,[nodeid(pos(46,1,13,10,13,12)),loc(local,WhileLoopVariantErr2,abstract_variables)])),integer,[nodeid(pos(44,1,13,8,13,12))]),b(value(int(2)),integer,[nodeid(pos(47,1,13,14,13,15))])),integer,[nodeid(pos(43,1,13,8,13,15))]),[bind(c,int(2))],[bind(xx,int(1))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5575501ed04afb6ae9c0d491ebe75965cbcac7b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 161,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162077424,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not NATURAL:,-1,span_context(span_predicate(b(minus(b(minus(b(value(int(2)),integer,[was_identifier(c),nodeid(pos(45,1,13,8,13,9)),readonly,introduced_by(operation)]),b(identifier(xx),integer,[nodeid(pos(46,1,13,10,13,12)),loc(local,WhileLoopVariantErr2,abstract_variables)])),integer,[nodeid(pos(44,1,13,8,13,12))]),b(value(int(2)),integer,[nodeid(pos(47,1,13,14,13,15))])),integer,[nodeid(pos(43,1,13,8,13,15))]),[bind(c,int(2))],[bind(xx,int(1))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5575501ed04afb6ae9c0d491ebe75965cbcac7b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 159,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("while_variant_error"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162104432,
+   :result
+   "state_error(abort_error(while_variant_error,While VARIANT not NATURAL:,-1,span_context(span_predicate(b(minus(b(minus(b(value(int(2)),integer,[was_identifier(c),nodeid(pos(45,1,13,8,13,9)),readonly,introduced_by(operation)]),b(identifier(xx),integer,[nodeid(pos(46,1,13,10,13,12)),loc(local,WhileLoopVariantErr2,abstract_variables)])),integer,[nodeid(pos(44,1,13,8,13,12))]),b(value(int(2)),integer,[nodeid(pos(47,1,13,14,13,15))])),integer,[nodeid(pos(43,1,13,8,13,15))]),[bind(c,int(2))],[bind(xx,int(1))]),operation(Set,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5575501ed04afb6ae9c0d491ebe75965cbcac7b1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 163,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

@@ -1,6 +1,6 @@
 REFINEMENT MachineWithParametersErr2(a,C) /* Error: One parameter renamed: C must be B */
 REFINES MachineWithParameters
-CONSTRAINTS a:NAT
+//CONSTRAINTS a:NAT // not allowed by parser
 VARIABLES x
 INITIALISATION x:=0
 OPERATIONS

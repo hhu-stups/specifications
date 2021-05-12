@@ -1,0 +1,118 @@
+{:properties 4,
+ :definitions 14,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Other/MobileComm/BarRel_CXCC_Feb08.mch",
+ :enumerated_sets 2,
+ :variables 5,
+ :sha512
+ "04006ac22cf374e06723b6e316d55783ad7c454f65d4af05bb9b561601b4ddcd1a2429dea81b0cae7cc002451cfa306d6fd652d4221ffbc829be43d04bedddc5",
+ :static_assertions 0,
+ :operations 9,
+ :sha256
+ "029671a6cddf1dbaa7a88ef70f88aeeec61cdeae191329ff49d953115c6d0a0c",
+ :invariants 6,
+ :runs
+ [{:errors ("well_definedness_error"),
+   :states 3,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163558592,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,NODES),[]),span_context(span_predicate(b(function(b(identifier(ether),set(couple(global(NODES),global(Packets))),[nodeid(pos(538,1,85,46,85,51)),loc(local,CXCC_BarRel,abstract_variables)]),b(function(b(identifier(route),set(couple(integer,global(NODES))),[nodeid(pos(540,1,85,52,85,57)),loc(local,CXCC_BarRel,concrete_constants),readonly]),b(add(b(identifier(i),integer,[nodeid(pos(542,1,85,58,85,59)),readonly,introduced_by(operation)]),b(integer(2),integer,[nodeid(pos(543,1,85,60,85,61))])),integer,[nodeid(pos(541,1,85,58,85,61))])),global(NODES),[contains_wd_condition,nodeid(pos(539,1,85,52,85,62))])),global(Packets),[contains_wd_condition,nodeid(pos(537,1,85,46,85,63))]),[bind(n,fd(1,NODES)),bind(i,int(1)),bind(p,fd(1,Packets))],[bind(pout,avl_set(node((fd(1,NODES),fd(1,Packets)),true,0,empty,empty))),bind(pin,[]),bind(pinlast,[]),bind(ether,avl_set(node((fd(2,NODES),fd(1,Packets)),true,0,empty,empty))),bind(to_send,avl_set(node((int(1),fd(2,Packets)),true,1,empty,node((int(2),fd(3,Packets)),true,0,empty,empty)))),bind(route,avl_set(node((int(2),fd(2,NODES)),true,0,node((int(1),fd(1,NODES)),true,0,empty,empty),node((int(3),fd(3,NODES)),true,0,empty,empty)))),bind(expack,fd(4,Packets))]),operation(ReceiveImpAck,3))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "585d914c02fd0732d5e7620a010d29d52015f13c",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 201,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "assert_error"),
+   :states 3,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 7981,
+   :memory-usage 164511680,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,NODES),[]),span_context(span_predicate(b(function(b(identifier(ether),set(couple(global(NODES),global(Packets))),[nodeid(pos(538,1,85,46,85,51)),loc(local,CXCC_BarRel,abstract_variables)]),b(function(b(identifier(route),set(couple(integer,global(NODES))),[nodeid(pos(540,1,85,52,85,57)),loc(local,CXCC_BarRel,concrete_constants),readonly]),b(add(b(identifier(i),integer,[nodeid(pos(542,1,85,58,85,59)),readonly,introduced_by(operation)]),b(integer(2),integer,[nodeid(pos(543,1,85,60,85,61))])),integer,[nodeid(pos(541,1,85,58,85,61))])),global(NODES),[contains_wd_condition,nodeid(pos(539,1,85,52,85,62))])),global(Packets),[contains_wd_condition,nodeid(pos(537,1,85,46,85,63))]),[bind(n,fd(1,NODES)),bind(i,int(1)),bind(p,fd(1,Packets))],[bind(pout,avl_set(node((fd(1,NODES),fd(1,Packets)),true,0,empty,empty))),bind(pin,[]),bind(pinlast,[]),bind(ether,avl_set(node((fd(2,NODES),fd(1,Packets)),true,0,empty,empty))),bind(to_send,avl_set(node((int(1),fd(2,Packets)),true,1,empty,node((int(2),fd(3,Packets)),true,0,empty,empty)))),bind(route,avl_set(node((int(2),fd(2,NODES)),true,0,node((int(1),fd(1,NODES)),true,0,empty,empty),node((int(3),fd(3,NODES)),true,0,empty,empty)))),bind(expack,fd(4,Packets))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "585d914c02fd0732d5e7620a010d29d52015f13c",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 56,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "assert_error"),
+   :states 3,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4301,
+   :memory-usage 164513344,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,NODES),[]),span_context(span_predicate(b(function(b(identifier(ether),set(couple(global(NODES),global(Packets))),[nodeid(pos(538,1,85,46,85,51)),loc(local,CXCC_BarRel,abstract_variables)]),b(function(b(identifier(route),set(couple(integer,global(NODES))),[nodeid(pos(540,1,85,52,85,57)),loc(local,CXCC_BarRel,concrete_constants),readonly]),b(add(b(identifier(i),integer,[nodeid(pos(542,1,85,58,85,59)),readonly,introduced_by(operation)]),b(integer(2),integer,[nodeid(pos(543,1,85,60,85,61))])),integer,[nodeid(pos(541,1,85,58,85,61))])),global(NODES),[contains_wd_condition,nodeid(pos(539,1,85,52,85,62))])),global(Packets),[contains_wd_condition,nodeid(pos(537,1,85,46,85,63))]),[bind(n,fd(1,NODES)),bind(i,int(1)),bind(p,fd(1,Packets))],[bind(pout,avl_set(node((fd(1,NODES),fd(1,Packets)),true,0,empty,empty))),bind(pin,[]),bind(pinlast,[]),bind(ether,avl_set(node((fd(2,NODES),fd(1,Packets)),true,0,empty,empty))),bind(to_send,avl_set(node((int(1),fd(2,Packets)),true,1,empty,node((int(2),fd(3,Packets)),true,0,empty,empty)))),bind(route,avl_set(node((int(2),fd(2,NODES)),true,0,node((int(1),fd(1,NODES)),true,0,empty,empty),node((int(3),fd(3,NODES)),true,0,empty,empty)))),bind(expack,fd(4,Packets))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "585d914c02fd0732d5e7620a010d29d52015f13c",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 48,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163548512,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,NODES),[]),span_context(span_predicate(b(function(b(identifier(ether),set(couple(global(NODES),global(Packets))),[nodeid(pos(538,1,85,46,85,51)),loc(local,CXCC_BarRel,abstract_variables)]),b(function(b(identifier(route),set(couple(integer,global(NODES))),[nodeid(pos(540,1,85,52,85,57)),loc(local,CXCC_BarRel,concrete_constants),readonly]),b(add(b(identifier(i),integer,[nodeid(pos(542,1,85,58,85,59)),readonly,introduced_by(operation)]),b(integer(2),integer,[nodeid(pos(543,1,85,60,85,61))])),integer,[nodeid(pos(541,1,85,58,85,61))])),global(NODES),[contains_wd_condition,nodeid(pos(539,1,85,52,85,62))])),global(Packets),[contains_wd_condition,nodeid(pos(537,1,85,46,85,63))]),[bind(n,fd(1,NODES)),bind(i,int(1)),bind(p,fd(1,Packets))],[bind(pout,avl_set(node((fd(1,NODES),fd(1,Packets)),true,0,empty,empty))),bind(pin,[]),bind(pinlast,[]),bind(ether,avl_set(node((fd(2,NODES),fd(1,Packets)),true,0,empty,empty))),bind(to_send,avl_set(node((int(1),fd(2,Packets)),true,1,empty,node((int(2),fd(3,Packets)),true,0,empty,empty)))),bind(route,avl_set(node((int(2),fd(2,NODES)),true,0,node((int(1),fd(1,NODES)),true,0,empty,empty),node((int(3),fd(3,NODES)),true,0,empty,empty)))),bind(expack,fd(4,Packets))]),operation(ReceiveImpAck,3))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "585d914c02fd0732d5e7620a010d29d52015f13c",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 205,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 3,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 163630128,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#7): ,@fun(fd(3,NODES),[]),span_context(span_predicate(b(function(b(identifier(ether),set(couple(global(NODES),global(Packets))),[nodeid(pos(538,1,85,46,85,51)),loc(local,CXCC_BarRel,abstract_variables)]),b(function(b(identifier(route),set(couple(integer,global(NODES))),[nodeid(pos(540,1,85,52,85,57)),loc(local,CXCC_BarRel,concrete_constants),readonly]),b(add(b(identifier(i),integer,[nodeid(pos(542,1,85,58,85,59)),readonly,introduced_by(operation)]),b(integer(2),integer,[nodeid(pos(543,1,85,60,85,61))])),integer,[nodeid(pos(541,1,85,58,85,61))])),global(NODES),[contains_wd_condition,nodeid(pos(539,1,85,52,85,62))])),global(Packets),[contains_wd_condition,nodeid(pos(537,1,85,46,85,63))]),[bind(n,fd(1,NODES)),bind(i,int(1)),bind(p,fd(1,Packets))],[bind(pout,avl_set(node((fd(1,NODES),fd(1,Packets)),true,0,empty,empty))),bind(pin,[]),bind(pinlast,[]),bind(ether,avl_set(node((fd(2,NODES),fd(1,Packets)),true,0,empty,empty))),bind(to_send,avl_set(node((int(1),fd(2,Packets)),true,1,empty,node((int(2),fd(3,Packets)),true,0,empty,empty)))),bind(route,avl_set(node((int(2),fd(2,NODES)),true,0,node((int(1),fd(1,NODES)),true,0,empty,empty),node((int(3),fd(3,NODES)),true,0,empty,empty)))),bind(expack,fd(4,Packets))]),operation(ReceiveImpAck,3))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "585d914c02fd0732d5e7620a010d29d52015f13c",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 215,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 2}

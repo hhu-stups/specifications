@@ -1,0 +1,5 @@
+MACHINE TestWD_Division_KO2
+ASSERTIONS
+ 1+(((1012)+3)+4)/0 = 3
+END
+

@@ -1,0 +1,16 @@
+MACHINE verysimple
+DEFINITIONS SET_PREF_STRICT_CLASH_CHECKING == FALSE // c clashes with c
+CONSTANTS
+ c
+PROPERTIES
+ c = 10
+VARIABLES x, y
+INVARIANT
+ x:1..c & y : NATURAL
+INITIALISATION x,y:=2,1
+OPERATIONS
+  a = PRE y:1..5 THEN y:= 2*y END;
+  c(t) = PRE t:NATURAL & t<=x & x<10 THEN x := x+1 END
+ ;b = PRE y=0 THEN skip END
+END
+

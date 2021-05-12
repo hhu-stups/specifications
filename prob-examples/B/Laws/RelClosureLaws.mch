@@ -11,7 +11,7 @@ PROPERTIES
   dec = %y.(y:INTEGER|y-1) &
   decn = %y.(y:NATURAL1|y-1) &
   double = %z.(z:INTEGER|z*z) &
-  half = {x,y|y+y=x} &
+  half = {x,y|x:INTEGER & y+y=x} &
   fin235711 = {2 |->3, 3|->5, 5|->7, 7|->11, 11|->13}
 ASSERTIONS
   closure1(half)[{1024}] = {512,256,128,64,32,16,8,4,2,1};
@@ -82,4 +82,3 @@ OPERATIONS
   Half(yy) = PRE yy: half[{xx}] THEN xx:=yy END;
   HalfC(yy) = PRE yy: closure1(half)[{xx}] THEN xx:=yy END
 END
-

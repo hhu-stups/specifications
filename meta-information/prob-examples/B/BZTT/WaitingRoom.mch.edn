@@ -8,6 +8,8 @@
  :variables 8,
  :number-of-states :unknown,
  :included-machines ["./prob-examples/B/BZTT/WaitingRoom.mch"],
+ :sha512
+ "59115b4d8c543fd8e6672e7d3e7ed65cbb9b4399767676cb7eb54a3f23330e03a5e208ab79ba8cec343a2f90e49d1f01db772490f2abbc4b3a37cd9a15bf6890",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -27,7 +29,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 0,

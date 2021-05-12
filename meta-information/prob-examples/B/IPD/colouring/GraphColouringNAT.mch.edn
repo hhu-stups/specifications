@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/IPD/colouring/GraphColouringNAT.mch"
   "./prob-examples/B/IPD/colouring/Graph_small_40_200_0.def"],
+ :sha512
+ "930f344169b006350832e7a434256aa731d819b71f0cfc0a0a38e171012e3c3e425ad761516133bb4962cafc1b8a0a01eda9893211e82d602bbd82c67354e22d",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 4,

@@ -1,0 +1,68 @@
+{:properties 4,
+ :definitions 2,
+ :deferred_sets 0,
+ :file
+ "./prob-examples/B/Mathematical/Info4/Kapitel3-CF/CNF/GrammarWithHistory1.mch",
+ :enumerated_sets 1,
+ :variables 1,
+ :sha512
+ "4ce04d40d1a291161402323fa55c0082f24c9a98518e56592ccf26f956a0821e0e6b04bfd5c3edf04cd0b6637abe6a3552c3ad18ef7037473668578e2e95dbf6",
+ :static_assertions 0,
+ :operations 1,
+ :sha256
+ "d8a8cf664b9c29570337a1932623c31b2af084a13f9816f7d09729af9cabcd37",
+ :invariants 1,
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162792096,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "8866d6dd49aaf99eda37eaeecf233658e7108d3f",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 138,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:errors ("deadlock"),
+   :states 2,
+   :transitions 4,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 162877440,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "8866d6dd49aaf99eda37eaeecf233658e7108d3f",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 140,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 3}

@@ -19,11 +19,11 @@ PROPERTIES
   i3 = {a,b,c|a:NATURAL1 & b<0 & c>10} &
   i4 = {a,b|a>=200 & b=a*a} &
   i5 = %x.(x>10|100+x) &
-  i6 = {x,y,z|z=x+y & x>100 & y:{200,201}} 
+  i6 = {x,y,z|z=x+y & x>100 & y:{200,201}}
 ASSERTIONS
   f1:FIN(f1) & f2:FIN(f2) & f3: FIN(f3) & f4:FIN(f4) & f5:FIN(f5) & f6:FIN(f6) & f7:FIN(f7);
   i1 /: FIN(i1) & i2 /: FIN(i2) & i3 /: FIN(i3) & i4 /: FIN(i4) & i5 /: FIN(i5) & i6 /: FIN(i6);
-  f1(1)=TRUE; 
+  f1(1)=TRUE;
   f2={};
   f3={};
   f4={};

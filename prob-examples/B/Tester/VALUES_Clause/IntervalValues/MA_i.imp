@@ -1,0 +1,13 @@
+IMPLEMENTATION MA_i
+REFINES MA
+    
+    
+SEES MB
+
+VALUES 
+    Ens1 = 0..2 ** c1 +1;
+    Ens2 = interv
+
+    // both these VALUES are not supported yet by ProB
+
+ END

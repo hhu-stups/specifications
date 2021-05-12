@@ -1,35 +1,27 @@
-{:properties 2,
- :definitions 3,
- :deferred_sets 0,
- :number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "329f6aed72e04bf15ca61dd452826e26e064c7650fc9750ff495a2ab0c190eb6",
+ :sha512
+ "fdfa473bb82f22b884125d87383099dd23ba001ed69b044339e4a867fd0dbebc19e9b039c2900740b7099bed1ce9b96cac37bd3b67c2f541f108e3edd645b3d1",
  :file "./prob-examples/B/Compilers/TuringMachine_Add1.mch",
- :enumerated_sets 3,
- :variables 3,
- :number-of-states :unknown,
- :included-machines
- ["./prob-examples/B/Compilers/TuringMachine_Add1.mch"],
- :comment "",
- :files 1,
- :static_assertions 0,
- :operations 2,
- :sha256
- "b0d60451d8fa39c0443ddbd71b11cb1bd4cfdbad810c92fb99567ccc0993f5c2",
- :invariants 2,
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :dynamic_assertions 0,
- :invariant-violated :unknown,
- :constants 2,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

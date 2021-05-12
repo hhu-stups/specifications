@@ -14,4 +14,3 @@ OPERATIONS
   Set(x,y) = PRE x:ID & y:ID THEN rel1 := rel1 \/ {x|->y} END;
   Close = BEGIN rel1 := tclos(rel1) END
 END
-

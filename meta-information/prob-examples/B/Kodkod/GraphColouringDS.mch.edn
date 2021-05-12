@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/Kodkod/GraphColouringDS.mch"
   "./prob-examples/B/Kodkod/Graph_small_40_200_0_ds.def"],
+ :sha512
+ "12e86cc86fa68f7c44a53297473670a40feed31ba3eb2a2717a11c452d59e52dec90b40d85242bf0ec112dfb842d9f3b0411735849f855bbee6ca82dc404efb6",
  :comment "",
  :files 2,
  :static_assertions 0,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 3,

@@ -1,6 +1,7 @@
 MODEL SimpleCounter
 CONSTANTS minc,maxc
 PROPERTIES
+ minc : INTEGER &
  minc < maxc
 VARIABLES counter
 INVARIANT

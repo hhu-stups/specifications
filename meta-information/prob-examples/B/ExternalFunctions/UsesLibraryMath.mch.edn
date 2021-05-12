@@ -10,6 +10,8 @@
  :included-machines
  ["./prob-examples/B/ExternalFunctions/UsesLibraryMath.mch"
   "./prob-examples/B/ExternalFunctions/LibraryMath.mch"],
+ :sha512
+ "ee1ba61c0f6303080c6f3c0a4d915f5a9660888aca5606f6a5b9165de0d468c48e332ef55a1cff92517f0af8b712189b4e63decac9a563fcd4eacbdf73c30af7",
  :comment "",
  :files 2,
  :static_assertions 33,
@@ -29,7 +31,27 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated :unknown,
  :constants 11,

@@ -1,0 +1,27 @@
+{:sha256
+ "45f72430a8ce5659faee951e4783671a71d6e31077a171a7749caf553c41b976",
+ :sha512
+ "ab56993d2b4c86a8912335c2848cf0b4c395af7c3387a29b252ef478425a2cbccc3fa59a175ef6b19f8c080b97cafe9af7addf5ca8ddcd6db6cd49e743e79393",
+ :file
+ "./prob-examples/B/FeatureChecks/RenameParameterTests/FourCounters.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

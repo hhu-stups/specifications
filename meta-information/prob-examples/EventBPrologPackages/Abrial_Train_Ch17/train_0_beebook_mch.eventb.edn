@@ -1,0 +1,27 @@
+{:sha256
+ "8370e8f00f45c5f5366df7909340bc0625ed69f5129c5d3b553b0c7264895162",
+ :sha512
+ "a63cde8b17288c5bbd9e27b0759a637a1081c618c2ffa60c455bab9b1d1ecba08c51083f0344bb4856a8c9aa1d985f74bb690189700aed9bd399ecc5ee3799e3",
+ :file
+ "./prob-examples/EventBPrologPackages/Abrial_Train_Ch17/train_0_beebook_mch.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

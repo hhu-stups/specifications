@@ -1,0 +1,27 @@
+{:sha256
+ "2e0bee3d9a647a4d15857b1602c81578c080a99cb7f5f6c8a5bb6d0e2688ff30",
+ :sha512
+ "621aad0b5f124571ad9f368fa11e09cfabe1f7b2694d5201dbad6726bbe4ba7b86832051ae550c5be73aebc3a1e53bae4bc59aa3c84c9d40cdd8b333e4e4acd1",
+ :file
+ "./prob-examples/EventBPrologPackages/Tests/WD/TestWD_Prover_ctx.eventb",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

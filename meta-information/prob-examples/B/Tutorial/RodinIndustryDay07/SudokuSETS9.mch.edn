@@ -1,0 +1,26 @@
+{:sha256
+ "f39aba6a7e217614170bef69ab41126df6ec48d896e8f711bcc5753f7bfd1413",
+ :sha512
+ "459914a1701b1e2258c58bf53a201cb6c555411731e6bdcb3f9e9e02f2fc89167cd82301cc0e9d7ced38e1c4db606ecf68b9b5c52789f795e30da4f9c3b111c2",
+ :file "./prob-examples/B/Tutorial/RodinIndustryDay07/SudokuSETS9.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

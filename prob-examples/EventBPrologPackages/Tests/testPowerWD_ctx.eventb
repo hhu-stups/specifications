@@ -1,0 +1,2 @@
+package(load_event_b_project([],[event_b_context(none,testPowerWD,[extends(none,[]),constants(none,[identifier(none,a),identifier(none,b)]),abstract_constants(none,[]),axioms(none,[equal(rodinpos(testPowerWD,axm1,'_PtEigmHwEeqyttY07upLrA'),identifier(none,a),integer(none,-2)),equal(rodinpos(testPowerWD,axm2,'_PtEig2HwEeqyttY07upLrA'),identifier(none,b),power_of(none,identifier(none,a),integer(none,3)))]),theorems(none,[]),sets(none,[])])],[exporter_version(3),po(testPowerWD,'Well-definedness of Axiom',[axiom(axm2)],false)],_Error)).
+

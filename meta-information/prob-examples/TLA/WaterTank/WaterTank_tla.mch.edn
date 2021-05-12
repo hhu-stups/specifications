@@ -3,6 +3,8 @@
  :file "./prob-examples/TLA/WaterTank/WaterTank_tla.mch",
  :number-of-states :unknown,
  :included-machines [],
+ :sha512
+ "2951d02be332dfde71edf87892334ea17831944af7039f877060fa1817ff295f5093fad2fe7305b7c3f421398fb5fc0ab57e2e50d6770dfef724d38a6545cdf4",
  :comment "",
  :sha256
  "a743e9cb871c544e1121d554353a174ef6666444c696f8919555d0ee65b00152",
@@ -18,6 +20,26 @@
    :timeout 1800000,
    :model-checking-time :timeout,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :invariant-violated :unknown,
  :formalism :b}

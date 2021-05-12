@@ -1,7 +1,7 @@
 MACHINE scheduler_graphical
 
 SETS
-	PID  = {process1,process2,process3} 
+	PID  = {process1,process2,process3}
 
 VARIABLES active, ready, waiting
 
@@ -14,14 +14,13 @@ DEFINITIONS
       ASSERT_LTL2 == "GF (!e(swap) -> G ({card(active)>0} -> F {card(active)=0}))";
       ASSERT_LTL3_FAIL == "G {waiting /= {}}";
 
-      ANIMATION_FUNCTION2 == (card(active)+1);
       IsPidNr(c,i) == ((c=process1 & i=1) or (c=process2 & i=2) or (c=process3 & i=3));
       IsPidNrci == ((p=process1 & i=1) or (p=process2 & i=2) or (p=process3 & i=3));
          /* Note: currently only Predicate DEFINITIONS without arguments can be used inside ANIMATION_FUNCTION */
       ANIMATION_FUNCTION_DEFAULT == ( {1|->0|->5, 2|->0|->6, 3|->0|->7} \/ {r,c,img|r:1..3 & img=4 & c:1..3} );
       ANIMATION_FUNCTION == ( {r,c,i| r=1 & i:PID & c=i & i:waiting} \/
                                {r,c,i| r=2 & i:PID & c=i & i:ready} \/
-                               {r,c,i| r=3 & i:PID & c=i & i:active} 
+                               {r,c,i| r=3 & i:PID & c=i & i:active}
                               );
       ANIMATION_IMG1 == "images/1.gif";
       ANIMATION_IMG2 == "images/2.gif";
@@ -41,28 +40,28 @@ INVARIANT  /* active : POW(PID) & ready : POW(PID) & waiting: POW(PID) & */ /* t
            card(active) <= 1 &
            ((active = {})  => (ready = {}))
 
-              
-INITIALISATION  
+
+INITIALISATION
 	active := {} || ready := {} || waiting := {}
-	
+
 OPERATIONS
 
 new(pp) =
 	SELECT
 		pp : PID  &
 		pp /: active &
-		pp /: (ready \/ waiting) 
+		pp /: (ready \/ waiting)
 	THEN
 		waiting := (waiting \/ { pp })
 	END;
 
 del(pp) =
 	SELECT
-		pp : waiting 
+		pp : waiting
 	THEN
 		waiting := waiting - {pp}
 	END;
-	
+
 ready(rr) =
         SELECT
                 rr : waiting
@@ -71,10 +70,10 @@ ready(rr) =
                 IF (active = {}) THEN
                    active := {rr}
                 ELSE
-                   ready := ready \/ {rr} 
+                   ready := ready \/ {rr}
                 END
-        END; 
-        	
+        END;
+
 swap =
         SELECT
                 active /= {}
@@ -86,9 +85,9 @@ swap =
                    ANY pp WHERE pp : ready
                    THEN
                        active := {pp} ||
-                       ready := ready - {pp} 
+                       ready := ready - {pp}
                    END
                 END
-        END       
+        END
 END
 

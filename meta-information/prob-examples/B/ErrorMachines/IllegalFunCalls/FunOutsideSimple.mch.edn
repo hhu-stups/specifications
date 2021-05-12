@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/ErrorMachines/IllegalFunCalls/FunOutsideSimple.mch"],
+ :sha512
+ "e12f984f5ddbf8790fbecb53be41abcb1c4c0b23ff2ac0790282011429b7c96779c946f283e98579d5055d2466ad683983c2d217b8f34079ebc6849a99f306bf",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 80,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "initialisation_fails"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162310240,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,ID),[]),span_context(span_predicate(b(function(b(identifier(f),set(couple(global(ID),global(ID))),[nodeid(pos(35,1,13,20,13,21)),loc(local,FunOutsideSimple,concrete_constants),not_initialised,readonly]),b(identifier(aa),global(ID),[nodeid(pos(36,1,13,22,13,24)),loc(local,FunOutsideSimple,enumerated_elements),not_initialised,readonly,enumerated_set_element,def(enumerated_element,FunOutsideSimple)])),global(ID),[contains_wd_condition,nodeid(pos(34,1,13,20,13,25))]),[],[bind(xx,term(undefined)),bind(f,avl_set(node((fd(2,ID),fd(1,ID)),true,0,empty,empty)))]),operation($initialise_machine,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5a16cd99f367ce6cf03f6a2a4911988f713fa5e1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 59,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock" "initialisation_fails"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 3,
+   :memory-usage 162302528,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "5a16cd99f367ce6cf03f6a2a4911988f713fa5e1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "initialisation_fails"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162306320,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,ID),[]),span_context(span_predicate(b(function(b(identifier(f),set(couple(global(ID),global(ID))),[nodeid(pos(35,1,13,20,13,21)),loc(local,FunOutsideSimple,concrete_constants),not_initialised,readonly]),b(identifier(aa),global(ID),[nodeid(pos(36,1,13,22,13,24)),loc(local,FunOutsideSimple,enumerated_elements),not_initialised,readonly,enumerated_set_element,def(enumerated_element,FunOutsideSimple)])),global(ID),[contains_wd_condition,nodeid(pos(34,1,13,20,13,25))]),[],[bind(xx,term(undefined)),bind(f,avl_set(node((fd(2,ID),fd(1,ID)),true,0,empty,empty)))]),operation($initialise_machine,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5a16cd99f367ce6cf03f6a2a4911988f713fa5e1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 63,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error" "initialisation_fails"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 2,
+   :memory-usage 162308784,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,ID),[]),span_context(span_predicate(b(function(b(identifier(f),set(couple(global(ID),global(ID))),[nodeid(pos(35,1,13,20,13,21)),loc(local,FunOutsideSimple,concrete_constants),not_initialised,readonly]),b(identifier(aa),global(ID),[nodeid(pos(36,1,13,22,13,24)),loc(local,FunOutsideSimple,enumerated_elements),not_initialised,readonly,enumerated_set_element,def(enumerated_element,FunOutsideSimple)])),global(ID),[contains_wd_condition,nodeid(pos(34,1,13,20,13,25))]),[],[bind(xx,term(undefined)),bind(f,avl_set(node((fd(2,ID),fd(1,ID)),true,0,empty,empty)))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "5a16cd99f367ce6cf03f6a2a4911988f713fa5e1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock" "initialisation_fails"),
+   :states 0,
+   :transitions 3,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162311200,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "5a16cd99f367ce6cf03f6a2a4911988f713fa5e1",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 61,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

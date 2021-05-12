@@ -1,0 +1,26 @@
+{:sha256
+ "fe44350a4cf2770daeb5634965994d2d8d5c33794762f9bca376ddca523cd7df",
+ :sha512
+ "de06b61edc86f806c20380ee31bad27781c4172e279ee3d75e3118b090843cc0f9bfca26dfd2810e146dc98ae6fdac1b22fa7f9585ce7ffd13a8aa46206b9aa2",
+ :file "./prob-examples/B/TestCaseGeneration/NonDet_Simple1.mch",
+ :runs
+ [{:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}]}

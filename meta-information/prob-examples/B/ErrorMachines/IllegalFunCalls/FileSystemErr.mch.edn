@@ -10,6 +10,8 @@
  :number-of-states 14,
  :included-machines
  ["./prob-examples/B/ErrorMachines/IllegalFunCalls/FileSystemErr.mch"],
+ :sha512
+ "1dfa008eca13e0d8c27b723067f47fce2db2640f536e9db25b4f46689ad99fa3d23d171d1a0153e4ae5a46c6fb5a284b6adfc3d411ab2dcb7ca7973c99a616b8",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 390,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 28108,
+   :transitions 1619497,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 3060,
+   :memory-usage 1769932000,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,FilesFolders),[]),span_context(span_predicate(b(function(b(identifier(parent),set(couple(global(FilesFolders),global(FilesFolders))),[nodeid(pos(319,1,74,21,74,27)),loc(local,FileSystem,abstract_variables)]),b(identifier(ff),global(FilesFolders),[nodeid(pos(320,1,74,28,74,30)),readonly,introduced_by(operation)])),global(FilesFolders),[contains_wd_condition,nodeid(pos(318,1,74,21,74,31))]),[bind(ss,[(int(1),fd(1,FilesFolders))]),bind(ff,fd(1,FilesFolders))],[bind(path,term(undefined)),bind(parent,avl_set(node((fd(5,FilesFolders),fd(1,FilesFolders)),true,1,node((fd(2,FilesFolders),fd(1,FilesFolders)),true,0,empty,empty),node((fd(6,FilesFolders),fd(1,FilesFolders)),true,1,empty,node((fd(7,FilesFolders),fd(2,FilesFolders)),true,0,empty,empty))))),bind(name,avl_set(node((fd(5,FilesFolders),fd(1,Names)),true,0,node((fd(1,FilesFolders),fd(5,Names)),true,1,empty,node((fd(2,FilesFolders),fd(3,Names)),true,0,empty,empty)),node((fd(6,FilesFolders),fd(2,Names)),true,1,empty,node((fd(7,FilesFolders),fd(1,Names)),true,0,empty,empty))))),bind(Folders,avl_set(node(fd(2,FilesFolders),true,1,node(fd(1,FilesFolders),true,0,empty,empty),node(fd(3,FilesFolders),true,1,empty,node(fd(4,FilesFolders),true,0,empty,empty))))),bind(Files,avl_set(node(fd(8,FilesFolders),true,1,node(fd(6,FilesFolders),true,0,node(fd(5,FilesFolders),true,0,empty,empty),node(fd(7,FilesFolders),true,0,empty,empty)),node(fd(10,FilesFolders),true,1,node(fd(9,FilesFolders),true,0,empty,empty),node(fd(11,FilesFolders),true,1,empty,node(fd(12,FilesFolders),true,0,empty,empty)))))),bind(root,fd(1,FilesFolders)),bind(empty,fd(5,Names))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d17b65c5c6325bb95ec1e11162ef814b9e73305a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 366190,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 28050,
+   :transitions 1618753,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 1924098048,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,FilesFolders),[]),span_context(span_predicate(b(function(b(identifier(parent),set(couple(global(FilesFolders),global(FilesFolders))),[nodeid(pos(319,1,74,21,74,27)),loc(local,FileSystem,abstract_variables)]),b(identifier(ff),global(FilesFolders),[nodeid(pos(320,1,74,28,74,30)),readonly,introduced_by(operation)])),global(FilesFolders),[contains_wd_condition,nodeid(pos(318,1,74,21,74,31))]),[bind(ss,[(int(1),fd(1,FilesFolders))]),bind(ff,fd(1,FilesFolders))],[bind(path,term(undefined)),bind(parent,avl_set(node((fd(3,FilesFolders),fd(1,FilesFolders)),true,1,node((fd(2,FilesFolders),fd(1,FilesFolders)),true,0,empty,empty),node((fd(4,FilesFolders),fd(1,FilesFolders)),true,1,empty,node((fd(5,FilesFolders),fd(2,FilesFolders)),true,0,empty,empty))))),bind(name,avl_set(node((fd(3,FilesFolders),fd(2,Names)),true,0,node((fd(1,FilesFolders),fd(5,Names)),true,1,empty,node((fd(2,FilesFolders),fd(1,Names)),true,0,empty,empty)),node((fd(4,FilesFolders),fd(3,Names)),true,1,empty,node((fd(5,FilesFolders),fd(1,Names)),true,0,empty,empty))))),bind(Folders,avl_set(node(fd(2,FilesFolders),true,1,node(fd(1,FilesFolders),true,0,empty,empty),node(fd(3,FilesFolders),true,1,empty,node(fd(4,FilesFolders),true,0,empty,empty))))),bind(Files,avl_set(node(fd(8,FilesFolders),true,1,node(fd(6,FilesFolders),true,0,node(fd(5,FilesFolders),true,0,empty,empty),node(fd(7,FilesFolders),true,0,empty,empty)),node(fd(10,FilesFolders),true,1,node(fd(9,FilesFolders),true,0,empty,empty),node(fd(11,FilesFolders),true,1,empty,node(fd(12,FilesFolders),true,0,empty,empty)))))),bind(root,fd(1,FilesFolders)),bind(empty,fd(5,Names))]),operation(GetPath,28050))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d17b65c5c6325bb95ec1e11162ef814b9e73305a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 364098,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 28050,
+   :transitions 1618753,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 1689375936,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,FilesFolders),[]),span_context(span_predicate(b(function(b(identifier(parent),set(couple(global(FilesFolders),global(FilesFolders))),[nodeid(pos(319,1,74,21,74,27)),loc(local,FileSystem,abstract_variables)]),b(identifier(ff),global(FilesFolders),[nodeid(pos(320,1,74,28,74,30)),readonly,introduced_by(operation)])),global(FilesFolders),[contains_wd_condition,nodeid(pos(318,1,74,21,74,31))]),[bind(ss,[(int(1),fd(1,FilesFolders))]),bind(ff,fd(1,FilesFolders))],[bind(path,term(undefined)),bind(parent,avl_set(node((fd(3,FilesFolders),fd(1,FilesFolders)),true,1,node((fd(2,FilesFolders),fd(1,FilesFolders)),true,0,empty,empty),node((fd(4,FilesFolders),fd(1,FilesFolders)),true,1,empty,node((fd(5,FilesFolders),fd(2,FilesFolders)),true,0,empty,empty))))),bind(name,avl_set(node((fd(3,FilesFolders),fd(2,Names)),true,0,node((fd(1,FilesFolders),fd(5,Names)),true,1,empty,node((fd(2,FilesFolders),fd(1,Names)),true,0,empty,empty)),node((fd(4,FilesFolders),fd(3,Names)),true,1,empty,node((fd(5,FilesFolders),fd(1,Names)),true,0,empty,empty))))),bind(Folders,avl_set(node(fd(2,FilesFolders),true,1,node(fd(1,FilesFolders),true,0,empty,empty),node(fd(3,FilesFolders),true,1,empty,node(fd(4,FilesFolders),true,0,empty,empty))))),bind(Files,avl_set(node(fd(8,FilesFolders),true,1,node(fd(6,FilesFolders),true,0,node(fd(5,FilesFolders),true,0,empty,empty),node(fd(7,FilesFolders),true,0,empty,empty)),node(fd(10,FilesFolders),true,1,node(fd(9,FilesFolders),true,0,empty,empty),node(fd(11,FilesFolders),true,1,empty,node(fd(12,FilesFolders),true,0,empty,empty)))))),bind(root,fd(1,FilesFolders)),bind(empty,fd(5,Names))]),operation(GetPath,28050))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d17b65c5c6325bb95ec1e11162ef814b9e73305a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 370515,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 28050,
+   :transitions 1618753,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 1689384784,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,FilesFolders),[]),span_context(span_predicate(b(function(b(identifier(parent),set(couple(global(FilesFolders),global(FilesFolders))),[nodeid(pos(319,1,74,21,74,27)),loc(local,FileSystem,abstract_variables)]),b(identifier(ff),global(FilesFolders),[nodeid(pos(320,1,74,28,74,30)),readonly,introduced_by(operation)])),global(FilesFolders),[contains_wd_condition,nodeid(pos(318,1,74,21,74,31))]),[bind(ss,[(int(1),fd(1,FilesFolders))]),bind(ff,fd(1,FilesFolders))],[bind(path,term(undefined)),bind(parent,avl_set(node((fd(3,FilesFolders),fd(1,FilesFolders)),true,1,node((fd(2,FilesFolders),fd(1,FilesFolders)),true,0,empty,empty),node((fd(4,FilesFolders),fd(1,FilesFolders)),true,1,empty,node((fd(5,FilesFolders),fd(2,FilesFolders)),true,0,empty,empty))))),bind(name,avl_set(node((fd(3,FilesFolders),fd(2,Names)),true,0,node((fd(1,FilesFolders),fd(5,Names)),true,1,empty,node((fd(2,FilesFolders),fd(1,Names)),true,0,empty,empty)),node((fd(4,FilesFolders),fd(3,Names)),true,1,empty,node((fd(5,FilesFolders),fd(1,Names)),true,0,empty,empty))))),bind(Folders,avl_set(node(fd(2,FilesFolders),true,1,node(fd(1,FilesFolders),true,0,empty,empty),node(fd(3,FilesFolders),true,1,empty,node(fd(4,FilesFolders),true,0,empty,empty))))),bind(Files,avl_set(node(fd(8,FilesFolders),true,1,node(fd(6,FilesFolders),true,0,node(fd(5,FilesFolders),true,0,empty,empty),node(fd(7,FilesFolders),true,0,empty,empty)),node(fd(10,FilesFolders),true,1,node(fd(9,FilesFolders),true,0,empty,empty),node(fd(11,FilesFolders),true,1,empty,node(fd(12,FilesFolders),true,0,empty,empty)))))),bind(root,fd(1,FilesFolders)),bind(empty,fd(5,Names))]),operation(GetPath,28050))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d17b65c5c6325bb95ec1e11162ef814b9e73305a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 344939,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 28108,
+   :transitions 1619497,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4538,
+   :memory-usage 1775767376,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(1,FilesFolders),[]),span_context(span_predicate(b(function(b(identifier(parent),set(couple(global(FilesFolders),global(FilesFolders))),[nodeid(pos(319,1,74,21,74,27)),loc(local,FileSystem,abstract_variables)]),b(identifier(ff),global(FilesFolders),[nodeid(pos(320,1,74,28,74,30)),readonly,introduced_by(operation)])),global(FilesFolders),[contains_wd_condition,nodeid(pos(318,1,74,21,74,31))]),[bind(ss,[(int(1),fd(1,FilesFolders))]),bind(ff,fd(1,FilesFolders))],[bind(path,term(undefined)),bind(parent,avl_set(node((fd(5,FilesFolders),fd(1,FilesFolders)),true,1,node((fd(2,FilesFolders),fd(1,FilesFolders)),true,0,empty,empty),node((fd(6,FilesFolders),fd(1,FilesFolders)),true,1,empty,node((fd(7,FilesFolders),fd(2,FilesFolders)),true,0,empty,empty))))),bind(name,avl_set(node((fd(5,FilesFolders),fd(1,Names)),true,0,node((fd(1,FilesFolders),fd(5,Names)),true,1,empty,node((fd(2,FilesFolders),fd(3,Names)),true,0,empty,empty)),node((fd(6,FilesFolders),fd(2,Names)),true,1,empty,node((fd(7,FilesFolders),fd(1,Names)),true,0,empty,empty))))),bind(Folders,avl_set(node(fd(2,FilesFolders),true,1,node(fd(1,FilesFolders),true,0,empty,empty),node(fd(3,FilesFolders),true,1,empty,node(fd(4,FilesFolders),true,0,empty,empty))))),bind(Files,avl_set(node(fd(8,FilesFolders),true,1,node(fd(6,FilesFolders),true,0,node(fd(5,FilesFolders),true,0,empty,empty),node(fd(7,FilesFolders),true,0,empty,empty)),node(fd(10,FilesFolders),true,1,node(fd(9,FilesFolders),true,0,empty,empty),node(fd(11,FilesFolders),true,1,empty,node(fd(12,FilesFolders),true,0,empty,empty)))))),bind(root,fd(1,FilesFolders)),bind(empty,fd(5,Names))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "d17b65c5c6325bb95ec1e11162ef814b9e73305a",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 353317,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

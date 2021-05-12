@@ -12,6 +12,8 @@
   "./prob-examples/B/Typecheckertests/included1.mch"
   "./prob-examples/B/Typecheckertests/seen.mch"
   "./prob-examples/B/Typecheckertests/included2.mch"],
+ :sha512
+ "7d5b4c66a52802eb9f60c214ce823c189ba43830607d0a5211d98214dbfae12901724c30116662713604830225e6dce8131ac8ab33aa462ae7f78542075fec2c",
  :comment "",
  :files 4,
  :static_assertions 0,
@@ -31,6 +33,108 @@
    :timeout 1800000,
    :model-checking-time 140,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 2032,
+   :transitions 8114,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 169351168,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,elem : included2.Param & size(vI2a) < included2.value,span_context(span_predicate(b(conjunct(b(member(b(identifier(elem),global(sA),[nodeid(pos(131,4,10,9,10,13)),readonly,introduced_by(operation)]),b(identifier(included2.Param),set(global(sA)),[nodeid(pos(132,4,10,14,10,19)),loc(local,included2,parameters),readonly,parameter_set])),pred,[nodeid(pos(130,4,10,9,10,19))]),b(less(b(size(b(identifier(vI2a),seq(global(sA)),[nodeid(pos(135,4,10,27,10,31)),loc(local,included2,abstract_variables)])),integer,[contains_wd_condition,nodeid(pos(134,4,10,22,10,32))]),b(identifier(included2.value),integer,[nodeid(pos(136,4,10,35,10,40)),loc(local,included2,parameters),readonly,parameter_scalar])),pred,[contains_wd_condition,nodeid(pos(133,4,10,22,10,40))])),pred,[contains_wd_condition,nodeid(pos(129,4,10,9,10,40))]),[bind(elem,fd(1,sA))],[bind(vAa,fd(1,sA)),bind(vI1,fd(1,seenset2)),bind(r.vI1,fd(1,seenset2)),bind(vI2a,avl_set(node((int(3),fd(1,sA)),true,0,node((int(1),fd(1,sA)),true,1,empty,node((int(2),fd(1,sA)),true,0,empty,empty)),node((int(5),fd(1,sA)),true,0,node((int(4),fd(1,sA)),true,0,empty,empty),node((int(6),fd(1,sA)),true,0,empty,empty))))),bind(seencst,avl_set(node((fd(1,seenset1),int(0)),true,1,empty,node((fd(2,seenset1),int(0)),true,0,empty,empty)))),bind(included2.Param,avl_set(node(fd(1,sA),true,1,empty,node(fd(2,sA),true,0,empty,empty)))),bind(included2.value,int(6))]),operation(addSomething,2032))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7747e1c77bb133ce76d38527ad691d3f1f52a25e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 1221,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 2032,
+   :transitions 8114,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 169722784,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,elem : included2.Param & size(vI2a) < included2.value,span_context(span_predicate(b(conjunct(b(member(b(identifier(elem),global(sA),[nodeid(pos(131,4,10,9,10,13)),readonly,introduced_by(operation)]),b(identifier(included2.Param),set(global(sA)),[nodeid(pos(132,4,10,14,10,19)),loc(local,included2,parameters),readonly,parameter_set])),pred,[nodeid(pos(130,4,10,9,10,19))]),b(less(b(size(b(identifier(vI2a),seq(global(sA)),[nodeid(pos(135,4,10,27,10,31)),loc(local,included2,abstract_variables)])),integer,[contains_wd_condition,nodeid(pos(134,4,10,22,10,32))]),b(identifier(included2.value),integer,[nodeid(pos(136,4,10,35,10,40)),loc(local,included2,parameters),readonly,parameter_scalar])),pred,[contains_wd_condition,nodeid(pos(133,4,10,22,10,40))])),pred,[contains_wd_condition,nodeid(pos(129,4,10,9,10,40))]),[bind(elem,fd(1,sA))],[bind(vAa,fd(1,sA)),bind(vI1,fd(1,seenset2)),bind(r.vI1,fd(1,seenset2)),bind(vI2a,avl_set(node((int(3),fd(1,sA)),true,0,node((int(1),fd(1,sA)),true,1,empty,node((int(2),fd(1,sA)),true,0,empty,empty)),node((int(5),fd(1,sA)),true,0,node((int(4),fd(1,sA)),true,0,empty,empty),node((int(6),fd(1,sA)),true,0,empty,empty))))),bind(seencst,avl_set(node((fd(1,seenset1),int(0)),true,1,empty,node((fd(2,seenset1),int(0)),true,0,empty,empty)))),bind(included2.Param,avl_set(node(fd(1,sA),true,1,empty,node(fd(2,sA),true,0,empty,empty)))),bind(included2.value,int(6))]),operation(addSomething,2032))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7747e1c77bb133ce76d38527ad691d3f1f52a25e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 1123,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 2032,
+   :transitions 8114,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 104,
+   :memory-usage 170172896,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,elem : included2.Param & size(vI2a) < included2.value,span_context(span_predicate(b(conjunct(b(member(b(identifier(elem),global(sA),[nodeid(pos(131,4,10,9,10,13)),readonly,introduced_by(operation)]),b(identifier(included2.Param),set(global(sA)),[nodeid(pos(132,4,10,14,10,19)),loc(local,included2,parameters),readonly,parameter_set])),pred,[nodeid(pos(130,4,10,9,10,19))]),b(less(b(size(b(identifier(vI2a),seq(global(sA)),[nodeid(pos(135,4,10,27,10,31)),loc(local,included2,abstract_variables)])),integer,[contains_wd_condition,nodeid(pos(134,4,10,22,10,32))]),b(identifier(included2.value),integer,[nodeid(pos(136,4,10,35,10,40)),loc(local,included2,parameters),readonly,parameter_scalar])),pred,[contains_wd_condition,nodeid(pos(133,4,10,22,10,40))])),pred,[contains_wd_condition,nodeid(pos(129,4,10,9,10,40))]),[bind(elem,fd(1,sA))],[bind(vAa,fd(1,sA)),bind(vI1,fd(1,seenset2)),bind(r.vI1,fd(1,seenset2)),bind(vI2a,avl_set(node((int(3),fd(1,sA)),true,0,node((int(1),fd(1,sA)),true,1,empty,node((int(2),fd(1,sA)),true,0,empty,empty)),node((int(5),fd(1,sA)),true,0,node((int(4),fd(1,sA)),true,0,empty,empty),node((int(6),fd(1,sA)),true,0,empty,empty))))),bind(seencst,avl_set(node((fd(1,seenset1),int(0)),true,1,empty,node((fd(2,seenset1),int(0)),true,0,empty,empty)))),bind(included2.Param,avl_set(node(fd(1,sA),true,1,empty,node(fd(2,sA),true,0,empty,empty)))),bind(included2.value,int(6))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7747e1c77bb133ce76d38527ad691d3f1f52a25e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 1647,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 2032,
+   :transitions 8114,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 169713120,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,elem : included2.Param & size(vI2a) < included2.value,span_context(span_predicate(b(conjunct(b(member(b(identifier(elem),global(sA),[nodeid(pos(131,4,10,9,10,13)),readonly,introduced_by(operation)]),b(identifier(included2.Param),set(global(sA)),[nodeid(pos(132,4,10,14,10,19)),loc(local,included2,parameters),readonly,parameter_set])),pred,[nodeid(pos(130,4,10,9,10,19))]),b(less(b(size(b(identifier(vI2a),seq(global(sA)),[nodeid(pos(135,4,10,27,10,31)),loc(local,included2,abstract_variables)])),integer,[contains_wd_condition,nodeid(pos(134,4,10,22,10,32))]),b(identifier(included2.value),integer,[nodeid(pos(136,4,10,35,10,40)),loc(local,included2,parameters),readonly,parameter_scalar])),pred,[contains_wd_condition,nodeid(pos(133,4,10,22,10,40))])),pred,[contains_wd_condition,nodeid(pos(129,4,10,9,10,40))]),[bind(elem,fd(1,sA))],[bind(vAa,fd(1,sA)),bind(vI1,fd(1,seenset2)),bind(r.vI1,fd(1,seenset2)),bind(vI2a,avl_set(node((int(3),fd(1,sA)),true,0,node((int(1),fd(1,sA)),true,1,empty,node((int(2),fd(1,sA)),true,0,empty,empty)),node((int(5),fd(1,sA)),true,0,node((int(4),fd(1,sA)),true,0,empty,empty),node((int(6),fd(1,sA)),true,0,empty,empty))))),bind(seencst,avl_set(node((fd(1,seenset1),int(0)),true,1,empty,node((fd(2,seenset1),int(0)),true,0,empty,empty)))),bind(included2.Param,avl_set(node(fd(1,sA),true,1,empty,node(fd(2,sA),true,0,empty,empty)))),bind(included2.value,int(6))]),operation(addSomething,2032))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7747e1c77bb133ce76d38527ad691d3f1f52a25e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 1223,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("precondition_error"),
+   :states 400,
+   :transitions 949,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 104,
+   :memory-usage 164544832,
+   :result
+   "state_error(abort_error(precondition_error,Precondition violated: ,elem : included2.Param & size(vI2a) < included2.value,span_context(span_predicate(b(conjunct(b(member(b(identifier(elem),global(sA),[nodeid(pos(131,4,10,9,10,13)),readonly,introduced_by(operation)]),b(identifier(included2.Param),set(global(sA)),[nodeid(pos(132,4,10,14,10,19)),loc(local,included2,parameters),readonly,parameter_set])),pred,[nodeid(pos(130,4,10,9,10,19))]),b(less(b(size(b(identifier(vI2a),seq(global(sA)),[nodeid(pos(135,4,10,27,10,31)),loc(local,included2,abstract_variables)])),integer,[contains_wd_condition,nodeid(pos(134,4,10,22,10,32))]),b(identifier(included2.value),integer,[nodeid(pos(136,4,10,35,10,40)),loc(local,included2,parameters),readonly,parameter_scalar])),pred,[contains_wd_condition,nodeid(pos(133,4,10,22,10,40))])),pred,[contains_wd_condition,nodeid(pos(129,4,10,9,10,40))]),[bind(elem,fd(1,sA))],[bind(vAa,fd(2,sA)),bind(vI1,fd(1,seenset2)),bind(r.vI1,fd(1,seenset2)),bind(vI2a,avl_set(node((int(3),fd(1,sA)),true,0,node((int(1),fd(1,sA)),true,1,empty,node((int(2),fd(1,sA)),true,0,empty,empty)),node((int(5),fd(2,sA)),true,0,node((int(4),fd(2,sA)),true,0,empty,empty),node((int(6),fd(1,sA)),true,0,empty,empty))))),bind(seencst,avl_set(node((fd(1,seenset1),int(0)),true,1,empty,node((fd(2,seenset1),int(0)),true,0,empty,empty)))),bind(included2.Param,avl_set(node(fd(1,sA),true,1,empty,node(fd(2,sA),true,0,empty,empty)))),bind(included2.value,int(6))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7747e1c77bb133ce76d38527ad691d3f1f52a25e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 329,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

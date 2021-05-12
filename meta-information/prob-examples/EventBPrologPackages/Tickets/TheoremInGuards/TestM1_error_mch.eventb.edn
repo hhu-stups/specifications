@@ -10,6 +10,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/EventBPrologPackages/Tickets/TheoremInGuards/TestM1_error_mch.eventb"],
+ :sha512
+ "e30c763247d76509d6afbae352e1fccd223a2ec972baac88c9ca867e4198040b604393e74ff3d0b77c12ca9f35a903b39620b965dd05b83f40c89fd96da6f254",
  :comment "",
  :files 1,
  :static_assertions 1,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 50,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:teste:invalid_theorem_in_guard"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161586048,
+   :result
+   "state_error(eventerror(teste,invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))])),[event(teste,TestM1_error),true_guard([],[],b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g)),loc(TestM1_error,variables),section(TestM1_error),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g))])),pred,[nodeid(rodinpos(TestM1_error,g,_EA_14qWgEeWLn-CnkyCiZw))])),invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7e8a267aa41b68f5d08572a58eda1055c3fa62af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 50,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:teste:invalid_theorem_in_guard"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161496912,
+   :result
+   "state_error(eventerror(teste,invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))])),[event(teste,TestM1_error),true_guard([],[],b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g)),loc(TestM1_error,variables),section(TestM1_error),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g))])),pred,[nodeid(rodinpos(TestM1_error,g,_EA_14qWgEeWLn-CnkyCiZw))])),invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7e8a267aa41b68f5d08572a58eda1055c3fa62af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 49,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:teste:invalid_theorem_in_guard"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161488784,
+   :result
+   "state_error(eventerror(teste,invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))])),[event(teste,TestM1_error),true_guard([],[],b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g)),loc(TestM1_error,variables),section(TestM1_error),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g))])),pred,[nodeid(rodinpos(TestM1_error,g,_EA_14qWgEeWLn-CnkyCiZw))])),invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7e8a267aa41b68f5d08572a58eda1055c3fa62af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 46,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:teste:invalid_theorem_in_guard"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 4,
+   :memory-usage 161591888,
+   :result
+   "state_error(eventerror(teste,invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))])),[event(teste,TestM1_error),true_guard([],[],b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g)),loc(TestM1_error,variables),section(TestM1_error),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g))])),pred,[nodeid(rodinpos(TestM1_error,g,_EA_14qWgEeWLn-CnkyCiZw))])),invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7e8a267aa41b68f5d08572a58eda1055c3fa62af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 51,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:teste:invalid_theorem_in_guard"),
+   :states 0,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161492128,
+   :result
+   "state_error(eventerror(teste,invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))])),[event(teste,TestM1_error),true_guard([],[],b(equal(b(identifier(y),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g)),loc(TestM1_error,variables),section(TestM1_error),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,guard),g))])),pred,[nodeid(rodinpos(TestM1_error,g,_EA_14qWgEeWLn-CnkyCiZw))])),invalid_theorem_in_guard(b(equal(b(identifier(item),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx)),loc(TestM0,variables),section(TestM0),level(0)]),b(integer(2),integer,[nodeid(rodin_derived_context_pos(TestM1_error,event(teste,theorems),gx))])),pred,[nodeid(rodinpos(TestM1_error,gx,_EA_146WgEeWLn-CnkyCiZw))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "7e8a267aa41b68f5d08572a58eda1055c3fa62af",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 46,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

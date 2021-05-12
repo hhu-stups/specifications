@@ -1,35 +1,119 @@
 {:properties 6,
  :definitions 7,
  :deferred_sets 1,
- :number-of-transitions 88,
- :deadlock false,
  :file "./prob-examples/ASM/TranslationToB/ExtremaFinding.mch",
  :enumerated_sets 1,
  :variables 5,
- :number-of-states 7,
- :included-machines
- ["./prob-examples/ASM/TranslationToB/ExtremaFinding.mch"],
- :comment "",
- :files 1,
+ :sha512
+ "840433068b8e9d89a04569f414064719b72223b84d19d32b913cb5c86a0babd92f7e11263d886dbdd13efddd0baa8b529e0a07cc4f446e5e2c0edd4803e9a784",
+ :comment "SHA changed",
  :static_assertions 0,
  :operations 2,
  :sha256
- "8e172aadf6e9f18bc99d6b9f90add4b8433030499ca690f197d2d28387174f90",
+ "0ae343fcc870c67b3c301c347be07a0fc9f65509bd9f8bb1da47a7364de96d71",
  :invariants 5,
  :runs
- [{:tool :prob,
+ [{:errors ("well_definedness_error"),
+   :states 432,
+   :transitions 1587,
+   :tool :prob,
    :hardware
    {:name :hilbert-ivybridge,
     :memory "2 GB",
     :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage 157286400,
+   :static-analysis-time 1,
+   :memory-usage 166183120,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Agents),[]),span_context(span_predicate(b(function(b(identifier(leftMsg),set(couple(global(Agents),integer)),[nodeid(pos(324,1,56,31,56,38)),loc(local,ExtremaFinding,abstract_variables)]),b(identifier(self),global(Agents),[nodeid(pos(325,1,56,39,56,43)),readonly,introduced_by(operation)])),integer,[contains_wd_condition,nodeid(pos(323,1,56,31,56,44))]),[bind(self,fd(2,Agents))],[bind(mode,avl_set(node((fd(2,Agents),fd(2,Status)),true,1,node((fd(1,Agents),fd(1,Status)),true,0,empty,empty),node((fd(3,Agents),fd(1,Status)),true,1,empty,node((fd(4,Agents),fd(1,Status)),true,0,empty,empty))))),bind(notified,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(isLargest,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(rightMsg,avl_set(node((fd(2,Agents),int(9)),true,1,empty,node((fd(3,Agents),int(6)),true,0,empty,empty)))),bind(leftMsg,avl_set(node((fd(1,Agents),int(6)),true,1,empty,node((fd(4,Agents),int(9)),true,0,empty,empty)))),bind(N,int(4)),bind(m,int(11)),bind(pos,avl_set(node((fd(2,Agents),int(2)),true,1,node((fd(1,Agents),int(3)),true,0,empty,empty),node((fd(3,Agents),int(1)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty))))),bind(pid,avl_set(node((fd(2,Agents),int(6)),true,1,node((fd(1,Agents),int(9)),true,0,empty,empty),node((fd(3,Agents),int(3)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty)))))]),operation(Rule,432))))",
    :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
-   :timeout 1800000,
-   :model-checking-time 150,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :machine-hash "e8970a7a1627b8b77a1acc3f70ebbf763133da41",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 2982,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 432,
+   :transitions 1587,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 362,
+   :memory-usage 166688240,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Agents),[]),span_context(span_predicate(b(function(b(identifier(leftMsg),set(couple(global(Agents),integer)),[nodeid(pos(324,1,56,31,56,38)),loc(local,ExtremaFinding,abstract_variables)]),b(identifier(self),global(Agents),[nodeid(pos(325,1,56,39,56,43)),readonly,introduced_by(operation)])),integer,[contains_wd_condition,nodeid(pos(323,1,56,31,56,44))]),[bind(self,fd(2,Agents))],[bind(mode,avl_set(node((fd(2,Agents),fd(2,Status)),true,1,node((fd(1,Agents),fd(1,Status)),true,0,empty,empty),node((fd(3,Agents),fd(1,Status)),true,1,empty,node((fd(4,Agents),fd(1,Status)),true,0,empty,empty))))),bind(notified,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(isLargest,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(rightMsg,avl_set(node((fd(2,Agents),int(9)),true,1,empty,node((fd(3,Agents),int(6)),true,0,empty,empty)))),bind(leftMsg,avl_set(node((fd(1,Agents),int(6)),true,1,empty,node((fd(4,Agents),int(9)),true,0,empty,empty)))),bind(N,int(4)),bind(m,int(11)),bind(pos,avl_set(node((fd(2,Agents),int(2)),true,1,node((fd(1,Agents),int(3)),true,0,empty,empty),node((fd(3,Agents),int(1)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty))))),bind(pid,avl_set(node((fd(2,Agents),int(6)),true,1,node((fd(1,Agents),int(9)),true,0,empty,empty),node((fd(3,Agents),int(3)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e8970a7a1627b8b77a1acc3f70ebbf763133da41",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 2911,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 432,
+   :transitions 1587,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 166218048,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Agents),[]),span_context(span_predicate(b(function(b(identifier(leftMsg),set(couple(global(Agents),integer)),[nodeid(pos(324,1,56,31,56,38)),loc(local,ExtremaFinding,abstract_variables)]),b(identifier(self),global(Agents),[nodeid(pos(325,1,56,39,56,43)),readonly,introduced_by(operation)])),integer,[contains_wd_condition,nodeid(pos(323,1,56,31,56,44))]),[bind(self,fd(2,Agents))],[bind(mode,avl_set(node((fd(2,Agents),fd(2,Status)),true,1,node((fd(1,Agents),fd(1,Status)),true,0,empty,empty),node((fd(3,Agents),fd(1,Status)),true,1,empty,node((fd(4,Agents),fd(1,Status)),true,0,empty,empty))))),bind(notified,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(isLargest,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(rightMsg,avl_set(node((fd(2,Agents),int(9)),true,1,empty,node((fd(3,Agents),int(6)),true,0,empty,empty)))),bind(leftMsg,avl_set(node((fd(1,Agents),int(6)),true,1,empty,node((fd(4,Agents),int(9)),true,0,empty,empty)))),bind(N,int(4)),bind(m,int(11)),bind(pos,avl_set(node((fd(2,Agents),int(2)),true,1,node((fd(1,Agents),int(3)),true,0,empty,empty),node((fd(3,Agents),int(1)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty))))),bind(pid,avl_set(node((fd(2,Agents),int(6)),true,1,node((fd(1,Agents),int(9)),true,0,empty,empty),node((fd(3,Agents),int(3)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty)))))]),operation(Rule,432))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e8970a7a1627b8b77a1acc3f70ebbf763133da41",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 2846,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 432,
+   :transitions 1587,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 359,
+   :memory-usage 166683248,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Agents),[]),span_context(span_predicate(b(function(b(identifier(leftMsg),set(couple(global(Agents),integer)),[nodeid(pos(324,1,56,31,56,38)),loc(local,ExtremaFinding,abstract_variables)]),b(identifier(self),global(Agents),[nodeid(pos(325,1,56,39,56,43)),readonly,introduced_by(operation)])),integer,[contains_wd_condition,nodeid(pos(323,1,56,31,56,44))]),[bind(self,fd(2,Agents))],[bind(mode,avl_set(node((fd(2,Agents),fd(2,Status)),true,1,node((fd(1,Agents),fd(1,Status)),true,0,empty,empty),node((fd(3,Agents),fd(1,Status)),true,1,empty,node((fd(4,Agents),fd(1,Status)),true,0,empty,empty))))),bind(notified,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(isLargest,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(rightMsg,avl_set(node((fd(2,Agents),int(9)),true,1,empty,node((fd(3,Agents),int(6)),true,0,empty,empty)))),bind(leftMsg,avl_set(node((fd(1,Agents),int(6)),true,1,empty,node((fd(4,Agents),int(9)),true,0,empty,empty)))),bind(N,int(4)),bind(m,int(11)),bind(pos,avl_set(node((fd(2,Agents),int(2)),true,1,node((fd(1,Agents),int(3)),true,0,empty,empty),node((fd(3,Agents),int(1)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty))))),bind(pid,avl_set(node((fd(2,Agents),int(6)),true,1,node((fd(1,Agents),int(9)),true,0,empty,empty),node((fd(3,Agents),int(3)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty)))))]),???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e8970a7a1627b8b77a1acc3f70ebbf763133da41",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 2920,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 432,
+   :transitions 1587,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 166227312,
+   :result
+   "state_error(abort_error(well_definedness_error,function applied outside of domain (#6): ,@fun(fd(2,Agents),[]),span_context(span_predicate(b(function(b(identifier(leftMsg),set(couple(global(Agents),integer)),[nodeid(pos(324,1,56,31,56,38)),loc(local,ExtremaFinding,abstract_variables)]),b(identifier(self),global(Agents),[nodeid(pos(325,1,56,39,56,43)),readonly,introduced_by(operation)])),integer,[contains_wd_condition,nodeid(pos(323,1,56,31,56,44))]),[bind(self,fd(2,Agents))],[bind(mode,avl_set(node((fd(2,Agents),fd(2,Status)),true,1,node((fd(1,Agents),fd(1,Status)),true,0,empty,empty),node((fd(3,Agents),fd(1,Status)),true,1,empty,node((fd(4,Agents),fd(1,Status)),true,0,empty,empty))))),bind(notified,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(isLargest,avl_set(node((fd(2,Agents),pred_false),true,1,node((fd(1,Agents),pred_false),true,0,empty,empty),node((fd(3,Agents),pred_false),true,1,empty,node((fd(4,Agents),pred_false),true,0,empty,empty))))),bind(rightMsg,avl_set(node((fd(2,Agents),int(9)),true,1,empty,node((fd(3,Agents),int(6)),true,0,empty,empty)))),bind(leftMsg,avl_set(node((fd(1,Agents),int(6)),true,1,empty,node((fd(4,Agents),int(9)),true,0,empty,empty)))),bind(N,int(4)),bind(m,int(11)),bind(pos,avl_set(node((fd(2,Agents),int(2)),true,1,node((fd(1,Agents),int(3)),true,0,empty,empty),node((fd(3,Agents),int(1)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty))))),bind(pid,avl_set(node((fd(2,Agents),int(6)),true,1,node((fd(1,Agents),int(9)),true,0,empty,empty),node((fd(3,Agents),int(3)),true,1,empty,node((fd(4,Agents),int(0)),true,0,empty,empty)))))]),operation(Rule,432))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "e8970a7a1627b8b77a1acc3f70ebbf763133da41",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 3129,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
- :invariant-violated false,
- :constants 4,
- :formalism :b}
+ :constants 4}

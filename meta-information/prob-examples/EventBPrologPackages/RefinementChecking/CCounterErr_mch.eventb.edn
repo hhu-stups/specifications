@@ -10,6 +10,8 @@
  :number-of-states 4,
  :included-machines
  ["./prob-examples/EventBPrologPackages/RefinementChecking/CCounterErr_mch.eventb"],
+ :sha512
+ "a14f464b745870a54dc23d3156eeded5e5c75b0786ec938303bda7a7d6392496857e56c5012c4c970ad2d55790de66219adc8c90a0b93baff5c01932c5868852",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,108 @@
    :timeout 1800000,
    :model-checking-time 120,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:no_witness_found"),
+   :states 13,
+   :transitions 26,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162271552,
+   :result
+   "state_error(eventerror(Inc,no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))])),[event(Inc,CCounterErr),true_guard([],[],b(less(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(identifier(maxitems),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(ACsts,constants),section(ACsts)])),pred,[nodeid(rodinpos(CCounterErr,grd2,_tGqrwXqdEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])],[int(3)]),no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ca0c0b2a546a514b04028a933701fb829535658e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 113,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:no_witness_found"),
+   :states 13,
+   :transitions 26,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 88,
+   :memory-usage 162567872,
+   :result
+   "state_error(eventerror(Inc,no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))])),[event(Inc,CCounterErr),true_guard([],[],b(less(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(identifier(maxitems),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(ACsts,constants),section(ACsts)])),pred,[nodeid(rodinpos(CCounterErr,grd2,_tGqrwXqdEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])],[int(3)]),no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ca0c0b2a546a514b04028a933701fb829535658e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 72,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:no_witness_found"),
+   :states 13,
+   :transitions 26,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162266512,
+   :result
+   "state_error(eventerror(Inc,no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))])),[event(Inc,CCounterErr),true_guard([],[],b(less(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(identifier(maxitems),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(ACsts,constants),section(ACsts)])),pred,[nodeid(rodinpos(CCounterErr,grd2,_tGqrwXqdEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])],[int(3)]),no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ca0c0b2a546a514b04028a933701fb829535658e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 110,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:no_witness_found"),
+   :states 13,
+   :transitions 26,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162263840,
+   :result
+   "state_error(eventerror(Inc,no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))])),[event(Inc,CCounterErr),true_guard([],[],b(less(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(identifier(maxitems),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(ACsts,constants),section(ACsts)])),pred,[nodeid(rodinpos(CCounterErr,grd2,_tGqrwXqdEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])],[int(3)]),no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ca0c0b2a546a514b04028a933701fb829535658e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 108,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:Inc:no_witness_found"),
+   :states 13,
+   :transitions 26,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 102,
+   :memory-usage 162603360,
+   :result
+   "state_error(eventerror(Inc,no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))])),[event(Inc,CCounterErr),true_guard([],[],b(less(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(identifier(maxitems),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,guard),grd2)),loc(ACsts,constants),section(ACsts)])),pred,[nodeid(rodinpos(CCounterErr,grd2,_tGqrwXqdEeK4Fp2vhFF57Q))])),action([b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)])],[b(add(b(identifier(n),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2)),loc(CCounterErr,variables),section(CCounterErr),level(1)]),b(integer(1),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])),integer,[nodeid(rodin_derived_context_pos(CCounterErr,event(Inc,actions),act2))])],[int(3)]),no_witness_found(parameter,b(identifier(p),global(T),[droppedby([AEnter]),nodeid(rodinpos(AEnterLeave,[],_54XYQHp_EeKbMcnaXCV8SA)),loc(AEnterLeave,event(AEnter))]),b(member(b(identifier(p),global(T),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),droppedby([AEnter]),loc(AEnterLeave,event(AEnter))]),b(set_subtraction(b(identifier(T),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),section(ACsts),given_set]),b(identifier(s),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p)),loc(AEnterLeave,variables),section(AEnterLeave),level(0)])),set(global(T)),[nodeid(rodin_derived_context_pos(CCounterErr,witness,p))])),pred,[nodeid(rodinpos(CCounterErr,p,_tGrS0HqdEeK4Fp2vhFF57Q))]))]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ca0c0b2a546a514b04028a933701fb829535658e",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 80,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

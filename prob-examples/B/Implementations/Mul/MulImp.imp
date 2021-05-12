@@ -1,6 +1,7 @@
 IMPLEMENTATION
    MulImp
 REFINES Mul
+//ABSTRACT_CONSTANTS aa PROPERTIES aa=10
 OPERATIONS
  res <-- Mult(a,b) =
   VAR tot,x,y IN

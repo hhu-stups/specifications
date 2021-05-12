@@ -9,6 +9,8 @@
  :number-of-states 0,
  :included-machines
  ["./prob-examples/B/SymmetryReduction/SudokuSym.mch"],
+ :sha512
+ "f8c7b0e23a0c29a03e4fbb4ca80271d75d568a54ee117ece4e2bc7c2888efa5c96c9b25c34fc470ceeb7a12d3d98c43388436c602a00544de7cb8c003643a50f",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -28,7 +30,27 @@
    :timeout 1800000,
    :model-checking-time 90,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
  :dynamic_assertions 0,
  :invariant-violated false,
  :constants 2,

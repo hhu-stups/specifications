@@ -10,6 +10,8 @@
  :number-of-states 1,
  :included-machines
  ["./prob-examples/EventBPrologPackages/MultiLevel/TestMC_m1_mch.eventb"],
+ :sha512
+ "906f3ab219ba9758e545b8967c5aa1713638346cd34772bd460e625610478d4dab65640162a7b9d459f9c3dac5728168bbc788101e09aa63b2d63288c14217b8",
  :comment "",
  :files 1,
  :static_assertions 0,
@@ -29,6 +31,106 @@
    :timeout 1800000,
    :model-checking-time 40,
    :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
+   :memory-unit :byte}
+  {:errors ("event_error:evt1:simulation_error"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161500576,
+   :result
+   "state_error(eventerror(evt1,simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))]),[event(evt1,m1),true_guard([],[],b(equal(b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),action([b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)])],[b(integer(0),integer,[])],[int(0)]),simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ed00265dbe67544e14b71caa6b93c2be39ecb484",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 55,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:evt1:simulation_error"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161591920,
+   :result
+   "state_error(eventerror(evt1,simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))]),[event(evt1,m1),true_guard([],[],b(equal(b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),action([b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)])],[b(integer(0),integer,[])],[int(0)]),simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ed00265dbe67544e14b71caa6b93c2be39ecb484",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 57,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 5,
+   :memory-usage 161543040,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "ed00265dbe67544e14b71caa6b93c2be39ecb484",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 52,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("event_error:evt1:simulation_error"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 161466160,
+   :result
+   "state_error(eventerror(evt1,simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))]),[event(evt1,m1),true_guard([],[],b(equal(b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))])),action([b(identifier(var1),integer,[loc(m1,variables),section(m1),level(1)])],[b(integer(0),integer,[])],[int(0)]),simulation_error([event(evt1,m0,b(equal(b(identifier(var),integer,[loc(m0,variables),section(m0),level(0)]),b(integer(0),integer,[])),pred,[nodeid(rodinpos(grd1,'))]))])]))",
+   :model-checking-time-unit :msec,
+   :machine-hash "ed00265dbe67544e14b71caa6b93c2be39ecb484",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 46,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("deadlock"),
+   :states 1,
+   :transitions 2,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161448640,
+   :result "deadlock",
+   :model-checking-time-unit :msec,
+   :machine-hash "ed00265dbe67544e14b71caa6b93c2be39ecb484",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 47,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
    :memory-unit :byte}],
  :dynamic_assertions 0,
  :invariant-violated false,

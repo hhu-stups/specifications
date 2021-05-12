@@ -1,23 +1,27 @@
-{:number-of-transitions :unknown,
- :deadlock :unknown,
+{:sha256
+ "06163abc45e37edd2e80bebd1d06aab2cd6d13a7945faad2e1db9b57f8a9084b",
+ :sha512
+ "c69f6bc3040cbda38b2419747ce646545c210a08f4926c6b5f357dbf162fb8ffb4c5b6448c130659b0d703ed6e8b15fe30997b2d971afcb4b05dda6293b8d20c",
  :file "./prob-examples/B/Puzzles/gol.mch",
- :number-of-states :unknown,
- :included-machines [],
- :comment "",
- :sha256
- "0ab53cadf2409fe7485c7bd0a3e48f69006f4374651da833fa78a9d303539d15",
  :runs
  [{:tool :prob,
-   :hardware
-   {:name :hilbert-ivybridge,
-    :memory "2 GB",
-    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
-   :memory-usage :timeout,
-   :model-checking-time-unit :msec,
-   :commit "a2072ff1b7e810931787fc1d214ee8cc5cfbf373",
    :timeout 1800000,
-   :model-checking-time :timeout,
-   :revision-date "  Mon Jan 14 21:18:10 2019 +0100",
-   :memory-unit :byte}],
- :invariant-violated :unknown,
- :formalism :b}
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :comment "SHA changed"}

@@ -1,0 +1,52 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Hybrid/HybridThermostat.mch",
+ :enumerated_sets 1,
+ :variables 2,
+ :sha512
+ "80ef2e4750897b24f15afdefea10a31b437b731eb92a87d415e1f57238c6a8b32c6e0d4c779a4f40a3da790c394a05dae86ee1a75f89eca577ed90c87ee852d6",
+ :static_assertions 0,
+ :operations 4,
+ :sha256
+ "d7d1ec8f7380c730f9a2f95dac62c5554688781fc8047671248d5efb8fc280cb",
+ :invariants 2,
+ :runs
+ [{:errors ("general_error_occurred" "internal_error(error_manager)"),
+   :states 1,
+   :transitions 7,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 161956928,
+   :result "general_error_occurred",
+   :model-checking-time-unit :msec,
+   :machine-hash "14c3119ef77575c7b2b17339399b222dd0a59e0b",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 102,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}
+  {:tool :prob,
+   :timeout 1800000,
+   :timeout-unit :msecs,
+   :result :timeout}],
+ :dynamic_assertions 0,
+ :constants 0}

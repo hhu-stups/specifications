@@ -1,0 +1,6 @@
+IMPLEMENTATION  DateI
+REFINES Date
+SEES DateFields 
+PROPERTIES DATE = {dd,mm,yy | dd : DAY & mm : MONTH & yy : YEAR }
+END
+

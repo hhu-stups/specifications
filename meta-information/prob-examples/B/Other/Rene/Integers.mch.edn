@@ -1,0 +1,116 @@
+{:properties 0,
+ :definitions 0,
+ :deferred_sets 0,
+ :file "./prob-examples/B/Other/Rene/Integers.mch",
+ :enumerated_sets 0,
+ :variables 3,
+ :sha512
+ "b56afe0daca2638468b66cf35914d195187ffd89e3c7e05fd229406420971f6cc33378589e56179da85ee9080f42b005e1822a48281e964739093433a03496ef",
+ :static_assertions 0,
+ :operations 10,
+ :sha256
+ "879776dbd3e02d9adc3986640efc45206f6f7f64e527759fdc7cb4b2e026b3d5",
+ :invariants 3,
+ :runs
+ [{:errors ("invariant_violation"),
+   :states 0,
+   :transitions 40,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162130464,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "1a8c5b4cda2616f28af6df87270830d13fc69551",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations},
+   :model-checking-time 108,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 40,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 0,
+   :memory-usage 162111472,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,0/0,span_context([contains_wd_condition,nodeid(pos(121,1,13,27,13,30))],operation(div,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1a8c5b4cda2616f28af6df87270830d13fc69551",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors},
+   :model-checking-time 105,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 40,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 1,
+   :memory-usage 162101264,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,0/0,span_context([contains_wd_condition,nodeid(pos(121,1,13,27,13,30))],operation(div,0))))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1a8c5b4cda2616f28af6df87270830d13fc69551",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options #{:inspect_existing_nodes :find_state_errors},
+   :model-checking-time 103,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("well_definedness_error"),
+   :states 0,
+   :transitions 40,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 113,
+   :memory-usage 162473440,
+   :result
+   "state_error(abort_error(well_definedness_error,division by zero,0/0,span_context([contains_wd_condition,nodeid(pos(121,1,13,27,13,30))],???)))",
+   :model-checking-time-unit :msec,
+   :machine-hash "1a8c5b4cda2616f28af6df87270830d13fc69551",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:find_deadlocks :inspect_existing_nodes :find_state_errors
+     :partial_order_reduction},
+   :model-checking-time 72,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}
+  {:errors ("invariant_violation"),
+   :states 0,
+   :transitions 40,
+   :tool :prob,
+   :hardware
+   {:name :hilbert-ivybridge,
+    :memory "2 GB",
+    :cpu "Intel E5-2697v2 (Ivy Bridge EP), 2,70GHz"},
+   :static-analysis-time 148,
+   :memory-usage 162565376,
+   :result "invariant_violation",
+   :model-checking-time-unit :msec,
+   :machine-hash "1a8c5b4cda2616f28af6df87270830d13fc69551",
+   :commit "1b6f14bbd533c2459b1ce675eb57ab24fee89caa",
+   :options
+   #{:inspect_existing_nodes :find_state_errors
+     :find_invariant_violations :partial_order_reduction},
+   :model-checking-time 61,
+   :revision-date "Fri May 7 15:43:25 2021 +0200",
+   :memory-unit :byte}],
+ :dynamic_assertions 0,
+ :constants 0}
