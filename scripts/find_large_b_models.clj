@@ -6,10 +6,12 @@
 
 (defn read-meta-file [f] (read-string (slurp f)))
 
-(->> meta-files
-     (map read-meta-file)
-     (filter (fn [data]
-               (and (= (:formalism data) :b)
-                    (number? (:number-of-states data))
-                    (> (:number-of-states data) 100000))))
-     (map :file))
+(defn larger-models [n]
+  (->> meta-files
+       (map read-meta-file)
+       (filter (fn [data]
+                 (and (= (:formalism data) :b)
+                      (number? (:number-of-states data))
+                      (>= (:number-of-states data) n)
+                      (not (:invariant-violated data)))))
+       (map :file)))
