@@ -1,4 +1,4 @@
-:- module(db_tools,[print_csv/0, print_csv/1, get_git_sha/2]).
+:- module(db_tools,[print_matching_files/1, print_csv/0, print_csv/1, get_git_sha/2]).
 
 % database should be created with lein repl and then (load-file "generate-prolog-facts.clj")
 
@@ -35,6 +35,32 @@ codes_list_attr(name).
 codes_list_attr(sha256).
 
 last_attr(variables).
+
+:- meta_predicate print_matching_files(1).
+
+print_files :-
+     print_matching_files(setup_constants_fails).
+print_matching_files(Criterion) :-
+     format(user_output,'MATCHING_FILES = \\~n',[]),
+     file(Nr,Path),
+     call(Criterion,Nr),
+     format(user_output,' ~s \\~n',[Path]),
+     fail.
+print_matching_files(_) :- nl.
+
+% criterion:
+% find files where constants setup fails
+setup_constants_fails(Nr) :- 
+     'number-of-states'(Nr,0),
+     'properties'(Nr,Props), number(Props), Props>0.
+
+% criterion:
+% find files where constants setup fails
+at_least_states(MinNrStates,Nr) :- 
+     'number-of-states'(Nr,S), number(S), S >= MinNrStates.
+states(MinNrStates,MaxNrStates,Nr) :- 
+     'number-of-states'(Nr,S), number(S), S >= MinNrStates, S =< MaxNrStates.
+
 
 :- use_module(library(between),[between/3]).
 % generate spec IDs in ascending order
