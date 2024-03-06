@@ -60,6 +60,13 @@ at_least_states(MinNrStates,Nr) :-
      'number-of-states'(Nr,S), number(S), S >= MinNrStates.
 states(MinNrStates,MaxNrStates,Nr) :- 
      'number-of-states'(Nr,S), number(S), S >= MinNrStates, S =< MaxNrStates.
+mctime(MinTime,MaxTime,Nr) :- 
+     'number-of-states'(Nr,S), number(S), S>0,
+     model_checking_time(Nr,Time), number(Time),
+     Time >= MinTime, Time =< MaxTime.
+
+model_checking_time(Nr,Time) :- runs(Nr,[Run1|_]),
+   member(bind('model-checking-time',Time),Run1).
 
 
 :- use_module(library(between),[between/3]).
